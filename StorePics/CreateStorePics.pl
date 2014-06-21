@@ -12,7 +12,7 @@ my $main_font = " -family 'Linux Libertine' -style Normal";
 my $driver = "mysql";   # Database driver type
 my $database = "TP";  # Database name
 my $user = "root";          # Database user name
-my $password = "doover11";      # Database user password
+my $password = "doover111";      # Database user password
 
 use constant STOREPICSDIR => "StorePics/";
 
