@@ -17,12 +17,6 @@ use constant LOGFILE    => "./ScrapeBMCAirFilters.log";
 use constant ALERTFILE  => "./ScrapeBMCAirFilters.alert";
 use constant DEBUGFILE  => "./ScrapeBMCAirFilters.debug";
 
-
-my $driver = "mysql";   # Database driver type
-my $database = "TP";    # Database name
-my $user = "root";      # Database user name
-my $password = "doover11";      # Database user password
-
 # 
 # Open log/aler/debug files
 #
@@ -32,13 +26,17 @@ open(my $debugfh, ">", DEBUGFILE) or die "cannot open DEBUGFILE $!";
 
 #
 # Connect to database
-#
-my $dbh = DBI->connect(
-"DBI:$driver:$database", $user, $password,
+# mysql_enable_utf8 enables to store data as UT8
+# we also need to ensure that our DB or DB tables 
+# are configured to use UTF8
+my $driver = "mysql";   # Database driver type
+my $my_cnf = '~/.my.cnf';
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
 	}
-) or die "Cannot connect to database!\n";
+) or die $DBI::errstr;
 
 #
 # Query to get each active known product from the BMCAirFilters table

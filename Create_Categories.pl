@@ -6,12 +6,6 @@ use DBI;
 use English;
 use feature 'say';
 
-my $driver = "mysql";   # Database driver type
-my $database = "TP";    # Database name
-my $user = "root";      # Database user name
-my $password = "doover11";      # Database user password
-
-
 use constant CSV => "./Categories.csv";
 open (my $categories, ">", CSV) or die "Cannot open " . CSV;
 
@@ -23,11 +17,15 @@ $OFS = ',';
 
 #
 # Connect to database
-#
-my $dbh = DBI->connect(
-"DBI:$driver:$database", $user, $password,
+# mysql_enable_utf8 enables to store data as UT8
+# we also need to ensure that our DB or DB tables 
+# are configured to use UTF8
+my $driver = "mysql";   # Database driver type
+my $my_cnf = '~/.my.cnf';
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dbh = DBI->connect($dsn, undef, undef,
 	{
-	RaiseError => 1, PrintError => 1,
+	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
 	}
 ) or die $DBI::errstr;
 
