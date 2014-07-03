@@ -11,7 +11,7 @@ open (my $logfh, ">", LOG) or die "cannot open " . LOG;
 
 use constant SPECIAL_PRICE => 0.85;
 use constant SPECIAL_START => "2014-06-01 00:00:00";
-use constant SPECIAL_END => "2014-06-30 00:00:00";
+use constant SPECIAL_END => "2014-07-31 00:00:00";
 
 
 use constant SORT_ORDER_START => 100;

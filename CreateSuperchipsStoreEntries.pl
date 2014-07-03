@@ -11,15 +11,15 @@ open (my $logfh, ">", LOG) or die "cannot open " . LOG;
 
 use constant BFECUOPENPRICE => 400; 
 use constant TUNENASPPRICE1 => 599;
-use constant TUNENASPPRICE2 => 599;
-use constant TUNETURBOPRICE1 =>999;
-use constant TUNETURBOPRICE2 => 1099;
-use constant TUNETURBOPRICE3 => 1299;
+use constant TUNENASPPRICE2 => 699;
+use constant TUNETURBOPRICE1 => 999;
+use constant TUNETURBOPRICE2 => 1249;
+use constant TUNETURBOPRICE3 => 1499;
 
 use constant BFNASPPRICE => 499;
-use constant BFFORDPRICE => 649;
-use constant BFVAGPRICE  => 699;
-use constant BFOPELPRICE => 749;
+use constant BFFORDPRICE => 739;
+use constant BFVAGPRICE  => 739;
+use constant BFOPELPRICE => 739;
 
 use constant PRO2PRICE => 899;
 
