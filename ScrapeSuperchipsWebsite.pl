@@ -39,7 +39,7 @@ my $updvariantth = $dbh->prepare("
 	UPDATE SuperchipsWebsite 
 	 SET make = ?, model = ?, year = ?, engine_type = ?, capacity = ?, 
 	  cylinders = ?, original_bhp = ?, original_nm = ?, gain_bhp = ?, gain_nm = ?, 
-	   uk_price = ?, bluefin = ?, pro2 = ?, tune_type = ?, dyno_graph = ?,
+	   uk_price = ?, bluefin = ?, epc = ?, tune_type = ?, dyno_graph = ?,
 	    road_test = ?, warning = ?, related_media = ?, active = ?, comments = ?
 	 WHERE variant_id = ?
 ") or die $dbh->errstr;
@@ -48,7 +48,6 @@ my $updvariantth = $dbh->prepare("
 my $insvariantth = $dbh->prepare("
 		INSERT into SuperchipsWebsite VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
 ") or die $dbh->errstr;
-
 
 my $makes_hr = $loadmakesth->fetchall_hashref ('make');
 my $make = (defined $ARGV[0]) ? $ARGV[0] : "ALL";
@@ -111,7 +110,7 @@ sub extract_info_for_variant
 	my $gain_nm = 0;
 	my $uk_price = 0;
 	my $bluefin = "N";
-	my $pro2 = "N";
+	my $epc = "N";
 	my $tune_type = "?";
 	my $dyno_graph = '';
 	my $road_test = '';
@@ -155,7 +154,7 @@ sub extract_info_for_variant
 	# See if Bluefin is supported
 	$bluefin = "Y" if $bluefin eq "N" && $content =~ /bluefin is available for your/;
 	$bluefin = "E" if $content =~ /bluefin enabled/;
-	$pro2 = "Y" if $content =~ /modified using Superchips Pro2/;
+	$epc = "Y" if $content =~ /modified using Superchips EPC/;
 	$tune_type = "F" if $bluefin eq "Y";
 	$tune_type = "B" if $bluefin eq "E";
 	
@@ -215,9 +214,9 @@ sub extract_info_for_variant
 			say $logfh "\t\tbluefn is DIFFERENT. : $bluefin : $variant_hr->{bluefin} :";
 			$need_update ++;
 		}
-		if ($pro2 ne $variant_hr->{pro2})
+		if ($epc ne $variant_hr->{epc})
 		{
-			say $logfh "\t\tpro2 is DIFFERENT. : $pro2 : $variant_hr->{pro2} :";
+			say $logfh "\t\tepc is DIFFERENT. : $epc : $variant_hr->{epc} :";
 			$need_update ++;
 		}
 		if ($dyno_graph ne $variant_hr->{dyno_graph})
@@ -244,14 +243,14 @@ sub extract_info_for_variant
 	else
 	{
 		say "\t\tThis model needs to be added!";
-		print $logfh "Adding New Record $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $pro2, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments\n";
-		$insvariantth->execute($variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $pro2, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments);
+		print $logfh "Adding New Record $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments\n";
+		$insvariantth->execute($variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments);
 	}
 	if ($need_update)
 	{
 		say "\t\tThis car needs $need_update updates!";
-		print $logfh "Updating: $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $pro2, $tune_type, $dyno_graph $road_test, $warning, $related_media, $active, $comments\n";
-		$updvariantth->execute($make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $pro2, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, $variant_id);
+		print $logfh "Updating: $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph $road_test, $warning, $related_media, $active, $comments\n";
+		$updvariantth->execute($make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, $variant_id);
 	}
 }
 
