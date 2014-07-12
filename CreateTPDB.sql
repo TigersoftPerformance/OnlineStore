@@ -321,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`SuperchipsWebsite` (
   `gain_nm` INT(11) NOT NULL,
   `uk_price` INT(11) NOT NULL,
   `bluefin` CHAR(1) NOT NULL,
-  `pro2` CHAR(1) NOT NULL,
+  `epc` CHAR(1) NOT NULL,
   `tune_type` CHAR(1) NULL DEFAULT NULL,
   `dyno_graph` TEXT NULL DEFAULT NULL,
   `road_test` TEXT NULL DEFAULT NULL,
