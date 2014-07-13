@@ -337,8 +337,17 @@ sub update_bmcairfilters_row
 		{
 		my $url_img = BMCWEBSITE . $image;
 		my $img = IMAGESDIR . $1 if $image =~ /.*(\/.+)$/;
-		my $rc1 = getstore($url_img, $img);
-		die "getstore of <$url_img> failed with $rc1" if (is_error($rc1)) 
+		my $rc1;
+		my $retries = 5;
+		# Try a few times in case of failure
+		do 
+			{
+			$rc1 = getstore($url_img, $img);
+			$retries --;
+			}
+		while ($retries && is_error($rc1));
+			
+		die "getstore of <$url_img> failed with $rc1" if (is_error($rc1));
 		}
 
 	# save image to the image folder
@@ -346,8 +355,17 @@ sub update_bmcairfilters_row
 		{
 		my $url_diag = BMCWEBSITE . $diagram;
 		my $diag = IMAGESDIR . $1 if $diagram =~ /.*(\/.+)$/;
-		my $rc2 = getstore($url_diag, $diag);
-		die "getstore of <$url_diag> failed with $rc2" if (is_error($rc2)) 
+		my $rc2;
+		my $retries = 5;
+		# Try a few times in case of failure
+		do 
+			{
+			$rc2 = getstore($url_diag, $diag);
+			$retries --;
+			}
+		while ($retries && is_error($rc2));
+			
+		die "getstore of <$url_diag> failed with $rc2" if (is_error($rc2));
 		}	
 
 
