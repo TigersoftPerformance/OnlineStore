@@ -40,19 +40,41 @@ my $updvariantth = $dbh->prepare("
 	 SET make = ?, model = ?, year = ?, engine_type = ?, capacity = ?, 
 	  cylinders = ?, original_bhp = ?, original_nm = ?, gain_bhp = ?, gain_nm = ?, 
 	   uk_price = ?, bluefin = ?, epc = ?, tune_type = ?, dyno_graph = ?,
-	    road_test = ?, warning = ?, related_media = ?, active = ?, comments = ?
+	    road_test = ?, warning = ?, related_media = ?, active = ?, comments = ?, mark = ?
 	 WHERE variant_id = ?
 ") or die $dbh->errstr;
 
+my $unmarkvariantth = $dbh->prepare("
+	UPDATE SuperchipsWebsite 
+	 SET mark = 'N'
+	 WHERE variant_id = ?
+") or die $dbh->errstr;
+
+my $markvariantsth = $dbh->prepare("
+	UPDATE SuperchipsWebsite 
+	 SET mark = 'Y'
+	 WHERE variant_id > 0
+") or die $dbh->errstr;
+
+
 # Insert new row into model_code
 my $insvariantth = $dbh->prepare("
-		INSERT into SuperchipsWebsite VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+		INSERT into SuperchipsWebsite VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
 ") or die $dbh->errstr;
 
 my $makes_hr = $loadmakesth->fetchall_hashref ('make');
 my $make = (defined $ARGV[0]) ? $ARGV[0] : "ALL";
 if ($make eq "ALL")
 {
+	###########################################################################
+	# 20140714 JR
+	# When all makes will be scraped, we will first of all mark every variant currently listed in the
+	# SuperchipsWebsite table. Then, as each variant is is scraped, it can be unmarked, and this
+	# will allow easy identification of variants that have been deleted from the Superchips webiste
+	###########################################################################
+	
+	$markvariantsth->execute ();
+		
 	my $i;
 	for $i (sort (keys $makes_hr))
 		{
@@ -239,18 +261,42 @@ sub extract_info_for_variant
 			say $logfh "\t\trelated_media is DIFFERENT. : $related_media : $variant_hr->{related_media} :";
 			$need_update ++;
 		}
+		if ($year ne $variant_hr->{year})
+		{
+			say $logfh "\t\tyear is DIFFERENT. : $year : $variant_hr->{year} :";
+			$need_update ++;
+		}
+		if ($cylinders ne $variant_hr->{cylinders})
+		{
+			say $logfh "\t\tcylinders is DIFFERENT. : $cylinders : $variant_hr->{cylinders} :";
+			$need_update ++;
+		}
+		if ($engine_type ne $variant_hr->{engine_type})
+		{
+			say $logfh "\t\tengine_type is DIFFERENT. : $engine_type : $variant_hr->{engine_type} :";
+			$need_update ++;
+		}
+		if ($capacity ne $variant_hr->{capacity})
+		{
+			say $logfh "\t\tcapacity is DIFFERENT. : $year : $variant_hr->{capacity} :";
+			$need_update ++;
+		}
 	}
 	else
 	{
 		say "\t\tThis model needs to be added!";
 		print $logfh "Adding New Record $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments\n";
-		$insvariantth->execute($variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments);
+		$insvariantth->execute($variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, 'N');
 	}
 	if ($need_update)
 	{
 		say "\t\tThis car needs $need_update updates!";
 		print $logfh "Updating: $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph $road_test, $warning, $related_media, $active, $comments\n";
-		$updvariantth->execute($make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, $variant_id);
+		$updvariantth->execute($make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, 'N', $variant_id);
+	}
+	else
+	{
+	$unmarkvariantth->execute ($variant_id);
 	}
 }
 
