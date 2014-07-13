@@ -165,32 +165,6 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`CarsNew` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`CarsNew` (
-  `idCars` INT(11) NOT NULL,
-  `make` TEXT CHARACTER SET 'latin1' NOT NULL,
-  `model` TEXT CHARACTER SET 'latin1' NOT NULL,
-  `model_code` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `variant` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `fuel_type` TEXT CHARACTER SET 'latin1' NOT NULL,
-  `start_date` DATE NOT NULL,
-  `end_date` DATE NOT NULL,
-  `capacity` FLOAT NOT NULL,
-  `cylinders` INT(11) NOT NULL,
-  `original_bhp` INT(11) NULL DEFAULT NULL,
-  `original_kw` INT(11) NULL DEFAULT NULL,
-  `original_nm` INT(11) NULL DEFAULT NULL,
-  `superchips_tune` INT(11) NULL DEFAULT NULL,
-  `superchips_stage2` INT(11) NULL DEFAULT NULL,
-  `superchips_stage3` INT(11) NULL DEFAULT NULL,
-  `superchips_stage4` INT(11) NULL DEFAULT NULL,
-  `bmc_airfilter` INT(11) NULL DEFAULT NULL,
-  `bc_racing_coilovers` INT(11) NULL DEFAULT NULL,
-  `active` CHAR(1) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `comments` LONGTEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  PRIMARY KEY (`idCars`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
 
 -- -----------------------------------------------------
 -- Table `TP`.`Categories`
@@ -329,6 +303,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`SuperchipsWebsite` (
   `related_media` TEXT NULL DEFAULT NULL,
   `active` CHAR(1) NULL DEFAULT NULL,
   `comments` LONGTEXT NULL DEFAULT NULL,
+  `mark` CHAR(1) NOT NULL,
   PRIMARY KEY (`variant_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
