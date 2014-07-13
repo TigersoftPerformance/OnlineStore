@@ -16,6 +16,7 @@ use constant BMCWEBSITE => "http://au.bmcairfilters.com";
 use constant LOGFILE    => "./ScrapeBMCAirFilters.log";
 use constant ALERTFILE  => "./ScrapeBMCAirFilters.alert";
 use constant DEBUGFILE  => "./ScrapeBMCAirFilters.debug";
+use constant IMAGESDIR => "./BMCImages";
 
 # 
 # Open log/aler/debug files
@@ -77,9 +78,9 @@ my $updbmcairth = $dbh->prepare("
 ") or die $dbh->errstr;
 
 # Create images directory for images and diagrams
-unless (-d 'images')
+unless (-d IMAGESDIR)
 	{
-	mkdir "images" or die "cannot";	
+	mkdir IMAGESDIR or die "cannot";	
 	}
 
 #
@@ -335,7 +336,7 @@ sub update_bmcairfilters_row
 	if ($image) 
 		{
 		my $url_img = BMCWEBSITE . $image;
-		my $img = "images" . $1 if $image =~ /.*(\/.+)$/;
+		my $img = IMAGESDIR . $1 if $image =~ /.*(\/.+)$/;
 		my $rc1 = getstore($url_img, $img);
 		die "getstore of <$url_img> failed with $rc1" if (is_error($rc1)) 
 		}
@@ -344,7 +345,7 @@ sub update_bmcairfilters_row
 	if ($diagram) 
 		{
 		my $url_diag = BMCWEBSITE . $diagram;
-		my $diag = "images" . $1 if $diagram =~ /.*(\/.+)$/;
+		my $diag = IMAGESDIR . $1 if $diagram =~ /.*(\/.+)$/;
 		my $rc2 = getstore($url_diag, $diag);
 		die "getstore of <$url_diag> failed with $rc2" if (is_error($rc2)) 
 		}	
