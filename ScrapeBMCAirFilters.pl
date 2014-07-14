@@ -347,7 +347,7 @@ sub update_bmcairfilters_row
 			}
 		while ($retries && is_error($rc1));
 			
-		die "getstore of <$url_img> failed with $rc1" if (is_error($rc1));
+		alert ("getstore of <$url_img> failed with $rc1") if (is_error($rc1));
 		}
 
 	# save image to the image folder
@@ -365,7 +365,7 @@ sub update_bmcairfilters_row
 			}
 		while ($retries && is_error($rc2));
 			
-		die "getstore of <$url_diag> failed with $rc2" if (is_error($rc2));
+		alert ("getstore of <$url_diag> failed with $rc2") if (is_error($rc2));
 		}	
 
 
