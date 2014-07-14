@@ -278,7 +278,7 @@ sub extract_info_for_variant
 		}
 		if ($capacity ne $variant_hr->{capacity})
 		{
-			say $logfh "\t\tcapacity is DIFFERENT. : $year : $variant_hr->{capacity} :";
+			say $logfh "\t\tcapacity is DIFFERENT. : $capacity : $variant_hr->{capacity} :";
 			$need_update ++;
 		}
 	}
