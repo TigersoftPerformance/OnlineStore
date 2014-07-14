@@ -20,7 +20,7 @@
 20,Alfa Romeo,147,,JTD,Turbo-Diesel,2003-01-01,2050-12-31,2,4,140,105,305,18,0,0,0,0,0,Y,No comments
 21,Alfa Romeo,147,,JTD 16V,Turbo-Diesel,2005-01-01,2050-12-31,2,4,150,112,305,20,0,0,0,0,0,Y,No comments
 22,Alfa Romeo,147,,,Turbo-Diesel,2004-01-01,2050-12-31,2,4,120,90,0,1775,0,0,0,0,0,Y,No comments
-23,Alfa Romeo,148,,,Turbo-Diesel,2004-01-01,2050-12-31,2,4,150,112,0,1776,0,0,0,0,0,Y,No comments
+23,Alfa Romeo,148,,,Turbo-Diesel,2004-01-01,2050-12-31,2,4,150,112,0,0,0,0,0,0,0,N,Deleted from Superchips website
 24,Alfa Romeo,155,,Cloverleaf,Non-Turbo Petrol,1992-01-01,1995-12-31,2,4,190,142,291,731,0,0,0,0,0,Y,No comments
 25,Alfa Romeo,155,,Sport,Non-Turbo Petrol,1992-01-01,1996-12-31,2.5,4,166,124,0,732,0,0,0,0,0,Y,No comments
 26,Alfa Romeo,155,,Sportwdwad,Non-Turbo Petrol,1992-01-01,1996-12-31,2.5,1,166,124,0,2294,0,0,0,0,0,N,No comments
@@ -117,8 +117,8 @@
 117,Audi,A4,B6,All Models,Turbo-Diesel,2002-01-01,2006-12-31,2.5,6,163,122,310,51,0,0,0,0,0,Y,No comments
 118,Audi,A4,B6,,Turbocharged Petrol,2002-01-01,2004-12-31,1.8,4,163,122,225,518,0,0,0,0,0,Y,No comments
 119,Audi,A4,B6,,Turbocharged Petrol,2003-01-01,2004-12-31,1.8,4,190,142,240,519,0,0,0,0,0,Y,No comments
-120,Audi,A4,B7,FSi,Non-Turbo Petrol,2005-01-01,2008-12-31,3.2,6,252,188,330,1924,0,0,0,0,0,Y,No comments
-121,Audi,A4,B7,,Non-Turbo Petrol,2005-01-01,2008-12-31,4.2,8,339,253,410,764,0,0,0,0,0,Y,No comments
+120,Audi,A4,B7,3.2 V6 FSI,Non-Turbo Petrol,2005-01-01,2008-12-31,3.2,6,252,188,330,1924,0,0,0,0,0,Y,No comments
+121,Audi,A4,B7,4.2 V8 FSI,Non-Turbo Petrol,2005-01-01,2008-12-31,4.2,8,339,253,410,764,0,0,0,0,0,Y,No comments
 122,Audi,A4,B7,,Non-Turbo Petrol,2006-01-01,2008-12-31,1.6,4,100,75,148,757,0,0,0,0,0,Y,No comments
 123,Audi,A4,B7,1.9 TDI PD,Turbo-Diesel,2004-01-01,2007-12-31,1.9,4,113,85,285,48,0,0,0,0,0,Y,No comments
 124,Audi,A4,B7,2.0 PD,Turbo-Diesel,2006-01-01,2008-12-31,2,4,170,127,350,1723,0,0,0,0,0,Y,No comments
@@ -130,8 +130,8 @@
 130,Audi,A4,B7,All Models,Turbo-Diesel,2005-01-01,2007-12-31,2.5,6,160,120,350,67,0,0,0,0,0,Y,No comments
 131,Audi,A4,B7,2.0T FSI DTM,Turbocharged Petrol,2005-01-01,2009-12-31,2,4,216,162,300,515,0,0,0,0,0,Y,No comments
 132,Audi,A4,B7,2.0T FSi Turbo,Turbocharged Petrol,2005-01-01,2009-12-31,2,4,197,147,280,520,0,0,0,0,0,Y,No comments
-133,Audi,A4,B8,FSI,Non-Turbo Petrol,2008-01-01,2050-12-31,3.2,6,261,195,330,1921,0,0,0,0,0,Y,No comments
-134,Audi,A4,B8,,Non-Turbo Petrol,2008-01-01,2050-12-31,4.2,8,339,253,410,764,0,0,0,0,0,Y,No comments
+133,Audi,A4,B8,3.2 V6 FSI,Non-Turbo Petrol,2008-01-01,2050-12-31,3.2,6,261,195,330,1921,0,0,0,0,0,Y,No comments
+134,Audi,A4,B8,4.2 V8 FSI,Non-Turbo Petrol,2008-01-01,2050-12-31,4.2,8,339,253,410,764,0,0,0,0,0,Y,No comments
 135,Audi,A4,B8,2.0 TDI CR,Turbo-Diesel,2008-06-01,2050-12-31,2,4,140,105,320,2071,0,0,0,0,0,Y,No comments
 136,Audi,A4,B8,2.0 TDI CR,Turbo-Diesel,2008-09-01,2050-12-31,2,4,167,125,350,2152,0,0,0,0,0,Y,No comments
 137,Audi,A4,B8,2.0 TDI CR,Turbo-Diesel,2009-09-01,2050-12-31,2,4,140,105,320,2461,0,0,0,0,0,Y,No comments
@@ -299,7 +299,7 @@
 299,Audi,S2,,,Turbocharged Petrol,1989-01-01,1996-12-31,2.3,6,230,172,0,531,0,0,0,0,0,Y,No comments
 300,Audi,S3,8L,,Turbocharged Petrol,1999-01-01,2003-12-31,1.8,4,210,157,270,532,0,0,0,0,0,Y,No comments
 301,Audi,S3,8L,,Turbocharged Petrol,2001-01-01,2003-12-31,1.8,4,225,168,280,533,0,0,0,0,0,Y,No comments
-302,Audi,S3,8P,2.0 TFSI,Turbocharged Petrol,2006-09-01,2012-12-31,2,4,261,195,350,1742,0,0,0,0,0,Y,No comments
+302,Audi,S3,8P,2.0 TFSI,Turbocharged Petrol,2006-09-01,2012-12-31,2,4,261,195,350,1742,2124,2125,0,0,0,Y,No comments
 303,Audi,S4,B5,,Turbocharged Petrol,1997-01-01,2001-12-31,2.7,6,265,198,400,534,0,0,0,0,0,Y,No comments
 304,Audi,S4,B6,,Non-Turbo Petrol,2003-01-01,2005-12-31,4.2,8,339,253,410,1895,0,0,0,0,0,Y,No comments
 305,Audi,S4,B7,,Non-Turbo Petrol,2005-01-01,2007-12-31,4.2,8,339,253,410,1895,0,0,0,0,0,Y,No comments
@@ -311,7 +311,7 @@
 311,Audi,S6,C5,V8,Non-Turbo Petrol,1999-09-01,2050-12-31,4.2,8,335,250,420,2222,0,0,0,0,0,Y,No comments
 312,Audi,S6,C6,5.2 FSI Quattro,Non-Turbo Petrol,2006-06-01,2011-12-31,5.3,10,428,320,540,2236,0,0,0,0,0,Y,No comments
 313,Audi,S8,D3,FSi Quattro,Non-Turbo Petrol,2006-06-01,2009-12-31,5.3,10,443,331,540,2151,0,0,0,0,0,Y,No comments
-314,Audi,TT,8J,V6,Non-Turbo Petrol,2007-01-01,2010-12-31,3.2,6,246,184,320,1988,0,0,0,0,0,Y,No comments
+314,Audi,TT,8J,3.2 V6,Non-Turbo Petrol,2007-01-01,2010-12-31,3.2,6,246,184,320,1988,0,0,0,0,0,Y,No comments
 315,Audi,TT,8J,2.0 TDI Quattro,Turbo-Diesel,2008-06-01,2050-12-31,2,4,167,125,350,2095,0,0,0,0,0,Y,No comments
 316,Audi,TT,8J,2.0 TDI Quattro,Turbo-Diesel,2010-09-01,2010-12-31,2,4,167,125,350,2471,0,0,0,0,0,Y,No comments
 317,Audi,TT,8J,1.8T FSI,Turbocharged Petrol,2008-06-01,2050-12-31,1.8,4,157,118,250,2137,0,0,0,0,0,Y,No comments
@@ -320,12 +320,12 @@
 320,Audi,TT,8J,2.0T FSI TTS,Turbocharged Petrol,2008-03-01,2010-12-31,2,4,268,200,350,2055,0,0,0,0,0,Y,No comments
 321,Audi,TT,8J,2.0T FSi Turbo,Turbocharged Petrol,2006-01-01,2010-03-31,2,4,197,147,280,1732,0,0,0,0,0,Y,No comments
 322,Audi,TT,8J,RS 2.5T FSI,Turbocharged Petrol,2009-06-01,2010-12-31,2.5,5,335,250,450,2230,0,0,0,0,0,Y,No comments
-323,Audi,TT,8N,,Non-Turbo Petrol,2003-01-01,2006-12-31,3.2,6,246,184,320,782,0,0,0,0,0,Y,No comments
-324,Audi,TT,8N,1.8 T 20V,Turbocharged Petrol,2001-03-01,2050-12-31,1.8,4,150,112,210,537,0,0,0,0,0,Y,No comments
-325,Audi,TT,8N,,Turbocharged Petrol,1999-01-01,2006-12-31,1.8,4,180,135,235,538,0,0,0,0,0,Y,No comments
-326,Audi,TT,8N,,Turbocharged Petrol,1999-01-01,2006-12-31,1.8,4,225,168,280,540,0,0,0,0,0,Y,No comments
-327,Audi,TT,8N,,Turbocharged Petrol,2005-01-01,2006-12-31,1.8,4,190,142,240,539,0,0,0,0,0,Y,No comments
-328,Audi,TT,8N,,Turbocharged Petrol,2005-01-01,2006-12-31,1.8,4,240,180,320,541,0,0,0,0,0,Y,No comments
+323,Audi,TT,8N,3.2 V6,Non-Turbo Petrol,2003-03-01,2006-09-30,3.2,6,246,184,320,782,0,0,0,0,0,Y,No comments
+324,Audi,TT,8N,1.8 T 20V,Turbocharged Petrol,1999-01-01,2006-12-31,1.8,4,180,135,235,538,0,0,0,0,0,Y,No comments
+325,Audi,TT,8N,1.8 T 20V,Turbocharged Petrol,1999-01-01,2006-12-31,1.8,4,225,168,280,540,0,0,0,0,0,Y,No comments
+326,Audi,TT,8N,1.8 T 20V,Turbocharged Petrol,2001-03-01,2050-12-31,1.8,4,150,112,210,537,0,0,0,0,0,Y,No comments
+327,Audi,TT,8N,1.8 T 20V,Turbocharged Petrol,2005-01-01,2006-12-31,1.8,4,190,142,240,539,0,0,0,0,0,Y,No comments
+328,Audi,TT,8N,1.8 T 20V,Turbocharged Petrol,2005-01-01,2006-12-31,1.8,4,240,180,320,541,0,0,0,0,0,Y,No comments
 329,Bentley,Continental,,GT,Turbocharged Petrol,2003-01-01,2006-12-31,6,12,552,412,650,1876,0,0,0,0,0,Y,No comments
 330,Bluefin Reset,Bluefin,,Reset Bluefin Reset,Non-Turbo Petrol,1970-01-01,2050-12-31,0.1,0,0,1,0,2535,0,0,0,0,0,N,No comments
 331,Bluefin Reset,Bluefin,,Reset Bluefin Reset,Turbo-Diesel,1970-01-01,2050-12-31,0.1,0,0,1,0,2536,0,0,0,0,0,N,No comments
@@ -341,8 +341,8 @@
 341,BMW,1-Series,E81,118d,Turbo-Diesel,2007-03-01,2050-12-31,2,4,143,107,300,2037,0,0,0,0,0,Y,No comments
 342,BMW,1-Series,E81,118d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,143,107,300,2479,0,0,0,0,0,Y,No comments
 343,BMW,1-Series,E81,120d,Turbo-Diesel,2004-01-01,2007-12-31,2,4,163,122,340,108,0,0,0,0,0,Y,No comments
-344,BMW,1-Series,E81,120d,Turbo-Diesel,2007-01-01,2050-12-31,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
-345,BMW,1-Series,E81,120d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
+344,BMW,1-Series,E81,120d,Turbo-Diesel,2007-03-01,2009-09-30,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
+345,BMW,1-Series,E81,120d,Turbo-Diesel,2009-09-01,2012-09-30,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
 346,BMW,1-Series,E81,123d,Turbo-Diesel,2007-09-01,2050-12-31,2,4,204,153,400,2039,0,0,0,0,0,Y,No comments
 347,BMW,1-Series,E81,123d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,204,153,400,2481,0,0,0,0,0,Y,No comments
 348,BMW,1-Series,E81,130i,Turbocharged Petrol,2005-09-01,2012-09-30,3,6,261,195,315,2859,0,0,0,0,0,Y,No comments
@@ -359,8 +359,8 @@
 359,BMW,1-Series,E82,118d,Turbo-Diesel,2007-03-01,2050-12-31,2,4,143,107,300,2037,0,0,0,0,0,Y,No comments
 360,BMW,1-Series,E82,118d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,143,107,300,2479,0,0,0,0,0,Y,No comments
 361,BMW,1-Series,E82,120d,Turbo-Diesel,2004-01-01,2007-12-31,2,4,163,122,340,108,0,0,0,0,0,Y,No comments
-362,BMW,1-Series,E82,120d,Turbo-Diesel,2007-01-01,2050-12-31,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
-363,BMW,1-Series,E82,120d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
+362,BMW,1-Series,E82,120d,Turbo-Diesel,2007-03-01,2009-09-30,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
+363,BMW,1-Series,E82,120d,Turbo-Diesel,2009-09-01,2012-09-30,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
 364,BMW,1-Series,E82,123d,Turbo-Diesel,2007-09-01,2050-12-31,2,4,204,153,400,2039,0,0,0,0,0,Y,No comments
 365,BMW,1-Series,E82,123d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,204,153,400,2481,0,0,0,0,0,Y,No comments
 366,BMW,1-Series,E82,135i,Turbocharged Petrol,2007-01-01,2010-03-31,3,6,302,226,400,1908,0,0,0,0,0,Y,No comments
@@ -376,8 +376,8 @@
 376,BMW,1-Series,E87,118d,Turbo-Diesel,2007-03-01,2050-12-31,2,4,143,107,300,2037,0,0,0,0,0,Y,No comments
 377,BMW,1-Series,E87,118d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,143,107,300,2479,0,0,0,0,0,Y,No comments
 378,BMW,1-Series,E87,120d,Turbo-Diesel,2004-01-01,2007-12-31,2,4,163,122,340,108,0,0,0,0,0,Y,No comments
-379,BMW,1-Series,E87,120d,Turbo-Diesel,2007-01-01,2050-12-31,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
-380,BMW,1-Series,E87,120d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
+379,BMW,1-Series,E87,120d,Turbo-Diesel,2007-03-01,2009-09-30,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
+380,BMW,1-Series,E87,120d,Turbo-Diesel,2009-09-01,2012-09-30,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
 381,BMW,1-Series,E87,123d,Turbo-Diesel,2007-09-01,2050-12-31,2,4,204,153,400,2039,0,0,0,0,0,Y,No comments
 382,BMW,1-Series,E87,123d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,204,153,400,2481,0,0,0,0,0,Y,No comments
 383,BMW,1-Series,E87,135i,Turbocharged Petrol,2007-01-01,2010-03-31,3,6,302,226,400,1908,0,0,0,0,0,Y,No comments
@@ -393,8 +393,8 @@
 393,BMW,1-Series,E88,118d,Turbo-Diesel,2007-03-01,2050-12-31,2,4,143,107,300,2037,0,0,0,0,0,Y,No comments
 394,BMW,1-Series,E88,118d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,143,107,300,2479,0,0,0,0,0,Y,No comments
 395,BMW,1-Series,E88,120d,Turbo-Diesel,2004-01-01,2007-12-31,2,4,163,122,340,108,0,0,0,0,0,Y,No comments
-396,BMW,1-Series,E88,120d,Turbo-Diesel,2007-01-01,2050-12-31,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
-397,BMW,1-Series,E88,120d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
+396,BMW,1-Series,E88,120d,Turbo-Diesel,2007-03-01,2009-09-30,2,4,177,133,350,2038,0,0,0,0,0,Y,No comments
+397,BMW,1-Series,E88,120d,Turbo-Diesel,2009-09-01,2012-09-30,2,4,177,133,350,2480,0,0,0,0,0,Y,No comments
 398,BMW,1-Series,E88,123d,Turbo-Diesel,2007-09-01,2050-12-31,2,4,204,153,400,2039,0,0,0,0,0,Y,No comments
 399,BMW,1-Series,E88,123d,Turbo-Diesel,2009-09-01,2014-12-31,2,4,204,153,400,2481,0,0,0,0,0,Y,No comments
 400,BMW,1-Series,E88,135i,Turbocharged Petrol,2007-01-01,2010-03-31,3,6,302,226,400,1908,0,0,0,0,0,Y,No comments
@@ -428,11 +428,11 @@
 428,BMW,3-Series,E46,316i,Non-Turbo Petrol,1999-01-01,2002-12-31,1.9,4,105,79,165,803,0,0,0,0,0,Y,No comments
 429,BMW,3-Series,E46,316i,Non-Turbo Petrol,2002-01-01,2005-12-31,1.8,4,114,86,175,802,0,0,0,0,0,Y,No comments
 430,BMW,3-Series,E46,318i,Non-Turbo Petrol,1998-01-01,2001-12-31,1.9,4,118,89,180,804,0,0,0,0,0,Y,No comments
-431,BMW,3-Series,E46,318i (M43),Non-Turbo Petrol,2001-01-01,2005-12-31,2,4,140,105,200,805,0,0,0,0,0,Y,No comments
+431,BMW,3-Series,E46,318i (M43),Non-Turbo Petrol,2001-06-01,2005-09-30,2,4,140,105,200,805,0,0,0,0,0,Y,No comments
 432,BMW,3-Series,E46,320i,Non-Turbo Petrol,2000-01-01,2005-12-31,2.2,6,170,127,210,806,0,0,0,0,0,Y,No comments
 433,BMW,3-Series,E46,323i,Non-Turbo Petrol,1998-01-01,2000-12-31,2.5,6,170,127,245,807,0,0,0,0,0,Y,No comments
 434,BMW,3-Series,E46,323i,Non-Turbo Petrol,2000-01-01,2006-12-31,2.5,6,170,127,245,2017,0,0,0,0,0,Y,No comments
-435,BMW,3-Series,E46,325i,Non-Turbo Petrol,2000-01-01,2002-12-31,2.5,6,192,144,245,808,0,0,0,0,0,Y,No comments
+435,BMW,3-Series,E46,325i,Non-Turbo Petrol,2000-06-01,2007-06-30,2.5,6,192,144,245,808,0,0,0,0,0,Y,No comments
 436,BMW,3-Series,E46,328i,Non-Turbo Petrol,1998-01-01,2000-12-31,2.8,6,193,144,280,809,0,0,0,0,0,Y,No comments
 437,BMW,3-Series,E46,330i,Non-Turbo Petrol,2000-01-01,2005-12-31,3,6,231,173,300,810,0,0,0,0,0,Y,No comments
 438,BMW,3-Series,E46,M3,Non-Turbo Petrol,2001-01-01,2005-12-31,3.3,6,340,252,365,811,0,0,0,0,0,Y,No comments
@@ -443,7 +443,7 @@
 443,BMW,3-Series,E46,330d,Turbo-Diesel,1999-01-01,2003-12-31,3,6,181,136,390,116,0,0,0,0,0,Y,No comments
 444,BMW,3-Series,E46,330d,Turbo-Diesel,2003-01-01,2006-12-31,3,6,201,150,410,117,0,0,0,0,0,Y,No comments
 445,BMW,3-Series,E90,316i,Non-Turbo Petrol,2009-06-01,2012-12-31,2,4,120,90,185,2238,0,0,0,0,0,Y,No comments
-446,BMW,3-Series,E90,318i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
+446,BMW,3-Series,E90,318i,Non-Turbo Petrol,2005-09-01,2007-09-30,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
 447,BMW,3-Series,E90,320i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,170,127,200,815,0,0,0,0,0,Y,No comments
 448,BMW,3-Series,E90,320i,Non-Turbo Petrol,2005-03-01,2050-12-31,2,4,147,110,200,814,0,0,0,0,0,Y,No comments
 449,BMW,3-Series,E90,323i,Non-Turbo Petrol,2005-01-01,2007-12-31,2.5,6,170,127,245,2017,0,0,0,0,0,Y,No comments
@@ -468,7 +468,7 @@
 468,BMW,3-Series,E90,335i,Turbocharged Petrol,2007-01-01,2010-03-31,3,6,302,226,400,1907,0,0,0,0,0,Y,No comments
 469,BMW,3-Series,E90,335i,Turbocharged Petrol,2010-01-01,2012-12-31,3,6,302,226,400,2742,0,0,0,0,0,Y,No comments
 470,BMW,3-Series,E91,316i,Non-Turbo Petrol,2009-06-01,2012-12-31,2,4,120,90,185,2238,0,0,0,0,0,Y,No comments
-471,BMW,3-Series,E91,318i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
+471,BMW,3-Series,E91,318i,Non-Turbo Petrol,2005-09-01,2007-09-30,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
 472,BMW,3-Series,E91,320i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,170,127,200,815,0,0,0,0,0,Y,No comments
 473,BMW,3-Series,E91,320i,Non-Turbo Petrol,2005-03-01,2050-12-31,2,4,147,110,200,814,0,0,0,0,0,Y,No comments
 474,BMW,3-Series,E91,323i,Non-Turbo Petrol,2005-01-01,2007-12-31,2.5,6,170,127,245,2017,0,0,0,0,0,Y,No comments
@@ -493,7 +493,7 @@
 493,BMW,3-Series,E91,335i,Turbocharged Petrol,2007-01-01,2010-03-31,3,6,302,226,400,1907,0,0,0,0,0,Y,No comments
 494,BMW,3-Series,E91,335i,Turbocharged Petrol,2010-01-01,2012-12-31,3,6,302,226,400,2742,0,0,0,0,0,Y,No comments
 495,BMW,3-Series,E92,316i,Non-Turbo Petrol,2009-06-01,2012-12-31,2,4,120,90,185,2238,0,0,0,0,0,Y,No comments
-496,BMW,3-Series,E92,318i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
+496,BMW,3-Series,E92,318i,Non-Turbo Petrol,2005-09-01,2007-09-30,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
 497,BMW,3-Series,E92,320i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,170,127,200,815,0,0,0,0,0,Y,No comments
 498,BMW,3-Series,E92,320i,Non-Turbo Petrol,2005-03-01,2050-12-31,2,4,147,110,200,814,0,0,0,0,0,Y,No comments
 499,BMW,3-Series,E92,323i,Non-Turbo Petrol,2005-01-01,2007-12-31,2.5,6,170,127,245,2017,0,0,0,0,0,Y,No comments
@@ -518,7 +518,7 @@
 518,BMW,3-Series,E92,335i,Turbocharged Petrol,2007-01-01,2010-03-31,3,6,302,226,400,1907,0,0,0,0,0,Y,No comments
 519,BMW,3-Series,E92,335i,Turbocharged Petrol,2010-01-01,2012-12-31,3,6,302,226,400,2742,0,0,0,0,0,Y,No comments
 520,BMW,3-Series,E93,316i,Non-Turbo Petrol,2009-06-01,2012-12-31,2,4,120,90,185,2238,0,0,0,0,0,Y,No comments
-521,BMW,3-Series,E93,318i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
+521,BMW,3-Series,E93,318i,Non-Turbo Petrol,2005-09-01,2007-09-30,2,4,127,95,180,813,0,0,0,0,0,Y,No comments
 522,BMW,3-Series,E93,320i,Non-Turbo Petrol,2005-01-01,2012-12-31,2,4,170,127,200,815,0,0,0,0,0,Y,No comments
 523,BMW,3-Series,E93,320i,Non-Turbo Petrol,2005-03-01,2050-12-31,2,4,147,110,200,814,0,0,0,0,0,Y,No comments
 524,BMW,3-Series,E93,323i,Non-Turbo Petrol,2005-01-01,2007-12-31,2.5,6,170,127,245,2017,0,0,0,0,0,Y,No comments
@@ -725,7 +725,7 @@
 725,BMW,X-Series,X5 E70,X5,Turbo-Diesel,2010-03-01,2013-12-31,3,6,241,180,540,2246,0,0,0,0,0,Y,No comments
 726,BMW,X-Series,X5 E70,X5,Turbo-Diesel,2010-03-01,2013-12-31,3,6,301,225,600,2423,0,0,0,0,0,Y,No comments
 727,BMW,X-Series,X5 E70,X5,Turbocharged Petrol,2010-06-01,2013-12-31,3,6,302,226,400,2747,0,0,0,0,0,Y,No comments
-728,BMW,X-Series,X6 E71,X6,Turbo-Diesel,2008-01-01,2050-12-31,3,6,286,214,580,2011,0,0,0,0,0,Y,No comments
+728,BMW,X-Series,X6 E71,X6,Turbo-Diesel,2008-01-01,2050-12-31,3,6,282,210,580,2011,0,0,0,0,0,Y,No comments
 729,BMW,X-Series,X6 E71,X6,Turbo-Diesel,2008-03-01,2050-12-31,3,6,235,176,520,2049,0,0,0,0,0,Y,No comments
 730,BMW,X-Series,X6 E71,X6,Turbo-Diesel,2010-03-01,2050-12-31,3,6,241,180,540,2247,0,0,0,0,0,Y,No comments
 731,BMW,X-Series,X6 E71,X6,Turbo-Diesel,2010-03-01,2050-12-31,3,6,301,225,600,2425,0,0,0,0,0,Y,No comments
@@ -941,7 +941,7 @@
 941,Fiat,Punto,,JTD,Turbo-Diesel,2003-01-01,2050-12-31,2,4,100,75,260,162,0,0,0,0,0,Y,No comments
 942,Fiat,Punto,,JTD,Turbo-Diesel,2006-01-01,2050-12-31,2,4,130,97,280,1870,0,0,0,0,0,Y,No comments
 943,Fiat,Punto,,Multijet,Turbo-Diesel,2006-01-01,2050-12-31,1.3,4,73,55,170,1953,0,0,0,0,0,Y,No comments
-944,Fiat,Punto,,Multijet,Turbo-Diesel,2008-09-01,2012-03-31,2,4,118,89,300,2112,0,0,0,0,0,Y,No comments
+944,Fiat,Punto,,Multijet,Turbo-Diesel,2008-09-01,2012-03-31,1.6,4,118,89,300,2112,0,0,0,0,0,Y,No comments
 945,Fiat,Punto,,Grande T-Jet,Turbocharged Petrol,2007-06-01,2050-12-31,1.4,4,120,90,206,2083,0,0,0,0,0,Y,No comments
 946,Fiat,Punto,,GT,Turbocharged Petrol,1994-01-01,1999-12-31,1.4,4,130,97,200,548,0,0,0,0,0,Y,No comments
 947,Fiat,Sedici,,1.9 MultiJet,Turbo-Diesel,2006-03-01,2050-12-31,2,4,118,89,280,2689,0,0,0,0,0,Y,No comments
@@ -959,8 +959,8 @@
 959,Ford,B-Max,,1.0 EcoBoost,Turbocharged Petrol,2012-09-01,2050-12-31,1,3,98,73,170,2869,0,0,0,0,0,Y,No comments
 960,Ford,C-Max,MkI,VVTi,Non-Turbo Petrol,2004-01-01,2007-12-31,1.6,4,115,86,155,1938,0,0,0,0,0,Y,No comments
 961,Ford,C-Max,MkI,,Non-Turbo Petrol,2006-01-01,2010-12-31,1.6,4,98,74,146,1913,0,0,0,0,0,Y,No comments
-962,Ford,C-Max,MkI,1.6 TDCi,Turbo-Diesel,2003-09-01,2010-12-31,1.6,4,108,81,245,2035,0,0,0,0,0,Y,No comments
-963,Ford,C-Max,MkI,1.6 TDCi,Turbo-Diesel,2005-01-01,2010-12-31,1.6,4,90,68,215,1842,0,0,0,0,0,Y,No comments
+962,Ford,C-Max,MkI,1.6 TDCi,Turbo-Diesel,2003-01-01,2007-12-31,1.6,4,90,68,215,1842,0,0,0,0,0,Y,No comments
+963,Ford,C-Max,MkI,1.6 TDCi,Turbo-Diesel,2003-09-01,2010-12-31,1.6,4,108,81,245,2035,0,0,0,0,0,Y,No comments
 964,Ford,C-Max,MkI,2.0 TDCi,Turbo-Diesel,2004-01-01,2010-12-31,2,4,134,100,320,1736,0,0,0,0,0,Y,No comments
 965,Ford,C-Max,MkI,TDCi,Turbo-Diesel,2005-06-01,2050-12-31,1.8,4,113,85,280,2304,0,0,0,0,0,Y,No comments
 966,Ford,C-Max,MkII,1.6 TDCi,Turbo-Diesel,2010-09-01,2050-12-31,1.6,4,113,84,270,2945,0,0,0,0,0,Y,No comments
@@ -993,13 +993,13 @@
 993,Ford,Fiesta,MkVII,1.6 TDCi,Turbo-Diesel,2010-03-01,2009-12-31,1.6,4,93,70,200,2385,0,0,0,0,0,Y,No comments
 994,Ford,Fiesta,MkVII,1.0 EcoBoost,Turbocharged Petrol,2012-09-01,2050-12-31,1,3,98,73,170,2866,0,0,0,0,0,Y,No comments
 995,Ford,Fiesta,MkVII,1.0 EcoBoost,Turbocharged Petrol,2012-09-01,2050-12-31,1,3,123,92,200,2870,0,0,0,0,0,Y,No comments
-996,Ford,Fiesta,MkVII,ST 1.6 EcoBoost,Turbocharged Petrol,2013-03-01,2009-12-31,1.6,4,179,134,290,2757,0,0,0,0,0,Y,No comments
+996,Ford,Fiesta,MkVII,ST 1.6 EcoBoost,Turbocharged Petrol,2013-03-01,2050-12-31,1.6,4,179,134,290,2757,0,0,0,0,0,Y,No comments
 997,Ford,Figo,,,Non-Turbo Petrol,2010-03-01,2050-12-31,1.2,4,70,53,102,2292,0,0,0,0,0,Y,No comments
-998,Ford,Focus,MkI,ST170,Non-Turbo Petrol,2002-01-01,2005-12-31,2,4,170,127,196,985,0,0,0,0,0,Y,No comments
-999,Ford,Focus,MkI,,Non-Turbo Petrol,1998-01-01,2005-12-31,1.4,4,73,55,123,981,0,0,0,0,0,Y,No comments
-1000,Ford,Focus,MkI,,Non-Turbo Petrol,1998-01-01,2005-12-31,1.6,4,98,74,145,982,0,0,0,0,0,Y,No comments
-1001,Ford,Focus,MkI,,Non-Turbo Petrol,1998-01-01,2005-12-31,1.8,4,113,85,160,983,0,0,0,0,0,Y,No comments
-1002,Ford,Focus,MkI,,Non-Turbo Petrol,1998-01-01,2005-12-31,2,4,128,96,178,984,0,0,0,0,0,Y,No comments
+998,Ford,Focus,MkI,16V Zetec,Non-Turbo Petrol,1998-01-01,2005-12-31,1.6,4,98,74,145,982,0,0,0,0,0,Y,No comments
+999,Ford,Focus,MkI,ST170,Non-Turbo Petrol,2002-01-01,2005-12-31,2,4,170,127,196,985,0,0,0,0,0,Y,No comments
+1000,Ford,Focus,MkI,,Non-Turbo Petrol,1998-01-01,2005-12-31,1.8,4,113,85,160,983,0,0,0,0,0,Y,No comments
+1001,Ford,Focus,MkI,,Non-Turbo Petrol,1998-01-01,2005-12-31,2,4,128,96,178,984,0,0,0,0,0,Y,No comments
+1002,Ford,Focus,MkI,,Non-Turbo Petrol,1998-09-01,2004-09-30,1.4,4,73,55,123,981,0,0,0,0,0,Y,No comments
 1003,Ford,Focus,MkI,,Non-Turbo Petrol,2002-01-01,2005-12-31,1.4,4,79,59,124,1920,0,0,0,0,0,Y,No comments
 1004,Ford,Focus,MkI,TD,Turbo-Diesel,1998-01-01,2004-12-31,1.8,4,90,68,200,180,0,0,0,0,0,Y,No comments
 1005,Ford,Focus,MkI,TDCi,Turbo-Diesel,2001-01-01,2005-12-31,1.8,4,115,86,250,181,0,0,0,0,0,Y,No comments
@@ -1007,16 +1007,16 @@
 1007,Ford,Focus,MkI,RS,Turbocharged Petrol,2002-01-01,2003-12-31,2,4,215,161,310,559,0,0,0,0,0,Y,No comments
 1008,Ford,Focus,MkII,VVTi,Non-Turbo Petrol,2005-01-01,2007-12-31,1.6,4,115,86,155,1937,0,0,0,0,0,Y,No comments
 1009,Ford,Focus,MkII,,Non-Turbo Petrol,2005-01-01,2011-12-31,1.6,4,98,74,146,1911,0,0,0,0,0,Y,No comments
-1010,Ford,Focus,MkII,1.6 TDCi Duratorq,Turbo-Diesel,2005-03-01,2011-12-31,1.6,4,88,66,215,2709,0,0,0,0,0,Y,No comments
+1010,Ford,Focus,MkII,1.6 TDCi Duratorq,Turbo-Diesel,2004-01-01,2008-12-31,1.6,4,88,66,215,2709,0,0,0,0,0,Y,No comments
 1011,Ford,Focus,MkII,2.0 TDCi,Turbo-Diesel,2005-01-01,2011-12-31,2,4,134,100,320,1735,0,0,0,0,0,Y,No comments
 1012,Ford,Focus,MkII,2.0 TDCi PowerShift,Turbo-Diesel,2008-03-01,2009-03-31,2,4,108,81,265,2229,0,0,0,0,0,Y,No comments
 1013,Ford,Focus,MkII,TDCi,Turbo-Diesel,2005-01-01,2050-12-31,1.6,4,110,83,260,183,0,0,0,0,0,Y,No comments
-1014,Ford,Focus,MkII,TDCi,Turbo-Diesel,2005-03-01,2011-31-12,1.8,4,113,85,280,2858,0,0,0,0,0,Y,No comments
+1014,Ford,Focus,MkII,TDCi,Turbo-Diesel,2005-03-01,2011-12-31,1.8,4,113,85,280,2858,0,0,0,0,0,Y,No comments
 1015,Ford,Focus,MkII,TDCi,Turbo-Diesel,2010-01-01,2011-12-31,1.6,4,110,83,260,2264,0,0,0,0,0,Y,No comments
-1016,Ford,Focus,MkII,RS,Turbocharged Petrol,2009-03-01,2011-12-31,2.6,5,300,224,440,2114,0,0,0,0,0,Y,No comments
+1016,Ford,Focus,MkII,RS,Turbocharged Petrol,2009-03-01,2011-12-31,2.6,5,300,224,440,2114,2171,2172,2308,0,0,Y,No comments
 1017,Ford,Focus,MkII,RS MP350,Turbocharged Petrol,2010-06-01,2011-12-31,2.6,5,345,258,460,2306,0,0,0,0,0,Y,No comments
 1018,Ford,Focus,MkII,RS RS500,Turbocharged Petrol,2010-06-01,2011-12-31,2.6,5,345,258,460,2307,0,0,0,0,0,Y,No comments
-1019,Ford,Focus,MkII,ST,Turbocharged Petrol,2005-01-01,2011-12-31,2.6,5,225,168,320,2,0,0,0,0,0,Y,No comments
+1019,Ford,Focus,MkII,ST,Turbocharged Petrol,2005-01-01,2011-12-31,2.6,5,225,168,320,2,2024,2025,0,0,0,Y,No comments
 1020,Ford,Focus,MkIII,1.6TDCi,Turbo-Diesel,2011-03-01,2050-12-31,1.6,4,113,85,270,2809,0,0,0,0,0,Y,No comments
 1021,Ford,Focus,MkIII,2.0 TDCi,Turbo-Diesel,2011-03-01,2050-12-31,2,4,138,103,320,2449,0,0,0,0,0,Y,No comments
 1022,Ford,Focus,MkIII,2.0 TDCi,Turbo-Diesel,2011-03-01,2050-12-31,2,4,160,120,340,2627,0,0,0,0,0,Y,No comments
@@ -1185,10 +1185,10 @@
 1185,Honda,Accord,,,Turbo-Diesel,1996-01-01,1998-12-31,2,4,0,1,0,205,0,0,0,0,0,N,No comments
 1186,Honda,Civic,,,Non-Turbo Petrol,1996-01-01,2001-12-31,1.4,4,88,66,120,1019,0,0,0,0,0,Y,No comments
 1187,Honda,Civic,,,Non-Turbo Petrol,1996-01-01,2001-12-31,1.5,4,112,84,135,1020,0,0,0,0,0,Y,No comments
-1188,Honda,Civic,,2.2 i-DTEC,Turbo-Diesel,1970-01-01,2050-12-31,2.2,4,147,110,350,2674,0,0,0,0,0,Y,No comments
-1189,Honda,Civic,,iCDTi,Turbo-Diesel,2005-01-01,2050-12-31,2.3,4,138,103,340,203,0,0,0,0,0,Y,No comments
+1188,Honda,Civic,,2.2 i-DTEC,Turbo-Diesel,1970-01-01,2050-12-31,2.2,4,147,110,350,0,0,0,0,0,0,N,Deleted from Superchips website
+1189,Honda,Civic,,iCDTi,Turbo-Diesel,2005-01-01,2011-12-31,2.3,4,138,103,340,203,0,0,0,0,0,Y,No comments
 1190,Honda,Concerto,,,Non-Turbo Petrol,1992-01-01,1995-12-31,1.6,4,121,91,0,1034,0,0,0,0,0,Y,No comments
-1191,Honda,CR-V,,,Non-Turbo Petrol,1997-01-01,2001-12-31,2,4,144,108,182,1031,0,0,0,0,0,Y,No comments
+1191,Honda,CR-V,,,Non-Turbo Petrol,1997-01-01,2001-12-31,2,4,144,108,182,0,0,0,0,0,0,N,Deleted from Superchips website
 1192,Honda,CR-V,,,Non-Turbo Petrol,1997-01-01,1999-12-31,2,4,147,110,182,1032,0,0,0,0,0,Y,No comments
 1193,Honda,CR-V,,2.2 i-DTEC,Turbo-Diesel,1970-01-01,2050-12-31,2.2,4,147,110,350,2334,0,0,0,0,0,Y,No comments
 1194,Honda,CR-V,,iCDTi,Turbo-Diesel,2007-03-01,2050-12-31,2.3,4,138,103,340,204,0,0,0,0,0,Y,No comments
@@ -1219,7 +1219,7 @@
 1219,Hyundai,S-Coupe,,MVTi,Turbocharged Petrol,1992-01-01,1995-12-31,1.5,4,114,86,0,570,0,0,0,0,0,Y,No comments
 1220,Hyundai,SantaFe,,2.0 CRDi,Turbo-Diesel,2003-01-01,2005-12-31,2,4,111,83,260,1665,0,0,0,0,0,Y,No comments
 1221,Hyundai,SantaFe,,2.2 CRDi,Turbo-Diesel,2009-09-01,2012-12-31,2.2,4,194,145,422,2890,0,0,0,0,0,Y,No comments
-1222,Hyundai,SantaFe,,2.2 CRDi,Turbo-Diesel,2010-01-01,2050-12-31,2.2,4,194,145,436,2347,0,0,0,0,0,Y,No comments
+1222,Hyundai,SantaFe,,2.2 CRDi,Turbo-Diesel,2012-01-01,2050-12-31,2.2,4,194,145,436,2347,0,0,0,0,0,Y,No comments
 1223,Hyundai,SantaFe,,CRTD,Turbo-Diesel,2006-01-01,2050-12-31,2.2,4,153,115,343,1800,0,0,0,0,0,Y,No comments
 1224,Hyundai,Sonata,,,Non-Turbo Petrol,1994-01-01,1996-12-31,2,4,139,104,0,1045,0,0,0,0,0,Y,No comments
 1225,Hyundai,Sonata,,,Non-Turbo Petrol,1996-01-01,1998-12-31,2,4,122,92,0,1046,0,0,0,0,0,Y,No comments
@@ -1235,8 +1235,8 @@
 1235,Isuzu,Rodeo,,Denver Max LE (manual),Turbo-Diesel,2006-01-01,2050-12-31,3,4,161,121,360,2005,0,0,0,0,0,Y,No comments
 1236,Isuzu,Trooper,,3.0D,Turbo-Diesel,1998-01-01,2003-12-31,3,4,156,117,331,1731,0,0,0,0,0,Y,No comments
 1237,Jaguar,S-Type,,2.7d,Turbo-Diesel,2004-01-01,2050-12-31,2.8,6,206,154,435,1683,0,0,0,0,0,Y,No comments
-1238,Jaguar,X-Type,,,Turbo-Diesel,2001-01-01,2050-12-31,2,4,126,64,331,1828,0,0,0,0,0,Y,No comments
-1239,Jaguar,X-Type,,2.2d,Turbo-Diesel,1970-01-01,2050-12-31,2.2,4,152,114,360,1829,0,0,0,0,0,Y,No comments
+1238,Jaguar,X-Type,,2.2d,Turbo-Diesel,2012-01-01,2050-12-31,2.2,4,152,114,360,1829,0,0,0,0,0,Y,No comments
+1239,Jaguar,X-Type,,,Turbo-Diesel,2003-06-01,2009-09-30,2,4,126,64,331,1828,0,0,0,0,0,Y,No comments
 1240,Jaguar,XF,,2.2 i4 Td,Turbo-Diesel,2011-03-01,2050-12-31,2.2,4,187,140,450,2806,0,0,0,0,0,Y,No comments
 1241,Jaguar,XF,,2.2 i4 Td,Turbo-Diesel,2012-03-01,2050-12-31,2.2,4,161,120,400,2933,0,0,0,0,0,Y,No comments
 1242,Jaguar,XF,,2.2 i4 Td,Turbo-Diesel,2012-03-01,2050-12-31,2.2,4,197,147,450,2792,0,0,0,0,0,Y,No comments
@@ -1293,9 +1293,9 @@
 1293,Land Rover,Freelander,Freelander 2,2 TD4e 2.2D,Turbo-Diesel,2009-03-01,2011-12-31,2.2,4,157,118,400,2501,0,0,0,0,0,Y,No comments
 1294,Land Rover,Freelander,Freelander 2,II ED4 / TD4,Turbo-Diesel,2010-09-01,2011-12-31,2.2,4,148,111,420,2712,0,0,0,0,0,Y,No comments
 1295,Land Rover,Freelander,Freelander 2,II SD4,Turbo-Diesel,2010-09-01,2011-12-31,2.2,4,187,140,420,2710,0,0,0,0,0,Y,No comments
-1296,Land Rover,Range-Rover,Evoque,Evoque ED4,Turbo-Diesel,2011-06-01,2050-12-31,2.2,4,148,111,380,2711,0,0,0,0,0,Y,No comments
-1297,Land Rover,Range-Rover,Evoque,Evoque SD4,Turbo-Diesel,2011-09-01,2050-12-31,2.2,4,187,140,420,2690,0,0,0,0,0,Y,No comments
-1298,Land Rover,Range-Rover,Evoque,Evoque TD4,Turbo-Diesel,2011-06-01,2050-12-31,2.2,4,148,111,400,2713,0,0,0,0,0,Y,No comments
+1296,Land Rover,Range-Rover,Evoque,Evoque ED4,Turbo-Diesel,2011-06-01,2013-09-30,2.2,4,148,111,380,2711,0,0,0,0,0,Y,No comments
+1297,Land Rover,Range-Rover,Evoque,Evoque SD4,Turbo-Diesel,2011-09-01,2013-09-30,2.2,4,187,140,420,2690,0,0,0,0,0,Y,No comments
+1298,Land Rover,Range-Rover,Evoque,Evoque TD4,Turbo-Diesel,2011-06-01,2013-09-30,2.2,4,148,111,400,2713,0,0,0,0,0,Y,No comments
 1299,Land Rover,Range-Rover,Evoque,Evoque 2.0 Si4,Turbocharged Petrol,2011-09-01,2050-12-31,2,4,236,177,340,2616,0,0,0,0,0,Y,No comments
 1300,Land Rover,Range-Rover,L322,,Non-Turbo Petrol,2002-01-01,2012-12-31,4.4,8,281,210,440,1067,0,0,0,0,0,Y,No comments
 1301,Land Rover,Range-Rover,L322,4.2s,Supercharged,2005-01-01,2012-12-31,4.2,8,400,299,560,1740,0,0,0,0,0,Y,No comments
@@ -1333,8 +1333,8 @@
 1333,Mercedes,A-Class,W169,A180 CDI (Euro5),Turbo-Diesel,2005-06-01,2050-12-31,2,4,107,80,250,2581,0,0,0,0,0,Y,No comments
 1334,Mercedes,A-Class,W169,A200 CDI,Turbo-Diesel,2005-01-01,2012-12-31,2,4,140,105,300,227,0,0,0,0,0,Y,No comments
 1335,Mercedes,A-Class,W176,A200 CDI BlueEfficiency,Turbo-Diesel,2012-09-01,2050-12-31,2.2,4,134,100,330,2864,0,0,0,0,0,Y,No comments
-1336,Mercedes,A-Class,W176,A180 BlueEfficiency,Turbocharged Petrol,2012-09-01,2050-12-31,1.6,4,120,90,200,2822,0,0,0,0,0,Y,No comments
-1337,Mercedes,A-Class,W176,A200 BlueEfficiency,Turbocharged Petrol,2012-09-01,2050-12-31,1.6,4,120,90,200,2822,0,0,0,0,0,Y,No comments
+1336,Mercedes,A-Class,W176,A180 BlueEfficiency,Turbocharged Petrol,2012-09-01,2050-12-31,1.6,4,120,90,200,0,0,0,0,0,0,Y,Deleted from Superchips website
+1337,Mercedes,A-Class,W176,A200 BlueEfficiency,Turbocharged Petrol,2012-09-01,2050-12-31,1.6,4,120,90,200,0,0,0,0,0,0,Y,Deleted from Superchips website
 1338,Mercedes,A-Class,W176,A200 BlueEfficiency,Turbocharged Petrol,2012-09-01,2050-12-31,1.6,4,154,115,250,2901,0,0,0,0,0,Y,No comments
 1339,Mercedes,B-Class,,B180 CDI (Euro4),Turbo-Diesel,2005-01-01,2050-12-31,2,4,109,82,250,228,0,0,0,0,0,Y,No comments
 1340,Mercedes,B-Class,,B180 CDI (Euro5),Turbo-Diesel,2005-06-01,2050-12-31,2,4,107,80,250,2582,0,0,0,0,0,Y,No comments
@@ -1416,27 +1416,27 @@
 1416,Mercedes,CLS,,CLS320 CDI,Turbo-Diesel,2008-03-01,2050-12-31,3,6,224,168,540,2507,0,0,0,0,0,Y,No comments
 1417,Mercedes,CLS,,CLS350 CDI,Turbo-Diesel,2009-03-01,2050-12-31,3,6,224,168,540,2508,0,0,0,0,0,Y,No comments
 1418,Mercedes,E-Class,W210,E240,Non-Turbo Petrol,1997-01-01,2000-12-31,2.4,6,170,127,225,1134,0,0,0,0,0,Y,No comments
-1419,Mercedes,E-Class,W210,E240,Non-Turbo Petrol,2002-01-01,2003-12-31,2.6,6,177,133,240,1143,0,0,0,0,0,Y,No comments
-1420,Mercedes,E-Class,W210,E280,Non-Turbo Petrol,1995-01-01,1997-12-31,2.8,6,193,144,0,1135,0,0,0,0,0,Y,No comments
-1421,Mercedes,E-Class,W210,E280,Non-Turbo Petrol,1997-01-01,2002-12-31,2.8,6,204,153,270,1136,0,0,0,0,0,Y,No comments
-1422,Mercedes,E-Class,W210,E320,Non-Turbo Petrol,1995-01-01,1997-12-31,3.2,6,220,165,0,1137,0,0,0,0,0,Y,No comments
-1423,Mercedes,E-Class,W210,E320,Non-Turbo Petrol,1997-01-01,2002-12-31,3.2,6,222,166,315,1138,0,0,0,0,0,Y,No comments
-1424,Mercedes,E-Class,W210,E36,Non-Turbo Petrol,1996-01-01,1998-12-31,3.6,6,272,203,0,1139,0,0,0,0,0,Y,No comments
-1425,Mercedes,E-Class,W210,E430,Non-Turbo Petrol,1997-01-01,2002-12-31,4.3,8,279,209,400,1140,0,0,0,0,0,Y,No comments
-1426,Mercedes,E-Class,W210,E500,Non-Turbo Petrol,2002-01-01,2003-12-31,5,8,306,229,460,1147,0,0,0,0,0,Y,No comments
-1427,Mercedes,E-Class,W210,E55,Non-Turbo Petrol,1997-01-01,2002-12-31,5.5,8,354,265,530,1141,0,0,0,0,0,Y,No comments
-1428,Mercedes,E-Class,W210,E200K,Supercharged,2002-01-01,2003-12-31,0.1,4,163,122,220,1758,0,0,0,0,0,Y,No comments
-1429,Mercedes,E-Class,W210,E55 AMG,Supercharged,2002-09-01,2050-12-31,5.5,8,469,350,700,2110,0,0,0,0,0,Y,No comments
-1430,Mercedes,E-Class,W210,E200 CDI,Turbo-Diesel,1998-01-01,2000-12-31,2.2,4,125,94,0,242,0,0,0,0,0,Y,No comments
-1431,Mercedes,E-Class,W210,E220 CDI,Turbo-Diesel,1998-01-01,2000-12-31,2.2,4,143,107,315,243,0,0,0,0,0,Y,No comments
-1432,Mercedes,E-Class,W210,E220 CDI,Turbo-Diesel,1998-01-01,2000-12-31,2.2,4,143,107,315,0,0,0,0,0,0,Y,No comments
-1433,Mercedes,E-Class,W210,E320 CDI,Turbo-Diesel,1999-01-01,2002-12-31,3.3,6,195,146,470,245,0,0,0,0,0,Y,No comments
-1434,Mercedes,E-Class,W210,TD,Turbo-Diesel,1997-01-01,1999-12-31,3,6,177,133,330,244,0,0,0,0,0,Y,No comments
-1435,Mercedes,E-Class,W211,E280,Non-Turbo Petrol,2005-01-01,2009-12-31,3,6,197,147,300,1144,0,0,0,0,0,Y,No comments
-1436,Mercedes,E-Class,W211,E320,Non-Turbo Petrol,2003-01-01,2004-12-31,3.2,6,224,168,315,1145,0,0,0,0,0,Y,No comments
-1437,Mercedes,E-Class,W211,E350,Non-Turbo Petrol,2004-01-01,2009-12-31,3.5,6,272,203,350,1146,0,0,0,0,0,Y,No comments
-1438,Mercedes,E-Class,W211,E500,Non-Turbo Petrol,2003-01-01,2009-12-31,5,8,301,225,460,1148,0,0,0,0,0,Y,No comments
-1439,Mercedes,E-Class,W211,E63 AMG,Non-Turbo Petrol,2008-01-01,2009-12-31,6.3,8,514,384,630,2033,0,0,0,0,0,Y,No comments
+1419,Mercedes,E-Class,W210,E280,Non-Turbo Petrol,1995-01-01,1997-12-31,2.8,6,193,144,0,1135,0,0,0,0,0,Y,No comments
+1420,Mercedes,E-Class,W210,E280,Non-Turbo Petrol,1997-01-01,2002-12-31,2.8,6,204,153,270,1136,0,0,0,0,0,Y,No comments
+1421,Mercedes,E-Class,W210,E320,Non-Turbo Petrol,1995-01-01,1997-12-31,3.2,6,220,165,0,1137,0,0,0,0,0,Y,No comments
+1422,Mercedes,E-Class,W210,E320,Non-Turbo Petrol,1997-01-01,2002-12-31,3.2,6,222,166,315,1138,0,0,0,0,0,Y,No comments
+1423,Mercedes,E-Class,W210,E36,Non-Turbo Petrol,1996-01-01,1998-12-31,3.6,6,272,203,0,1139,0,0,0,0,0,Y,No comments
+1424,Mercedes,E-Class,W210,E430,Non-Turbo Petrol,1997-01-01,2002-12-31,4.3,8,279,209,400,1140,0,0,0,0,0,Y,No comments
+1425,Mercedes,E-Class,W210,E55,Non-Turbo Petrol,1997-01-01,2002-12-31,5.5,8,354,265,530,1141,0,0,0,0,0,Y,No comments
+1426,Mercedes,E-Class,W210,E200 CDI,Turbo-Diesel,1998-01-01,2000-12-31,2.2,4,125,94,0,242,0,0,0,0,0,Y,No comments
+1427,Mercedes,E-Class,W210,E220 CDI,Turbo-Diesel,1998-01-01,2000-12-31,2.2,4,143,107,315,243,0,0,0,0,0,Y,No comments
+1428,Mercedes,E-Class,W210,E220 CDI,Turbo-Diesel,1998-01-01,2000-12-31,2.2,4,143,107,315,0,0,0,0,0,0,Y,No comments
+1429,Mercedes,E-Class,W210,E320 CDI,Turbo-Diesel,1999-01-01,2002-12-31,3.3,6,195,146,470,245,0,0,0,0,0,Y,No comments
+1430,Mercedes,E-Class,W210,TD,Turbo-Diesel,1997-01-01,1999-12-31,3,6,177,133,330,244,0,0,0,0,0,Y,No comments
+1431,Mercedes,E-Class,W211,E240,Non-Turbo Petrol,2002-01-01,2003-12-31,2.6,6,177,133,240,1143,0,0,0,0,0,Y,No comments
+1432,Mercedes,E-Class,W211,E280,Non-Turbo Petrol,2005-01-01,2009-12-31,3,6,197,147,300,1144,0,0,0,0,0,Y,No comments
+1433,Mercedes,E-Class,W211,E320,Non-Turbo Petrol,2003-01-01,2004-12-31,3.2,6,224,168,315,1145,0,0,0,0,0,Y,No comments
+1434,Mercedes,E-Class,W211,E350,Non-Turbo Petrol,2004-01-01,2009-12-31,3.5,6,272,203,350,1146,0,0,0,0,0,Y,No comments
+1435,Mercedes,E-Class,W211,E500,Non-Turbo Petrol,2002-01-01,2003-12-31,5,8,306,229,460,1147,0,0,0,0,0,Y,No comments
+1436,Mercedes,E-Class,W211,E500,Non-Turbo Petrol,2003-01-01,2009-12-31,5,8,301,225,460,1148,0,0,0,0,0,Y,No comments
+1437,Mercedes,E-Class,W211,E63 AMG,Non-Turbo Petrol,2008-01-01,2009-12-31,6.3,8,514,384,630,2033,0,0,0,0,0,Y,No comments
+1438,Mercedes,E-Class,W211,E200K,Supercharged,2002-01-01,2003-12-31,0.1,4,163,122,220,1758,0,0,0,0,0,Y,No comments
+1439,Mercedes,E-Class,W211,E55 AMG,Supercharged,2002-09-01,2006-12-31,5.5,8,469,350,700,2110,0,0,0,0,0,Y,No comments
 1440,Mercedes,E-Class,W211,E220 CDI,Turbo-Diesel,2004-01-01,2007-12-31,2.2,4,150,112,340,246,0,0,0,0,0,Y,No comments
 1441,Mercedes,E-Class,W211,E220 CDI,Turbo-Diesel,2006-06-01,2010-03-31,2.2,4,167,125,400,2534,0,0,0,0,0,Y,No comments
 1442,Mercedes,E-Class,W211,E220 CDI BlueEFFICIENCY,Turbo-Diesel,2010-03-01,2009-12-31,2.2,4,168,126,400,2765,0,0,0,0,0,Y,No comments
@@ -1449,7 +1449,7 @@
 1449,Mercedes,E-Class,W212,E350 CDI BlueEFFICIENCY,Turbo-Diesel,2009-06-01,2050-12-31,3,6,231,173,540,2248,0,0,0,0,0,Y,No comments
 1450,Mercedes,G-Class,,G350 BlueTEC,Turbo-Diesel,2010-09-01,2013-12-31,3,6,207,155,540,2805,0,0,0,0,0,Y,No comments
 1451,Mercedes,GL,,GL320 CDI,Turbo-Diesel,2006-03-01,2050-12-31,3,6,224,168,510,1877,0,0,0,0,0,Y,No comments
-1452,Mercedes,GL,,GL420 CDI,Turbo-Diesel,2006-03-01,2009-12-31,4,8,301,224,700,2874,0,0,0,0,0,Y,No comments
+1452,Mercedes,GL,,GL420 CDI,Turbo-Diesel,2006-03-01,2050-12-31,4,8,301,224,700,2874,0,0,0,0,0,Y,No comments
 1453,Mercedes,GLA,,GLA 200,Turbocharged Petrol,2013-03-01,2050-12-31,1.6,4,154,115,250,2904,0,0,0,0,0,Y,No comments
 1454,Mercedes,GLK,,GLK320 CDI W204,Turbo-Diesel,2008-01-01,2010-12-31,3,6,224,168,510,2798,0,0,0,0,0,Y,No comments
 1455,Mercedes,M-Class,W163,M320,Non-Turbo Petrol,1998-01-01,2002-12-31,3.2,6,218,163,310,1176,0,0,0,0,0,Y,No comments
@@ -1557,14 +1557,14 @@
 1557,MG,ZT,,CDTi,Turbo-Diesel,2002-01-01,2050-12-31,2,4,129,97,300,223,0,0,0,0,0,Y,No comments
 1558,Mini,Cooper,,MK 1 (R50),Non-Turbo Petrol,2001-01-01,2007-12-31,1.6,4,115,86,150,1186,0,0,0,0,0,Y,No comments
 1559,Mini,Cooper,,Paceman,Non-Turbo Petrol,2013-03-01,2050-12-31,1.6,4,120,89,160,2943,0,0,0,0,0,Y,No comments
-1560,Mini,Cooper,,S MK 1 (R52/R53),Supercharged,2002-03-01,2050-12-31,1.6,4,163,122,210,1761,0,0,0,0,0,Y,No comments
-1561,Mini,Cooper,,S MK 1 (R52/R53),Supercharged,2004-06-01,2050-12-31,1.6,4,170,127,220,1762,0,0,0,0,0,Y,No comments
+1560,Mini,Cooper,,S MK 1 (R52/R53),Supercharged,2002-03-01,2050-12-31,1.6,4,163,122,210,1761,2510,0,0,0,0,Y,No comments
+1561,Mini,Cooper,,S MK 1 (R52/R53),Supercharged,2004-06-01,2050-12-31,1.6,4,170,127,220,1762,2509,0,0,0,0,Y,No comments
 1562,Mini,Cooper,,S Works MK 1 (R52/R53),Supercharged,2003-03-01,2050-12-31,1.6,4,200,150,230,1892,0,0,0,0,0,Y,No comments
 1563,Mini,Cooper,,S Works MK 1 (R52/R53),Supercharged,2004-09-01,2050-12-31,1.6,4,210,157,245,1763,0,0,0,0,0,Y,No comments
 1564,Mini,Cooper,,All body styles 1.6D,Turbo-Diesel,2010-09-01,2050-12-31,1.6,4,110,83,270,2351,0,0,0,0,0,Y,No comments
 1565,Mini,Cooper,,II R55/6 1.6 D,Turbo-Diesel,2007-03-01,2050-12-31,1.6,4,110,83,240,1875,0,0,0,0,0,Y,No comments
 1566,Mini,Cooper,,S All body styles,Turbocharged Petrol,2006-01-01,2050-12-31,1.6,4,172,129,240,1874,0,0,0,0,0,Y,No comments
-1567,Mini,Cooper,,S All body styles,Turbocharged Petrol,2010-03-01,2050-12-31,1.6,4,181,136,260,2322,0,0,0,0,0,Y,No comments
+1567,Mini,Cooper,,S All body styles,Turbocharged Petrol,2010-03-01,2050-12-31,1.6,4,181,136,260,2322,2671,0,0,0,0,Y,No comments
 1568,Mini,First,,,Non-Turbo Petrol,2009-06-01,2010-03-31,1.4,4,74,56,120,2376,0,0,0,0,0,Y,No comments
 1569,Mini,One,,MK 1 (R50 / R52),Non-Turbo Petrol,2001-01-01,2007-12-31,1.6,4,90,68,140,1189,0,0,0,0,0,Y,No comments
 1570,Mini,One,,D,Turbo-Diesel,2003-01-01,2050-12-31,1.4,4,75,56,180,271,0,0,0,0,0,Y,No comments
@@ -1610,7 +1610,7 @@
 1610,Nissan,Primera,,,Non-Turbo Petrol,1995-01-01,1999-12-31,2,4,147,110,181,1202,0,0,0,0,0,Y,No comments
 1611,Nissan,Primera,,TD,Turbo-Diesel,1996-01-01,1999-12-31,2,4,88,66,177,277,0,0,0,0,0,Y,No comments
 1612,Nissan,Qashqai,,1.5 8V dCi EU4,Turbo-Diesel,2007-03-01,2050-12-31,1.5,4,104,78,240,2045,0,0,0,0,0,Y,No comments
-1613,Nissan,Qashqai,,1.5 8V dCi EU5,Turbo-Diesel,2010-09-01,2050-12-31,1.5,4,108,81,240,2514,0,0,0,0,0,Y,No comments
+1613,Nissan,Qashqai,,1.5 8V dCi EU5,Turbo-Diesel,2010-09-01,2013-09-30,1.5,4,108,81,240,2514,0,0,0,0,0,Y,No comments
 1614,Nissan,Sunny,,,Non-Turbo Petrol,1993-01-01,1995-12-31,1.6,4,90,68,0,1207,0,0,0,0,0,Y,No comments
 1615,Nissan,Sunny,,,Non-Turbo Petrol,1993-01-01,1995-12-31,1.6,4,102,77,0,1208,0,0,0,0,0,Y,No comments
 1616,Nissan,Terrano,,TDi,Turbo-Diesel,1996-01-01,1999-12-31,2.7,4,123,92,278,278,0,0,0,0,0,Y,No comments
@@ -1651,7 +1651,7 @@
 1651,Opel,Astra,Astra H,,Turbo-Diesel,2005-06-01,2009-12-31,1.3,4,88,66,200,0,0,0,0,0,0,Y,No comments
 1652,Opel,Astra,Astra H,SRi,Turbocharged Petrol,2004-01-01,2009-12-31,2,4,200,150,262,1885,0,0,0,0,0,Y,No comments
 1653,Opel,Astra,Astra H,SRI 1.6T,Turbocharged Petrol,2007-03-01,2009-12-31,1.6,4,177,133,230,2113,0,0,0,0,0,Y,No comments
-1654,Opel,Astra,Astra H,VXR,Turbocharged Petrol,2005-01-01,2009-12-31,2,4,236,177,320,14,0,0,0,0,0,Y,No comments
+1654,Opel,Astra,Astra H,VXR,Turbocharged Petrol,2005-01-01,2009-12-31,2,4,236,177,320,14,2026,2027,0,0,0,Y,No comments
 1655,Opel,Astra,Astra H,,Turbocharged Petrol,2005-01-01,2009-12-31,2,4,167,125,250,1884,0,0,0,0,0,Y,No comments
 1656,Opel,Astra,Astra J,1.4i 16V,Non-Turbo Petrol,2009-09-01,2013-12-31,1.4,4,99,74,130,2355,0,0,0,0,0,Y,No comments
 1657,Opel,Astra,Astra J,1.4i 16V,Non-Turbo Petrol,2010-03-01,2013-12-31,1.4,4,86,65,130,2354,0,0,0,0,0,Y,No comments
@@ -1666,7 +1666,7 @@
 1666,Opel,Astra,Astra J,1.6i 16v GTC,Turbocharged Petrol,2011-06-01,2013-12-31,1.6,4,177,133,230,2494,0,0,0,0,0,Y,No comments
 1667,Opel,Astra,Astra J,GTC 1.4T 16V,Turbocharged Petrol,2011-09-01,2013-12-31,1.4,4,118,89,200,2620,0,0,0,0,0,Y,No comments
 1668,Opel,Astra,Astra J,GTC 1.4T 16V,Turbocharged Petrol,2011-09-01,2013-12-31,1.4,4,138,103,200,2626,0,0,0,0,0,Y,No comments
-1669,Opel,Astra,Astra J,GTC VXR 2.0T,Turbocharged Petrol,2012-03-01,2013-12-31,2,4,276,206,400,2720,0,0,0,0,0,Y,No comments
+1669,Opel,Astra,Astra J,GTC VXR 2.0T,Turbocharged Petrol,2012-03-01,2013-12-31,2,4,276,206,400,2720,2722,0,0,0,0,Y,No comments
 1670,Opel,Calibra,,,Non-Turbo Petrol,1990-01-01,1998-12-31,2,4,136,102,0,1521,0,0,0,0,0,Y,No comments
 1671,Opel,Calibra,,,Non-Turbo Petrol,1990-01-01,1995-12-31,2,4,150,112,0,1520,0,0,0,0,0,Y,No comments
 1672,Opel,Calibra,,,Non-Turbo Petrol,1993-01-01,1998-12-31,2.5,6,167,125,227,1523,0,0,0,0,0,Y,No comments
@@ -1697,10 +1697,10 @@
 1697,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2000-01-01,2003-12-31,1.2,4,73,55,110,1469,0,0,0,0,0,Y,No comments
 1698,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2000-01-01,2003-12-31,1.4,4,88,66,125,1470,0,0,0,0,0,Y,No comments
 1699,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2000-01-01,2003-12-31,1.8,4,123,92,165,1471,0,0,0,0,0,Y,No comments
-1700,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2006-12-31,1,3,59,45,88,1476,0,0,0,0,0,Y,No comments
-1701,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2004-12-31,1.2,4,73,55,110,1473,0,0,0,0,0,Y,No comments
-1702,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2004-12-31,1.4,4,88,66,125,1474,0,0,0,0,0,Y,No comments
-1703,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2006-12-31,1.8,4,123,92,165,1475,0,0,0,0,0,Y,No comments
+1700,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2000-09-01,2006-09-30,1.8,4,123,92,165,1475,0,0,0,0,0,Y,No comments
+1701,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2006-12-31,1,3,59,45,88,1476,0,0,0,0,0,Y,No comments
+1702,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2004-12-31,1.2,4,73,55,110,1473,0,0,0,0,0,Y,No comments
+1703,Opel,Corsa,Corsa C,,Non-Turbo Petrol,2003-01-01,2004-12-31,1.4,4,88,66,125,1474,0,0,0,0,0,Y,No comments
 1704,Opel,Corsa,Corsa C,1.3 CDTi Euro3 / 4,Turbo-Diesel,2003-09-01,2050-12-31,1.3,4,69,52,170,2738,0,0,0,0,0,Y,No comments
 1705,Opel,Corsa,Corsa C,CDTi,Turbo-Diesel,2003-01-01,2006-12-31,1.7,4,98,74,240,416,0,0,0,0,0,Y,No comments
 1706,Opel,Corsa,Corsa C,DTi,Turbo-Diesel,2000-01-01,2003-12-31,1.7,4,73,55,165,415,0,0,0,0,0,Y,No comments
@@ -1713,8 +1713,8 @@
 1713,Opel,Corsa,Corsa D,1.7 CDTi,Turbo-Diesel,2010-03-01,2050-12-31,1.7,4,128,96,300,2566,0,0,0,0,0,Y,No comments
 1714,Opel,Corsa,Corsa D,1.4T 16V,Turbocharged Petrol,2012-06-01,2050-12-31,1.4,4,118,89,175,2619,0,0,0,0,0,Y,No comments
 1715,Opel,Corsa,Corsa D,SRi,Turbocharged Petrol,2007-01-01,2050-12-31,1.6,4,147,110,210,0,0,0,0,0,0,Y,No comments
-1716,Opel,Corsa,Corsa D,VXR 1.6T EURO4,Turbocharged Petrol,2007-03-01,2050-12-31,1.6,4,189,141,230,1834,0,0,0,0,0,Y,No comments
-1717,Opel,Corsa,Corsa D,VXR 1.6T EURO5,Turbocharged Petrol,2010-09-01,2050-12-31,1.6,4,189,141,230,2803,0,0,0,0,0,Y,No comments
+1716,Opel,Corsa,Corsa D,VXR 1.6T EURO4,Turbocharged Petrol,2007-03-01,2050-12-31,1.6,4,189,141,230,1834,2182,0,0,0,0,Y,No comments
+1717,Opel,Corsa,Corsa D,VXR 1.6T EURO5,Turbocharged Petrol,2010-09-01,2050-12-31,1.6,4,189,141,230,2803,2804,0,0,0,0,Y,No comments
 1718,Opel,Frontera,,,Non-Turbo Petrol,1994-01-01,1998-12-31,2,4,113,85,172,1510,0,0,0,0,0,Y,No comments
 1719,Opel,Frontera,,,Non-Turbo Petrol,1994-01-01,2050-12-31,2.5,4,125,94,0,1513,0,0,0,0,0,Y,No comments
 1720,Opel,Frontera,,,Non-Turbo Petrol,1995-01-01,2000-12-31,2.2,4,134,100,202,1511,0,0,0,0,0,Y,No comments
@@ -1816,7 +1816,7 @@
 1816,Opel,Zafira,,1.4T 16V (Zafira),Turbocharged Petrol,2011-09-01,2050-12-31,1.4,4,138,103,200,2631,0,0,0,0,0,Y,No comments
 1817,Opel,Zafira,,2.0 T SRI,Turbocharged Petrol,2005-06-01,2050-12-31,2,4,200,150,262,1887,0,0,0,0,0,Y,No comments
 1818,Opel,Zafira,,Gsi,Turbocharged Petrol,2001-01-01,2005-12-31,2,4,189,141,250,660,0,0,0,0,0,Y,No comments
-1819,Opel,Zafira,,VXR,Turbocharged Petrol,2005-01-01,2050-12-31,2,4,236,177,320,1663,0,0,0,0,0,Y,No comments
+1819,Opel,Zafira,,VXR,Turbocharged Petrol,2005-01-01,2050-12-31,2,4,236,177,320,1663,2028,2030,0,0,0,Y,No comments
 1820,Peugeot,106,,GTI,Non-Turbo Petrol,1996-01-01,2003-12-31,1.6,4,120,90,0,1214,0,0,0,0,0,Y,No comments
 1821,Peugeot,106,,Rallye,Non-Turbo Petrol,1993-01-01,1995-12-31,1.3,4,100,75,108,1211,0,0,0,0,0,Y,No comments
 1822,Peugeot,106,,Rallye,Non-Turbo Petrol,1997-01-01,1998-12-31,1.6,4,103,77,132,1212,0,0,0,0,0,Y,No comments
@@ -1996,7 +1996,7 @@
 1996,Renault,Clio,Clio II,,Non-Turbo Petrol,2001-01-01,2004-12-31,1.6,4,110,83,148,1307,0,0,0,0,0,Y,No comments
 1997,Renault,Clio,Clio II,,Non-Turbo Petrol,2002-01-01,2006-12-31,1.4,4,98,74,127,1306,0,0,0,0,0,Y,No comments
 1998,Renault,Clio,Clio II,dCi,Turbo-Diesel,2001-01-01,2006-12-31,1.5,4,64,48,160,311,0,0,0,0,0,Y,No comments
-1999,Renault,Clio,Clio II,dCi,Turbo-Diesel,2001-01-01,2006-12-31,1.5,4,80,60,185,312,0,0,0,0,0,Y,No comments
+1999,Renault,Clio,Clio II,dCi,Turbo-Diesel,2001-06-01,2005-09-30,1.5,4,80,60,185,312,0,0,0,0,0,Y,No comments
 2000,Renault,Clio,Clio II,dCi,Turbo-Diesel,2003-01-01,2006-12-31,1.5,4,100,75,200,313,0,0,0,0,0,Y,No comments
 2001,Renault,Clio,Clio II,dTi,Turbo-Diesel,1999-01-01,2001-12-31,1.9,4,80,60,160,310,0,0,0,0,0,Y,No comments
 2002,Renault,Clio,Clio III,Renaultsport,Non-Turbo Petrol,2006-01-01,2009-12-31,2,4,194,145,215,1929,0,0,0,0,0,Y,No comments
@@ -2029,8 +2029,8 @@
 2029,Renault,Kangoo,,,Non-Turbo Petrol,2001-01-01,2005-12-31,1.6,4,95,71,148,1346,0,0,0,0,0,Y,No comments
 2030,Renault,Kangoo,,,Non-Turbo Petrol,2002-01-01,2050-12-31,1.2,4,73,55,105,1344,0,0,0,0,0,Y,No comments
 2031,Renault,Kangoo,,1.5 8V dCi EU4,Turbo-Diesel,2009-06-01,2050-12-31,1.5,4,104,78,240,2519,0,0,0,0,0,Y,No comments
-2032,Renault,Kangoo,,dCi,Turbo-Diesel,2003-01-01,2050-12-31,1.5,4,65,49,160,333,0,0,0,0,0,Y,No comments
-2033,Renault,Kangoo,,dCi,Turbo-Diesel,2003-01-01,2050-12-31,1.5,4,80,60,185,334,0,0,0,0,0,Y,No comments
+2032,Renault,Kangoo,,dCi,Turbo-Diesel,2000-01-01,2009-12-31,1.5,4,65,49,160,333,0,0,0,0,0,Y,No comments
+2033,Renault,Kangoo,,dCi,Turbo-Diesel,2001-01-01,2009-12-31,1.5,4,80,60,185,334,0,0,0,0,0,Y,No comments
 2034,Renault,Koleos,,2.0 dCi,Turbo-Diesel,2008-06-01,2050-12-31,2,4,147,110,320,2326,0,0,0,0,0,Y,No comments
 2035,Renault,Koleos,,2.0 dCi EURO4,Turbo-Diesel,2008-06-01,2050-12-31,2,4,172,129,360,2654,0,0,0,0,0,Y,No comments
 2036,Renault,Laguna,Laguna I,,Non-Turbo Petrol,1994-01-01,1998-12-31,2,4,115,86,168,1323,0,0,0,0,0,Y,No comments
@@ -2050,7 +2050,7 @@
 2050,Renault,Laguna,Laguna II,dCi,Turbo-Diesel,2005-01-01,2007-12-31,1.9,4,130,97,300,328,0,0,0,0,0,Y,No comments
 2051,Renault,Laguna,Laguna II,dCi,Turbo-Diesel,2005-01-01,2007-12-31,2.2,4,140,105,0,332,0,0,0,0,0,Y,No comments
 2052,Renault,Laguna,Laguna III,1.5 8V dCi EU4,Turbo-Diesel,2007-09-01,2050-12-31,1.5,4,108,81,240,2518,0,0,0,0,0,Y,No comments
-2053,Renault,Laguna,Laguna III,2.0 dCi,Turbo-Diesel,2007-09-01,0000-12-31,2,4,147,110,340,2323,0,0,0,0,0,Y,No comments
+2053,Renault,Laguna,Laguna III,2.0 dCi,Turbo-Diesel,2007-09-01,2050-12-31,2,4,147,110,340,2323,0,0,0,0,0,Y,No comments
 2054,Renault,Latitude,,2.0 dCi,Turbo-Diesel,2011-03-01,2050-12-31,2,4,172,129,360,2655,0,0,0,0,0,Y,No comments
 2055,Renault,Master,,dCi,Turbo-Diesel,2003-01-01,2050-12-31,2.5,4,100,75,0,354,0,0,0,0,0,Y,No comments
 2056,Renault,Master,,dCi,Turbo-Diesel,2003-01-01,2050-12-31,2.5,4,120,90,0,355,0,0,0,0,0,Y,No comments
@@ -2075,8 +2075,8 @@
 2075,Renault,Megane,Megane II,,Non-Turbo Petrol,2002-01-01,2008-12-31,1.6,4,115,86,152,1318,0,0,0,0,0,Y,No comments
 2076,Renault,Megane,Megane II,,Non-Turbo Petrol,2002-01-01,2008-12-31,2,4,136,102,191,1319,0,0,0,0,0,Y,No comments
 2077,Renault,Megane,Megane II,1.5 8V dCi,Turbo-Diesel,2005-06-01,2008-12-31,1.5,4,104,78,240,1891,0,0,0,0,0,Y,No comments
-2078,Renault,Megane,Megane II,dCi,Turbo-Diesel,2002-01-01,2005-06-31,1.5,4,79,60,185,317,0,0,0,0,0,Y,No comments
-2079,Renault,Megane,Megane II,dCi,Turbo-Diesel,2002-01-01,2008-12-31,1.9,4,120,90,300,320,0,0,0,0,0,Y,No comments
+2078,Renault,Megane,Megane II,dCi,Turbo-Diesel,2002-01-01,2008-12-31,1.9,4,120,90,300,320,0,0,0,0,0,Y,No comments
+2079,Renault,Megane,Megane II,dCi,Turbo-Diesel,2002-09-01,2005-06-30,1.5,4,79,60,185,317,0,0,0,0,0,Y,No comments
 2080,Renault,Megane,Megane II,dCi,Turbo-Diesel,2004-01-01,2008-12-31,1.9,4,90,68,230,319,0,0,0,0,0,Y,No comments
 2081,Renault,Megane,Megane II,dCi,Turbo-Diesel,2005-01-01,2008-12-31,1.5,4,100,75,200,318,0,0,0,0,0,Y,No comments
 2082,Renault,Megane,Megane II,dCi,Turbo-Diesel,2005-01-01,2008-12-31,1.9,4,130,97,300,321,0,0,0,0,0,Y,No comments
@@ -2118,7 +2118,7 @@
 2118,Renault,Scenic,Scenic III,1.5 8V dCi EU4,Turbo-Diesel,2009-06-01,2050-12-31,1.5,4,104,78,240,2520,0,0,0,0,0,Y,No comments
 2119,Renault,Scenic,Scenic III,1.5 8V dCi EU5,Turbo-Diesel,2010-09-01,2012-03-31,1.5,4,108,81,240,2521,0,0,0,0,0,Y,No comments
 2120,Renault,Scenic,Scenic III,1.6 dCi,Turbo-Diesel,2011-06-01,2050-12-31,1.6,4,128,95,320,2914,0,0,0,0,0,Y,No comments
-2121,Renault,Scenic,Scenic III,2.0 dCi,Turbo-Diesel,2009-06-01,0000-12-31,2,4,157,118,380,2565,0,0,0,0,0,Y,No comments
+2121,Renault,Scenic,Scenic III,2.0 dCi,Turbo-Diesel,2009-06-01,2050-12-31,2,4,157,118,380,2565,0,0,0,0,0,Y,No comments
 2122,Renault,Traffic,,2.0 dCi Euro5,Turbo-Diesel,2011-01-01,2050-12-31,2,4,115,86,290,2640,0,0,0,0,0,Y,No comments
 2123,Renault,Traffic,,dCi,Turbo-Diesel,2003-01-01,2050-12-31,1.9,4,100,75,0,357,0,0,0,0,0,Y,No comments
 2124,Renault,Traffic,,dCi,Turbo-Diesel,2003-01-01,2050-12-31,2.5,4,140,105,0,358,0,0,0,0,0,Y,No comments
@@ -2285,7 +2285,7 @@
 2285,Seat,Leon,,1.4 TFSI,Turbocharged Petrol,2007-09-01,2050-12-31,1.4,4,123,92,200,2139,0,0,0,0,0,Y,No comments
 2286,Seat,Leon,,1.8 TSI,Turbocharged Petrol,2007-03-01,2050-12-31,1.8,4,158,118,250,2623,0,0,0,0,0,Y,No comments
 2287,Seat,Leon,,1.8 TSI,Turbocharged Petrol,2011-01-01,2050-12-31,1.8,4,158,118,250,2624,0,0,0,0,0,Y,No comments
-2288,Seat,Leon,,2.0 T FSI Cupra / K1,Turbocharged Petrol,2006-09-01,2050-12-31,2,4,236,177,300,1821,0,0,0,0,0,Y,No comments
+2288,Seat,Leon,,2.0 T FSI Cupra / K1,Turbocharged Petrol,2006-09-01,2050-12-31,2,4,236,177,300,1821,2126,2127,0,0,0,Y,No comments
 2289,Seat,Leon,,2.0 TFSI,Turbocharged Petrol,2004-01-01,2006-12-31,2,4,183,137,270,1886,0,0,0,0,0,Y,No comments
 2290,Seat,Leon,,2.0 TFSI,Turbocharged Petrol,2005-01-01,2009-12-31,2,4,197,147,280,1688,0,0,0,0,0,Y,No comments
 2291,Seat,Leon,,Cupra,Turbocharged Petrol,2000-01-01,2005-12-31,1.8,4,180,135,235,639,0,0,0,0,0,Y,No comments
@@ -2347,7 +2347,7 @@
 2347,Skoda,Octavia,1Z,1.4 TFSI,Turbocharged Petrol,2008-09-01,2013-12-31,1.4,4,120,90,200,2346,0,0,0,0,0,Y,No comments
 2348,Skoda,Octavia,1Z,1.8 TSI,Turbocharged Petrol,2007-06-01,2050-12-31,1.8,4,158,118,250,2104,0,0,0,0,0,Y,No comments
 2349,Skoda,Octavia,1Z,1.8 TSI,Turbocharged Petrol,2011-01-01,2013-12-31,1.8,4,158,118,250,2625,0,0,0,0,0,Y,No comments
-2350,Skoda,Octavia,1Z,vRS 2.0T,Turbocharged Petrol,2005-09-01,2013-12-31,2,4,197,147,280,641,0,0,0,0,0,Y,No comments
+2350,Skoda,Octavia,1Z,vRS 2.0T,Turbocharged Petrol,2005-09-01,2013-12-31,2,4,197,147,280,641,2129,0,0,0,0,Y,No comments
 2351,Skoda,Praktik,,1.6 TDI,Turbo-Diesel,2010-03-01,2050-12-31,1.6,4,74,56,195,2827,0,0,0,0,0,Y,No comments
 2352,Skoda,Praktik,,1.6 TDI,Turbo-Diesel,2010-03-01,2050-12-31,1.6,4,88,66,230,2775,0,0,0,0,0,Y,No comments
 2353,Skoda,Rapid,,1.6 TDI /,Turbo-Diesel,2011-09-01,2050-12-31,1.6,4,103,77,250,2595,0,0,0,0,0,Y,No comments
@@ -2358,15 +2358,15 @@
 2358,Skoda,Roomster,,1.6 TDI,Turbo-Diesel,2010-03-01,2050-12-31,1.6,4,103,77,250,2596,0,0,0,0,0,Y,No comments
 2359,Skoda,Roomster,,1.9 TDI PD,Turbo-Diesel,2006-06-01,2050-12-31,1.9,4,103,77,240,2567,0,0,0,0,0,Y,No comments
 2360,Skoda,Roomster,,1.2 TSI (Roomster),Turbocharged Petrol,2010-03-01,2050-12-31,1.2,4,103,77,175,2685,0,0,0,0,0,Y,No comments
-2361,Skoda,Superb,3T,3.6 FSi V6,Non-Turbo Petrol,2008-09-01,0000-12-31,3.6,6,256,191,350,2753,0,0,0,0,0,Y,No comments
-2362,Skoda,Superb,3T,3.6 V6,Non-Turbo Petrol,2008-09-01,0000-12-31,3.6,6,256,191,350,2406,0,0,0,0,0,Y,No comments
-2363,Skoda,Superb,3T,1.6 TDI / Greenline,Turbo-Diesel,2010-09-01,0000-12-31,1.6,4,103,77,250,2597,0,0,0,0,0,Y,No comments
+2361,Skoda,Superb,3T,3.6 FSi V6,Non-Turbo Petrol,2008-09-01,2050-12-31,3.6,6,256,191,350,2753,0,0,0,0,0,Y,No comments
+2362,Skoda,Superb,3T,3.6 V6,Non-Turbo Petrol,2008-09-01,2050-12-31,3.6,6,256,191,350,2406,0,0,0,0,0,Y,No comments
+2363,Skoda,Superb,3T,1.6 TDI / Greenline,Turbo-Diesel,2010-09-01,2050-12-31,1.6,4,103,77,250,2597,0,0,0,0,0,Y,No comments
 2364,Skoda,Superb,3T,2.0 TDI CR,Turbo-Diesel,2008-06-01,2050-12-31,2,4,167,125,350,2644,0,0,0,0,0,Y,No comments
-2365,Skoda,Superb,3T,2.0 TDI CR,Turbo-Diesel,2010-01-01,0000-12-31,2,4,167,125,350,2320,0,0,0,0,0,Y,No comments
-2366,Skoda,Superb,3T,2.0 TDI CR,Turbo-Diesel,2010-03-01,0000-12-31,2,4,138,103,320,2391,0,0,0,0,0,Y,No comments
+2365,Skoda,Superb,3T,2.0 TDI CR,Turbo-Diesel,2010-01-01,2050-12-31,2,4,167,125,350,2320,0,0,0,0,0,Y,No comments
+2366,Skoda,Superb,3T,2.0 TDI CR,Turbo-Diesel,2010-03-01,2050-12-31,2,4,138,103,320,2391,0,0,0,0,0,Y,No comments
 2367,Skoda,Superb,3T,2.0 TDI PD,Turbo-Diesel,2008-09-01,2010-12-31,2,4,140,105,320,409,0,0,0,0,0,Y,No comments
-2368,Skoda,Superb,3T,1.4 TSI,Turbocharged Petrol,2008-09-01,0000-12-31,1.4,4,123,92,200,2200,0,0,0,0,0,Y,No comments
-2369,Skoda,Superb,3T,1.8 TSI,Turbocharged Petrol,2008-09-01,0000-12-31,1.8,4,158,118,250,2105,0,0,0,0,0,Y,No comments
+2368,Skoda,Superb,3T,1.4 TSI,Turbocharged Petrol,2008-09-01,2050-12-31,1.4,4,123,92,200,2200,0,0,0,0,0,Y,No comments
+2369,Skoda,Superb,3T,1.8 TSI,Turbocharged Petrol,2008-09-01,2050-12-31,1.8,4,158,118,250,2105,0,0,0,0,0,Y,No comments
 2370,Skoda,Superb,3U,,Non-Turbo Petrol,2002-01-01,2008-12-31,2,4,115,86,170,1443,0,0,0,0,0,Y,No comments
 2371,Skoda,Superb,3U,,Non-Turbo Petrol,2002-01-01,2008-12-31,2.8,6,193,144,280,1444,0,0,0,0,0,Y,No comments
 2372,Skoda,Superb,3U,1.9 TDI,Turbo-Diesel,2001-09-01,2050-12-31,1.9,4,100,75,240,406,0,0,0,0,0,Y,No comments
@@ -2408,7 +2408,7 @@
 2408,Toyota,Yaris,,1.4 D4D,Turbo-Diesel,2006-01-01,2007-12-31,1.4,4,88,66,190,1826,0,0,0,0,0,Y,No comments
 2409,Toyota,Yaris,,D4D,Turbo-Diesel,2002-01-01,2006-12-31,1.4,4,74,56,170,414,0,0,0,0,0,Y,No comments
 2410,Volkswagen,Amarok,,2.0 BiTDI,Turbo-Diesel,2010-01-01,2050-12-31,2,4,161,121,400,2426,0,0,0,0,0,Y,No comments
-2411,Volkswagen,Amarok,,2.0 BiTDI,Turbo-Diesel,2012-01-01,2050-12-31,2,4,177,133,420,2724,0,0,0,0,0,Y,No comments
+2411,Volkswagen,Amarok,,2.0 BiTDI,Turbo-Diesel,2011-09-01,2050-12-31,2,4,177,133,420,2724,0,0,0,0,0,Y,No comments
 2412,Volkswagen,Beetle,,,Non-Turbo Petrol,1999-01-01,2050-12-31,2,4,115,86,172,1565,0,0,0,0,0,Y,No comments
 2413,Volkswagen,Beetle,,,Non-Turbo Petrol,2000-01-01,2004-12-31,2.4,5,170,127,220,1566,0,0,0,0,0,Y,No comments
 2414,Volkswagen,Beetle,,1.6 TDI / BlueMotion,Turbo-Diesel,2011-09-01,2050-12-31,1.6,4,103,77,250,2578,0,0,0,0,0,Y,No comments
@@ -2456,8 +2456,8 @@
 2456,Volkswagen,EOS,,2.0 TDI CR Euro5,Turbo-Diesel,2006-06-01,2050-12-31,2,4,138,103,320,2202,0,0,0,0,0,Y,No comments
 2457,Volkswagen,EOS,,2.0 TDI CR Euro5,Turbo-Diesel,2009-09-01,2050-12-31,2,4,138,103,320,2492,0,0,0,0,0,Y,No comments
 2458,Volkswagen,EOS,,2.0 TDI PD Euro4,Turbo-Diesel,2006-06-01,2010-12-31,2,4,138,103,320,1708,0,0,0,0,0,Y,No comments
-2459,Volkswagen,EOS,,2.0 TFSI,Turbocharged Petrol,2006-03-01,2010-12-31,2,4,197,147,280,1709,0,0,0,0,0,Y,No comments
-2460,Volkswagen,EOS,,2.0 TSI,Turbocharged Petrol,2009-09-01,2050-12-31,2,4,207,155,280,2203,0,0,0,0,0,Y,No comments
+2459,Volkswagen,EOS,,2.0 TSI,Turbocharged Petrol,2006-03-01,2010-12-31,2,4,197,147,280,1709,0,0,0,0,0,Y,No comments
+2460,Volkswagen,EOS,,2.0 TSI,Turbocharged Petrol,2009-09-01,2050-12-31,2,4,207,155,280,2203,2505,0,0,0,0,Y,No comments
 2461,Volkswagen,EOS,,1.4 TSI,Twincharger,2008-03-01,2050-12-31,1.4,4,157,118,240,2434,0,0,0,0,0,Y,No comments
 2462,Volkswagen,Golf,Mk3,,Non-Turbo Petrol,1992-01-01,1998-12-31,1.4,4,60,45,0,1542,0,0,0,0,0,Y,No comments
 2463,Volkswagen,Golf,Mk3,,Non-Turbo Petrol,1992-01-01,2001-12-31,2,4,115,86,166,1547,0,0,0,0,0,Y,No comments
@@ -2492,8 +2492,8 @@
 2492,Volkswagen,Golf,Mk5,1.9 TDI PD,Turbo-Diesel,2004-03-01,2009-09-01,1.9,4,89,66,210,2891,0,0,0,0,0,Y,No comments
 2493,Volkswagen,Golf,Mk5,2.0 TDI PD,Turbo-Diesel,2003-09-01,2008-12-31,2,4,140,105,320,454,0,0,0,0,0,Y,No comments
 2494,Volkswagen,Golf,Mk5,2.0 TDI PD,Turbo-Diesel,2005-09-01,2050-12-31,2,4,170,127,350,1726,0,0,0,0,0,Y,No comments
-2495,Volkswagen,Golf,Mk5,2.0T Edition 30/Pirelli,Turbocharged Petrol,2006-09-01,2050-12-31,2,4,226,169,300,1743,0,0,0,0,0,Y,No comments
-2496,Volkswagen,Golf,Mk5,GTI,Turbocharged Petrol,2004-09-01,2050-12-31,2,4,197,147,280,668,0,0,0,0,0,Y,No comments
+2495,Volkswagen,Golf,Mk5,2.0T Edition 30/Pirelli,Turbocharged Petrol,2006-09-01,2050-12-31,2,4,226,169,300,1743,2048,2077,0,0,0,Y,No comments
+2496,Volkswagen,Golf,Mk5,GTI,Turbocharged Petrol,2004-09-01,2050-12-31,2,4,197,147,280,668,2016,2020,2021,0,0,Y,No comments
 2497,Volkswagen,Golf,Mk5,1.4 TSI,Twincharger,2005-09-01,2050-12-31,1.4,4,167,125,240,2435,0,0,0,0,0,Y,No comments
 2498,Volkswagen,Golf,Mk5,1.4 TSI,Twincharger,2006-06-01,2050-12-31,1.4,4,138,103,220,2436,0,0,0,0,0,Y,No comments
 2499,Volkswagen,Golf,Mk6,1.6 TDI / BlueMotion,Turbo-Diesel,2009-03-01,2013-12-31,1.6,4,88,66,230,2769,0,0,0,0,0,Y,No comments
@@ -2505,7 +2505,7 @@
 2505,Volkswagen,Golf,Mk6,1.2 TSI (Golf),Turbocharged Petrol,2009-09-01,2013-12-31,1.2,4,103,77,175,2682,0,0,0,0,0,Y,No comments
 2506,Volkswagen,Golf,Mk6,1.4 TSI,Turbocharged Petrol,2008-09-01,2013-12-31,1.4,4,120,90,200,2156,0,0,0,0,0,Y,No comments
 2507,Volkswagen,Golf,Mk6,1.8 TSI,Turbocharged Petrol,2009-06-01,2013-12-31,1.8,4,158,118,250,2561,0,0,0,0,0,Y,No comments
-2508,Volkswagen,Golf,Mk6,GTI,Turbocharged Petrol,2009-03-01,2013-12-31,2,4,207,155,280,2108,0,0,0,0,0,Y,No comments
+2508,Volkswagen,Golf,Mk6,GTI,Turbocharged Petrol,2009-03-01,2013-12-31,2,4,207,155,280,2108,2178,0,0,0,0,Y,No comments
 2509,Volkswagen,Golf,Mk6,GTI Edition 35,Turbocharged Petrol,2011-09-01,2013-12-31,2,4,231,173,300,2558,0,0,0,0,0,Y,No comments
 2510,Volkswagen,Golf,Mk6,R,Turbocharged Petrol,2010-03-01,2013-12-31,2,4,266,199,350,2226,0,0,0,0,0,Y,No comments
 2511,Volkswagen,Golf,Mk6,1.4 TSI,Twincharger,2008-09-01,2013-12-31,1.4,4,158,118,240,2476,0,0,0,0,0,Y,No comments
@@ -2580,32 +2580,32 @@
 2580,Volkswagen,Passat,B5.5,TDI,Turbo-Diesel,2003-01-01,2005-12-31,2.5,4,160,120,310,471,0,0,0,0,0,Y,No comments
 2581,Volkswagen,Passat,B5.5,,Turbocharged Petrol,1996-01-01,2004-12-31,1.8,4,150,112,210,669,0,0,0,0,0,Y,No comments
 2582,Volkswagen,Passat,B6,3.6 R36,Non-Turbo Petrol,2008-06-01,2010-03-31,3.6,6,295,221,350,2407,0,0,0,0,0,Y,No comments
-2583,Volkswagen,Passat,B6,1.6 TDI / BlueMotion,Turbo-Diesel,2009-03-01,0000-12-31,1.6,4,103,77,250,2575,0,0,0,0,0,Y,No comments
+2583,Volkswagen,Passat,B6,1.6 TDI / BlueMotion,Turbo-Diesel,2009-03-01,2050-12-31,1.6,4,103,77,250,2575,0,0,0,0,0,Y,No comments
 2584,Volkswagen,Passat,B6,1.9 TDI PD,Turbo-Diesel,2005-03-01,2050-12-31,1.9,4,105,79,250,1830,0,0,0,0,0,Y,No comments
 2585,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2008-03-01,2050-12-31,2,4,138,103,320,2096,0,0,0,0,0,Y,No comments
 2586,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2008-03-01,2050-12-31,2,4,167,125,350,2097,0,0,0,0,0,Y,No comments
 2587,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2008-09-01,2050-12-31,2,4,108,81,250,2257,0,0,0,0,0,Y,No comments
-2588,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2010-01-01,0000-12-31,2,4,167,125,350,2499,0,0,0,0,0,Y,No comments
-2589,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2011-01-01,0000-12-31,2,4,138,103,320,2500,0,0,0,0,0,Y,No comments
-2590,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2013-01-01,0000-12-31,2,4,174,130,380,2813,0,0,0,0,0,Y,No comments
+2588,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2010-01-01,2050-12-31,2,4,167,125,350,2499,0,0,0,0,0,Y,No comments
+2589,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2011-01-01,2050-12-31,2,4,138,103,320,2500,0,0,0,0,0,Y,No comments
+2590,Volkswagen,Passat,B6,2.0 TDI CR,Turbo-Diesel,2013-01-01,2050-12-31,2,4,174,130,380,2813,0,0,0,0,0,Y,No comments
 2591,Volkswagen,Passat,B6,2.0 TDI PD,Turbo-Diesel,2005-03-01,2050-12-31,2,4,140,105,320,472,0,0,0,0,0,Y,No comments
 2592,Volkswagen,Passat,B6,2.0 TDI PD,Turbo-Diesel,2005-03-01,2050-12-31,2,4,170,127,350,1727,0,0,0,0,0,Y,No comments
-2593,Volkswagen,Passat,B6,1.4 TSI,Turbocharged Petrol,2007-09-01,0000-12-31,1.4,4,120,90,200,2662,0,0,0,0,0,Y,No comments
+2593,Volkswagen,Passat,B6,1.4 TSI,Turbocharged Petrol,2007-09-01,2050-12-31,1.4,4,120,90,200,2662,0,0,0,0,0,Y,No comments
 2594,Volkswagen,Passat,B6,1.8 TSI,Turbocharged Petrol,2007-09-01,2010-12-31,1.8,4,157,118,250,2146,0,0,0,0,0,Y,No comments
 2595,Volkswagen,Passat,B6,2.0 TFSI,Turbocharged Petrol,2005-03-01,2050-12-31,2,4,197,147,280,670,0,0,0,0,0,Y,No comments
 2596,Volkswagen,Passat,B6,2.0 TSI,Turbocharged Petrol,2009-09-01,2011-12-31,2,4,197,147,280,2488,0,0,0,0,0,Y,No comments
 2597,Volkswagen,Passat,B7,3.6 R36,Non-Turbo Petrol,2008-06-01,2010-03-31,3.6,6,295,221,350,2407,0,0,0,0,0,Y,No comments
-2598,Volkswagen,Passat,B7,1.6 TDI / BlueMotion,Turbo-Diesel,2009-03-01,0000-12-31,1.6,4,103,77,250,2575,0,0,0,0,0,Y,No comments
+2598,Volkswagen,Passat,B7,1.6 TDI / BlueMotion,Turbo-Diesel,2009-03-01,2050-12-31,1.6,4,103,77,250,2575,0,0,0,0,0,Y,No comments
 2599,Volkswagen,Passat,B7,1.9 TDI PD,Turbo-Diesel,2005-03-01,2050-12-31,1.9,4,105,79,250,1830,0,0,0,0,0,Y,No comments
 2600,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2008-03-01,2050-12-31,2,4,138,103,320,2096,0,0,0,0,0,Y,No comments
 2601,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2008-03-01,2050-12-31,2,4,167,125,350,2097,0,0,0,0,0,Y,No comments
 2602,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2008-09-01,2050-12-31,2,4,108,81,250,2257,0,0,0,0,0,Y,No comments
-2603,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2010-01-01,0000-12-31,2,4,167,125,350,2499,0,0,0,0,0,Y,No comments
-2604,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2011-01-01,0000-12-31,2,4,138,103,320,2500,0,0,0,0,0,Y,No comments
-2605,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2013-01-01,0000-12-31,2,4,174,130,380,2813,0,0,0,0,0,Y,No comments
+2603,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2010-01-01,2050-12-31,2,4,167,125,350,2499,0,0,0,0,0,Y,No comments
+2604,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2011-01-01,2050-12-31,2,4,138,103,320,2500,0,0,0,0,0,Y,No comments
+2605,Volkswagen,Passat,B7,2.0 TDI CR,Turbo-Diesel,2013-01-01,2050-12-31,2,4,174,130,380,2813,0,0,0,0,0,Y,No comments
 2606,Volkswagen,Passat,B7,2.0 TDI PD,Turbo-Diesel,2005-03-01,2050-12-31,2,4,140,105,320,472,0,0,0,0,0,Y,No comments
 2607,Volkswagen,Passat,B7,2.0 TDI PD,Turbo-Diesel,2005-03-01,2050-12-31,2,4,170,127,350,1727,0,0,0,0,0,Y,No comments
-2608,Volkswagen,Passat,B7,1.4 TSI,Turbocharged Petrol,2007-09-01,0000-12-31,1.4,4,120,90,200,2662,0,0,0,0,0,Y,No comments
+2608,Volkswagen,Passat,B7,1.4 TSI,Turbocharged Petrol,2007-09-01,2050-12-31,1.4,4,120,90,200,2662,0,0,0,0,0,Y,No comments
 2609,Volkswagen,Passat,B7,1.8 TSI,Turbocharged Petrol,2007-09-01,2010-12-31,1.8,4,157,118,250,2146,0,0,0,0,0,Y,No comments
 2610,Volkswagen,Passat,B7,2.0 TFSI,Turbocharged Petrol,2005-03-01,2050-12-31,2,4,197,147,280,670,0,0,0,0,0,Y,No comments
 2611,Volkswagen,Passat,B7,2.0 TSI,Turbocharged Petrol,2009-09-01,2011-12-31,2,4,197,147,280,2488,0,0,0,0,0,Y,No comments
@@ -2629,15 +2629,15 @@
 2629,Volkswagen,Polo,9N,TDI,Turbo-Diesel,2004-01-01,2009-12-31,1.9,4,130,97,310,445,0,0,0,0,0,Y,No comments
 2630,Volkswagen,Polo,9N,TDI,Turbo-Diesel,2005-01-01,2009-12-31,1.5,3,69,52,155,1696,0,0,0,0,0,Y,No comments
 2631,Volkswagen,Polo,9N,TDI,Turbo-Diesel,2005-01-01,2009-12-31,1.5,3,78,59,195,1697,0,0,0,0,0,Y,No comments
-2632,Volkswagen,Polo,9N,,Turbocharged Petrol,2006-01-01,2009-12-31,1.8,4,150,112,210,1833,0,0,0,0,0,Y,No comments
+2632,Volkswagen,Polo,9N,1.8 TFSI,Turbocharged Petrol,2006-01-01,2009-12-31,1.8,4,150,112,210,1833,0,0,0,0,0,Y,No comments
 2633,Volkswagen,Scirocco,,,Non-Turbo Petrol,1970-01-01,2050-12-31,1.8,4,0,1,0,1598,0,0,0,0,0,N,No comments
 2634,Volkswagen,Scirocco,,2.0 TDI CR,Turbo-Diesel,2008-09-01,2050-12-31,2,4,138,103,320,2082,0,0,0,0,0,Y,No comments
 2635,Volkswagen,Scirocco,,2.0 TDI CR,Turbo-Diesel,2009-03-01,2050-12-31,2,4,167,125,350,2205,0,0,0,0,0,Y,No comments
 2636,Volkswagen,Scirocco,,2.0 TDI CR,Turbo-Diesel,2010-01-01,2050-12-31,2,4,138,103,320,2502,0,0,0,0,0,Y,No comments
 2637,Volkswagen,Scirocco,,2.0 TDI CR,Turbo-Diesel,2013-01-01,2050-12-31,2,4,174,130,380,2812,0,0,0,0,0,Y,No comments
 2638,Volkswagen,Scirocco,,1.4 TSI,Turbocharged Petrol,2008-09-01,2050-12-31,1.4,4,120,90,200,2340,0,0,0,0,0,Y,No comments
-2639,Volkswagen,Scirocco,,2.0 TSI,Turbocharged Petrol,2008-09-01,2010-12-31,2,4,197,147,280,2065,0,0,0,0,0,Y,No comments
-2640,Volkswagen,Scirocco,,GT 2.0 TSI,Turbocharged Petrol,2009-09-01,2050-12-31,2,4,207,155,280,2204,0,0,0,0,0,Y,No comments
+2639,Volkswagen,Scirocco,,2.0 TSI,Turbocharged Petrol,2008-09-01,2010-12-31,2,4,197,147,280,2065,2179,0,0,0,0,Y,No comments
+2640,Volkswagen,Scirocco,,GT 2.0 TSI,Turbocharged Petrol,2009-09-01,2050-12-31,2,4,207,155,280,2204,2495,0,0,0,0,Y,No comments
 2641,Volkswagen,Scirocco,,R 2.0 TSI,Turbocharged Petrol,2009-09-01,2050-12-31,2,4,256,191,350,2511,0,0,0,0,0,Y,No comments
 2642,Volkswagen,Scirocco,,R 2.0 TSI,Turbocharged Petrol,2009-09-01,2050-12-31,2,4,261,195,350,2228,0,0,0,0,0,Y,No comments
 2643,Volkswagen,Scirocco,,1.4 TSI,Twincharger,2008-09-01,2050-12-31,1.4,4,157,118,240,2441,0,0,0,0,0,Y,No comments
