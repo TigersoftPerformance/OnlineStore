@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+######################################################################
+# This script will advise and fix and inconsistencies in the modelcodes tables
+######################################################################
 
 use strict;
 use warnings;
@@ -22,9 +25,9 @@ my $dbh = DBI->connect($dsn, undef, undef,
 
 #
 # prepare the sql statements
-# This is for the main loop, we will read every entry with a model code
+# This is for the main loop, we will read every entry  in the cars tables
 my $carsth = $dbh->prepare("
-	SELECT * FROM Cars WHERE active = 'Y' AND model_code != ''
+	SELECT * FROM Cars WHERE active = 'Y' 
 ") or die $dbh->errstr;
 $carsth->execute() or die $dbh->errstr;
 
@@ -35,7 +38,7 @@ my $selmdlth = $dbh->prepare("
 
 # Insert new row into model_code
 my $insmdlth = $dbh->prepare("
-		INSERT into ModelCodes (make, model, model_code, start_date, end_date) VALUES (?,?,?,?,?)
+		INSERT into ModelCodes (make, model, model_code, start_date, end_date, active) VALUES (?,?,?,?,?,?)
 ") or die $dbh->errstr;
 
 # Update existing row into model_code
@@ -58,6 +61,7 @@ while (my $car_data = $carsth->fetchrow_hashref)
 	my $variant = $car_data->{variant};
 	$selmdlth->execute($make, $model, $model_code) or die $dbh->errstr;
 	
+	say "Car $carid";
 	if (my $model_code_data = $selmdlth->fetchrow_hashref)
 		{
 		my $model_start_year = substr ($model_code_data->{start_date}, 0, 4);
@@ -67,11 +71,23 @@ while (my $car_data = $carsth->fetchrow_hashref)
 		my $start_year = 0;
 		my $end_year = 0;
 
-		if ($car_start_year < $model_start_year || $car_end_year > $model_end_year)
+		if ($car_end_year > $model_end_year && $car_end_year != 2050)
 			{
-			say "Car: $carid $make $model ($model_code) $variant $car_start_year to $car_end_year";
-			say "\tModel: $model_code $model_start_year $model_end_year";
+			say "End Year is wrong for ModelCode: $model_code $model_start_year $model_end_year";
+			say "\tCar: $carid $make $model ($model_code) $variant $car_start_year to $car_end_year";
+			say "Would you like to update the ModelCode entry? >";
+			my $answer = <STDIN>;
+			if ($answer =~ /[Yy]/)
+				{
+				$updmdlth->execute(sprintf ("%4s", $model_start_year), sprintf ("%4s", $car_end_year), $make, $model, $model_code) or die $dbh->errstr;
+				}
 			}
+
+		# if ($car_start_year < $model_start_year)
+			# {
+			# say "Car: $carid $make $model ($model_code) $variant $car_start_year to $car_end_year";
+			# say "\tModel: $model_code $model_start_year $model_end_year";
+			# }
 
 		if ($car_end_year == 2050 && $model_end_year < 2050)
 			{
@@ -85,7 +101,7 @@ while (my $car_data = $carsth->fetchrow_hashref)
 	else
 		{
 		say "Need to add record for " . $model_code;
-		$insmdlth->execute($car_data->{make}, $car_data->{model}, $car_data->{model_code}, substr ($car_data->{start_date}, 0, 4), substr ($car_data->{end_date}, 0, 4)) or die $dbh->errstr;
+		$insmdlth->execute($car_data->{make}, $car_data->{model}, $car_data->{model_code}, substr ($car_data->{start_date}, 0, 4), substr ($car_data->{end_date}, 0, 4), 'Y') or die $dbh->errstr;
 		}
 	}
 
