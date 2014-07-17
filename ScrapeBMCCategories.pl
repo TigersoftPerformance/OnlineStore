@@ -41,25 +41,25 @@ my $insbmcairth = $dbh->prepare("
 ") or die $dbh->errstr;
 
 #
-# Insert a new row into BMCCategories
+# Insert a new row into Categories
 #
 my $ins_bmccat_sth = $dbh->prepare("
-	INSERT INTO BMCCategories (longname, shortname, description, image, note, active) VALUES (?,?,?,?,?,?)
+	INSERT INTO Categories (longname, shortname, image, description, active) VALUES (?,?,?,?,?)
 ") or die $dbh->errstr;
 
 #
-# This select is only used to see if BMCCategory exists or not
+# This select is only used to see if Category exists or not
 #
 my $existsbmccatth = $dbh->prepare("
-	SELECT * FROM BMCCategories WHERE longname = ?
+	SELECT * FROM Categories WHERE longname = ?
 ") or die $dbh->errstr;
 
 #
-# Update existing row in BMCCategories
+# Update existing row in Categories
 #
 my $updbmccatth = $dbh->prepare("
-	UPDATE BMCCategories SET shortname = ?, description = ?,
-		image = ?, note = ?
+	UPDATE Categories SET shortname = ?, image = ?,
+	 description = ?	
 		WHERE longname = ?
 ") or die $dbh->errstr;
 
@@ -377,17 +377,18 @@ sub parse_product_list
 sub do_db
 #############################
 # Add new or Update existing 
-# category in BMCCategories
+# category in Categories
 #############################
 {
 	my ($name,$short,$desc,$image,$note) = @_;
+	$desc ||= $note;
 	# Add current Category data to the 
-	# BMCCategories table if not exists
+	# Categories table if not exists
 	$existsbmccatth->execute($name);
 	my $cat_table = $existsbmccatth->fetchrow_hashref;
 	unless (defined ($cat_table))
-		{
-		$ins_bmccat_sth->execute($name,$short,$desc,$image,$note,"Y"); 
+		{	
+		$ins_bmccat_sth->execute($name,$short,$image,$desc,"Y"); 
 		&screen("\tNew Category : $name");
 		}
 	# Look for changes if any	
@@ -397,7 +398,7 @@ sub do_db
 			$cat_table->{note} ne $note
 	  	  )
 		{
-		$updbmccatth->execute($short,$desc,$image,$note,$name);
+		$updbmccatth->execute($short,$image,$desc,$name);
 		&screen("Updated category $name");	
 		}
 	else	
