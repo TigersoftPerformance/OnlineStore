@@ -158,13 +158,26 @@ sub create_model_code_pic
 	$get_model_code_sth->execute($car->{make}, $car->{model}, $car->{model_code}) or return;
 	# need some error checking here....
 	my $model_code = $get_model_code_sth->fetchrow_hashref;
-	my $start_year = substr ($model_code->{start_date}, 0, 4);
-	my $end_year = substr ($model_code->{end_date}, 0, 4);
-	$command .= &create_date_range (2, $start_year, $end_year);
+	if (!defined $model_code)
+		{
+		say STDERR "NO MODEL CODE FOR $car->{idCars}, $car->{make}, $car->{model}, $car->{model_code}";
+		}
+	else	
+		{
+			
+		my $start_year = substr ($model_code->{start_date}, 0, 4);
+		my $end_year = substr ($model_code->{end_date}, 0, 4);
+		$command .= &create_date_range (2, $start_year, $end_year);
+		
+		if ($model_code->{nickname})
+			{
+			$command .= &create_mode_code_nickname ($model_code->{nickname});
+			}
 
-	$command .= " " . $model_code_pic_name;
-
-	system ($command);
+		$command .= " " . $model_code_pic_name;
+		}
+		system ($command);
+		
 	}
 
 sub create_variant_pic
@@ -240,6 +253,22 @@ sub create_specs
 	my $pointsize = 22;
 
 	my $draw_text = "\"text $specx,$specy \'$text\'\"";
+	return " $main_font -weight Normal -pointsize $pointsize -fill $colour -stroke $colour -draw $draw_text";
+	}
+	
+sub create_mode_code_nickname
+	{
+	my $pointsize = 32;
+	my $textx = 0;
+	my $texty = 295;
+	my $colour = "DodgerBlue2";
+	my $nickname = $_[0];
+	my $length = length ($nickname);
+	
+	my $width = $length * $pointsize / 2;
+	 $textx = (420 - $width) / 2;
+	
+	my $draw_text = "\"text $textx,$texty \'$nickname\'\"";
 	return " $main_font -weight Normal -pointsize $pointsize -fill $colour -stroke $colour -draw $draw_text";
 	}
 	
@@ -320,13 +349,13 @@ sub create_date_range
 	my ($linenum, $start_year, $end_year) = @_;
 	my $command = "";
 	
-	if (!($start_year == 1970 && $end_year == 2050))
+	if (!($start_year eq "1970" && $end_year eq "2050"))
 		{
-		if ($start_year == 1970)
+		if ($start_year eq "1970")
 			{
 			$start_year = "Up to";
 			}
-		if ($end_year == 2050)
+		if ($end_year eq "2050")
 			{
 			$end_year = "onward";
 			}
