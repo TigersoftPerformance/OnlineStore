@@ -16,6 +16,7 @@ use constant BMCWEBSITE => "http://au.bmcairfilters.com";
 use constant LOGFILE    => "./ScrapeBMCAirFilters.log";
 use constant ALERTFILE  => "./ScrapeBMCAirFilters.alert";
 use constant DEBUGFILE  => "./ScrapeBMCAirFilters.debug";
+use constant IMAGESDIR => "./BMCImages";
 
 # 
 # Open log/aler/debug files
@@ -31,7 +32,7 @@ open(my $debugfh, ">", DEBUGFILE) or die "cannot open DEBUGFILE $!";
 # are configured to use UTF8
 my $driver = "mysql";   # Database driver type
 my $my_cnf = '~/.my.cnf';
-my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf" . ";mysql_read_default_group=TigersoftPerformance";
 my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
@@ -77,9 +78,9 @@ my $updbmcairth = $dbh->prepare("
 ") or die $dbh->errstr;
 
 # Create images directory for images and diagrams
-unless (-d 'images')
+unless (-d IMAGESDIR)
 	{
-	mkdir "images" or die "cannot";	
+	mkdir IMAGESDIR or die "cannot";	
 	}
 
 #
@@ -335,18 +336,36 @@ sub update_bmcairfilters_row
 	if ($image) 
 		{
 		my $url_img = BMCWEBSITE . $image;
-		my $img = "images" . $1 if $image =~ /.*(\/.+)$/;
-		my $rc1 = getstore($url_img, $img);
-		die "getstore of <$url_img> failed with $rc1" if (is_error($rc1)) 
+		my $img = IMAGESDIR . $1 if $image =~ /.*(\/.+)$/;
+		my $rc1;
+		my $retries = 5;
+		# Try a few times in case of failure
+		do 
+			{
+			$rc1 = getstore($url_img, $img);
+			$retries --;
+			}
+		while ($retries && is_error($rc1));
+			
+		alert ("getstore of <$url_img> failed with $rc1") if (is_error($rc1));
 		}
 
 	# save image to the image folder
 	if ($diagram) 
 		{
 		my $url_diag = BMCWEBSITE . $diagram;
-		my $diag = "images" . $1 if $diagram =~ /.*(\/.+)$/;
-		my $rc2 = getstore($url_diag, $diag);
-		die "getstore of <$url_diag> failed with $rc2" if (is_error($rc2)) 
+		my $diag = IMAGESDIR . $1 if $diagram =~ /.*(\/.+)$/;
+		my $rc2;
+		my $retries = 5;
+		# Try a few times in case of failure
+		do 
+			{
+			$rc2 = getstore($url_diag, $diag);
+			$retries --;
+			}
+		while ($retries && is_error($rc2));
+			
+		alert ("getstore of <$url_diag> failed with $rc2") if (is_error($rc2));
 		}	
 
 

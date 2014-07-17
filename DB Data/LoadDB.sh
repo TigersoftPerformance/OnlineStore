@@ -22,5 +22,5 @@ mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=','
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BCRacingCoilovers.csv
 
-mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP QantumCars.csv
+mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP QuantumCars.csv
 

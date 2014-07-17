@@ -21,14 +21,14 @@ use constant BFFORDPRICE => 739;
 use constant BFVAGPRICE  => 739;
 use constant BFOPELPRICE => 739;
 
-use constant PRO2PRICE => 899;
+# use constant PRO2PRICE => 899;
 
 use constant NONTURBO    => "Non-Turbo Petrol";
 use constant TURBOPETROL => "Turbocharged Petrol";
 use constant TURBODIESEL => "Turbo-Diesel";
 
 use constant PPBLUEFIN    => "BF"; # Product suffix for Bluefin
-use constant PPPRO2       => "P2"; # Product prefix for Pro2
+# use constant PPPRO2       => "P2"; # Product prefix for Pro2
 use constant PPFLASHTUNE  => "FT"; # Product prefix for Flash tune
 use constant PPBENCHTUNE  => "BT"; # Product prefix for Bench Tune
 use constant PPCHIPCHANGE => "CC"; # Product prefix for Bench Tune
@@ -36,7 +36,7 @@ use constant PPUNKNOWN    => "UK"; # Product prefix for Bluefin
 use constant PPNONE       => "NO"; # Product prefix for None
 
 use constant PNBLUEFIN    => "Superchips Bluefin"; # Product Name for Bluefin
-use constant PNPRO2       => "Superchips Pro2"; # Product Name for Pro2
+# use constant PNPRO2       => "Superchips Pro2"; # Product Name for Pro2
 use constant PNFLASHTUNE  => "Superchips Flash Tune"; # Product Name for Flash tune
 use constant PNBENCHTUNE  => "Superchips Bench Tune"; # Product Name for Bench Tune
 use constant PNCHIPCHANGE => "Superchips Chip Change"; # Product Name for Bench Tune
@@ -56,7 +56,8 @@ $OFS = ',';
 # are configured to use UTF8
 my $driver = "mysql";   # Database driver type
 my $my_cnf = '~/.my.cnf';
-my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf" . ";mysql_read_default_group=TigersoftPerformance";
+
 my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
@@ -225,21 +226,21 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 # This is for PRO2
 #
-	if ($no_tune && $superchips_website->{pro2} eq "Y")
-		{
-		$v_products_price = PRO2PRICE;
-		$v_products_image = "Superchips Pro2 box picture.jpg";
-		$v_products_model = $products_model . PPPRO2;
-		$v_products_name_1 = PNPRO2 . " for $complete_model";
+	# if ($no_tune && $superchips_website->{pro2} eq "Y")
+		# {
+		# $v_products_price = PRO2PRICE;
+		# $v_products_image = "Superchips Pro2 box picture.jpg";
+		# $v_products_model = $products_model . PPPRO2;
+		# $v_products_name_1 = PNPRO2 . " for $complete_model";
 			
-		$v_products_description_1 = PNPRO2 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-		$v_products_description_1 = $v_products_description_1 . "<p>The ECU in this car is of a type that we are unable to tune directly. This is where Superchips' newest product&#44 the Pro2 comes in. It is a Piggy-Back unit that intercepts some of the signals going to the ECU to convince it to produce more power. This approach has several advantagesn&#44 none more important than the fact that it can be installed or removed in only 5 minutes&#44 and once it has been removed&#44 it leaves behind no evidence that it was ever installed!<p>The Pro2 is a sophisticated product&#44 boasting a dual-core 32-bit ARM CPU to ensure that it always keeps ahead of the cars ECU.";
+		# $v_products_description_1 = PNPRO2 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
+		# $v_products_description_1 = $v_products_description_1 . $otherbenefits;
+		# $v_products_description_1 = $v_products_description_1 . "<p>The ECU in this car is of a type that we are unable to tune directly. This is where Superchips' newest product&#44 the Pro2 comes in. It is a Piggy-Back unit that intercepts some of the signals going to the ECU to convince it to produce more power. This approach has several advantagesn&#44 none more important than the fact that it can be installed or removed in only 5 minutes&#44 and once it has been removed&#44 it leaves behind no evidence that it was ever installed!<p>The Pro2 is a sophisticated product&#44 boasting a dual-core 32-bit ARM CPU to ensure that it always keeps ahead of the cars ECU.";
 
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		}
+		# $v_metatags_title_1 = $v_products_name_1;
+		# $v_metatags_keywords_1 = $v_products_name_1;
+		# $v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		# }
 
 #
 # This is for UNKNOWN TUNE TYPE
@@ -318,7 +319,10 @@ while ($car_data = $sth->fetchrow_hashref)
 		}
 
 	$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
-	print $v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 . "\n";	
+	if ($v_products_model)
+		{
+		print $v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 . "\n";	
+		}
 	}
 
 #

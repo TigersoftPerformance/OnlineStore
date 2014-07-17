@@ -13,7 +13,7 @@ use feature 'say';
 # are configured to use UTF8
 my $driver = "mysql";   # Database driver type
 my $my_cnf = '~/.my.cnf';
-my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf" . ";mysql_read_default_group=TigersoftPerformance";
 my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
