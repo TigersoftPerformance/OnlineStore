@@ -16,32 +16,38 @@ use constant TUNETURBOPRICE1 => 999;
 use constant TUNETURBOPRICE2 => 1249;
 use constant TUNETURBOPRICE3 => 1499;
 
+use constant TUNESTAGE2PRICE => 150;
+use constant TUNESTAGE3PRICE => 150;
+use constant TUNESTAGE4PRICE => 150;
+
 use constant BFNASPPRICE => 499;
 use constant BFFORDPRICE => 739;
 use constant BFVAGPRICE  => 739;
 use constant BFOPELPRICE => 739;
-
-# use constant PRO2PRICE => 899;
 
 use constant NONTURBO    => "Non-Turbo Petrol";
 use constant TURBOPETROL => "Turbocharged Petrol";
 use constant TURBODIESEL => "Turbo-Diesel";
 
 use constant PPBLUEFIN    => "BF"; # Product suffix for Bluefin
-# use constant PPPRO2       => "P2"; # Product prefix for Pro2
 use constant PPFLASHTUNE  => "FT"; # Product prefix for Flash tune
 use constant PPBENCHTUNE  => "BT"; # Product prefix for Bench Tune
 use constant PPCHIPCHANGE => "CC"; # Product prefix for Bench Tune
 use constant PPUNKNOWN    => "UK"; # Product prefix for Bluefin
 use constant PPNONE       => "NO"; # Product prefix for None
+use constant PPSTAGE2       => "S2"; # Product prefix for None
+use constant PPSTAGE3       => "S3"; # Product prefix for None
+use constant PPSTAGE4       => "S4"; # Product prefix for None
 
 use constant PNBLUEFIN    => "Superchips Bluefin"; # Product Name for Bluefin
-# use constant PNPRO2       => "Superchips Pro2"; # Product Name for Pro2
 use constant PNFLASHTUNE  => "Superchips Flash Tune"; # Product Name for Flash tune
 use constant PNBENCHTUNE  => "Superchips Bench Tune"; # Product Name for Bench Tune
 use constant PNCHIPCHANGE => "Superchips Chip Change"; # Product Name for Bench Tune
 use constant PNUNKNOWN    => "Superchips Tune"; # Product Name for Bluefin
 use constant PNNONE       => "No Tune Whatsoever"; # Product Name for None
+use constant PNSTAGE2       => "Stage 2 Tune"; 
+use constant PNSTAGE3       => "Stage 3 Tune"; 
+use constant PNSTAGE4       => "Stage 4 Tune"; 
 
 use constant SORT_ORDER_START => 100;
 use constant SORT_ORDER_INCREMENT => 50;
@@ -73,7 +79,6 @@ if (defined $ARGV[0])
 		$cars_query = "$cars_query AND model ='$ARGV[1]'";
 	}
 }
-
 my $sth = $dbh->prepare($cars_query) or die $dbh->errstr;
 $sth->execute() or die $dbh->errstr;
 
@@ -92,10 +97,67 @@ my $get_cat_sth = $dbh->prepare("
 ") or die $dbh->errstr;
 
 #
+# Update/Insert row into ZenCartStoreEntries table
+#
+my $insertth = $dbh->prepare("
+	INSERT INTO ZenCartStoreEntries VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE v_status='1'
+") or die $dbh->errstr;
+
+#
+# Global Variables
+#
+my $v_products_type = 1;
+my $v_products_url_1;
+my $v_specials_price;
+my $v_specials_date_avail = "";
+my $v_specials_expires_date = "";
+my $v_products_weight = 0;
+my $v_product_is_call = 0;
+my $v_products_sort_order;
+my $v_products_quantity_order_min = 1;
+my $v_products_quantity_order_units = 1;
+my $v_products_priced_by_attribute = 0;
+my $v_product_is_always_free_shipping = 1;
+my $v_date_avail = "0000-00-00 00:00:00";
+my $v_date_added = "2013-12-27 00:25:30";
+my $v_products_quantity = 100;
+my $v_manufacturers_name = "Superchips";
+my $v_categories_name_1;
+my $v_tax_class_title = "--none--";
+my $v_status = 1;
+my $v_metatags_products_name_status = 1;
+my $v_metatags_title_status = 1;
+my $v_metatags_model_status = 1;
+my $v_metatags_price_status = 0;
+my $v_metatags_title_tagline_status = 1;
+my $v_metatags_title_1 = "";
+my $v_metatags_keywords_1 = "";
+my $v_metatags_description_1 = "";
+my $v_products_price  = 0;
+my $v_products_image = "";
+my $v_products_model = "";
+my $v_products_name_1 = "";
+my $v_products_description_1 = "";
+
+my $products_model;
+
+my $guarantee = "<p>When you buy through Tigersoft Performance&#44 you get a 28-day money-back guarantee. That means that you get 28 days to try the tune out in every situation you can think of&#44 and if you are not happy&#44 we will set your car back to stock and give you a full refund&#44 no questions asked.<p>Superchips has been around since 1977. They are a well established Tuning House&#44 with a proven record and an outstanding reputation. With Superchips&#44 Reliability is always the highest priority. They will never push the standard components of your car beyond their safe operating limits. That's why Superchips is one of the only tuning companies in the world that will provide you a lifetime warranty against engine damage caused by the tune.<br>In the case of cars that are still under warranty&#44 the Superchips warranty will supplement your standard warranty to ensure that you are fully covered.";
+my $otherbenefits = "<p>The real benefits that come from the tune are noticeably smoother running&#44 sharper throttle response&#44 and the car will generally feel more lively and responsive. More power is well and good&#44 and never goes astray&#44 but the reality is that most people only spend a few percent at most of their daily driving at maximum power. It's the other benefits listed above that are of most use to you for the vast majority of your daily driving. The differences are both noticeable and tangible.<br>On top of all that&#44 you will also notice an improvement in fuel economy of around 3% for Naturally Aspirated engines&#44 5% for Turbo-Petrol engines&#44 and 10% or more for Turbo Diesel engines. Basically&#44 the tune makes your car work more efficiently&#44 giving you usable increases in torque while using less fuel overall.";
+#my $advert1 = "<br><table width=100%><tr><td><center><big><b>Christmas Special!</b></big><p>Receive 5 Litres of Martini Racing Fully Synthetic Motor Oil <b>ABSOLUTELY FREE</b> when you purchase this tune!</center></td><td><center><img height=200px width=200px src=\"images/sint20_online_store.jpg\"></img></center></td></tr></table>";
+my $advert1 = "";
+my $womostuff = "<p><table width=100%><tr><td><script type=\"text/javascript\" src=\"http://www.womo.com.au/widget-MDAxMTUyNjcw.js\"></script></td><td><center><img height=200px width=200px src=\"http://www.womo.com.au/uploadedimages/1011676.png?utm_source=womo&utm_medium=email&utm_campaign=serviceaward\"></img><br><b>Tigersoft Performance</b><br>Winners of a 2013 Service award from WOMO</center></td></tr></table>";
+
+my $carkw;
+my $complete_model;
+# my $hiddenstats = "<DIV ID=\"hiddenstats1\" STYLE=\"POSITION: absolute; z-index: 4; VISIBILITY: hidden;\">$complete_model. Original Power: $car_data->{original_kw} kW ($car_data->{original_bhp} bhp). Original Torque: $car_data->{original_nm} Nm. Power Gain: $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase.Torque Gain: $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</DIV>";
+my $hiddenstats = "";
+
+
+#
 # This is where the grunt work happens
 # This main loop reads each row from the Cars table
 #
-print 'v_products_model,v_products_type,v_products_image,v_products_name_1,v_products_description_1,v_products_url_1,v_specials_price,v_specials_date_avail,v_specials_expires_date,v_products_price,v_products_weight,v_product_is_call,v_products_sort_order,v_products_quantity_order_min,v_products_quantity_order_units,v_products_priced_by_attribute,v_product_is_always_free_shipping,v_date_avail,v_date_added,v_products_quantity,v_manufacturers_name,v_categories_name_1,v_tax_class_title,v_status,v_metatags_products_name_status,v_metatags_title_status,v_metatags_model_status,v_metatags_price_status,v_metatags_title_tagline_status,v_metatags_title_1,v_metatags_keywords_1,v_metatags_description_1' . "\n";
+#print 'v_products_model,v_products_type,v_products_image,v_products_name_1,v_products_description_1,v_products_url_1,v_specials_price,v_specials_date_avail,v_specials_expires_date,v_products_price,v_products_weight,v_product_is_call,v_products_sort_order,v_products_quantity_order_min,v_products_quantity_order_units,v_products_priced_by_attribute,v_product_is_always_free_shipping,v_date_avail,v_date_added,v_products_quantity,v_manufacturers_name,v_categories_name_1,v_tax_class_title,v_status,v_metatags_products_name_status,v_metatags_title_status,v_metatags_model_status,v_metatags_price_status,v_metatags_title_tagline_status,v_metatags_title_1,v_metatags_keywords_1,v_metatags_description_1' . "\n";
 my $car_data = {};
 while ($car_data = $sth->fetchrow_hashref)
 	{
@@ -109,96 +171,27 @@ while ($car_data = $sth->fetchrow_hashref)
 	my $powerincreasekw = int (($superchips_website->{gain_bhp} * 0.746) + 0.5);
 	my $powercurve = $superchips_website->{dyno_graph} ? "<p><a href=\"http://www.superchips.co.uk/curves/$superchips_website->{dyno_graph}\"><img src=\"images/icon_curve.png\"></img></a>" : "";
 
-	my $guarantee = "<p>When you buy through Tigersoft Performance&#44 you get a 28-day money-back guarantee. That means that you get 28 days to try the tune out in every situation you can think of&#44 and if you are not happy&#44 we will set your car back to stock and give you a full refund&#44 no questions asked.<p>Superchips has been around since 1977. They are a well established Tuning House&#44 with a proven record and an outstanding reputation. With Superchips&#44 Reliability is always the highest priority. They will never push the standard components of your car beyond their safe operating limits. That's why Superchips is one of the only tuning companies in the world that will provide you a lifetime warranty against engine damage caused by the tune.<br>In the case of cars that are still under warranty&#44 the Superchips warranty will supplement your standard warranty to ensure that you are fully covered.";
-	my $otherbenefits = "<p>The real benefits that come from the tune are noticeably smoother running&#44 sharper throttle response&#44 and the car will generally feel more lively and responsive. More power is well and good&#44 and never goes astray&#44 but the reality is that most people only spend a few percent at most of their daily driving at maximum power. It's the other benefits listed above that are of most use to you for the vast majority of your daily driving. The differences are both noticeable and tangible.<br>On top of all that&#44 you will also notice an improvement in fuel economy of around 3% for Naturally Aspirated engines&#44 5% for Turbo-Petrol engines&#44 and 10% or more for Turbo Diesel engines. Basically&#44 the tune makes your car work more efficiently&#44 giving you usable increases in torque while using less fuel overall.";
-	#my $advert1 = "<br><table width=100%><tr><td><center><big><b>Christmas Special!</b></big><p>Receive 5 Litres of Martini Racing Fully Synthetic Motor Oil <b>ABSOLUTELY FREE</b> when you purchase this tune!</center></td><td><center><img height=200px width=200px src=\"images/sint20_online_store.jpg\"></img></center></td></tr></table>";
-	my $advert1 = "";
-	my $womostuff = "<p><table width=100%><tr><td><script type=\"text/javascript\" src=\"http://www.womo.com.au/widget-MDAxMTUyNjcw.js\"></script></td><td><center><img height=200px width=200px src=\"http://www.womo.com.au/uploadedimages/1011676.png?utm_source=womo&utm_medium=email&utm_campaign=serviceaward\"></img><br><b>Tigersoft Performance</b><br>Winners of a 2013 Service award from WOMO</center></td></tr></table>";
 
-#### populate the output line:
-#
-# $1 =	v_products_model,
-	my $products_model = sprintf ("TPC%06d", $car_data->{idCars});
-# $2 =	v_products_type,
-	my $v_products_type = 1;
-# $6 =	v_products_url_1,
-	my $v_products_url_1 = "";
-# $7 =	v_specials_price,
-	my $v_specials_price = "";
-# $8 =	v_specials_date_avail,
-	my $v_specials_date_avail = "";
-# $9 =	v_specials_expires_date,
-	my $v_specials_expires_date = "";
-# $11 =	v_products_weight,
-	my $v_products_weight = 0;
-# $12 =	v_product_is_call,
-	my $v_product_is_call = 0;
-# $13 =	v_products_sort_order,
-	my $v_products_sort_order = $sortorder;
+	$products_model = sprintf ("TPC%06d", $car_data->{idCars});
+	$v_products_sort_order = $sortorder;
 	$sortorder += SORT_ORDER_INCREMENT;
-# $14 =	v_products_quantity_order_min,
-	my $v_products_quantity_order_min = 1;
-# $15 =	v_products_quantity_order_units,
-	my $v_products_quantity_order_units = 1;
-# $16 =	v_products_priced_by_attribute,
-	my $v_products_priced_by_attribute = 0;
-# $17 =	v_product_is_always_free_shipping,
-	my $v_product_is_always_free_shipping = 1;
-# $18 =	v_date_avail,
-	my $v_date_avail = "0000-00-00 00:00:00";
-# $19 =	v_date_added,
-	my $v_date_added = "2013-12-27 00:25:30";
-# $20 =	v_products_quantity,
-	my $v_products_quantity = 100;
-# $21 =	v_manufacturers_name,
-	my $v_manufacturers_name = "Superchips";
-# $22 =	v_categories_name_1,
+
 	$get_cat_sth->execute($car_data->{idCars}) or die;
 	my $categories = $get_cat_sth->fetchrow_hashref;
-	my $v_categories_name_1 = $categories->{longname};
+	$v_categories_name_1 = $categories->{longname};
 	unless (defined ($v_categories_name_1))
 		{
 		print $logfh "Can't find Category Name for car $car_data->{idCars}\n";
 		next;
 		}
 
-# $23 =	v_tax_class_title,
-	my $v_tax_class_title = "--none--";
-# $24 =	v_status,
-	my $v_status = 1;
-# $25 =	v_metatags_products_name_status,
-	my $v_metatags_products_name_status = 1;
-# $26 =	v_metatags_title_status,
-	my $v_metatags_title_status = 1;
-# $27 =	v_metatags_model_status,
-	my $v_metatags_model_status = 1;
-# $28 =	v_metatags_price_status,
-	my $v_metatags_price_status = 0;
-# $29 =	v_metatags_title_tagline_status,
-	my $v_metatags_title_tagline_status = 1;
-# $30 =	v_metatags_title_1,
-	my $v_metatags_title_1 = "";
-# $31 =	v_metatags_keywords_1,
-	my $v_metatags_keywords_1 = "";
-# $32 =	v_metatags_description_1
-	my $v_metatags_description_1 = "";
-
 	my $no_tune = 1;
-	my $v_products_price  = 0;
-	my $v_products_image = "";
-	my $v_products_model = "";
-	my $v_products_name_1 = "";
 
-
-
-	my $carkw = ($car_data->{original_kw} ? " " . $car_data->{original_kw} . "kW": "");
-	my $complete_model = $car_data->{make} . " " . (length ($car_data->{variant}) ? $car_data->{variant} : "All Models") . $carkw;
-	
-	# my $hiddenstats = "<DIV ID=\"hiddenstats1\" STYLE=\"POSITION: absolute; z-index: 4; VISIBILITY: hidden;\">$complete_model. Original Power: $car_data->{original_kw} kW ($car_data->{original_bhp} bhp). Original Torque: $car_data->{original_nm} Nm. Power Gain: $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase.Torque Gain: $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</DIV>";
-	my $hiddenstats = "";
+	$carkw = ($car_data->{original_kw} ? " " . $car_data->{original_kw} . "kW": "");
+	$complete_model = $car_data->{make} . " " . (length ($car_data->{variant}) ? $car_data->{variant} : "All Models") . $carkw;
 	my $openingstats = "<p><b>Vehicle:</b> $complete_model<br><b>Engine Type:</b> $superchips_website->{engine_type}<br><b>Engine Capacity:</b> $superchips_website->{capacity} cc<br><b>Original Power:</b> $car_data->{original_kw} kW ($car_data->{original_bhp} bhp)<br><b>Original Torque:</b> $car_data->{original_nm} Nm<p><font color=\"green\"><b>Power Gain:</b> $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase<br><b>Torque Gain:</b> $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</font>";
+	
 
-	my $v_products_description_1 = "";
 #
 # This is for BLUEFIN
 #
@@ -221,26 +214,9 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
 		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
 		}
-
-#
-# This is for PRO2
-#
-	# if ($no_tune && $superchips_website->{pro2} eq "Y")
-		# {
-		# $v_products_price = PRO2PRICE;
-		# $v_products_image = "Superchips Pro2 box picture.jpg";
-		# $v_products_model = $products_model . PPPRO2;
-		# $v_products_name_1 = PNPRO2 . " for $complete_model";
-			
-		# $v_products_description_1 = PNPRO2 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		# $v_products_description_1 = $v_products_description_1 . $otherbenefits;
-		# $v_products_description_1 = $v_products_description_1 . "<p>The ECU in this car is of a type that we are unable to tune directly. This is where Superchips' newest product&#44 the Pro2 comes in. It is a Piggy-Back unit that intercepts some of the signals going to the ECU to convince it to produce more power. This approach has several advantagesn&#44 none more important than the fact that it can be installed or removed in only 5 minutes&#44 and once it has been removed&#44 it leaves behind no evidence that it was ever installed!<p>The Pro2 is a sophisticated product&#44 boasting a dual-core 32-bit ARM CPU to ensure that it always keeps ahead of the cars ECU.";
-
-		# $v_metatags_title_1 = $v_products_name_1;
-		# $v_metatags_keywords_1 = $v_products_name_1;
-		# $v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		# }
 
 #
 # This is for UNKNOWN TUNE TYPE
@@ -259,6 +235,8 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
 		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
 		}
 
 #
@@ -278,6 +256,8 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
 		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
 		}
 
 #
@@ -297,6 +277,8 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
 		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
 		}
 
 #
@@ -316,14 +298,113 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
 		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
 		}
-
-	$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
-	if ($v_products_model)
+	
+#
+# This is for a STAGE 2 tune
+#
+	if ($car_data->{superchips_stage2})
 		{
-		print $v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 . "\n";	
+		my $superchips_website = &get_tune_info ($car_data->{superchips_stage2}, $get_tune_sth);
+		unless (defined $superchips_website)
+			{
+			next;
+			}
+		
+		my $percentpowerincrease = $car_data->{original_bhp} ? int ($superchips_website->{gain_bhp} / $car_data->{original_bhp} * 100) : 0;
+		my $percenttorqueincrease = $car_data->{original_nm} ? int ($superchips_website->{gain_nm} / $car_data->{original_nm} * 100) : 0;
+		my $powerincreasekw = int (($superchips_website->{gain_bhp} * 0.746) + 0.5);
+		my $powercurve = $superchips_website->{dyno_graph} ? "<p><a href=\"http://www.superchips.co.uk/curves/$superchips_website->{dyno_graph}\"><img src=\"images/icon_curve.png\"></img></a>" : "";
+		my $openingstats = "<p><b>Vehicle:</b> $complete_model<br><b>Engine Type:</b> $superchips_website->{engine_type}<br><b>Engine Capacity:</b> $superchips_website->{capacity} cc<br><b>Original Power:</b> $car_data->{original_kw} kW ($car_data->{original_bhp} bhp)<br><b>Original Torque:</b> $car_data->{original_nm} Nm<p><font color=\"green\"><b>Power Gain:</b> $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase<br><b>Torque Gain:</b> $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</font>";
+
+		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
+		$v_products_image = "flash_tune.jpg";
+		$v_products_model = $products_model . PPSTAGE2;
+		$v_products_name_1 = PNSTAGE2 . " for $complete_model";
+			
+		$v_products_description_1 = PNSTAGE2 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
+		$v_products_description_1 = $v_products_description_1 . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)";
+		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
+
+		$v_metatags_title_1 = $v_products_name_1;
+		$v_metatags_keywords_1 = $v_products_name_1;
+		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
+		}
+	
+
+#
+# This is for a STAGE 3 tune
+#
+	if ($car_data->{superchips_stage3})
+		{
+		my $superchips_website = &get_tune_info ($car_data->{superchips_stage3}, $get_tune_sth);
+		unless (defined $superchips_website)
+			{
+			next;
+			}
+		
+		my $percentpowerincrease = $car_data->{original_bhp} ? int ($superchips_website->{gain_bhp} / $car_data->{original_bhp} * 100) : 0;
+		my $percenttorqueincrease = $car_data->{original_nm} ? int ($superchips_website->{gain_nm} / $car_data->{original_nm} * 100) : 0;
+		my $powerincreasekw = int (($superchips_website->{gain_bhp} * 0.746) + 0.5);
+		my $powercurve = $superchips_website->{dyno_graph} ? "<p><a href=\"http://www.superchips.co.uk/curves/$superchips_website->{dyno_graph}\"><img src=\"images/icon_curve.png\"></img></a>" : "";
+		my $openingstats = "<p><b>Vehicle:</b> $complete_model<br><b>Engine Type:</b> $superchips_website->{engine_type}<br><b>Engine Capacity:</b> $superchips_website->{capacity} cc<br><b>Original Power:</b> $car_data->{original_kw} kW ($car_data->{original_bhp} bhp)<br><b>Original Torque:</b> $car_data->{original_nm} Nm<p><font color=\"green\"><b>Power Gain:</b> $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase<br><b>Torque Gain:</b> $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</font>";
+
+		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
+		$v_products_image = "flash_tune.jpg";
+		$v_products_model = $products_model . PPSTAGE3;
+		$v_products_name_1 = PNSTAGE3 . " for $complete_model";
+			
+		$v_products_description_1 = PNSTAGE3 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
+		$v_products_description_1 = $v_products_description_1 . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)";
+		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
+
+		$v_metatags_title_1 = $v_products_name_1;
+		$v_metatags_keywords_1 = $v_products_name_1;
+		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
+		}
+	
+
+#
+# This is for a STAGE 4 tune
+#
+	if ($car_data->{superchips_stage4})
+		{
+		my $superchips_website = &get_tune_info ($car_data->{superchips_stage4}, $get_tune_sth);
+		unless (defined $superchips_website)
+			{
+			next;
+			}
+		
+		my $percentpowerincrease = $car_data->{original_bhp} ? int ($superchips_website->{gain_bhp} / $car_data->{original_bhp} * 100) : 0;
+		my $percenttorqueincrease = $car_data->{original_nm} ? int ($superchips_website->{gain_nm} / $car_data->{original_nm} * 100) : 0;
+		my $powerincreasekw = int (($superchips_website->{gain_bhp} * 0.746) + 0.5);
+		my $powercurve = $superchips_website->{dyno_graph} ? "<p><a href=\"http://www.superchips.co.uk/curves/$superchips_website->{dyno_graph}\"><img src=\"images/icon_curve.png\"></img></a>" : "";
+		my $openingstats = "<p><b>Vehicle:</b> $complete_model<br><b>Engine Type:</b> $superchips_website->{engine_type}<br><b>Engine Capacity:</b> $superchips_website->{capacity} cc<br><b>Original Power:</b> $car_data->{original_kw} kW ($car_data->{original_bhp} bhp)<br><b>Original Torque:</b> $car_data->{original_nm} Nm<p><font color=\"green\"><b>Power Gain:</b> $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase<br><b>Torque Gain:</b> $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</font>";
+
+		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
+		$v_products_image = "flash_tune.jpg";
+		$v_products_model = $products_model . PPSTAGE4;
+		$v_products_name_1 = PNSTAGE4 . " for $complete_model";
+			
+		$v_products_description_1 = PNSTAGE4 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
+		$v_products_description_1 = $v_products_description_1 . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)";
+		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
+
+		$v_metatags_title_1 = $v_products_name_1;
+		$v_metatags_keywords_1 = $v_products_name_1;
+		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		&insert_store_entry ();
 		}
 	}
+		
+
 
 #
 # Disconnect from database
@@ -336,6 +417,14 @@ $dbh->disconnect;
 close $logfh;
 exit 0;
 
+
+sub insert_store_entry
+{
+	if ($v_products_model)
+		{
+		$insertth->execute ($v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 );	
+		}
+}
 
 
 sub get_tune_info
