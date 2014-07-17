@@ -353,27 +353,6 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-
--- -----------------------------------------------------
--- Table `TP`.`BMCCategories`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `TP`.`BMCCategories` ;
-
-CREATE TABLE IF NOT EXISTS `TP`.`BMCCategories` (
-  `idBMCCategories` INT(11) NOT NULL AUTO_INCREMENT,
-  `longname` TEXT NOT NULL,
-  `shortname` TEXT NOT NULL,
-  `description` TEXT NULL DEFAULT NULL,
-  `image` TEXT NULL DEFAULT NULL,
-  `note` TEXT NULL DEFAULT NULL,
-  `active` CHAR(1) NULL DEFAULT NULL,
-  `comments` LONGTEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`idBMCCategories`),
-  UNIQUE INDEX `idBMCCategories_UNIQUE` (`idBMCCategories` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
-
-
 -- -----------------------------------------------------
 -- Table `TP`.`BMCAirProducts`
 -- -----------------------------------------------------
