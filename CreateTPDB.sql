@@ -352,3 +352,53 @@ DEFAULT CHARACTER SET = latin1;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BMCCategories`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BMCCategories` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BMCCategories` (
+  `idBMCCategories` INT(11) NOT NULL AUTO_INCREMENT,
+  `longname` TEXT NOT NULL,
+  `shortname` TEXT NOT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `image` TEXT NULL DEFAULT NULL,
+  `note` TEXT NULL DEFAULT NULL,
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL,
+  PRIMARY KEY (`idBMCCategories`),
+  UNIQUE INDEX `idBMCCategories_UNIQUE` (`idBMCCategories` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BMCAirProducts`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BMCAirProducts` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BMCAirProducts` (
+  `part_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `cat` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `part` VARCHAR(32) CHARACTER SET 'latin1' NOT NULL,
+  `name` TEXT CHARACTER SET 'latin1' NOT NULL COMMENT ' ',
+  `buy_price` FLOAT NOT NULL COMMENT '  ',
+  `RRP` FLOAT NOT NULL,
+  `type` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `description` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `dimname1` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `dimvalue1` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `dimname2` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `dimvalue2` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `dimname3` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `dimvalue3` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `image` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `diagram` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `active` CHAR(1) CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `comments` LONGTEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  PRIMARY KEY (`part_id`),
+  UNIQUE INDEX `part_id_UNIQUE` (`part_id` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
