@@ -207,6 +207,12 @@ sub get_product_info
 	$description =~ s/\/ThumbGen.ashx\?path=\/cgi-bin\///;
 	$description =~ s/\&.*?(width=\d+).*?\"\s*alt/\" $1 alt/;
 
+	# Semicolon replacement with html entity
+	$description =~ s/\;/\&#59/g;
+
+	# Comma replacement
+	$description =~ s/,/\&#44/g;
+
 	foreach my $line (split qr/\R/, $content)
 		{
 		#

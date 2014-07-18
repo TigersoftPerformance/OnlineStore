@@ -236,6 +236,12 @@ sub do_categorization
 		# Product list container
 		$c_plist = $2;
 
+		# Semicolon replacement with html entity
+		$c_desc =~ s/\;/\&#59/g;
+
+		# Comma replacement
+		$c_desc =~ s/,/\&#44/g;
+
 		# Add new or Update existing category 
 		do_db($c_name,$c_short,$c_desc,$c_image,$c_note);	
 
@@ -263,6 +269,12 @@ sub do_categorization
 
 		# This part contains Product lists if any
 		$c_list = $2;
+
+		# Comma replacement
+		$c_desc =~ s/,/\&#44/g;
+
+		# Semicolon replacement with html entity
+		$c_desc =~ s/\;/\&#59/g;
 
 		# Add new or Update existing category 
 		do_db($c_name,$c_short,$c_desc,$c_image,$c_note);
@@ -394,8 +406,7 @@ sub do_db
 	# Look for changes if any	
 	elsif ( $cat_table->{shortname} ne $short ||
 			$cat_table->{description} ne $desc ||
-			$cat_table->{image} ne $image ||
-			$cat_table->{note} ne $note
+			$cat_table->{image} ne $image
 	  	  )
 		{
 		$updbmccatth->execute($short,$image,$desc,$name);
