@@ -78,8 +78,6 @@ my $insertth = $dbh->prepare("
 	my $v_product_is_call = 0;
 # $13 =	v_products_sort_order,
 	my $v_products_sort_order = $sortorder;
-
-
 # $14 =	v_products_quantity_order_min,
 	my $v_products_quantity_order_min = 1;
 # $15 =	v_products_quantity_order_units,
@@ -98,7 +96,6 @@ my $insertth = $dbh->prepare("
 	my $v_manufacturers_name = "BMC";
 # $22 =	v_categories_name_1,
 
-	
 # $23 =	v_tax_class_title,
 	my $v_tax_class_title = "--none--";
 # $24 =	v_status,
@@ -144,7 +141,6 @@ while ($bmc_data = $get_bmc_sth->fetchrow_hashref)
 
 	my @cat_elements = split('\^',$bmc_data->{cat});
 
-
 			$v_products_price = $bmc_data->{RRP} || 0;
 			$v_specials_price = $v_products_price * SPECIAL_PRICE;
 			$v_products_image = ($bmc_data->{image} =~ /.*\/(.*)$/i ? $1 : "" ) if $bmc_data->{image};
@@ -153,7 +149,7 @@ while ($bmc_data = $get_bmc_sth->fetchrow_hashref)
 			##############################
 			$v_products_model = $cat_elements[1] . $id++;
 			$v_products_name_1 = $cat_elements[-1];
-			$v_products_description_1 = description("BMC Products",$bmc_data->{part},$bmc_data->{dimname1},$bmc_data->{dimvalue1},$bmc_data->{dimname2},$bmc_data->{dimvalue2},$bmc_data->{dimname3},$bmc_data->{dimvalue3},$bmc_data->{image},$bmc_data->{diagram},$v_products_model);
+			$v_products_description_1 = description("BMC Products",$bmc_data->{part},$bmc_data->{description},$bmc_data->{dimname1},$bmc_data->{dimvalue1},$bmc_data->{dimname2},$bmc_data->{dimvalue2},$bmc_data->{dimname3},$bmc_data->{dimvalue3},$bmc_data->{image},$bmc_data->{diagram},$v_products_model);
 			$v_metatags_title_1 = $v_products_name_1;
 			$v_metatags_keywords_1 = $v_products_name_1;
 			$v_metatags_description_1 = $v_products_description_1;
@@ -182,7 +178,7 @@ sub description
 # Product Description
 ########################
 {
-my ($filter_type,$part,$dimname1,$dimvalue1,$dimname2,$dimvalue2,$dimname3,$dimvalue3,$image,$diagram,$products_model) = @_;
+my ($filter_type,$part,$description,$dimname1,$dimvalue1,$dimname2,$dimvalue2,$dimname3,$dimvalue3,$image,$diagram,$products_model) = @_;
 $image ||= "";	
 $diagram ||="";
 $dimname1 ||="";
@@ -191,13 +187,16 @@ $dimname3 ||="";
 $dimvalue1 ||="";
 $dimvalue2 ||="";
 $dimvalue3 ||="";
+$description ||="";
+$description =~ s/class=\"red\"/style=\"color:red\"/g;
 print $logfh "$filter_type,$part,$dimname1,$dimvalue1,$dimname2,$dimvalue2,$dimname3,$dimvalue3,$image,$diagram,$products_model\n";
 my $products_description = sprintf("<table style=\"margin:0 auto&#59\"><thead><tr><th colspan=\"3\" style=\"font-family: Impact&#44 Arial&#44 sans-serif&#59font-size: 1.40em&#59font-weight: normal&#59padding: 8px 8px 8px 16px&#59\"> %s </th></tr></thead><tbody><tr>", $filter_type ." - ".$part);
    $products_description .= sprintf("<td width=\"130\" valign=\"top\"><span><font color=\"red\"><b>Code:</b></font></span> %s <br><br><span><font color=\"red\"><b>%s </b></font></span> %s <br><span><font color=\"red\"><b>%s </b></font></span> %s <br><span><font color=\"red\"><b>%s </b></font></span> %s <br></td><td>", $part, ($dimname1 ? "$dimname1:" : ""),$dimvalue1,($dimname2 ? "$dimname2:" : ""),$dimvalue2,($dimname3 ? "$dimname3:" : ""),$dimvalue3);
-   $products_description .= sprintf("<img style=\"max-width:200px\" src=\"http://au.bmcairfilters.com/%s\" alt=\"%s\"><br><br></td><td><img style=\"max-width:200px\" src=\"http://au.bmcairfilters.com%s\" alt=\"%s\"><br><br></td></tr></tbody></table>",$image,$products_model,$diagram,$products_model);
+   $products_description .= sprintf("<img style=\"max-width:200px\" src=\"http://au.bmcairfilters.com/%s\" alt=\"%s\"><br><br></td>",$image,$products_model);
+   $products_description .= ($diagram ? sprintf("<td><img style=\"max-width:200px\" src=\"http://au.bmcairfilters.com%s\" alt=\"%s\"><br><br></td></tr></tbody></table>",$diagram,$products_model) : '</tr></tbody></table>');
+   $products_description .= (($description =~ /(<table\s*id=\"available\".*?<\/table>)/sgi) ? $1 : '');
    # replace commas with slash to avoid disorder in csv
    $products_description =~ s/\,/\//g;
    $products_description =~ s/\;//g;
 return $products_description;
 }
-
