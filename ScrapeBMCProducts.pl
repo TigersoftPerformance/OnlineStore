@@ -57,10 +57,18 @@ my $getbmcairth = $dbh->prepare("
 # Update existing row into BMCAirProducts
 #
 my $updbmcairth = $dbh->prepare("
-	UPDATE BMCAirProducts SET part = ?, type = ?, description=?, image = ?, diagram = ?,
+	UPDATE BMCAirProducts SET part = ?, buy_price = ?, RRP = ?, type = ?, description=?, image = ?, diagram = ?,
 		dimname1 = ?, dimvalue1 = ?, dimname2 = ?, dimvalue2 = ?, dimname3 = ?, dimvalue3 = ?
 		WHERE part_id = ?
 ") or die $dbh->errstr;
+
+#
+# Get the data from BMCAirFlters
+#
+my $getbmcairfilth = $dbh->prepare("
+	SELECT * FROM BMCAirFilters WHERE part = ?
+") or die $dbh->errstr;
+
 
 # Create images directory for images and diagrams
 unless (-d 'images')
@@ -161,6 +169,7 @@ sub get_product_info
 	my ($part_id, $model_code, $type, $url) = @_;
 	my ($content, $myline, $make, $model);
 	my ($hp, $year, $photo);
+	my ($buy_price,$rrp) = ('0')x2;
 	my $hpyear = "";
 	my $diagram = "";
 	#
@@ -176,6 +185,15 @@ sub get_product_info
 	use constant MAX_DIMENSIONS => 3;
 	my (@dimension_names, @dimension_values);
 	my $dimension_count = 0;
+
+	$getbmcairfilth->execute($model_code);
+
+	# Read price information from BMCAirFilter table
+	if( my $filter = $getbmcairfilth->fetchrow_hashref)
+		{
+		$buy_price = $filter->{buy_price};
+		$rrp = $filter->{RRP};	
+		}
 
 	# 
 	# go get the product info page
@@ -292,31 +310,10 @@ sub get_product_info
 			$in_diagram = 0;
 			next;
 			}
-=from
-		#
-		# OK so now we are at the top of the list of all of the supported models
-		#
-		if ($line =~ /<th colspan="2" scope="col">Available For<\/th>/)
-			{
-			$avail = 1;
-			next;
-			}
-		if ($avail)
-			{
-			if ($line =~ /<span class="red">(.+?): &nbsp;<\/span>/g)
-				{
-				$make = $1;
-				$make =~ s/\xCB/E/g;
-				$foundmake = 1;
-				&debug ("\tFound $make");
-				next;
-				}
-			}
-=cut
 
 		}
 
-	&update_bmcairproducts_row ($part_id, $model_code, $type, $description, $photo, $diagram, $dimension_count, \@dimension_names, \@dimension_values);
+	&update_bmcairproducts_row ($part_id, $model_code,$buy_price,$rrp, $type, $description, $photo, $diagram, $dimension_count, \@dimension_names, \@dimension_values);
 	}
 
 
@@ -328,7 +325,7 @@ sub update_bmcairproducts_row
 #
 #####################################
 	{
-	my ($part_id, $part, $type, $description, $image, $diagram, $dimension_count, $dimnames, $dimvalues) = @_; 
+	my ($part_id, $part,$buy_price,$rrp, $type, $description, $image, $diagram, $dimension_count, $dimnames, $dimvalues) = @_; 
 	my $needchange = 0;
 
 
@@ -369,6 +366,15 @@ sub update_bmcairproducts_row
 			die "Part does not match! =$bmcair->{'part'}=$part=";
 			$needchange++;
 			}
+		if (defined $bmcair->{'buy_price'})
+			{
+			if ($bmcair->{'buy_price'} ne $buy_price)
+				{
+				&alert ( "buy_price does not match! =$bmcair->{'buy_price'}=$buy_price=");
+				$needchange++;
+				}
+			}
+		else	{$needchange++;}	
 
 		if (defined $bmcair->{'type'})
 			{
@@ -473,7 +479,7 @@ sub update_bmcairproducts_row
 		if ($needchange)
 			{
 			&alert ("Updating record for $part");
-			$updbmcairth->execute($part, $type, $description, $image, $diagram, 
+			$updbmcairth->execute($part,$buy_price,$rrp, $type, $description, $image, $diagram, 
 				$dimension_count >=1 ? $dimnames->[1] : "", $dimension_count >=1 ? $dimvalues->[1] : "", 
 				$dimension_count >=2 ? $dimnames->[2] : "", $dimension_count >=2 ? $dimvalues->[2] : "", 
 				$dimension_count >=3 ? $dimnames->[3] : "", $dimension_count >=3 ? $dimvalues->[3] : "",
