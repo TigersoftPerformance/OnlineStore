@@ -225,6 +225,8 @@ sub get_product_info
 	$description =~ s/\/ThumbGen.ashx\?path=\/cgi-bin\///;
 	$description =~ s/\&.*?(width=\d+).*?\"\s*alt/\" $1 alt/;
 
+	$description =~ s/\&nbsp;//g;
+
 	# Semicolon replacement with html entity
 	$description =~ s/\;/\&#59/g;
 
