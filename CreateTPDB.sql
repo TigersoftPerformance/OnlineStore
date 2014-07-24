@@ -35,8 +35,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`BCRacingCoilovers` (
   UNIQUE INDEX `idBCRacingCoilovers` (`idBCRacingCoilovers` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = latin1
-COLLATE = latin1_swedish_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -46,22 +45,22 @@ DROP TABLE IF EXISTS `TP`.`BMCAirFilters` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`BMCAirFilters` (
   `part_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `part` VARCHAR(32) CHARACTER SET 'latin1' NOT NULL,
-  `name` TEXT CHARACTER SET 'latin1' NOT NULL COMMENT '	',
+  `part` VARCHAR(32) NOT NULL,
+  `name` TEXT NOT NULL COMMENT '	',
   `buy_price` FLOAT NOT NULL COMMENT '	',
   `RRP` FLOAT NOT NULL,
-  `type` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `description` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimname1` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimvalue1` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimname2` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimvalue2` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimname3` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimvalue3` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `image` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `diagram` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `active` CHAR(1) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `comments` LONGTEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `type` TEXT NULL DEFAULT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `dimname1` VARCHAR(45) NULL DEFAULT NULL,
+  `dimvalue1` VARCHAR(45) NULL DEFAULT NULL,
+  `dimname2` VARCHAR(45) NULL DEFAULT NULL,
+  `dimvalue2` VARCHAR(45) NULL DEFAULT NULL,
+  `dimname3` VARCHAR(45) NULL DEFAULT NULL,
+  `dimvalue3` VARCHAR(45) NULL DEFAULT NULL,
+  `image` TEXT NULL DEFAULT NULL,
+  `diagram` TEXT NULL DEFAULT NULL,
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`part_id`),
   UNIQUE INDEX `part_id_UNIQUE` (`part_id` ASC))
 ENGINE = InnoDB
@@ -87,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`BMCCars` (
   UNIQUE INDEX `idBMCCars_UNIQUE` (`idBMCCars` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -157,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`Cars` (
   UNIQUE INDEX `idCars_UNIQUE` (`idCars` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -172,9 +171,9 @@ DROP TABLE IF EXISTS `TP`.`CarsNew` ;
 DROP TABLE IF EXISTS `TP`.`Categories` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`Categories` (
-  `idCategories` INT(11) NOT NULL AUTO_INCREMENT,
   `longname` VARCHAR(120) NOT NULL,
-  `shortname` TEXT NOT NULL,
+  `shortname` VARCHAR(50) NOT NULL,
+  `partid` VARCHAR(25) NULL,
   `idCars` INT(11) NULL,
   `image` TEXT NOT NULL,
   `description` TEXT NOT NULL,
@@ -182,34 +181,54 @@ CREATE TABLE IF NOT EXISTS `TP`.`Categories` (
   `metatags_keywords` TEXT NULL DEFAULT NULL,
   `metatags_description` TEXT NULL DEFAULT NULL,
   `active` CHAR(1) NULL DEFAULT NULL,
-  `comments` LONGTEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`idCategories`),
-  UNIQUE INDEX `idCategories_UNIQUE` (`idCategories` ASC),
-  UNIQUE INDEX `longname_UNIQUE` (`longname` ASC))
+  `comments` LONGTEXT NULL DEFAULT NULL)
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `TP`.`FI`
+-- Table `TP`.`FIWebsite`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`FI` ;
+DROP TABLE IF EXISTS `TP`.`FIDESC` ;
+DROP TABLE IF EXISTS `TP`.`FIWebsite` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`FI` (
-  `idFI` INT(11) NOT NULL AUTO_INCREMENT,
-  `category` VARCHAR(50) NULL DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `TP`.`FIWebsite` (
+  `partid` VARCHAR(16) NULL DEFAULT NULL,
   `name` VARCHAR(50) NULL DEFAULT NULL,
+  `category` VARCHAR(50) NULL DEFAULT NULL,
+  `price` DECIMAL(13,4) NULL DEFAULT '0',
   `overview` TEXT NULL DEFAULT NULL,
-  `price` VARCHAR(10) NULL DEFAULT NULL,
   `images` TEXT NULL DEFAULT NULL,
   `videos` TEXT NULL DEFAULT NULL,
   `description` TEXT NULL DEFAULT NULL,
-  UNIQUE INDEX `idFI` (`idFI` ASC))
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL)
 ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = latin1
-COLLATE = latin1_swedish_ci;
+DEFAULT CHARACTER SET = utf8;
+
+-- -----------------------------------------------------
+-- Table `TP`.`FIProducts`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`FIProducts` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`FIProducts` (
+  `partid` VARCHAR(16) NULL DEFAULT NULL,
+  `name` VARCHAR(50) NULL DEFAULT NULL,
+  `category` VARCHAR(50) NULL DEFAULT NULL,
+  `rrprice` DECIMAL(13,4) NULL DEFAULT '0',
+  `tpprice` DECIMAL(13,4) NULL DEFAULT '0',
+  `tpcost` DECIMAL(13,4) NULL DEFAULT '0',
+  `image` TEXT NULL DEFAULT NULL,
+  `description` LONGTEXT NULL DEFAULT NULL,
+  `manufacturer` VARCHAR(50) NULL DEFAULT NULL,
+  `sortorder` INT NULL DEFAULT '0',
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL
+ )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -219,14 +238,14 @@ DROP TABLE IF EXISTS `TP`.`ModelCodes` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`ModelCodes` (
   `idModelCodes` INT(11) NOT NULL AUTO_INCREMENT,
-  `make` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `model` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `model_code` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `start_date` VARCHAR(5) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `end_date` VARCHAR(5) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `nickname` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `active` CHAR(1) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `comments` LONGTEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `make` TEXT NULL DEFAULT NULL,
+  `model` TEXT NULL DEFAULT NULL,
+  `model_code` TEXT NULL DEFAULT NULL,
+  `start_date` VARCHAR(5) NULL DEFAULT NULL,
+  `end_date` VARCHAR(5) NULL DEFAULT NULL,
+  `nickname` TEXT NULL DEFAULT NULL,
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`idModelCodes`),
   UNIQUE INDEX `idModelCodes_UNIQUE` (`idModelCodes` ASC))
 ENGINE = InnoDB
@@ -254,9 +273,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`QuantumCars` (
   UNIQUE INDEX `idQuantumCars` (`idQuantumCars` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = latin1
-COLLATE = latin1_swedish_ci;
-
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `TP`.`SuperchipsMakes`
@@ -271,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`SuperchipsMakes` (
   PRIMARY KEY (`make_num`),
   UNIQUE INDEX `make_num_UNIQUE` (`make_num` ASC))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -304,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`SuperchipsWebsite` (
   `mark` CHAR(1) NOT NULL,
   PRIMARY KEY (`variant_id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -346,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`ZenCartStoreEntries` (
   `v_metatags_keywords_1` TEXT NOT NULL,
   `v_metatags_description_1` LONGTEXT NOT NULL)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -360,23 +377,23 @@ DROP TABLE IF EXISTS `TP`.`BMCAirProducts` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`BMCAirProducts` (
   `part_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `cat` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `part` VARCHAR(32) CHARACTER SET 'latin1' NOT NULL,
-  `name` TEXT CHARACTER SET 'latin1' NOT NULL COMMENT ' ',
+  `cat` TEXT NULL DEFAULT NULL,
+  `part` VARCHAR(32) NOT NULL,
+  `name` TEXT NOT NULL COMMENT ' ',
   `buy_price` FLOAT NOT NULL COMMENT '  ',
   `RRP` FLOAT NOT NULL,
-  `type` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `description` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimname1` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimvalue1` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimname2` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimvalue2` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimname3` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `dimvalue3` VARCHAR(45) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `image` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `diagram` TEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `active` CHAR(1) CHARACTER SET 'latin1' NULL DEFAULT NULL,
-  `comments` LONGTEXT CHARACTER SET 'latin1' NULL DEFAULT NULL,
+  `type` TEXT NULL DEFAULT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `dimname1` VARCHAR(45) NULL DEFAULT NULL,
+  `dimvalue1` VARCHAR(45) NULL DEFAULT NULL,
+  `dimname2` VARCHAR(45) NULL DEFAULT NULL,
+  `dimvalue2` VARCHAR(45) NULL DEFAULT NULL,
+  `dimname3` VARCHAR(45) NULL DEFAULT NULL,
+  `dimvalue3` VARCHAR(45) NULL DEFAULT NULL,
+  `image` TEXT NULL DEFAULT NULL,
+  `diagram` TEXT NULL DEFAULT NULL,
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`part_id`),
   UNIQUE INDEX `part_id_UNIQUE` (`part_id` ASC))
 ENGINE = InnoDB
