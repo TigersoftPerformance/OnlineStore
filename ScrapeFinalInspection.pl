@@ -36,7 +36,7 @@ my $dbh = DBI->connect($dsn, undef, undef,
 # Load FI items based on category and name
 #
 my $loadfith = $dbh->prepare("
-	SELECT * FROM FI where 
+	SELECT * FROM FIWebsite where 
 	category =? AND name =?
 ") or die $dbh->errstr;
 
@@ -44,7 +44,7 @@ my $loadfith = $dbh->prepare("
 # Update FI row 
 #
 my $updfith = $dbh->prepare("
-	UPDATE FI SET overview =?,price =?,
+	UPDATE FIWebsite SET overview =?,price =?,
 	images =?,videos =?,description =?
 	WHERE category =? AND name =? 
 ") or die $dbh->errstr;
@@ -53,7 +53,7 @@ my $updfith = $dbh->prepare("
 # Insert a new row into FI
 #
 my $insfith = $dbh->prepare("
-	INSERT into FI (category,name,overview,price,
+	INSERT into FIWebsite (category,name,overview,price,
 	images,videos,description,active) 
 	VALUES (?,?,?,?,?,?,?,?)
 ") or die $dbh->errstr;
@@ -103,7 +103,6 @@ while ($retries && !($content3 = get $gift_url ))
 	$retries --;
 	}
 die "Couldn't get $gift_url" if (!$retries);
-
 &screen("Gift Certificates");
 while ($content3 =~ /<div class=\"item last\">.*?<h2.*?<a href=\"(.*?)\".*?>(.*?)<\/a>/gms)
 	{
@@ -134,6 +133,7 @@ sub scrape_content
 		$retries --;
 		}
 	die "Couldn't get $s_url" if (!$retries);
+	$content2 =~ s/,/&#44/g;
 
 	my ($images_cont,$overview_price_cont,$desc_cont,$video_cont) = ('')x4;
 	my ($images,$overview,$price,$description,$video) = ('')x5;
@@ -240,7 +240,7 @@ sub do_db
 			}	
 		#
 		# Check to see if price changed
-		if ($row->{price} ne $price_c)
+		if ($row->{price} != $price_c)
 			{
 			$need_update++;	
 			&screen(" Need update for price $cat_c : $name_c ");

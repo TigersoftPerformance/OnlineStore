@@ -6,7 +6,7 @@ use DBI;
 use English;
 use feature 'say';
 
-use constant LOG => "./log_superchips_entries.TXT";
+use constant LOG => "./Logs/CreateSuperchipsStoreEntries.log";
 open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
 
 use constant BFECUOPENPRICE => 400; 
