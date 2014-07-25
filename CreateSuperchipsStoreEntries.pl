@@ -53,8 +53,6 @@ use constant SORT_ORDER_START => 100;
 use constant SORT_ORDER_INCREMENT => 50;
 my $sortorder = SORT_ORDER_START;
 
-$OFS = ',';
-
 #
 # Connect to database
 # mysql_enable_utf8 enables to store data as UT8
