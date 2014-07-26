@@ -33,7 +33,7 @@ my $dbh = DBI->connect($dsn, undef, undef,
 # Select a row from Categories based on calculated
 #
 my $get_cat_sth = $dbh->prepare("
-	SELECT * FROM Categories WHERE shortname = ? AND Active = 'Y'
+	SELECT * FROM Categories WHERE shortname = ? AND active = 'Y'
 ") or die $dbh->errstr;
 
 #
@@ -51,11 +51,12 @@ while (my $line = <$input_csv>)
 
 	# skip if empty category name
 	next if $catname eq '';
+	print "Looking for Category for <$catname>\n";
 	$get_cat_sth->execute($catname);
 	my $cat_table = $get_cat_sth->fetchrow_hashref;
 	unless (defined ($cat_table))
 		{
-		print "Can't find Category for $catname\n";
+		print "  Can't find Category for <$catname>\n";
 		next;
 		}
 

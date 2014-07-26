@@ -9,7 +9,7 @@ use English;
 use feature 'say';
 
 use constant LOG => "./Logs/ExportStoreEntries.log";
-open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
+open (my $logfh, ">:encoding(UTF-8)", LOG) or die "cannot open " . LOG; 
 
 $OFS=",";
 #
@@ -30,7 +30,7 @@ my $dbh = DBI->connect($dsn, undef, undef,
 # Select all rows from ZenCartStoreEntries table 
 #
 my $store_entries_sth = $dbh->prepare("
-	SELECT * FROM TP.ZenCartStoreEntries WHERE v_categories_name_1 LIKE 'Test%'
+	SELECT * FROM TP.ZenCartStoreEntries WHERE v_categories_name_1 LIKE 'Final%'
 ") or die $dbh->errstr;
 $store_entries_sth->execute() or die $dbh->errstr;
 
@@ -38,11 +38,14 @@ print 'v_products_model,v_products_type,v_products_image,v_products_name_1,v_pro
 my $storeentries = {};
 while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	{
+	 my $description = $storeentries->{v_products_description_1};
+	 $description =~ s/\"\"/\"/g;
+	 
 	 print $storeentries->{v_products_model}, 
 	 $storeentries->{v_products_type}, 
 	 $storeentries->{v_products_image}, 
 	 $storeentries->{v_products_name_1}, 
-	 $storeentries->{v_products_description_1}, 
+	 $description, 
 	 $storeentries->{v_products_url_1},
 	 $storeentries->{v_specials_price}, 
 	 $storeentries->{v_specials_date_avail}, 
