@@ -12,7 +12,7 @@ use constant LOG => "./Logs/CreateFIStoreEntries.log";
 open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
 
 use constant SPECIAL_START => "2014-06-01 00:00:00";
-use constant SPECIAL_END => "2014-07-31 00:00:00";
+use constant SPECIAL_END => "2014-12-31 00:00:00";
 
 use constant SORT_ORDER_START => 100;
 use constant SORT_ORDER_INCREMENT => 50;
@@ -73,7 +73,7 @@ my $v_date_added = "2014-06-00 00:00:00";
 my $v_products_quantity = 100;
 my $v_manufacturers_name;
 my $v_categories_name_1;
-my $v_tax_class_title = "--none--";
+my $v_tax_class_title = "Taxable Goods";
 my $v_status = 1;
 my $v_metatags_products_name_status = 1;
 my $v_metatags_title_status = 1;
