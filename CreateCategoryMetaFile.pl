@@ -60,7 +60,10 @@ while (my $line = <$input_csv>)
 		next;
 		}
 
-	print $categories $catid, $cat_table->{image}, $catname, $cat_table->{description}, "", "", "" . "\n";
+	my $description = $cat_table->{description};
+	$description =~ s/[\n]//g;
+	$description =~ s/,/&#44/g;
+	print $categories $catid, $cat_table->{image}, $catname, $description, "", "", "" . "\n";
 	}	
 
 
