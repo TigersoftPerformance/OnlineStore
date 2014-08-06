@@ -20,7 +20,9 @@ mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=','
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP FIWebsite.csv
 
-mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --fields-escaped-by='\' --lines-terminated-by='\n' --verbose TP FIProducts.csv
+mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP FIProducts.csv
+
+mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP FIStoreLayout.csv
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BCRacingCoilovers.csv
 

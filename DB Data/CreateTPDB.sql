@@ -218,20 +218,31 @@ DROP TABLE IF EXISTS `TP`.`FIProducts` ;
 CREATE TABLE IF NOT EXISTS `TP`.`FIProducts` (
   `partid` VARCHAR(16) NULL DEFAULT NULL,
   `name` VARCHAR(50) NULL DEFAULT NULL,
-  `category` VARCHAR(50) NULL DEFAULT NULL,
   `rrprice` DECIMAL(13,4) NULL DEFAULT '0',
   `tpprice` DECIMAL(13,4) NULL DEFAULT '0',
   `tpcost` DECIMAL(13,4) NULL DEFAULT '0',
   `image` TEXT NULL DEFAULT NULL,
   `description` LONGTEXT NULL DEFAULT NULL,
   `manufacturer` VARCHAR(50) NULL DEFAULT NULL,
-  `sortorder` INT NULL DEFAULT '0',
   `active` CHAR(1) NULL DEFAULT NULL,
   `comments` LONGTEXT NULL DEFAULT NULL
   )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+-- -----------------------------------------------------
+-- Table `TP`.`FIStoreLayout`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`FIStoreLayout` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`FIStoreLayout` (
+  `partid` VARCHAR(16) NULL DEFAULT NULL,
+  `category` VARCHAR(50) NULL DEFAULT NULL,
+  `sortorder` INT NULL DEFAULT '0'
+  )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `TP`.`ModelCodes`

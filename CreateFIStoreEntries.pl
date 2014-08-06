@@ -33,17 +33,25 @@ my $dbh = DBI->connect($dsn, undef, undef,
 ) or die $DBI::errstr;
 
 #
-# Select all rows from FIWebsite 
+# Select all rows from FIStoreLayout 
 #
-my $get_fiproducts_sth = $dbh->prepare("
-	SELECT * FROM TP.FIProducts WHERE active = 'Y'
+my $get_fistore_sth = $dbh->prepare("
+	SELECT * FROM TP.FIStoreLayout 
 ") or die $dbh->errstr;
-$get_fiproducts_sth->execute() or die $dbh->errstr;
+$get_fistore_sth->execute() or die $dbh->errstr;
+
+#
+# Select one row from FIProducts
+#
+my $get_fiproduct_sth = $dbh->prepare("
+	SELECT * FROM TP.FIProducts WHERE partid = ? and active='Y'
+") or die $dbh->errstr;
+
 #
 # Select a row from Categories based on idCars
 #
 my $get_cat_sth = $dbh->prepare("
-	SELECT * FROM TP.Categories WHERE shortname = ? 
+	SELECT * FROM TP.Categories WHERE shortname = ?
 ") or die $dbh->errstr;
 
 #
@@ -89,10 +97,19 @@ my $v_products_model;
 my $v_products_name_1;
 my $v_products_description_1;
 
+my $fistore = {};
 my $fiproduct = {};
-while ($fiproduct = $get_fiproducts_sth->fetchrow_hashref)
+while ($fistore = $get_fistore_sth->fetchrow_hashref)
 	{
-	$v_products_model = $fiproduct->{partid};
+	$get_fiproduct_sth->execute($fistore->{partid}) or die;
+	$fiproduct = $get_fiproduct_sth->fetchrow_hashref;
+	if (!defined $fiproduct->{partid})
+		{
+		say "Can't find FI Product " . $fistore->{partid};
+		next;
+		}
+	
+	$v_products_model = $fistore->{partid};
 	say "Part: $v_products_model";
 	$v_products_price = $fiproduct->{rrprice};
 	$v_specials_price = $fiproduct->{tpprice};
@@ -102,9 +119,9 @@ while ($fiproduct = $get_fiproducts_sth->fetchrow_hashref)
 	$v_products_name_1 = $fiproduct->{name};
 	$v_products_description_1 = $fiproduct->{description};
 	$v_manufacturers_name = $fiproduct->{manufacturer};
-	$v_products_sort_order = $fiproduct->{sortorder};
+	$v_products_sort_order = $fistore->{sortorder};
 
-	$get_cat_sth->execute($fiproduct->{category}) or die;
+	$get_cat_sth->execute($fistore->{category}) or die;
 	my $categories = $get_cat_sth->fetchrow_hashref;
 	$v_categories_name_1 = $categories->{longname};
 	unless (defined ($v_categories_name_1))

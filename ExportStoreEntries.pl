@@ -38,16 +38,24 @@ print 'v_products_model,v_products_type,v_products_image,v_products_name_1,v_pro
 my $storeentries = {};
 while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	{
+	 # just need to remove excess quotes from the description
 	 my $description = $storeentries->{v_products_description_1};
 	 $description =~ s/\"\"/\"/g;
 	 
+	 # Zen Cart expects the specials price to be the before-tax price, so make the change
+	 my $specials_price = "";
+	 if ($storeentries->{v_specials_price} < $storeentries->{v_products_price})
+		{
+		$specials_price = $storeentries->{v_specials_price} - ($storeentries->{v_specials_price} / 11);
+		}
+		 	 
 	 print $storeentries->{v_products_model}, 
 	 $storeentries->{v_products_type}, 
 	 $storeentries->{v_products_image}, 
 	 $storeentries->{v_products_name_1}, 
 	 $description, 
 	 $storeentries->{v_products_url_1},
-	 $storeentries->{v_specials_price}, 
+	 $specials_price, 
 	 $storeentries->{v_specials_date_avail}, 
 	 $storeentries->{v_specials_expires_date}, 
 	 $storeentries->{v_products_price}, 
