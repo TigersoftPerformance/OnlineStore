@@ -1,0 +1,149 @@
+FI-LABEL,Accessories,100
+FI-SP-500,Accessories,110
+TP-KIT-BWASH,Bundles & Kits,120
+TP-KIT-DWASH,Bundles & Kits,130
+TP-KIT-INTCLN,Bundles & Kits,140
+TP-KIT-LEATHER,Bundles & Kits,150
+TP-KIT-DELINT,Bundles & Kits,160
+TP-KIT-BPNTPRT,Bundles & Kits,170
+TP-KIT-DPNTPRT,Bundles & Kits,180
+TP-KIT-BIRD,Bundles & Kits,190
+TP-KIT-GLASS,Bundles & Kits,200
+TP-KIT-PNTCOR,Bundles & Kits,210
+TP-KIT-CLAY,Bundles & Kits,220
+WM-H-1,Exterior Cleaning,230
+WWDT-M,Exterior Cleaning,240
+WWDT-L,Exterior Cleaning,250
+PPBS500,Exterior Cleaning,260
+JAF500,Exterior Cleaning,270
+TP-KIT-BWASH,Exterior Cleaning,280
+TP-KIT-DWASH,Exterior Cleaning,290
+PPBS1L,Exterior Cleaning,300
+JAF1L,Exterior Cleaning,310
+PPBS5L,Exterior Cleaning,320
+JAF5L,Exterior Cleaning,330
+PPBS20L,Exterior Cleaning,340
+JAF20L,Exterior Cleaning,350
+OPT500,Glass,360
+GS-H,Glass,370
+TP-KIT-GLASS,Glass,380
+OPT1L,Glass,390
+OPT5L,Glass,400
+OPT20L,Glass,410
+GS1-H,Glass,420
+GS2-H,Glass,430
+INT500,Interior Cleaning,440
+INTNF-H,Interior Cleaning,450
+PURE500,Interior Cleaning,460
+VANILLA,Interior Cleaning,470
+TP-KIT-INTCLN,Interior Cleaning,480
+TP-KIT-DELINT,Interior Cleaning,490
+TP-KIT-LEATHER,Interior Cleaning,500
+INT5L,Interior Cleaning,510
+PURE5L,Interior Cleaning,520
+INT1L,Interior Cleaning,530
+PURE1L,Interior Cleaning,540
+INT20L,Interior Cleaning,550
+PURE20L,Interior Cleaning,560
+LCG275,Leather Care,570
+FEED275,Leather Care,580
+HPA-L,Leather Care,590
+INTNF-H,Leather Care,600
+TP-KIT-LEATHER,Leather Care,610
+LCG1L,Leather Care,620
+FEED1L,Leather Care,630
+WM-H-1,NanoFibre,640
+WM-H-2,NanoFibre,650
+WWDT-M,NanoFibre,660
+WWDT-L,NanoFibre,670
+PAINTNF-H,NanoFibre,680
+JAMNF-H,NanoFibre,690
+WHLNF-H,NanoFibre,700
+INTNF-H,NanoFibre,710
+HPA-D,NanoFibre,720
+HPA-L,NanoFibre,730
+HPA-W,NanoFibre,740
+GS-H,NanoFibre,750
+GS1-H,NanoFibre,760
+GS2-H,NanoFibre,770
+PEP500,NanoFibre,780
+PEP1L,NanoFibre,790
+PEP5L,NanoFibre,800
+PEP20L,NanoFibre,810
+ERS-125,Paint Decontamination,820
+ERS-150,Paint Decontamination,830
+CLAY-2-100,Paint Decontamination,840
+LUBE500,Paint Decontamination,850
+PNTCLN500,Paint Decontamination,860
+CLNSTRG500,Paint Decontamination,870
+LUBE1L,Paint Decontamination,880
+PNTCLN1L,Paint Decontamination,890
+LUBE5L,Paint Decontamination,900
+PNTCLN5L,Paint Decontamination,910
+LUBE20L,Paint Decontamination,920
+PNTCLN20L,Paint Decontamination,930
+CLNSTRG20L,Paint Decontamination,940
+CAP-H-275,Paint Polishes,950
+CAP-M-275,Paint Polishes,960
+CAP-UF-275,Paint Polishes,970
+CAP-H-355,Paint Polishes,980
+CAP-M-355,Paint Polishes,990
+CAP-UF-355,Paint Polishes,1000
+CAP-H-1L,Paint Polishes,1010
+CAP-M-1L,Paint Polishes,1020
+CAP-UF-1L,Paint Polishes,1030
+CAP-H-5L,Paint Polishes,1040
+CAP-M-5L,Paint Polishes,1050
+CAP-UF-5L,Paint Polishes,1060
+BP-A-50,Paint Polishing Accessories,1070
+BP-A-75,Paint Polishing Accessories,1080
+BP-A-125,Paint Polishing Accessories,1090
+BP-A-175,Paint Polishing Accessories,1100
+BP-R-125,Paint Polishing Accessories,1110
+BP-R-P-125,Paint Polishing Accessories,1120
+PADCON-4B,Paint Polishing Accessories,1130
+PADCON-4W,Paint Polishing Accessories,1140
+CONV-75-8,Paint Polishing Accessories,1150
+EXX-14-70,Paint Polishing Accessories,1160
+CONV-14-8,Paint Polishing Accessories,1170
+WHITESHD-90,Paint Polishing Pads,1180
+WHITESHD-150,Paint Polishing Pads,1190
+ORANGEHD-90,Paint Polishing Pads,1200
+ORANGEHD-135,Paint Polishing Pads,1210
+ORANGEHD-150,Paint Polishing Pads,1220
+ORANGEHD-200,Paint Polishing Pads,1230
+BLACKLD-90,Paint Polishing Pads,1240
+BLACKLD-150,Paint Polishing Pads,1250
+BLACKLD-190,Paint Polishing Pads,1260
+JWL-SLD-135,Paint Polishing Pads,1270
+JWL-SLD-150,Paint Polishing Pads,1280
+DOPR-9,Paint Polishing Pads,1290
+VOPR-9,Paint Polishing Pads,1300
+NFP-90,Paint Polishing Pads,1310
+NFP-135,Paint Polishing Pads,1320
+NFP-150,Paint Polishing Pads,1330
+GP-75,Paint Polishing Pads,1340
+GP-50,Paint Polishing Pads,1350
+GP-90,Paint Polishing Pads,1360
+GP-135,Paint Polishing Pads,1370
+PB-SML,Paint Polishing Pads,1380
+PB-LRG,Paint Polishing Pads,1390
+FMJSW125,Paint Protection,1400
+FMJSW275,Paint Protection,1410
+GB125,Paint Protection,1420
+GB500,Paint Protection,1430
+FMJPP30,Paint Protection,1440
+DM250,Paint Protection,1450
+DE250,Paint Protection,1460
+FMJSW500,Paint Protection,1470
+GB1L,Paint Protection,1480
+GB5L,Paint Protection,1490
+GB20L,Paint Protection,1500
+FMJSW5L,Paint Protection,1510
+FMJSW20L,Paint Protection,1520
+PWC500,Wheel Care,1530
+WHLNF-H,Wheel Care,1540
+WHL-BRUSH,Wheel Care,1550
+PWC1L,Wheel Care,1560
+PWC5L,Wheel Care,1570
+PWC20L,Wheel Care,1580
