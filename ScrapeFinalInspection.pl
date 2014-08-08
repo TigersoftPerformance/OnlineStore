@@ -133,7 +133,7 @@ sub scrape_content
 		$retries --;
 		}
 	die "Couldn't get $s_url" if (!$retries);
-	$content2 =~ s/,/&#44/g;
+	$content2 =~ s/,/&#44;/g;
 
 	my ($images_cont,$overview_price_cont,$desc_cont,$video_cont) = ('')x4;
 	my ($images,$overview,$price,$description,$video) = ('')x5;
