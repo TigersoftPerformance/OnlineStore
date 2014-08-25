@@ -159,9 +159,11 @@ my $hiddenstats = "";
 my $car_data = {};
 while ($car_data = $sth->fetchrow_hashref)
 	{
+	say "$car_data->{make} $car_data->{model}";
 	my $superchips_website = &get_tune_info ($car_data->{superchips_tune}, $get_tune_sth);
 	unless (defined $superchips_website)
 		{
+		print $logfh "  No Superchips Website Entry for car $car_data->{idCars}\n";
 		next;
 		}
 	my $percentpowerincrease = $car_data->{original_bhp} ? int ($superchips_website->{gain_bhp} / $car_data->{original_bhp} * 100) : 0;

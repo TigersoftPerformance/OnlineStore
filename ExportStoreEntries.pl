@@ -29,15 +29,21 @@ my $dbh = DBI->connect($dsn, undef, undef,
 #
 # Select all rows from ZenCartStoreEntries table 
 #
-my $store_entries_sth = $dbh->prepare("
-	SELECT * FROM TP.ZenCartStoreEntries WHERE v_categories_name_1 LIKE 'Final%'
-") or die $dbh->errstr;
+my $zcquery = "SELECT * FROM TP.ZenCartStoreEntries";
+
+if (defined $ARGV[0])
+	{
+	$zcquery .= " WHERE v_categories_name_1 LIKE '" . $ARGV[0] . "%'";
+	}
+say $zcquery;
+my $store_entries_sth = $dbh->prepare($zcquery) or die $dbh->errstr;
 $store_entries_sth->execute() or die $dbh->errstr;
 
 print 'v_products_model,v_products_type,v_products_image,v_products_name_1,v_products_description_1,v_products_url_1,v_specials_price,v_specials_date_avail,v_specials_expires_date,v_products_price,v_products_weight,v_product_is_call,v_products_sort_order,v_products_quantity_order_min,v_products_quantity_order_units,v_products_priced_by_attribute,v_product_is_always_free_shipping,v_date_avail,v_date_added,v_products_quantity,v_manufacturers_name,v_categories_name_1,v_tax_class_title,v_status,v_metatags_products_name_status,v_metatags_title_status,v_metatags_model_status,v_metatags_price_status,v_metatags_title_tagline_status,v_metatags_title_1,v_metatags_keywords_1,v_metatags_description_1' . "\n";
 my $storeentries = {};
 while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	{
+	 say "Model = " . $storeentries->{v_products_model};
 	 # just need to remove excess quotes and new lines from the description
 	 my $description = $storeentries->{v_products_description_1};
 	 $description =~ s/\"\"/\"/g;

@@ -18,7 +18,7 @@ my $mech = WWW::Mechanize::Firefox->new();
 my ($marca,$make,$modid,$model);
 my $content;
 my $url = 'http://au.bmcairfilters.com';
-use constant LOG => "./scrape_mods_log";
+use constant LOG => "./Logs/ScrapeBMCWebsite.log";
 
 open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
 
@@ -29,12 +29,13 @@ open (my $logfh, ">", LOG) or die "cannot open " . LOG;
 # are configured to use UTF8
 my $driver = "mysql";   # Database driver type
 my $my_cnf = '~/.my.cnf';
-my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf" . ";mysql_read_default_group=TigersoftPerformance";
 my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
 	}
 ) or die $DBI::errstr;
+
 
 #
 # load BMCmod
@@ -61,6 +62,7 @@ my $insbmcmodth = $dbh->prepare("
 
 
 my $retries = 5;
+# This will get the front page of the website
 # Try a few times in case of failure
 while ($retries && !($content = get $url))
 	{
@@ -72,20 +74,23 @@ die "Couldn't get $url" if (!$retries);
 # collecting marca for all makes
 #
 $content =~ /<option value="0">(.*?)<\/select>/s;
-my $part = $1;
+my $part1 = $1;
 
 #
 # looping through each marcas
 #
-while ($part =~ /<option value="(\d+)">(.*?)<\/option>/gi)
+while ($part1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 	{
+	# It appears here that the "Make" is the actual string for the name of the make
+	# "Marca" is actually the BMC Make ID
+	#
 	$marca = $1;
 	$make  = $2;	
 	printf "%-20s %s", "marca: $make", " => $marca\n";
 	printf $logfh "%-20s %s", "marca: $make", " => $marca\n";
 
 	#
-	# here we scrape marca site
+	# This is where we get the content from the wesbite for the specific make
 	#
 	my $marca_url = 'http://au.bmcairfilters.com/search_a.aspx?marca=' . $marca . '&lng=2';
 	$retries = 5;
@@ -105,7 +110,9 @@ while ($part =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 	my $part2 = $1;
 
 	#
-	# looping through mods
+	# Now loop through the page looking for all of the models listed for this make
+	# Note that the list on the website is populated via some ajax calls, which is why
+	# Dave used Firefox::Mechanize
 	#
 	while ($part2 =~ /<option value="(\d+)">(.*?)\s*<\/option>/gi)
 		{
@@ -172,7 +179,7 @@ sub do_db
 
 my $content;
 my $url = 'http://au.bmcairfilters.com';
-use constant LOG => "./scrape_bmc_categories.log";
+use constant LOG => "./Logs/scrape_bmc_categories.log";
 
 open (my $logfh, ">", LOG) or die "cannot open LOG $!"; 
 
@@ -181,9 +188,14 @@ open (my $logfh, ">", LOG) or die "cannot open LOG $!";
 # mysql_enable_utf8 enables to store data as UT8
 # we also need to ensure that our DB or DB tables
 # are configured to use UTF8
+#
+# Connect to database
+# mysql_enable_utf8 enables to store data as UT8
+# we also need to ensure that our DB or DB tables 
+# are configured to use UTF8
 my $driver = "mysql";   # Database driver type
 my $my_cnf = '~/.my.cnf';
-my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf" . ";mysql_read_default_group=TigersoftPerformance";
 my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1
@@ -237,6 +249,7 @@ $loadmodth->execute();
 
 
 my $retries = 5;
+# This will get the front page of the website
 # Try a few times in case of failure
 while ($retries && !($content = get $url))
 	{
@@ -612,7 +625,7 @@ open(my $debugfh, ">", DEBUGFILE) or die "cannot open DEBUGFILE $!";
 # are configured to use UTF8
 my $driver = "mysql";   # Database driver type
 my $my_cnf = '~/.my.cnf';
-my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf";
+my $dsn = "DBI:$driver:;" . "mysql_read_default_file=$my_cnf" . ";mysql_read_default_group=TigersoftPerformance";
 my $dbh = DBI->connect($dsn, undef, undef,
 	{
 	RaiseError => 1, PrintError => 1, mysql_enable_utf8 => 1

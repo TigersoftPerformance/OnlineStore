@@ -756,7 +756,7 @@
 "Find Stuff For My Car!^Hyundai^Accent","Accent","0",\N,"Cat2HyundaiAccent.jpg","Please select the variant of your Hyundai Accent from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Hyundai^Accent^Accent 62kW (97-99)","Accent 62kW (97-99)","1202",\N,"TPC001202.jpg","Products available for your Hyundai Accent  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Hyundai^Accent^Accent 73kW (97-99)","Accent 73kW (97-99)","1203",\N,"TPC001203.jpg","Products available for your Hyundai Accent  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Accessories","Accessories","0",\N,"Accessories.jpg","Miscellaneous Detailing Accessories",\N,\N,\N,"Y",\N
+"Final Inspection^Accessories","Accessories","0",\N,"FIStore/Accessories.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Miscellaneous detailing accessories</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Accord","Accord","0",\N,"Cat2HondaAccord.jpg","Please select the variant of your Honda Accord from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Accord^Accord 100kW (97-98)","Accord 100kW (97-98)","1181",\N,"TPC001181.jpg","Products available for your Honda Accord  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Accord^Accord 108kW (97-98)","Accord 108kW (97-98)","1182",\N,"TPC001182.jpg","Products available for your Honda Accord  are listed below",\N,\N,\N,"Y",\N
@@ -774,6 +774,34 @@
 "Find Stuff For My Car!^Opel^Agila","Agila","0",\N,"Cat2OpelAgila.jpg","Please select the variant of your Opel Agila from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Agila^Agila CDTi 55kW (08-on)","Agila CDTi 55kW (08-on)","1620",\N,"TPC001620.jpg","Products available for your Opel Agila  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Agila^Agila Twin Port 59kW (05-on)","Agila Twin Port 59kW (05-on)","1619",\N,"TPC001619.jpg","Products available for your Opel Agila  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS","AIR INTAKE SYSTEMS",\N,\N,"","<p class=\"titolo\"><strong>What is an Intake Air System?</strong></p>\
+<p><span class=\"testo\">It is an air admission system designed to completely replace the OEM air-box of the car. It is designed to increase engine performance both in terms of power (HP) and torque (NM).</span><br /> <br /> <img title=\"BMC OTA fitting Mini Cooper\" src=\"http://www.bmcairfilters.com/cgi-bin/images/infobox/motori_mini.JPG\" alt=\"BMC OTA fitting Mini Cooper\" width=\"400\" height=\"133\" /><br /> <em>the same engine with the original air-box (left) and BMC intake system (right)</em></p>\
+<p><em><br /><br /></em></p>\
+<p><strong><span class=\"titolo\">Which one do I choose?</span><br /> </strong><strong>&nbsp&#59</strong><strong><a name=\"Whichone\"></a><br /><img title=\"BMC DIA CDA OTA CRF air intake system\" src=\"http://www.bmcairfilters.com/cgi-bin/images/infobox/intake_systems.JPG\" alt=\"BMC DIA CDA OTA CRF air intake system\" width=\"375\" height=\"126\" /><br /> </strong><em>(from the left) DIA &ndash&#59 CDA &ndash&#59 OTA - CRF</em><strong>&nbsp&#59</strong></p>\
+<p class=\"testo\">&nbsp&#59</p>\
+<p class=\"testo\"><br />DIA&#44 CDA and OTA are Universal Products&#44 even though there are several specific versions&#44 which can be found with the <em>Choose Your Car</em> search engine.<br /><strong>If your car does not have a specific intake system&#44 the Universal Version is what you need.</strong><br /><br /></p>\
+<p class=\"testo\">BMC intake systems have several versions which differ by size. <span style=\"text-decoration: underline&#59\">How to choose the correct Universal Version</span>:</p>\
+<ul class=\"testo\">\
+<li>Verify how much space you have after removing the air-box. Choose a version that fits the space (not too big).</li>\
+<li>If possible&#44 avoid air-flow bottlenecks: verify your intake diameter and compare it with the intake diameter of the BMC air system. The more similar they are the better. Tip: reducers are available therefore the two measurements can differ and be adapted with connection reducers.</li>\
+<li>Once you have chosen your intake system remember that Universal Versions do not have the specific mounting accessories required to properly install the kit to your car. Find out which accessories you need (we suggest you ask your mechanic/tuner for advice) and purchase them separately. BMC has a number of accessories available which are specifically designed for mounting BMC intake systems.</li>\
+</ul>\
+<p class=\"testo\"><em><strong>BMC also suggest that you program your ECU in order to optimize the stoichiometric ratio provided by the air intake system.</strong></em></p>\
+<p class=\"testo\">&nbsp&#59</p>\
+<p class=\"testo\">Frequently Asked Questions:</p>\
+<ul class=\"testo\">\
+<li><strong>How much horsepower will my car gain by installing the universal DIA&#44 CDA or OTA?</strong><br /> It is impossible to give a precise answer. These are Universal roducts which are designed to be fitted to any car on the market. Since every car is different we cannot possibly know the exact outcome for each. However we do strongly suggest that programming of the ECU is the most reliable way to get the most from the BMC kit.</li>\
+<li><strong>What are the differences between DIA&#44 CDA and OTA?</strong> \
+<ul>\
+<li><em>OTA&nbsp&#59</em>is BMC&rsquo&#59s latest&#44 top-of-the-range intake system. It is an evolution of the CDA. Thanks to its oval shape it is easier to install. It also features a &ldquo&#59trumpet&rdquo&#59 device which conveys more pressurized air to the engine. We also have a Waterproof variant&#44 specifically designed for heavy off-road use.</li>\
+<li><em>CDA&nbsp&#59</em>is the classic&#44 iconic BMC carbon-fibre air admission system. It is the only kit available in very large versions for the bigger engines.</li>\
+</ul>\
+<ul>\
+<li><em>DIA&nbsp&#59</em>is the &ldquo&#59junior&rdquo&#59 air intake system. It works like OTA and CDA&#44 but the box is made of plastic&#44 not carbon-fibre.</li>\
+</ul>\
+</li>\
+<li><strong>Are the DIA&#44 CDA and OTA kits washable and re-usable?<br /> </strong>Yes&#44 these kits can be regenerated in the same way as the standard BMC air filters.</li>\
+</ul>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo","Alfa Romeo","0",\N,"Cat1AlfaRomeo.jpg","Please select the model of your Alfa Romeo from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Seat^Alhambra","Alhambra","0",\N,"Cat2SeatAlhambra.jpg","Please select the variant of your Seat Alhambra from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Seat^Alhambra^Alhambra 112kW (98-04)","Alhambra 112kW (98-04)","2212",\N,"TPC002212.jpg","Products available for your Seat Alhambra  are listed below",\N,\N,\N,"Y",\N
@@ -890,6 +918,8 @@
 "Find Stuff For My Car!^Fiat^Barchetta","Barchetta","0",\N,"Cat2FiatBarchetta.jpg","Please select the variant of your Fiat Barchetta from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Barchetta^Barchetta 97kW (95-on)","Barchetta 97kW (95-on)","899",\N,"TPC000899.jpg","Products available for your Fiat Barchetta  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Barchetta^Barchetta LE 97kW (98-99)","Barchetta LE 97kW (98-99)","898",\N,"TPC000898.jpg","Products available for your Fiat Barchetta  are listed below",\N,\N,\N,"Y",\N
+"BC Forged Wheels","BC Forged Wheels","0",\N,"","",\N,\N,\N,"Y",\N
+"BC Racing Coilovers","BC Racing Coilovers","0",\N,"","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Beetle","Beetle","0",\N,"Cat2VolkswagenBeetle.jpg","Please select the variant of your Volkswagen Beetle from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Beetle^Beetle 1.6 TDI / BlueMotion 77kW (11-on)","Beetle 1.6 TDI / BlueMotion 77kW (11-on)","2414",\N,"TPC002414.jpg","Products available for your Volkswagen Beetle  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Beetle^Beetle 1.8 T 20V 112kW (98-02)","Beetle 1.8 T 20V 112kW (98-02)","2417",\N,"TPC002417.jpg","Products available for your Volkswagen Beetle  are listed below",\N,\N,\N,"Y",\N
@@ -906,8 +936,14 @@
 "Find Stuff For My Car!^Citroen^Berlingo^Berlingo HDI 68kW (06-on)","Berlingo HDI 68kW (06-on)","786",\N,"TPC000786.jpg","Products available for your Citroen Berlingo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Citroen^Berlingo^Berlingo HDI E4 83kW (08-10)","Berlingo HDI E4 83kW (08-10)","787",\N,"TPC000787.jpg","Products available for your Citroen Berlingo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Citroen^Berlingo^Berlingo HDI E5 83kW (10-on)","Berlingo HDI E5 83kW (10-on)","788",\N,"TPC000788.jpg","Products available for your Citroen Berlingo  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION","BIKE FILTER FOR DIRECT INDUCTION",\N,\N,"","<p><br /><br /></p>\
+",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS","BIKE FILTERS",\N,\N,"","<p><img style=\"float: right&#59\" title=\"Bike Filter\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/bike_filter.JPG\" alt=\"Bike Filter\" width=\"256\" height=\"147\" />The knowledge and experience gained on track is transferred to street production in order to offer performance products&#44 tested and in continuous evolution&#44 designed to satisfy the requirements of the most demanding motorcyclists. The materials used in production are of the highest standard: filters are made in one single piece with no welded joints thus avoiding breakage&#59 the filtering material is composed of a special cotton gauze soaked with low viscosity oil and covered with an epoxy coated alloy mesh to ensure protection from petrol fumes and oxidization due to air humidity. Furthermore the cotton has the advantage of being washable and therefore reusable. In this way BMC air filters guarantee superior air capacity in respect to traditional paper filters enabling minimum loss of power in the air flow and therefore obtaining better performance from the engine.</p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Cadillac^BLS","BLS","0",\N,"Cat2CadillacBLS.jpg","Please select the variant of your Cadillac BLS from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Cadillac^BLS^BLS 2.0 T 129kW (06-on)","BLS 2.0 T 129kW (06-on)","756",\N,"TPC000756.jpg","Products available for your Cadillac BLS  are listed below",\N,\N,\N,"Y",\N
+"Bluefin","Bluefin","0",\N,"Superchips/bluefin_header.jpg","<div class=\"infobox_container\"><div class=\"infobox halfbox\"><h2>Looking for a Bluefin?</h2><p>The best way to find the right Bluefin for your car is to visit the <a href=”../FindStuffForMyCar”>Find Stuff For My Car</a> section of our website</p></div><div class=\"infobox halfbox\"><h2>What is Bluefin and how does it work?</h2><p>Take a look at our <a href=”../BluefinInformation”>Bluefin Information Page</a></p></div></div>",\N,\N,\N,"Y",\N
+"BMC Air Filters","BMC Air Filters","0",\N,"","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^BMW","BMW","0",\N,"Cat1BMW.jpg","Please select the model of your BMW from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Bora","Bora","0",\N,"Cat2VolkswagenBora.jpg","Please select the variant of your Volkswagen Bora from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Bora^Bora 112kW (01-04)","Bora 112kW (01-04)","2428",\N,"TPC002428.jpg","Products available for your Volkswagen Bora  are listed below",\N,\N,\N,"Y",\N
@@ -956,7 +992,7 @@
 "Find Stuff For My Car!^Subaru^BRZ","BRZ","0",\N,"Cat2SubaruBRZ.jpg","Please select the variant of your Subaru BRZ from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^BRZ^BRZ 2.0i 147kW (12-on)","BRZ 2.0i 147kW (12-on)","2387",\N,"TPC002387.jpg","Products available for your Subaru BRZ  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Buick","Buick","0",\N,"Cat1Buick.jpg","Please select the model of your Buick from the list below",\N,\N,\N,"Y",\N
-"Final Inspection^Bundles & Kits","Bundles & Kits","0",\N,"Kits.jpg","Tigersoft Performance has several kits available at a significant discount over the price of the individual products",\N,\N,\N,"Y",\N
+"Final Inspection^Bundles & Kits","Bundles & Kits","0",\N,"FIStore/Kits.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>These kits are all made up of Final Inspection products&#44 and come with full instructions</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Citroen^BX","BX","0",\N,"Cat2CitroenBX.jpg","Please select the variant of your Citroen BX from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Citroen^BX^BX GTi 92kW (90-93)","BX GTi 92kW (90-93)","789",\N,"TPC000789.jpg","Products available for your Citroen BX  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^C-Class","C-Class","0",\N,"Cat2MercedesC-Class.jpg","Please select the model code of your Mercedes C-Class from the list below",\N,\N,\N,"Y",\N
@@ -1096,6 +1132,18 @@
 "Find Stuff For My Car!^Chevrolet^Captiva^Captiva 2.2 VCDi 136kW (11-on)","Captiva 2.2 VCDi 136kW (11-on)","761",\N,"TPC000761.jpg","Products available for your Chevrolet Captiva  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Captur","Captur","0",\N,"Cat2RenaultCaptur.jpg","Please select the variant of your Renault Captur from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Captur^Captur 1.5 dCi 66kW (13-on)","Captur 1.5 dCi 66kW (13-on)","1973",\N,"TPC001973.jpg","Products available for your Renault Captur  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CAR FILTERS","CAR FILTERS",\N,\N,"","<table style=\"text-align: justify&#59 width: 100%&#59\" border=\"0\" cellspacing=\"1\" cellpadding=\"1\">\
+<tbody>\
+<tr>\
+<td class=\"testo\" style=\"text-align: justify&#59\"><strong>Performance</strong><br />BMC air filters are designed and produced to ensure a higher air flow than original paper filters. In F1&#44 for example&#44 BMC cotton filters minimize the loss of air flow pressure passing through the air filter&#59 this way ensures the best conditions for full exploitation of maximum power. Therefore the benefits of replacing the original paper filter with BMC cotton air filter&#44 produced using the same technology and materials as the F1 air filters&#44 are evident.<br /><br /><span style=\"color: #000000&#59\"><span style=\"line-height: normal&#59 font-size: small&#59\">\
+<p style=\"text-align: center&#59\"><img title=\"Replacement Filter (flat)\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/filtro_piatto.JPG\" alt=\"Replacement Filter (flat)\" width=\"355\" height=\"237\" /></p>\
+<br /></span></span><br /><strong>Design and Materials</strong><br />Qualified engineers using advanced software and expert technicians using the latest technologies produce BMC air filters. An F1 filter must be very light&#44 must be made of the best raw materials and must improve performance. For this reason we use only alloy mesh with epoxy coating to ensure protection from petrol fumes and from oxidization due to the humidity of the air. The filtering material is composed of a special cotton gauze soaked with low-viscosity oil to give you the best air permeability.<br /><br />\
+<p style=\"text-align: center&#59\"><img title=\"Filtering materials\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/filtering_element.jpg\" alt=\"Filtering materials\" width=\"326\" height=\"245\" /></p>\
+<span class=\"rosso-centro\"><strong>Advanced Technology</strong></span><br /><span class=\"tblVoce\">BMC technical staff has developed a particular production system based on soft rubber moulding which produces the familiar BMC red filters. They are made in one single piece with no welded joints in the corners&#44 thus avoiding breaking risks. This system&#44 called \"Full Moulding\" comes from R&amp&#59D in F1 and it is significant of BMC air filters' technical and quality specifics.<br /><br />&nbsp&#59</span></td>\
+</tr>\
+</tbody>\
+</table>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Caravelle","Caravelle","0",\N,"Cat2VolkswagenCaravelle.jpg","Please select the variant of your Volkswagen Caravelle from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Caravelle^Caravelle 173kW (04-on)","Caravelle 173kW (04-on)","2440",\N,"TPC002440.jpg","Products available for your Volkswagen Caravelle  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Caravelle^Caravelle 2.0 BiTDI CR 133kW (09-on)","Caravelle 2.0 BiTDI CR 133kW (09-on)","2441",\N,"TPC002441.jpg","Products available for your Volkswagen Caravelle  are listed below",\N,\N,\N,"Y",\N
@@ -1126,6 +1174,9 @@
 "Find Stuff For My Car!^Porsche^Cayman^Cayman 183kW (05-09)","Cayman 183kW (05-09)","1966",\N,"TPC001966.jpg","Products available for your Porsche Cayman  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^Cayman^Cayman R 243kW (11-on)","Cayman R 243kW (11-on)","1964",\N,"TPC001964.jpg","Products available for your Porsche Cayman  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^Cayman^Cayman S 221kW (05-06)","Cayman S 221kW (05-06)","1965",\N,"TPC001965.jpg","Products available for your Porsche Cayman  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^CDA - CARBON DYNAMIC AIRBOX","CDA - CARBON DYNAMIC AIRBOX",\N,\N,"","<p style=\"text-align: justify&#59\">The CDA filtering system is composed of a cylindrical carbon fibre airbox containing a washable filtering element. The choice of this composite material is due to the fact that carbon has low thermal conductivity allowing insulation from the engine heat to the aspirated air. Replacing the original airbox with the CDA means that&nbsp&#59fresh air is channelled directly to the filter&#44 thermally insulated inside the carbon airbox and then conveyed to the engine through an air flow deflector with minimum loss of power (patented system). <br /><br /><img style=\"float: right&#59\" title=\"CDA\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/cda_1.JPG\" alt=\"CDA\" width=\"200\" height=\"150\" /><br /><br />The kit also contains a flexible aluminium tube (60 cm. length) to connect the CDA system to a frontal air intake. The CDA was created as a universal system fitting most kinds of car&#59 the different applications are completed by a wide range of accessories that are necessary for the installation. The CDA is available in two versions: the first with an external diameter of 130 mm which is recommended for engines of up to 1600 cc. and the second with an external diameter of 150 mm. for greater displacements.<br /><br /><img style=\"float: left&#59\" title=\"CDA\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/cdaaccessories.JPG\" alt=\"CDA\" width=\"200\" height=\"150\" /><br /><br /><strong>CDA Specific Kits<br /></strong>There is also a wide range of CDASP applications available. These are complete ready-to-mount kits specifically created for particular car models. The special kits often derive from a universal CDA with added specifically developed pipe fittings and reduction units&#44 while in other cases the CDASP is customised to fit from single components with special flanges&#44 made to measure for the specific vehicle.<br /><br /><img style=\"float: right&#59\" title=\"CDA + Box\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/cdabox.JPG\" alt=\"CDA + Box\" width=\"200\" height=\"133\" /><br /><br /><strong><br />Advanced Technology<br /></strong>The CDA filtration system is connected to a frontal air intake via a flexible aluminium tube. Thanks to the dynamic air intake you get a real supercharging system that conveys fresh air to the air box at a speed and capacity greater than that of traditional systems. The air flow entering the dynamic air intake is accelerated further thanks to the air flow deflector inside the carbon fibre airbox. Dynamic over-boosting&#44 greater air flow&#44 higher pressure and colder air are the elements which help to significantly increase the performance of the engine both in terms of power and torque&#44 as demonstrated by dyno tests carried out. The CDA is also available in a number of special versions with specific flanges for direct connection to the air sensor or with different dimensions according to the model of the car.<br /><br /></p>\
+<p><img style=\"float: left&#59\" title=\"CDA Application\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/cda_application_skoda.JPG\" alt=\"CDA Application\" width=\"200\" height=\"148\" /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Kia^Ceed","Ceed","0",\N,"Cat2KiaCeed.jpg","Please select the variant of your Kia Ceed from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Kia^Ceed^Ceed CRTDi 85kW (08-on)","Ceed CRTDi 85kW (08-on)","1261",\N,"TPC001261.jpg","Products available for your Kia Ceed  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Jeep^Cherokee","Cherokee","0",\N,"Cat2JeepCherokee.jpg","Please select the variant of your Jeep Cherokee from the list below",\N,\N,\N,"Y",\N
@@ -1234,6 +1285,11 @@
 "Find Stuff For My Car!^Jeep^Compass^Compass 105kW (07-on)","Compass 105kW (07-on)","1254",\N,"TPC001254.jpg","Products available for your Jeep Compass  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Concerto","Concerto","0",\N,"Cat2HondaConcerto.jpg","Please select the variant of your Honda Concerto from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Concerto^Concerto 91kW (92-95)","Concerto 91kW (92-95)","1190",\N,"TPC001190.jpg","Products available for your Honda Concerto  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS","CONICAL FILTERS",\N,\N,"","<p style=\"text-align: justify&#59\">BMC conical filters let you remove the original air box and provide long life&#44 better performance and easinessto replace. These filters are available in the following versions:<br /><em>Single Air</em> (SA) with a simple lateral airflow&#59&nbsp&#59<br /><em>Twin Air</em> (TW) with lateral and central airflow.<br /><br /><strong>Advanced Technology and&nbsp&#59Material Quality</strong><br />The elastomer used to produce the intake is especially heat-and-shock resistant.<br />It can't be distorted by temperature. The special mesh used for the filtering element enables us to produce air filters for applications up to 700 Hp (NOS or Turbo) without having deforming problems in the filter. Several official Teams in races like 24 Hours Le Mans and Porsche GT3 Cup fit conical BMC air filters.&nbsp&#59<br />\
+<td style=\"text-align: center&#59\">&nbsp&#59</td>\
+&nbsp&#59 &nbsp&#59 &nbsp&#59<span><br /><strong>Applications <br /></strong></span>BMC direct induction filters can be fitted on every kind of car. If necessary&#44 BMC is able to supply tubes and rubber connectors to make up a complete kit. For some particular applications&#44 an alloy flexible tube is available to duct cold air to the conical filter. In fact&#44 colder aspirated air means you have a bigger volumetric mass. A greater mass of air gives better combustion and finally&#44 increased performance.</p>\
+<p style=\"text-align: center&#59\"><img title=\"Twin Air (left) and Single Air (right)\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/sa_e_tw.JPG\" alt=\"Twin Air (left) and Single Air (right)\" width=\"299\" height=\"179\" /><br />Twin Air and Single Air</p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Bentley^Continental","Continental","0",\N,"Cat2BentleyContinental.jpg","Please select the variant of your Bentley Continental from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Bentley^Continental^Continental GT 412kW (03-06)","Continental GT 412kW (03-06)","329",\N,"TPC000329.jpg","Products available for your Bentley Continental  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mini^Cooper","Cooper","0",\N,"Cat2MiniCooper.jpg","Please select the variant of your Mini Cooper from the list below",\N,\N,\N,"Y",\N
@@ -1315,6 +1371,39 @@
 "Find Stuff For My Car!^Volkswagen^Crafter^Crafter 2.5TDI 121kW (06-on)","Crafter 2.5TDI 121kW (06-on)","2455",\N,"TPC002455.jpg","Products available for your Volkswagen Crafter  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Crafter^Crafter 2.5TDI 65kW (06-on)","Crafter 2.5TDI 65kW (06-on)","2452",\N,"TPC002452.jpg","Products available for your Volkswagen Crafter  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Crafter^Crafter 2.5TDI 81kW (06-on)","Crafter 2.5TDI 81kW (06-on)","2453",\N,"TPC002453.jpg","Products available for your Volkswagen Crafter  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER^Crankcase Vent Filters","Crankcase Vent Filters",\N,\N,"crankcase_vent_filter.JPG","",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^CRF - CARBON RACING FILTERS","CRF - CARBON RACING FILTERS",\N,\N,"","<p><img style=\"float: left&#59 margin: 10px&#59\" title=\"CRF &quot&#59Protector&quot&#59\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/protector.JPG\" alt=\"CRF &quot&#59Protector&quot&#59\" width=\"200\" height=\"151\" /><span class=\"testo\">The &ldquo&#59C.R.F.&rdquo&#59 Carbon Racing Filter (</span><a class=\"testo\" href=\"http://www.carbonracingfilter.com/\">www.carbonracingfilter.com</a><span class=\"testo\">) - is BMC&rsquo&#59s new high performance sports air filter designed for road and competition vehicles. It features a 100% carbon fibre support structure with a cotton filter element.&nbsp&#59</span></p>\
+<p class=\"testo\">The CRF has been designed and produced entirely by the BMC Racing and Advanced Composite Division&#44 &nbsp&#59&nbsp&#59which is wholly concerned with the development of air filters and aspiration systems for the racing world: &nbsp&#59Formula 1 / MotoGP One / World Superbike.</p>\
+<p class=\"testo\">The CRF has been created from extensive BMC knowledge acquired through more than 10 years experience in the racing sector&#44 which has brought high level results and increased performance to super-sports engines.</p>\
+<p class=\"testo\">&nbsp&#59</p>\
+<p class=\"testo\"><strong>Principle characteristics of the CRF:</strong></p>\
+<ul class=\"testo\">\
+<li>The CRF air filter makes use of innovative technical solutions to optimize the flow dynamics of the direct air into the engine. The geometry of the CRF has been devised with the objective of using the entire available volume of the standard air-box thanks to an extended filtration surface. The result is better air flow passage in the intake phase thereby maintaining constant air-box pressure. &nbsp&#59</li>\
+</ul>\
+<ul class=\"testo\">\
+<li>The structure of the CRF is made of carbon fibre which interfaces directly with the original air-box&#44 providing a perfect seal and easy mounting.&nbsp&#59 The structure is manufactured with pre-impregnated carbon materials which are cured in an autoclave. &nbsp&#59Thanks to this the CRF air filter presents a much reduced total weight whilst having excellent characteristics in terms of rigidity and mechanical resistance.&nbsp&#59</li>\
+</ul>\
+<ul class=\"testo\">\
+<li>The filtering element is made of a special multi-layer filtration material in RACE configuration which is impregnated with low viscosity oil held between epoxy-coated (to prevent oxidation) aluminium mesh. This enables increased permeability and low air flow resistance guaranteeing highly efficient filtration.&nbsp&#59</li>\
+</ul>\
+<ul class=\"testo\">\
+<li>The CRF filter was conceived with the objective of withstanding the vibrations and heat produced in movement both in normal road and intensive track use.&nbsp&#59</li>\
+</ul>\
+<ul class=\"testo\">\
+<li>The CRF filter&#44 as are all BMC filters&#44 can be regenerated and reused. Once the saturation level has been reached the filter can be regenerated through a process of washing and re-oiling using a special BMC kit.&nbsp&#59</li>\
+</ul>\
+<ul class=\"testo\">\
+<li>The CRF air filter is a patented product with a deposited industrial model.</li>\
+</ul>\
+<ul class=\"testo\">\
+<li>The CRF filter was created for those who require maximum return and performance from their motorbike. It is the definitive filter for those who look for: &nbsp&#59<br />1) enhanced quality&#59&nbsp&#59<br />2) technical development derived directly from the world of racing.</li>\
+</ul>\
+<p class=\"testo\">&nbsp&#59<br /> All this is available <span style=\"text-decoration: underline&#59\">for the very first time </span>as an aftermarket product both for Bikes and Cars.</p>\
+",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^CRF - CARBON RACING FILTERS^CRF - CARBON RACING FILTERS - BIKES","CRF - CARBON RACING FILTERS - BIKES",\N,\N,"","\
+",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^CRF - CARBON RACING FILTERS^CRF - CARBON RACING FILTERS - CARS","CRF - CARBON RACING FILTERS - CARS",\N,\N,"","\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Chrysler^Crossfire","Crossfire","0",\N,"Cat2ChryslerCrossfire.jpg","Please select the variant of your Chrysler Crossfire from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Chrysler^Crossfire^Crossfire 161kW (03-on)","Crossfire 161kW (03-on)","768",\N,"TPC000768.jpg","Products available for your Chrysler Crossfire  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Chrysler^Crossfire^Crossfire SRT-6 247kW (03-on)","Crossfire SRT-6 247kW (03-on)","769",\N,"TPC000769.jpg","Products available for your Chrysler Crossfire  are listed below",\N,\N,\N,"Y",\N
@@ -1334,6 +1423,10 @@
 "Find Stuff For My Car!^Land Rover^Defender^Defender 90/110/130 D Euro4 86kW (07-11)","Defender 90/110/130 D Euro4 86kW (07-11)","1277",\N,"TPC001277.jpg","Products available for your Land Rover Defender  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Defender^Defender TD5 92kW (02-05)","Defender TD5 92kW (02-05)","1279",\N,"TPC001279.jpg","Products available for your Land Rover Defender  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Defender^Defender TD5 92kW (98-01)","Defender TD5 92kW (98-01)","1278",\N,"TPC001278.jpg","Products available for your Land Rover Defender  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^DIA - DIRECT INTAKE AIRSYSTEM","DIA - DIRECT INTAKE AIRSYSTEM",\N,\N,"","<p style=\"text-align: justify&#59\"><img style=\"float: right&#59\" title=\"DIA\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/dia.JPG\" alt=\"DIA\" width=\"200\" height=\"182\" />Thanks to the experience gained by BMC in creating supercharging dynamic airboxes&#44 BMC have developed the Direct Intake Airsystem (DIA) and the Junior filtration system. The philosophy of BMC&rsquo&#59s top range product&#44 the Carbon Dynamic Airbox (CDA) is behind the DIA&#44 a system that&#44 with its particular structure&#44 ensures that aspirated air is carried to the engine at a higher speed and capacity in respect to traditional systems&#44 thus providing significant gains in engine performance. The DIA consists of a plastic air box containing an air flow deflector and a reusable filtering element. The universal kit also contains a flexible tube to carry fresh air to the inside of the air box&#44 a connector sleeve and two reducers to allow installation in standard applications.</p>\
+<p style=\"text-align: justify&#59\"><br />The DIA is available in two versions:<br />DIA70-130 recommended for applications up to 1.600 cc.<br />DIA85-150 recommended for applications over 1.600 cc.</p>\
+<p><br />The DIA represents a technological product available for everybody<br /><br /><img title=\"DIA\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/dia_and_tube.JPG\" alt=\"DIA\" width=\"200\" height=\"107\" /><br /><br /><br /></p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Discovery","Discovery","0",\N,"Cat2LandRoverDiscovery.jpg","Please select the model code of your Land Rover Discovery from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Discovery^Discovery Discovery 2^Discovery 136kW (98-04)","Discovery 136kW (98-04)","1280",\N,"TPC001280.jpg","Products available for your Land Rover Discovery Discovery 2 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Discovery^Discovery Discovery 3^Discovery 2.7 TDV6 140kW (04-09)","Discovery 2.7 TDV6 140kW (04-09)","1284",\N,"TPC001284.jpg","Products available for your Land Rover Discovery Discovery 3 are listed below",\N,\N,\N,"Y",\N
@@ -1455,7 +1548,7 @@
 "Find Stuff For My Car!^Peugeot^Expert^Expert 2.0 HDi 120kW (10-on)","Expert 2.0 HDi 120kW (10-on)","1913",\N,"TPC001913.jpg","Products available for your Peugeot Expert  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Peugeot^Expert^Expert HDi 102kW (07-on)","Expert HDi 102kW (07-on)","1915",\N,"TPC001915.jpg","Products available for your Peugeot Expert  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Peugeot^Expert^Expert HDI 83kW (04-on)","Expert HDI 83kW (04-on)","1914",\N,"TPC001914.jpg","Products available for your Peugeot Expert  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Exterior Cleaning","Exterior Cleaning","0",\N,"ExteriorCleaning.jpg","Final Inspection has a range of products to solve all sorts of exterior cleaning problems.",\N,\N,\N,"Y",\N
+"Final Inspection^Exterior Cleaning","Exterior Cleaning","0",\N,"FIStore/ExteriorCleaning.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Everything you need to wash the exterior of your car.</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^BMW^F","F","0",\N,"Cat2BMWF.jpg","Please select the variant of your BMW F from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^MG^F^F 106kW (95-02)","F 106kW (95-02)","1537",\N,"TPC001537.jpg","Products available for your MG F  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^MG^F^F 118kW (01-02)","F 118kW (01-02)","1539",\N,"TPC001539.jpg","Products available for your MG F  are listed below",\N,\N,\N,"Y",\N
@@ -1505,18 +1598,8 @@
 "Find Stuff For My Car!^Ford^Fiesta^Fiesta MkVI^Fiesta Zetec S 74kW (05-on)","Fiesta Zetec S 74kW (05-on)","984",\N,"TPC000984.jpg","Products available for your Ford Fiesta MkVI are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Figo","Figo","0",\N,"Cat2FordFigo.jpg","Please select the variant of your Ford Figo from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Figo^Figo 53kW (10-on)","Figo 53kW (10-on)","997",\N,"TPC000997.jpg","Products available for your Ford Figo  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection","Final Inspection","0",\N,"BannerFinalInspection.png","          <div id=\"categoryDescription\">\
-            <h2>The World's Finest Car Care Products, Made In Australia</h2>\
-            <p>Here at Tigersoft Performance, we don't just sell Final\
-              Inspection products. We use them almost every day to detail the\
-              cars of our customers to perfection. So not only do\
-              you get the world's best car care products, but you get expert\
-              advise on how to get the most from the products. </p>\
-            <p>Please take a look at our Facebook page for pictures of the\
-              latest cars that we have worked on.</p>\
-            <br />\
-            <br />\
-          </div>",\N,\N,\N,"Y",\N
+"Final Inspection","Final Inspection","0",\N,"FIStore/BannerFinalInspection.png","<div class=\"infobox_container\">  <div class=\"infobox fullbox longbox\">    <div class=\"longbox_pic\">      <img src=\"images/FIStore/JohnDetailing.jpg\" alt=\"We Use Final Inspection Products at Tigersoft Performance\">    </div>    <div class=\"longbox_text\">      <h2>Buy from the experts</h2>      <p>When you buy Final Inspection products through Tigersoft Performance&#44 you are not simply buying from another retailer. We use these products every day detailing the cars of our customers to perfection&#44 we know them inside and out. And so when you buy through us&#44 you also get expert advise from professionals that actually use the products they are selling.</p>    </div>  </div></div>",\N,\N,\N,"Y",\N
+"Find Stuff For My Car","Find Stuff For My Car","0",\N,"Tigersoft Performance/TigersoftPerformanceLogoBackground250x80.j","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>You can find all of the products that we have available for your car by selecting the Make of your car below. Currently&#44 we only have Superchips and BMC Air Filters products in this section of the store.</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!","Find Stuff For My Car!","0",\N,"TigersoftPerformanceLogoBackground250x80.jpg","Choose the Make of your car below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Fiorino","Fiorino","0",\N,"Cat2FiatFiorino.jpg","Please select the variant of your Fiat Fiorino from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Fiorino^Fiorino Multijet 55kW (08-on)","Fiorino Multijet 55kW (08-on)","924",\N,"TPC000924.jpg","Products available for your Fiat Fiorino  are listed below",\N,\N,\N,"Y",\N
@@ -1621,7 +1704,7 @@
 "Find Stuff For My Car!^Mercedes^GL^GL GL420 CDI 224kW (06-on)","GL GL420 CDI 224kW (06-on)","1452",\N,"TPC001452.jpg","Products available for your Mercedes GL  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^GLA","GLA","0",\N,"Cat2MercedesGLA.jpg","Please select the variant of your Mercedes GLA from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^GLA^GLA GLA 200 115kW (13-on)","GLA GLA 200 115kW (13-on)","1453",\N,"TPC001453.jpg","Products available for your Mercedes GLA  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Glass","Glass","0",\N,"Glass.jpg","Glass Cleaning Products",\N,\N,\N,"Y",\N
+"Final Inspection^Glass","Glass","0",\N,"FIStore/Glass.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Clean Glass can make all of the difference in the presentation of your car</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^GLK","GLK","0",\N,"Cat2MercedesGLK.jpg","Please select the variant of your Mercedes GLK from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^GLK^GLK GLK320 CDI W204 168kW (08-10)","GLK GLK320 CDI W204 168kW (08-10)","1454",\N,"TPC001454.jpg","Products available for your Mercedes GLK  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Golf","Golf","0",\N,"Cat2VolkswagenGolf.jpg","Please select the model code of your Volkswagen Golf from the list below",\N,\N,\N,"Y",\N
@@ -1790,7 +1873,7 @@
 "Find Stuff For My Car!^Opel^Insignia^Insignia VXR 243kW (09-on)","Insignia VXR 243kW (09-on)","1735",\N,"TPC001735.jpg","Products available for your Opel Insignia  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Lancia^Integrale","Integrale","0",\N,"Cat2LanciaIntegrale.jpg","Please select the variant of your Lancia Integrale from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Lancia^Integrale^Integrale 139kW (88-89)","Integrale 139kW (88-89)","1271",\N,"TPC001271.jpg","Products available for your Lancia Integrale  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Interior Cleaning","Interior Cleaning","0",\N,"InteriorCleaning.jpg","Interior Cleaning",\N,\N,\N,"Y",\N
+"IFinal Inspection^nterior Cleaning","Interior Cleaning","0",\N,"FIStore/InteriorCleaning.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Everything you need to keep the interior of your car clean and smelling fresh</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Interstar","Interstar","0",\N,"Cat2NissanInterstar.jpg","Please select the variant of your Nissan Interstar from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Interstar^Interstar dCi 60kW (03-on)","Interstar dCi 60kW (03-on)","1589",\N,"TPC001589.jpg","Products available for your Nissan Interstar  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Interstar^Interstar dCi 75kW (03-on)","Interstar dCi 75kW (03-on)","1590",\N,"TPC001590.jpg","Products available for your Nissan Interstar  are listed below",\N,\N,\N,"Y",\N
@@ -1882,7 +1965,7 @@
 "Find Stuff For My Car!^Hyundai^Lantra^Lantra 87kW (98-01)","Lantra 87kW (98-01)","1217",\N,"TPC001217.jpg","Products available for your Hyundai Lantra  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Latitude","Latitude","0",\N,"Cat2RenaultLatitude.jpg","Please select the variant of your Renault Latitude from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Latitude^Latitude 2.0 dCi 129kW (11-on)","Latitude 2.0 dCi 129kW (11-on)","2054",\N,"TPC002054.jpg","Products available for your Renault Latitude  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Leather Care","Leather Care","0",\N,"LeatherCare.jpg","Keep your Leather clean and soft.",\N,\N,\N,"Y",\N
+"Final Inspection^Leather Care","Leather Care","0",\N,"FIStore/LeatherCare.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Everything you need to keep the Leather in your car clean and soft.</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^Legacy","Legacy","0",\N,"Cat2SubaruLegacy.jpg","Please select the variant of your Subaru Legacy from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^Legacy^Legacy 2.0D 110kW (08-on)","Legacy 2.0D 110kW (08-on)","2390",\N,"TPC002390.jpg","Products available for your Subaru Legacy  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Legend","Legend","0",\N,"Cat2HondaLegend.jpg","Please select the variant of your Honda Legend from the list below",\N,\N,\N,"Y",\N
@@ -2072,7 +2155,7 @@
 "Find Stuff For My Car!^Mazda^MX3^MX3 100kW (94-on)","MX3 100kW (94-on)","1325",\N,"TPC001325.jpg","Products available for your Mazda MX3  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mazda^MX6","MX6","0",\N,"Cat2MazdaMX6.jpg","Please select the variant of your Mazda MX6 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mazda^MX6^MX6 123kW (92-97)","MX6 123kW (92-97)","1326",\N,"TPC001326.jpg","Products available for your Mazda MX6  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^NanoFibre","NanoFibre","0",\N,"Nanofibre.jpg","The world's very best NanoFibre products for your car",\N,\N,\N,"Y",\N
+"Final Inspection^NanoFibre","NanoFibre","0",\N,"FIStore/Nanofibre.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>The finest Nanofibre detailing cloths available on the market today</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Navara","Navara","0",\N,"Cat2NissanNavara.jpg","Please select the variant of your Nissan Navara from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Navara^Navara Di 98kW (01-04)","Navara Di 98kW (01-04)","1600",\N,"TPC001600.jpg","Products available for your Nissan Navara  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Chrysler^Neon","Neon","0",\N,"Cat2ChryslerNeon.jpg","Please select the variant of your Chrysler Neon from the list below",\N,\N,\N,"Y",\N
@@ -2132,15 +2215,21 @@
 "Find Stuff For My Car!^Chevrolet^Orlando","Orlando","0",\N,"Cat2ChevroletOrlando.jpg","Please select the variant of your Chevrolet Orlando from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Chevrolet^Orlando^Orlando 2.0 VCDi 119kW (11-on)","Orlando 2.0 VCDi 119kW (11-on)","765",\N,"TPC000765.jpg","Products available for your Chevrolet Orlando  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Chevrolet^Orlando^Orlando 2.0 VCDi 95kW (11-on)","Orlando 2.0 VCDi 95kW (11-on)","764",\N,"TPC000764.jpg","Products available for your Chevrolet Orlando  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^OTA - OVAL TRUMPET AIRBOX","OTA - OVAL TRUMPET AIRBOX",\N,\N,"","<p style=\"text-align: justify&#59\"><strong>The birth<br /></strong><img style=\"float: right&#59\" title=\"OTA\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/bmc_ota.JPG\" alt=\"OTA\" width=\"200\" height=\"148\" />The O.T.A. device &ndash&#59 Oval Trumpet Air box &ndash&#59 is the new high performance BMC aspiration and filtration kit&#59 it has been fully designed and manufactured by BMC race division&#44 the department which is constantly developing new air filters and filtration systems for racing: Formula 1 / Moto GP / WSBK / WTCC / DTM / Fia.GT / Le Mans 24 hours. The top know-how gained in over 10 years of work in the racing field is at the base of the new OTA device which will amaze you with impressive results and an undoubted increase of engine performance.<br /><br /><br /></p>\
+<p style=\"text-align: justify&#59\"><strong>What is O.T.A.?<br /></strong>It is a complete kit for engine air aspiration and filtration. This device is mainly composed of an oval-shaped air box in carbon fibre containing a cylindrical air filter with dynamic inlet. OTA kit totally replaces the original car filtration box (stock air-box). Usually the original car air boxes work in such a condition as the air is recalled by the engine in a &ldquo&#59depression regime&rdquo&#59&#44 through reduced section tubes&#44 thus resulting in high load drop along the aspiration line. The OTA device with its dynamic inlet works in a &ldquo&#59pressure regime&rdquo&#59&#44 therefore it provides a constant and high rated quantity of air to the engine taking advantage of the dynamic effect of the air pressure. In addition to its oval shape&#44 offering high installation versatility&#44 OTA system introduces in its inner part technical solutions which optimize the fluid dynamic of the air to the engine. In particular&#44 the innovative element called &ldquo&#59TRUMPET&rdquo&#59&#44 which is situated inside the air box in the area close to the air outlet&#44 thanks to its shape&#44 favours and optimizes the convey of the air flow to the engine&#44 resulting in the diminishing of turbulences. This solution reduces the pressure drop along the engine aspiration line and&#44 at the same time&#44 takes advantage of the potentiality of the dynamic pressure of the air caused by the speed of the moving car.<br />The air filter inside the air box is made of a multi layer pre-oiled filtering material which grants an high filtration efficiency against limited pressure drop in the air. The air filter has the function of protecting the engine from all the elements (debris&#44 sand&#44 dust&#44 etc&hellip&#59) in the air flow to the engine during the aspiration phase. BMC air filter has a very low drop (i.e. the pressure difference between the air flow at the engine side and the one at the air entrance side) in order to enable the maximum air flow. BMC air filter can be regenerated and re-used. Once the saturation level has been reached&#44 it is possible to regenerate the filter by washing and re-oil operation performed by means of the relevant regeneration kit OTA kit is a universal product which can be installed in different car models.<br />OTA kit range is featured by different air box dimensions and by the dimension of the connection parts of the car. The choice of the proper OTA model should be carried out on the base of the features of the engine to which the device will be applied and of the features and dimensions of the elements to which the device should be connected. Moreover&#44 the kit includes the necessary accessories to its installation. Besides the ones already included in the kit&#44 BMC has available in its catalogue a large range of accessories for the installation.</p>\
+<p style=\"text-align: justify&#59\"><strong><br /><img style=\"margin: 10px&#59 float: right&#59\" title=\"OTA Box\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/ota_box.JPG\" alt=\"OTA Box\" width=\"200\" height=\"142\" />Technical features<br /></strong>The main technical features are the following:<br />1) Oval shape of the air box designed to enable high versatility for the installation of the device.<br />2) High thermal insulation from heat sources by means of an air box in &ldquo&#59true&rdquo&#59 carbon fibre at 5 layers.<br />3) Air filter with re-generable material which warrants an high filtration efficiency with reduced drops.<br />4) Oval Trumpet: sophisticated and designed inner system for the channelling&#44 conveyance and increase of the air flow by introducing an innovative system/air conveyor named &ldquo&#59Trumpet&rdquo&#59. The Trumpet&#44 placed inside the OTA device on the air outlet side&#44 enables to additionally increase the quantity of air to the engine by taking advantage from the dynamic conveyance given by its peculiar shape.<br />5) Air box with sealing system enabling to guarantee the best sealing among the components&#44 such providing the best pressure tight of the device at any Rpm. <br /><br /><br /><br /><strong>Advantages and benefits<br /></strong>The joint working of all the OTA components above mentioned make OTA a device which is suitable to supply fresh and pressurized air to the engine: this brings to better combustion and performance&#44 consequently improving the torque values (NM) and the maximum power (HP) along the whole engine rpm. In addition&#44 OTA kit provides a sport sound.</p>\
+<p style=\"text-align: justify&#59\"><strong><br />Positioning</strong><br />OTA device&#44 due to its technical and design features and to the use of racing materials can be positioned at the top both of BMC air filters catalogue and of the worldwide range of sport filtration system for road and race cars. <br /><br />Visit the OTA dedicated site!<br /><br /></p>\
+<p style=\"text-align: center&#59\"><img title=\"OTA Details\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/ota_details_3d.JPG\" alt=\"OTA Details\" width=\"400\" height=\"345\" /><br /><br /><br /><br /></p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^Outback","Outback","0",\N,"Cat2SubaruOutback.jpg","Please select the variant of your Subaru Outback from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^Outback^Outback 2.0D 110kW (08-on)","Outback 2.0D 110kW (08-on)","2391",\N,"TPC002391.jpg","Products available for your Subaru Outback  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mitsubishi^Outlander","Outlander","0",\N,"Cat2MitsubishiOutlander.jpg","Please select the variant of your Mitsubishi Outlander from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mitsubishi^Outlander^Outlander DI-D 100kW (06-on)","Outlander DI-D 100kW (06-on)","1579",\N,"TPC001579.jpg","Products available for your Mitsubishi Outlander  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Paint Decontamination","Paint Decontamination","0",\N,"PaintDecontamination.jpg","Remove surface contaminants from your car's paint",\N,\N,\N,"Y",\N
-"Final Inspection^Paint Polishes","Paint Polishes","0",\N,"PaintPolishes.jpg","Everything you need to polish your car up to a high shine",\N,\N,\N,"Y",\N
-"Final Inspection^Paint Polishing Accessories","Paint Polishing Accessories","0",\N,"PolishingAccessories.jpg","Various polishing accessories",\N,\N,\N,"Y",\N
-"Final Inspection^Paint Polishing Pads","Paint Polishing Pads","0",\N,"PaintCorrection.jpg","Pads to polish your car up",\N,\N,\N,"Y",\N
-"Final Inspection^Paint Protection","Paint Protection","0",\N,"PaintProtection.jpg","Final Inspection has a range of sealants to keep the paint on your car protected against the elements.",\N,\N,\N,"Y",\N
+"Final Inspection^Paint Decontamination","Paint Decontamination","0",\N,"FIStore/PaintDecontamination.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Everything you need to remove surface contaminants from the paint surface of your car</p>  </div></div>",\N,\N,\N,"Y",\N
+"Final Inspection^Paint Polishes","Paint Polishes","0",\N,"FIStore/PaintPolishes.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>The Final Inspection range of CAP (Clustered Abrasive Polish) Polishes are amongst the very best polishes in the world</p>  </div></div>",\N,\N,\N,"Y",\N
+"Final Inspection^Paint Polishing Accessories","Paint Polishing Accessories","0",\N,"FIStore/PolishingAccessories.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>All of the other stuff you need when Polishing.</p>  </div></div>",\N,\N,\N,"Y",\N
+"Final Inspection^Paint Polishing Pads","Paint Polishing Pads","0",\N,"FIStore/PaintCorrection.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Final Inspection has a pad for every occasion!</p>  </div></div>",\N,\N,\N,"Y",\N
+"Final Inspection^Paint Protection","Paint Protection","0",\N,"FIStore/PaintProtection.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Final Inspection make the finest Paint Protection products in the world!</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^Panamera","Panamera","0",\N,"Cat2PorschePanamera.jpg","Please select the variant of your Porsche Panamera from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^Panamera^Panamera 3.0 D 185kW (11-on)","Panamera 3.0 D 185kW (11-on)","1967",\N,"TPC001967.jpg","Products available for your Porsche Panamera  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Panda","Panda","0",\N,"Cat2FiatPanda.jpg","Please select the variant of your Fiat Panda from the list below",\N,\N,\N,"Y",\N
@@ -2231,6 +2320,8 @@
 "Find Stuff For My Car!^Skoda^Praktik","Praktik","0",\N,"Cat2SkodaPraktik.jpg","Please select the variant of your Skoda Praktik from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Praktik^Praktik 1.6 TDI 56kW (10-on)","Praktik 1.6 TDI 56kW (10-on)","2351",\N,"TPC002351.jpg","Products available for your Skoda Praktik  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Praktik^Praktik 1.6 TDI 66kW (10-on)","Praktik 1.6 TDI 66kW (10-on)","2352",\N,"TPC002352.jpg","Products available for your Skoda Praktik  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^PREFILTERS","PREFILTERS",\N,\N,"","<p style=\"text-align: justify&#59\"><img style=\"float: right&#59\" title=\"Prefilters\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/prefiltro3.jpg\" alt=\"Prefilters\" width=\"151\" height=\"101\" />BMC Prefilters are made from polyester treated with a hydro-repellent process that does not impair normal air flow. The BMC prefilter prevents the induction of elements present on a standard off-road route such as sand&#44 soil&#44 water and rubble. Moreover&#44 by preventing the filter from becoming blocked&#44 they help to maintain optimum performance of the bike at all times.</p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Prelude","Prelude","0",\N,"Cat2HondaPrelude.jpg","Please select the variant of your Honda Prelude from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Prelude^Prelude 118kW (92-97)","Prelude 118kW (92-97)","1200",\N,"TPC001200.jpg","Products available for your Honda Prelude  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^Prelude^Prelude 137kW (93-97)","Prelude 137kW (93-97)","1201",\N,"TPC001201.jpg","Products available for your Honda Prelude  are listed below",\N,\N,\N,"Y",\N
@@ -2306,6 +2397,8 @@
 "Find Stuff For My Car!^Audi^R8^R8 42^R8 4.2 V8 FSi 309kW (07-on)","R8 4.2 V8 FSi 309kW (07-on)","287",\N,"TPC000287.jpg","Products available for your Audi R8 42 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Audi^R8^R8 42","R8 42","0",\N,"Cat3AudiR842.jpg","Please select the variant of your Audi R8 42 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Audi^R8^R8 42^R8 5.2 FSI Quattro 386kW (09-on)","R8 5.2 FSI Quattro 386kW (09-on)","288",\N,"TPC000288.jpg","Products available for your Audi R8 42 are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^RACE BIKE FILTERS","RACE BIKE FILTERS",\N,\N,"","<p style=\"text-align: justify&#59\"><img style=\"float: right&#59 margin-left: 10px&#59 margin-right: 10px&#59\" title=\"Race Filter\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/race_filter.jpg\" alt=\"Race Filter\" width=\"200\" height=\"151\" />Alongside standard filters&#44 BMC has produced a race version for the most important bike models. These filters have the same shape as the standard version but with a different filtering body designed to take in more air than other air intake systems&#44 but without compromising its filtering properties. BMC RACE filters are for people who are not satisfied with the standard performance of the bike and want to improve the engine by upgrading other bike parts. With this filter they can find the best balance for a bike aiming for the top. BMC RACE filters are identified by an orange line inside the filtering body.</p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Range-Rover","Range-Rover","0",\N,"Cat2LandRoverRange-Rover.jpg","Please select the model code of your Land Rover Range-Rover from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Range-Rover^Range-Rover P38A^Range-Rover 136kW (98-02)","Range-Rover 136kW (98-02)","1304",\N,"TPC001304.jpg","Products available for your Land Rover Range-Rover P38A are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Land Rover^Range-Rover^Range-Rover P38A^Range-Rover 160kW (99-02)","Range-Rover 160kW (99-02)","1306",\N,"TPC001306.jpg","Products available for your Land Rover Range-Rover P38A are listed below",\N,\N,\N,"Y",\N
@@ -2503,6 +2596,11 @@
 "Find Stuff For My Car!^Volvo^S90","S90","0",\N,"Cat2VolvoS90.jpg","Please select the variant of your Volvo S90 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volvo^S90^S90 135kW (96-98)","S90 135kW (96-98)","2770",\N,"TPC002770.jpg","Products available for your Volvo S90  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volvo^S90^S90 153kW (96-98)","S90 153kW (96-98)","2771",\N,"TPC002771.jpg","Products available for your Volvo S90  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER^SA 12° inlet flange","SA 12° inlet flange",\N,\N,"sa_12_inlet_flange_small.JPG","Polyurethane Top.<br /><br />With 12&deg; angled inflet flange.&nbsp;",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER^SA Large (CarbonTop)","SA Large (CarbonTop)",\N,\N,"sa_large_small.JPG","Carbon Fibre Top.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER^SA Large (Polyurethane Top)","SA Large (Polyurethane Top)",\N,\N,"sa_large_small.JPG","Polyurethane Top.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER^SA Medium","SA Medium",\N,\N,"sa_medium_small.JPG","Polyurethane Top.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER^SA Small","SA Small",\N,\N,"sa_small_small.JPG","Polyurethane Top.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Saab","Saab","0",\N,"Cat1Saab.jpg","Please select the model of your Saab from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Safrane","Safrane","0",\N,"Cat2RenaultSafrane.jpg","Please select the variant of your Renault Safrane from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Safrane^Safrane 101kW (96-00)","Safrane 101kW (96-00)","2099",\N,"TPC002099.jpg","Products available for your Renault Safrane  are listed below",\N,\N,\N,"Y",\N
@@ -2600,6 +2698,10 @@
 "Find Stuff For My Car!^Opel^Signum^Signum 2.8 V6 169kW (05-on)","Signum 2.8 V6 169kW (05-on)","1762",\N,"TPC001762.jpg","Products available for your Opel Signum  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Signum^Signum CDTi 110kW (03-08)","Signum CDTi 110kW (03-08)","1760",\N,"TPC001760.jpg","Products available for your Opel Signum  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Signum^Signum CDTi 89kW (03-08)","Signum CDTi 89kW (03-08)","1759",\N,"TPC001759.jpg","Products available for your Opel Signum  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER","SINGLE AIR FILTER",\N,\N,"","\
+",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Single carburetor Carbon Top","Single carburetor Carbon Top",\N,\N,"carb_filters.JPG","L, R and C stand for Left, Right and Central intake.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Single carburetor Chrome Metal Top","Single carburetor Chrome Metal Top",\N,\N,"single_carburetor_metal.JPG","L, R and C stand for Left, Right and Central intake.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Sintra","Sintra","0",\N,"Cat2OpelSintra.jpg","Please select the variant of your Opel Sintra from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Sintra^Sintra 104kW (97-99)","Sintra 104kW (97-99)","1763",\N,"TPC001763.jpg","Products available for your Opel Sintra  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Sintra^Sintra 148kW (97-99)","Sintra 148kW (97-99)","1764",\N,"TPC001764.jpg","Products available for your Opel Sintra  are listed below",\N,\N,\N,"Y",\N
@@ -2633,6 +2735,8 @@
 "Find Stuff For My Car!^Kia^Sorento","Sorento","0",\N,"Cat2KiaSorento.jpg","Please select the variant of your Kia Sorento from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Kia^Sorento^Sorento 2.5 CRDi 126kW (06-on)","Sorento 2.5 CRDi 126kW (06-on)","1262",\N,"TPC001262.jpg","Products available for your Kia Sorento  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Kia^Sorento^Sorento CRDi 103kW (03-on)","Sorento CRDi 103kW (03-on)","1263",\N,"TPC001263.jpg","Products available for your Kia Sorento  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SPECIFIC KITS","SPECIFIC KITS",\N,\N,"","\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^Spider","Spider","0",\N,"Cat2AlfaRomeoSpider.jpg","Please select the variant of your Alfa Romeo Spider from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^Spider^Spider TS 112kW (96-03)","Spider TS 112kW (96-03)","54",\N,"TPC000054.jpg","Products available for your Alfa Romeo Spider  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Splash","Splash","0",\N,"Cat2SuzukiSplash.jpg","Please select the variant of your Suzuki Splash from the list below",\N,\N,\N,"Y",\N
@@ -2657,6 +2761,8 @@
 "Find Stuff For My Car!^Mercedes^Sprinter^Sprinter 903","Sprinter 903","0",\N,"Cat3MercedesSprinter903.jpg","Please select the variant of your Mercedes Sprinter 903 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^Sprinter^Sprinter 906","Sprinter 906","0",\N,"Cat3MercedesSprinter906.jpg","Please select the variant of your Mercedes Sprinter 906 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^SsangYong","SsangYong","0",\N,"Cat1SsangYong.jpg","Please select the model of your SsangYong from the list below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^STANDARD BIKE FILTERS","STANDARD BIKE FILTERS",\N,\N,"","<p style=\"text-align: justify&#59\"><img style=\"float: right&#59\" title=\"Bike Filter\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/bike_filter.JPG\" alt=\"Bike Filter\" width=\"308\" height=\"205\" />The knowledge and experience gained on track is transferred to street production in order to offer performance products&#44 tested and in continuous evolution&#44 designed to satisfy the requirements of the most demanding motorcyclists. The materials used in production are of the highest standard: filters are made in one single piece with no welded joints thus avoiding breakage&#59 the filtering material is composed of a special cotton gauze soaked with low viscosity oil and covered with an epoxy coated alloy mesh to ensure protection from petrol fumes and oxidization due to air humidity. Furthermore the cotton has the advantage of being washable and therefore reusable. In this way BMC air filters guarantee superior air capacity in respect to traditional paper filters enabling minimum loss of power in the air flow and therefore obtaining better performance from the engine.<br /><br />Use the search panel (menu on the left) to find the right filter for your bike.</p>\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Stilo","Stilo","0",\N,"Cat2FiatStilo.jpg","Please select the variant of your Fiat Stilo from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Stilo^Stilo JTD 86kW (02-on)","Stilo JTD 86kW (02-on)","950",\N,"TPC000950.jpg","Products available for your Fiat Stilo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Rover^Streetwise","Streetwise","0",\N,"Cat2RoverStreetwise.jpg","Please select the variant of your Rover Streetwise from the list below",\N,\N,\N,"Y",\N
@@ -2689,6 +2795,7 @@
 "Find Stuff For My Car!^Skoda^Superb^Superb 3U","Superb 3U","0",\N,"Cat3SkodaSuperb3U.jpg","Please select the variant of your Skoda Superb 3U from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Superb^Superb 3U^Superb 86kW (02-08)","Superb 86kW (02-08)","2370",\N,"TPC002370.jpg","Products available for your Skoda Superb 3U are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Superb^Superb 3U^Superb TDI 116kW (03-08)","Superb TDI 116kW (03-08)","2377",\N,"TPC002377.jpg","Products available for your Skoda Superb 3U are listed below",\N,\N,\N,"Y",\N
+"Superchips","Superchips","0",\N,"","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki","Suzuki","0",\N,"Cat1Suzuki.jpg","Please select the model of your Suzuki from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Swift","Swift","0",\N,"Cat2SuzukiSwift.jpg","Please select the variant of your Suzuki Swift from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Swift^Swift DDiS 55kW (05-on)","Swift DDiS 55kW (05-on)","2398",\N,"TPC002398.jpg","Products available for your Suzuki Swift  are listed below",\N,\N,\N,"Y",\N
@@ -2855,11 +2962,26 @@
 "Find Stuff For My Car!^Hyundai^Tucson","Tucson","0",\N,"Cat2HyundaiTucson.jpg","Please select the variant of your Hyundai Tucson from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Hyundai^Tucson^Tucson 2.0 CRDi 83kW (04-06)","Tucson 2.0 CRDi 83kW (04-06)","1228",\N,"TPC001228.jpg","Products available for your Hyundai Tucson  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Hyundai^Tucson^Tucson CRTD 103kW (07-on)","Tucson CRTD 103kW (07-on)","1229",\N,"TPC001229.jpg","Products available for your Hyundai Tucson  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW Large (Carbon Top)","TW Large (Carbon Top)",\N,\N,"tw_large_small.JPG","Carbon Top.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW Large (Metal Top)","TW Large (Metal Top)",\N,\N,"tw_large_small.JPG","Metal Top.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW Large (Plastic Top)","TW Large (Plastic Top)",\N,\N,"tw_large_small.JPG","Plastic Top.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW Medium","TW Medium",\N,\N,"tw_medium_small.JPG","Standard = Metal Top<br />P = Plastic Top",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW Very Large","TW Very Large",\N,\N,"tw_very_large_small.JPG","Standard = Metal Top<br />P = Plastic Top<br />C = Carbon Top",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW With 12° angled flange","TW With 12° angled flange",\N,\N,"tw_12_flange_small.JPG","With 12&deg; angled intake flange.<br /><br />Standard = Metal&nbsp;Top<br />P = Plastic Top<br />C = Carbon Top",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW with sensor hole","TW with sensor hole",\N,\N,"tw_with_hole_small.JPG","Holed flange for Bosch sensor.<br /><br />Standard = Metal Top<br />P = Plastic Top<br />C = Carbon Top",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER^TW without flange","TW without flange",\N,\N,"tw_noflange_small(1).JPG","Twin Air conical filter without flange.<br /><br />Standard = Metal Top<br />P = Plastic Top<br />C = Carbon Top",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^CONICAL FILTERS^TWIN AIR FILTER","TWIN AIR FILTER",\N,\N,"","TWIN AIR FILTER\
+",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Twin Air for carburetor (SPECIFIC)","Twin Air for carburetor (SPECIFIC)",\N,\N,"twin_air_carb.JPG","Click on the codes to know the applications.",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Twin Air for carburetor (UNIVERSAL)","Twin Air for carburetor (UNIVERSAL)",\N,\N,"carb_twin_small.JPG","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Twingo","Twingo","0",\N,"Cat2RenaultTwingo.jpg","Please select the variant of your Renault Twingo from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Twingo^Twingo II 1.2 TCe 74kW (07-on)","Twingo II 1.2 TCe 74kW (07-on)","2128",\N,"TPC002128.jpg","Products available for your Renault Twingo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Ulysse","Ulysse","0",\N,"Cat2FiatUlysse.jpg","Please select the variant of your Fiat Ulysse from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Ulysse^Ulysse 91kW (95-00)","Ulysse 91kW (95-00)","956",\N,"TPC000956.jpg","Products available for your Fiat Ulysse  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Ulysse^Ulysse JTD 83kW (99-on)","Ulysse JTD 83kW (99-on)","957",\N,"TPC000957.jpg","Products available for your Fiat Ulysse  are listed below",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Universal Conical Filters (straight)","Universal Conical Filters (straight)",\N,\N,"conical_small.JPG","",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Universal Conical Filters (with elbow)","Universal Conical Filters (with elbow)",\N,\N,"con_angolo.jpg","",\N,\N,\N,"Y",\N
+"BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Universal Conical Filters Twin Air (straight)","Universal Conical Filters Twin Air (straight)",\N,\N,"","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^V-Class","V-Class","0",\N,"Cat2MercedesV-Class.jpg","Please select the variant of your Mercedes V-Class from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes^V-Class^V-Class 110 CDI 92kW (99-02)","V-Class 110 CDI 92kW (99-02)","1521",\N,"TPC001521.jpg","Products available for your Mercedes V-Class  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volvo^V40","V40","0",\N,"Cat2VolvoV40.jpg","Please select the variant of your Volvo V40 from the list below",\N,\N,\N,"Y",\N
@@ -2973,7 +3095,7 @@
 "Find Stuff For My Car!^Opel^VXR8","VXR8","0",\N,"Cat2OpelVXR8.jpg","Please select the variant of your Opel VXR8 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^VXR8^VXR8 6.0 V8 307kW (07-on)","VXR8 6.0 V8 307kW (07-on)","1804",\N,"TPC001804.jpg","Products available for your Opel VXR8  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^VXR8^VXR8 6.2 V8 317kW (08-on)","VXR8 6.2 V8 317kW (08-on)","1805",\N,"TPC001805.jpg","Products available for your Opel VXR8  are listed below",\N,\N,\N,"Y",\N
-"Final Inspection^Wheel Care","Wheel Care","0",\N,"WheelCare.jpg","Cleaning your wheels the easy way!",\N,\N,\N,"Y",\N
+"Final Inspection^Wheel Care","Wheel Care","0",\N,"FIStore/WheelCare.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Remove the brake dust from your wheels with little time or effort required</p>  </div></div>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Wind","Wind","0",\N,"Cat2RenaultWind.jpg","Please select the variant of your Renault Wind from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Wind^Wind 1.2 TCe 74kW (10-on)","Wind 1.2 TCe 74kW (10-on)","2129",\N,"TPC002129.jpg","Products available for your Renault Wind  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Jeep^Wrangler","Wrangler","0",\N,"Cat2JeepWrangler.jpg","Please select the variant of your Jeep Wrangler from the list below",\N,\N,\N,"Y",\N

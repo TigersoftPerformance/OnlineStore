@@ -12,6 +12,8 @@ mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=','
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BMCAirFilters.csv
 
+mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BMCAirProducts.csv
+
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BMCCars.csv
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BMCmods.csv

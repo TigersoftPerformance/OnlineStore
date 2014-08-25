@@ -7,6 +7,7 @@ cp /tmp/SuperchipsWebsite.txt ./SuperchipsWebsite.csv
 cp /tmp/SuperchipsMakes.txt ./SuperchipsMakes.csv
 cp /tmp/Categories.txt ./Categories.csv
 cp /tmp/BMCAirFilters.txt ./BMCAirFilters.csv
+cp /tmp/BMCAirProducts.txt ./BMCAirProducts.csv
 cp /tmp/BMCCars.txt ./BMCCars.csv
 cp /tmp/BMCmods.txt ./BMCmods.csv
 cp /tmp/CarFilters.txt ./CarFilters.csv
