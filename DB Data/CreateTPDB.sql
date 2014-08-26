@@ -1,7 +1,3 @@
--- SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
--- SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
--- SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
 CREATE SCHEMA IF NOT EXISTS `TP` DEFAULT CHARACTER SET utf8 ;
 USE `TP` ;
 
@@ -43,86 +39,20 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BMCAirFilters` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`BMCAirFilters` (
-  `part_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `part` VARCHAR(32) NOT NULL,
-  `name` TEXT NOT NULL COMMENT '	',
-  `buy_price` FLOAT NOT NULL COMMENT '	',
-  `RRP` FLOAT NOT NULL,
-  `type` TEXT NULL DEFAULT NULL,
-  `description` TEXT NULL DEFAULT NULL,
-  `dimname1` VARCHAR(45) NULL DEFAULT NULL,
-  `dimvalue1` VARCHAR(45) NULL DEFAULT NULL,
-  `dimname2` VARCHAR(45) NULL DEFAULT NULL,
-  `dimvalue2` VARCHAR(45) NULL DEFAULT NULL,
-  `dimname3` VARCHAR(45) NULL DEFAULT NULL,
-  `dimvalue3` VARCHAR(45) NULL DEFAULT NULL,
-  `image` TEXT NULL DEFAULT NULL,
-  `diagram` TEXT NULL DEFAULT NULL,
-  `active` CHAR(1) NULL DEFAULT NULL,
-  `comments` LONGTEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`part_id`),
-  UNIQUE INDEX `part_id_UNIQUE` (`part_id` ASC))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8;
-
-
 -- -----------------------------------------------------
 -- Table `TP`.`BMCCars`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BMCCars` ;
-
-CREATE TABLE IF NOT EXISTS `TP`.`BMCCars` (
-  `idBMCCars` INT(11) NOT NULL AUTO_INCREMENT,
-  `make` TEXT NOT NULL,
-  `variant` TEXT NOT NULL,
-  `hp` INT(11) NULL DEFAULT NULL,
-  `year` VARCHAR(16) NULL DEFAULT NULL,
-  `part_id` INT(11) NOT NULL,
-  `active` CHAR(1) NULL DEFAULT NULL,
-  `comments` LONGTEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`idBMCCars`),
-  UNIQUE INDEX `idBMCCars_UNIQUE` (`idBMCCars` ASC))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8;
-
 
 -- -----------------------------------------------------
 -- Table `TP`.`BMCmods`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BMCmods` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`BMCmods` (
-  `idBMCmods` INT(11) NOT NULL AUTO_INCREMENT,
-  `make` TEXT NULL DEFAULT NULL,
-  `marca` INT(11) NULL DEFAULT NULL,
-  `model` TEXT NULL DEFAULT NULL,
-  `modid` VARCHAR(30) NULL DEFAULT NULL,
-  PRIMARY KEY (`idBMCmods`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8;
-
-
 -- -----------------------------------------------------
 -- Table `TP`.`CarFilters`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`CarFilters` ;
-
-CREATE TABLE IF NOT EXISTS `TP`.`CarFilters` (
-  `idCarFilters` INT(11) NOT NULL AUTO_INCREMENT,
-  `carID` INT(11) NULL DEFAULT NULL,
-  `CR` INT(11) NULL DEFAULT NULL,
-  `CDA` INT(11) NULL DEFAULT NULL,
-  `CRF` INT(11) NULL DEFAULT NULL,
-  `OTA` INT(11) NULL DEFAULT NULL,
-  `SPK` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`idCarFilters`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -380,35 +310,74 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
--- SET SQL_MODE=@OLD_SQL_MODE;
--- SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
--- SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- -----------------------------------------------------
+-- Table `TP`.`BMCCars`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BMCCars` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BMCCars` (
+  `idBMCCars` INT NOT NULL,
+  `Make` VARCHAR(45) NOT NULL,
+  `Model` VARCHAR(45) NOT NULL,
+  `Model Code` VARCHAR(45) NULL,
+  `Variant` VARCHAR(45) NULL,
+  `HP` INT NULL,
+  `Year` VARCHAR(45) NULL,
+  PRIMARY KEY (`idBMCCars`),
+  UNIQUE INDEX `idBMC Cars_UNIQUE` (`idBMCCars` ASC))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
--- Table `TP`.`BMCAirProducts`
+-- Table `TP`.`BMCProducts`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TP`.`BMCAirProducts` ;
+DROP TABLE IF EXISTS `TP`.`BMCProducts` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`BMCAirProducts` (
-  `part_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `cat` TEXT NULL DEFAULT NULL,
-  `part` VARCHAR(32) NOT NULL,
-  `name` TEXT NOT NULL COMMENT ' ',
-  `buy_price` FLOAT NOT NULL COMMENT '  ',
-  `RRP` FLOAT NOT NULL,
-  `type` TEXT NULL DEFAULT NULL,
-  `description` TEXT NULL DEFAULT NULL,
-  `dimname1` VARCHAR(45) NULL DEFAULT NULL,
-  `dimvalue1` VARCHAR(45) NULL DEFAULT NULL,
-  `dimname2` VARCHAR(45) NULL DEFAULT NULL,
-  `dimvalue2` VARCHAR(45) NULL DEFAULT NULL,
-  `dimname3` VARCHAR(45) NULL DEFAULT NULL,
-  `dimvalue3` VARCHAR(45) NULL DEFAULT NULL,
-  `image` TEXT NULL DEFAULT NULL,
-  `diagram` TEXT NULL DEFAULT NULL,
-  `active` CHAR(1) NULL DEFAULT NULL,
-  `comments` LONGTEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`part_id`),
-  UNIQUE INDEX `part_id_UNIQUE` (`part_id` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+CREATE TABLE IF NOT EXISTS `TP`.`BMCProducts` (
+  `bmc_part_id` VARCHAR(32) NOT NULL,
+  `name` TEXT NULL,
+  `category` TEXT NULL,
+  `cost_price` DECIMAL(13,4) NULL,
+  `tp_price` DECIMAL(13,4) NULL,
+  `rrp_price` DECIMAL(13,4) NULL,
+  `type` TEXT NULL,
+  `description` TEXT NULL,
+  `dimname1` VARCHAR(45) NULL,
+  `dimvalue1` VARCHAR(45) NULL,
+  `dimname2` VARCHAR(45) NULL,
+  `dimvalue2` VARCHAR(45) NULL,
+  `dimname3` VARCHAR(45) NULL,
+  `dimvalue3` VARCHAR(45) NULL,
+  `image` TEXT NULL,
+  `diagram` TEXT NULL,
+  `active` CHAR(1) NULL,
+  `comments` LONGTEXT NULL,
+  PRIMARY KEY (`bmc_part_id`),
+  UNIQUE INDEX `bmc_part_id_UNIQUE` (`bmc_part_id` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BMCFitment`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BMCFitment` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BMCFitment` (
+  `BMCCars_idBMCCars` INT NOT NULL,
+  `BMCProducts_bmc_part_id` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`BMCCars_idBMCCars`, `BMCProducts_bmc_part_id`),
+  INDEX `fk_BMCCars_has_BMCProducts_BMCProducts1_idx` (`BMCProducts_bmc_part_id` ASC),
+  INDEX `fk_BMCCars_has_BMCProducts_BMCCars_idx` (`BMCCars_idBMCCars` ASC),
+  CONSTRAINT `fk_BMCCars_has_BMCProducts_BMCCars`
+    FOREIGN KEY (`BMCCars_idBMCCars`)
+    REFERENCES `TP`.`BMCCars` (`idBMCCars`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_BMCCars_has_BMCProducts_BMCProducts1`
+    FOREIGN KEY (`BMCProducts_bmc_part_id`)
+    REFERENCES `TP`.`BMCProducts` (`bmc_part_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
