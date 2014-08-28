@@ -116,17 +116,118 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 		#
 		my $modelid_content = $mech->content();
 
-		$modelid_content =~ /<div id="risultati">/s;
-		while ($modelid_content =~ /<strong>(.+)<\/strong>/gi)
+		# Scan the page for tables of variants of the specified model 
+		# There will be one table per BMC product. 
+		# The table will have the product type (eg CAR FILTERS, or CDA - CARBON DYNAMIC AIRBOX)
+		# within <strong> tags and then the table will follow
+		while ($modelid_content =~ /<strong>(.*?)<\/strong>.*?<table class="gradient-style2"(.*?)<\/table>/sg)
 			{
-			my $category = $1;
-			say $category;
-			}
-		my $table_cols = qr/<th scope="col">Model<\/th>\s*<th scope="col">HP<\/th>\s*<th scope="col">Year<\/th>\s*<th scope="col">ID\/Chassis<\/th>\s*<th scope="col">Engine Code<\/th>\s*<th scope="col">Shape<\/th>\s*<th scope="col">Code<\/th>/;
-		if ($modelid_content !~ /$table_cols/)
-			{
-			say "Can't find correct columns!";
+			my $product_type = $1, my $model_table = $2;
+			say "  >Found table for $product_type";
+			
+			# so now we have just the structure of one table with its product type, 
+			# so we can parse the table header to see what columns we are dealing with.
+			# Need to come up with a strategy for dealing with these better than just counting them
+			my $table_header = $1 if $model_table =~ /<thead>(.*?)<\/thead/sg;
+			last if (!defined $table_header);
+			my @column_names = ();
+			while ($table_header =~ /<th scope="col">(.*?)<\/th>/sg)
+				{
+				push (@column_names, $1);
+				#say "   >Found Column Name " . $column_names[scalar (@column_names) - 1];
+				}
+			
+
+			# Now we have to read each row of data from the table
+			# first thing is to isolate just the table data
+			my $table_data = $1 if $model_table =~ /<tbody>(.*?)<\/tbody/sg;
+			last if (!defined $table_data);
+			my @column_values = ();
+			# Now loop through each row in the table. There is one row per variant
+			while ($table_data =~ /<tr>(.*?)<\/tr>/sg)
+				{
+				my $table_row = $1;
+				@column_values = ();
+				#print "   >Found Row ";
+				while ($table_row =~ /<td.*?>(.*?)<\/td>/sg)
+					{
+					push (@column_values, $1);
+					#print ":" . $column_values [scalar (@column_values) - 1];
+					}
+				#say ":\n\n";
+				&add_new_variant ($product_type, \@column_names, \@column_values);
+				}
 			}
 		}
 	}
 
+sub add_new_variant
+	{
+	my $product_type = $_[0];
+	my @column_names = @{$_[1]};
+	my @column_values = @{$_[2]};
+
+	# Column Names for CAR FILTERS are:
+	# Model, HP, Year, ID/Chassis, Engine Code, Shape, Code
+	# So 7 columns in total
+	if ($product_type eq "CAR FILTERS")
+		{
+		if (scalar (@column_names) != 7 || scalar (@column_values) != 7)
+			{
+			&wrong_columns ($product_type, \@column_names, \@column_values);
+			return -1;
+			}
+		return 0;
+		}
+		
+	# Column Names for CDA - CARBON DYNAMIC AIRBOX are:
+	# Model, Mounting Note, Components List
+	# So 3 columns in total
+	if ($product_type eq "CDA - CARBON DYNAMIC AIRBOX")
+		{
+		if (scalar (@column_names) != 3 || scalar (@column_values) != 3)
+			{
+			&wrong_columns ($product_type, \@column_names, \@column_values);
+			return -1;
+			}
+		return 0;
+		}
+
+	# Column Names for OTA - OVAL TRUMPET AIRBOX are:
+	# Model, HP, Year, ID/Chassis, Engine Code, Shape, Code
+	# So 7 columns in total
+	if ($product_type eq "OTA - OVAL TRUMPET AIRBOX")
+		{
+		if (scalar (@column_names) != 7 || scalar (@column_values) != 7)
+			{
+			&wrong_columns ($product_type, \@column_names, \@column_values);
+			return -1;
+			}
+		return 0;
+		}
+
+	say "ERROR! Unknown Product Type!";
+	say "$product_type";
+	say "---------------------------------";
+	say "@column_names\n";
+	say "---------------------------------";
+	say "@column_values\n";
+	say "---------------------------------";
+	return -1;
+	}
+	
+sub wrong_columns
+	{
+	my $product_type = $_[0];
+	my @column_names = @{$_[1]};
+	my @column_values = @{$_[2]};
+	
+	say "ERROR! Mismatch of Columns!";
+	say "$product_type";
+	say "---------------------------------";
+	say "@column_names\n";
+	say "---------------------------------";
+	say "@column_values\n";
+	say "---------------------------------";
+	return -1;
+	}
