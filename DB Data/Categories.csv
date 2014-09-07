@@ -33,6 +33,7 @@
 "Find Stuff For My Car!^Peugeot^106^106 Rallye 75kW (93-95)","106 Rallye 75kW (93-95)","1821",\N,"TPC001821.jpg","Products available for your Peugeot 106  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Peugeot^106^106 Rallye 77kW (97-98)","106 Rallye 77kW (97-98)","1822",\N,"TPC001822.jpg","Products available for your Peugeot 106  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Peugeot^106^106 Xsi 79kW (94-95)","106 Xsi 79kW (94-95)","1823",\N,"TPC001823.jpg","Products available for your Peugeot 106  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^135° Elbow Hose","135° Elbow Hose",\N,\N,"curva_135.jpg","Silicon Connector with 135&deg; Bend (<span>THICKNESS&nbsp;</span>5mm)",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^145","145","0",\N,"Cat2AlfaRomeo145.jpg","Please select the variant of your Alfa Romeo 145 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^145^145 1.9 JTD 78kW (97-01)","145 1.9 JTD 78kW (97-01)","11",\N,"TPC000011.jpg","Products available for your Alfa Romeo 145  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^145^145 TS 108kW (97-01)","145 TS 108kW (97-01)","8",\N,"TPC000008.jpg","Products available for your Alfa Romeo 145  are listed below",\N,\N,\N,"Y",\N
@@ -497,6 +498,8 @@
 "Find Stuff For My Car!^Saab^9000","9000","0",\N,"Cat2Saab9000.jpg","Please select the variant of your Saab 9000 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Saab^9000^9000 157kW (94-96)","9000 157kW (94-96)","2182",\N,"TPC002182.jpg","Products available for your Saab 9000  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Saab^9000^9000 97kW (94-97)","9000 97kW (94-97)","2181",\N,"TPC002181.jpg","Products available for your Saab 9000  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^90° Elbow EPDM rubber connector","90° Elbow EPDM rubber connector",\N,\N,"curva_epdm.jpg","EPDM rubber connector with 90&deg; bend (TH 5mm)",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^90° Elbow Hose","90° Elbow Hose",\N,\N,"curva_90.jpg","Silicon Connector with 90&deg; Bend (THICKNESS&nbsp;5mm)",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^911","911","0",\N,"Cat2Porsche911.jpg","Please select the model code of your Porsche 911 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^911^911 964^911 187kW (89-93)","911 187kW (89-93)","1921",\N,"TPC001921.jpg","Products available for your Porsche 911 964 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche^911^911 964^911 194kW (91-93)","911 194kW (91-93)","1922",\N,"TPC001922.jpg","Products available for your Porsche 911 964 are listed below",\N,\N,\N,"Y",\N
@@ -774,6 +777,7 @@
 "Find Stuff For My Car!^Opel^Agila","Agila","0",\N,"Cat2OpelAgila.jpg","Please select the variant of your Opel Agila from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Agila^Agila CDTi 55kW (08-on)","Agila CDTi 55kW (08-on)","1620",\N,"TPC001620.jpg","Products available for your Opel Agila  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Agila^Agila Twin Port 59kW (05-on)","Agila Twin Port 59kW (05-on)","1619",\N,"TPC001619.jpg","Products available for your Opel Agila  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Air flow intake connector","Air flow intake connector",\N,\N,"colletto_ingresso_aria.jpg","Air Flow Sensor connector (Square Flange).",\N,\N,\N,"Y",\N
 "BMC^AIR INTAKE SYSTEMS","AIR INTAKE SYSTEMS",\N,\N,"","<p class=\"titolo\"><strong>What is an Intake Air System?</strong></p>\
 <p><span class=\"testo\">It is an air admission system designed to completely replace the OEM air-box of the car. It is designed to increase engine performance both in terms of power (HP) and torque (NM).</span><br /> <br /> <img title=\"BMC OTA fitting Mini Cooper\" src=\"http://www.bmcairfilters.com/cgi-bin/images/infobox/motori_mini.JPG\" alt=\"BMC OTA fitting Mini Cooper\" width=\"400\" height=\"133\" /><br /> <em>the same engine with the original air-box (left) and BMC intake system (right)</em></p>\
 <p><em><br /><br /></em></p>\
@@ -832,6 +836,9 @@
 "Find Stuff For My Car!^Seat^Altea^Altea 2.0 TFSI 147kW (06-on)","Altea 2.0 TFSI 147kW (06-on)","2224",\N,"TPC002224.jpg","Products available for your Seat Altea  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Seat^Altea^Altea Fsi 110kW (05-on)","Altea Fsi 110kW (05-on)","2214",\N,"TPC002214.jpg","Products available for your Seat Altea  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Seat^Altea^Altea FSi 75kW (05-on)","Altea FSi 75kW (05-on)","2213",\N,"TPC002213.jpg","Products available for your Seat Altea  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Aluminum connector with pin","Aluminum connector with pin",\N,\N,"manicotto_allum.jpg","Aluminum Connector with Threaded pin for support (THICKNESS 1&#44;5mm)",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Aluminum drain pipe","Aluminum drain pipe",\N,\N,"SARP Disegno.JPG","<span>Aluminum drain pipe</span>",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Aluminum tube cardboard reinforced","Aluminum tube cardboard reinforced",\N,\N,"tubo_acartone.jpg","Aluminum Flexible Tube Cardboard Reinforced.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Amarok","Amarok","0",\N,"Cat2VolkswagenAmarok.jpg","Please select the variant of your Volkswagen Amarok from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Amarok^Amarok 2.0 BiTDI 121kW (10-on)","Amarok 2.0 BiTDI 121kW (10-on)","2410",\N,"TPC002410.jpg","Products available for your Volkswagen Amarok  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Amarok^Amarok 2.0 BiTDI 133kW (11-on)","Amarok 2.0 BiTDI 133kW (11-on)","2411",\N,"TPC002411.jpg","Products available for your Volkswagen Amarok  are listed below",\N,\N,\N,"Y",\N
@@ -912,6 +919,7 @@
 "Find Stuff For My Car!^Mercedes^B-Class^B-Class B200 CDI BlueEfficiency 100kW (11-on)","B-Class B200 CDI BlueEfficiency 100kW (11-on)","1342",\N,"TPC001342.jpg","Products available for your Mercedes B-Class  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^B-Max","B-Max","0",\N,"Cat2FordB-Max.jpg","Please select the variant of your Ford B-Max from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^B-Max^B-Max 1.0 EcoBoost 73kW (12-on)","B-Max 1.0 EcoBoost 73kW (12-on)","959",\N,"TPC000959.jpg","Products available for your Ford B-Max  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Bag","Bag",\N,\N,"bag_small.JPG","BMC Bag.<br /><br />Select the article to view a larger image.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Baleno","Baleno","0",\N,"Cat2SuzukiBaleno.jpg","Please select the variant of your Suzuki Baleno from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Baleno^Baleno 71kW (96-99)","Baleno 71kW (96-99)","2392",\N,"TPC002392.jpg","Products available for your Suzuki Baleno  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Baleno^Baleno 89kW (99-02)","Baleno 89kW (99-02)","2393",\N,"TPC002393.jpg","Products available for your Suzuki Baleno  are listed below",\N,\N,\N,"Y",\N
@@ -940,10 +948,12 @@
 ",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^BIKE FILTERS","BIKE FILTERS",\N,\N,"","<p><img style=\"float: right&#59\" title=\"Bike Filter\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/bike_filter.JPG\" alt=\"Bike Filter\" width=\"256\" height=\"147\" />The knowledge and experience gained on track is transferred to street production in order to offer performance products&#44 tested and in continuous evolution&#44 designed to satisfy the requirements of the most demanding motorcyclists. The materials used in production are of the highest standard: filters are made in one single piece with no welded joints thus avoiding breakage&#59 the filtering material is composed of a special cotton gauze soaked with low viscosity oil and covered with an epoxy coated alloy mesh to ensure protection from petrol fumes and oxidization due to air humidity. Furthermore the cotton has the advantage of being washable and therefore reusable. In this way BMC air filters guarantee superior air capacity in respect to traditional paper filters enabling minimum loss of power in the air flow and therefore obtaining better performance from the engine.</p>\
 ",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Black T-Shirt","Black T-Shirt",\N,\N,"tshirt_black_small.jpg","Black/White BMC T-shirts. Available sizes from \"S\" to \"XXL\".<br /><br />Click an article to view a larger image and the products' details.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Cadillac^BLS","BLS","0",\N,"Cat2CadillacBLS.jpg","Please select the variant of your Cadillac BLS from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Cadillac^BLS^BLS 2.0 T 129kW (06-on)","BLS 2.0 T 129kW (06-on)","756",\N,"TPC000756.jpg","Products available for your Cadillac BLS  are listed below",\N,\N,\N,"Y",\N
 "Bluefin","Bluefin","0",\N,"Superchips/bluefin_header.jpg","<div class=\"infobox_container\"><div class=\"infobox halfbox\"><h2>Looking for a Bluefin?</h2><p>The best way to find the right Bluefin for your car is to visit the <a href=”../FindStuffForMyCar”>Find Stuff For My Car</a> section of our website</p></div><div class=\"infobox halfbox\"><h2>What is Bluefin and how does it work?</h2><p>Take a look at our <a href=”../BluefinInformation”>Bluefin Information Page</a></p></div></div>",\N,\N,\N,"Y",\N
 "BMC Air Filters","BMC Air Filters","0",\N,"","",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^BMC Watch","BMC Watch",\N,\N,"watch_bmc.JPG","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^BMW","BMW","0",\N,"Cat1BMW.jpg","Please select the model of your BMW from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Bora","Bora","0",\N,"Cat2VolkswagenBora.jpg","Please select the variant of your Volkswagen Bora from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Bora^Bora 112kW (01-04)","Bora 112kW (01-04)","2428",\N,"TPC002428.jpg","Products available for your Volkswagen Bora  are listed below",\N,\N,\N,"Y",\N
@@ -1442,6 +1452,7 @@
 "Find Stuff For My Car!^Land Rover^Discovery^Discovery Discovery 3^Discovery V8 224kW (04-09)","Discovery V8 224kW (04-09)","1283",\N,"TPC001283.jpg","Products available for your Land Rover Discovery Discovery 3 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Citroen^Dispatch","Dispatch","0",\N,"Cat2CitroenDispatch.jpg","Please select the variant of your Citroen Dispatch from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Citroen^Dispatch^Dispatch 2.0 HDi 120kW (10-on)","Dispatch 2.0 HDi 120kW (10-on)","832",\N,"TPC000832.jpg","Products available for your Citroen Dispatch  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Display","Display",\N,\N,"zcespnew_small.JPG","BMC Displaies for shops and dealers.<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Doblo","Doblo","0",\N,"Cat2FiatDoblo.jpg","Please select the variant of your Fiat Doblo from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Doblo^Doblo JTD 75kW (02-04)","Doblo JTD 75kW (02-04)","915",\N,"TPC000915.jpg","Products available for your Fiat Doblo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Doblo^Doblo JTD 79kW (04-on)","Doblo JTD 79kW (04-on)","916",\N,"TPC000916.jpg","Products available for your Fiat Doblo  are listed below",\N,\N,\N,"Y",\N
@@ -1605,6 +1616,7 @@
 "Find Stuff For My Car!^Fiat^Fiorino^Fiorino Multijet 55kW (08-on)","Fiorino Multijet 55kW (08-on)","924",\N,"TPC000924.jpg","Products available for your Fiat Fiorino  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mini^First","First","0",\N,"Cat2MiniFirst.jpg","Please select the variant of your Mini First from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mini^First^First 56kW (09-10)","First 56kW (09-10)","1568",\N,"TPC001568.jpg","Products available for your Mini First  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Flexible aluminum tube","Flexible aluminum tube",\N,\N,"tubo_gomma.jpg","Flexible aluminum tube.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Focus","Focus","0",\N,"Cat2FordFocus.jpg","Please select the model code of your Ford Focus from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Focus^Focus MkIII^Focus 1.0 EcoBoost 73kW (12-on)","Focus 1.0 EcoBoost 73kW (12-on)","1024",\N,"TPC001024.jpg","Products available for your Ford Focus MkIII are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Focus^Focus MkIII^Focus 1.0 EcoBoost 92kW (12-on)","Focus 1.0 EcoBoost 92kW (12-on)","1023",\N,"TPC001023.jpg","Products available for your Ford Focus MkIII are listed below",\N,\N,\N,"Y",\N
@@ -1808,6 +1820,7 @@
 "Find Stuff For My Car!^Toyota^GT86^GT86 2.0 D-4S 147kW (12-on)","GT86 2.0 D-4S 147kW (12-on)","2406",\N,"TPC002406.jpg","Products available for your Toyota GT86  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^GTV","GTV","0",\N,"Cat2AlfaRomeoGTV.jpg","Please select the variant of your Alfa Romeo GTV from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Alfa Romeo^GTV^GTV TS 112kW (96-03)","GTV TS 112kW (96-03)","53",\N,"TPC000053.jpg","Products available for your Alfa Romeo GTV  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Hats","Hats",\N,\N,"60_black_hat.jpg","BMC Hats&#44; Black or Red.<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Holden","Holden","0",\N,"Cat1Holden.jpg","Please select the model of your Holden from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda","Honda","0",\N,"Cat1Honda.jpg","Please select the model of your Honda from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Holden^HSV","HSV","0",\N,"Cat2HoldenHSV.jpg","Please select the variant of your Holden HSV from the list below",\N,\N,\N,"Y",\N
@@ -1858,6 +1871,8 @@
 "Find Stuff For My Car!^Hyundai^iLoad^iLoad 2.5 CRDi 86kW (10-on)","iLoad 2.5 CRDi 86kW (10-on)","1213",\N,"TPC001213.jpg","Products available for your Hyundai iLoad  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^Impreza","Impreza","0",\N,"Cat2SubaruImpreza.jpg","Please select the variant of your Subaru Impreza from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Subaru^Impreza^Impreza 2.0D 110kW (08-on)","Impreza 2.0D 110kW (08-on)","2389",\N,"TPC002389.jpg","Products available for your Subaru Impreza  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Inox clamp","Inox clamp",\N,\N,"fascetta_inox.jpg","Inox clamp",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Inox clamp for rubber tube","Inox clamp for rubber tube",\N,\N,"fascetta_per_tubo_gomma.jpg","Inox clamp for rubber flexible tube.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Insignia","Insignia","0",\N,"Cat2OpelInsignia.jpg","Please select the variant of your Opel Insignia from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Insignia^Insignia 1.4T 16V (Insig) 103kW (11-on)","Insignia 1.4T 16V (Insig) 103kW (11-on)","1731",\N,"TPC001731.jpg","Products available for your Opel Insignia  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Insignia^Insignia 1.8i 16V 103kW (09-on)","Insignia 1.8i 16V 103kW (09-on)","1724",\N,"TPC001724.jpg","Products available for your Opel Insignia  are listed below",\N,\N,\N,"Y",\N
@@ -1882,6 +1897,7 @@
 "Find Stuff For My Car!^Hyundai^ix35","ix35","0",\N,"Cat2Hyundaiix35.jpg","Please select the variant of your Hyundai ix35 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Hyundai^ix35^ix35 1.7 CRDi 85kW (10-on)","ix35 1.7 CRDi 85kW (10-on)","1214",\N,"TPC001214.jpg","Products available for your Hyundai ix35  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Hyundai^ix35^ix35 2.0 CRDi 100kW (10-on)","ix35 2.0 CRDi 100kW (10-on)","1215",\N,"TPC001215.jpg","Products available for your Hyundai ix35  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Jacket","Jacket",\N,\N,"giacca_small.JPG","Black BMC Jackets. Available sizes from \"S\" to \"XXXL\".<br /><br />Click an article to view a larger image and the products' details.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Jaguar","Jaguar","0",\N,"Cat1Jaguar.jpg","Please select the model of your Jaguar from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Jeep","Jeep","0",\N,"Cat1Jeep.jpg","Please select the model of your Jeep from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Jetta","Jetta","0",\N,"Cat2VolkswagenJetta.jpg","Please select the variant of your Volkswagen Jetta from the list below",\N,\N,\N,"Y",\N
@@ -1918,6 +1934,7 @@
 "Find Stuff For My Car!^Renault^Kangoo^Kangoo 71kW (01-05)","Kangoo 71kW (01-05)","2029",\N,"TPC002029.jpg","Products available for your Renault Kangoo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Kangoo^Kangoo dCi 49kW (00-09)","Kangoo dCi 49kW (00-09)","2032",\N,"TPC002032.jpg","Products available for your Renault Kangoo  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Kangoo^Kangoo dCi 60kW (01-09)","Kangoo dCi 60kW (01-09)","2033",\N,"TPC002033.jpg","Products available for your Renault Kangoo  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Keychains","Keychains",\N,\N,"keychain_small.JPG","BMC Red Keychain<br />BMC Silver Bottle Opener Keychain",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Kia","Kia","0",\N,"Cat1Kia.jpg","Please select the model of your Kia from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Koleos","Koleos","0",\N,"Cat2RenaultKoleos.jpg","Please select the variant of your Renault Koleos from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Koleos^Koleos 2.0 dCi 110kW (08-on)","Koleos 2.0 dCi 110kW (08-on)","2034",\N,"TPC002034.jpg","Products available for your Renault Koleos  are listed below",\N,\N,\N,"Y",\N
@@ -2084,6 +2101,8 @@
 "Find Stuff For My Car!^Renault^Megane^Megane Megane I^Megane Scenic dTi 75kW (97-99)","Megane Scenic dTi 75kW (97-99)","2073",\N,"TPC002073.jpg","Products available for your Renault Megane Megane I are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Megane^Megane Megane II^Megane Scenic Expr / Dyn / Oasis 65kW (03-06)","Megane Scenic Expr / Dyn / Oasis 65kW (03-06)","2084",\N,"TPC002084.jpg","Products available for your Renault Megane Megane II are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Mercedes","Mercedes","0",\N,"Cat1Mercedes.jpg","Please select the model of your Mercedes from the list below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING","MERCHANDISING",\N,\N,"","\
+",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Meriva","Meriva","0",\N,"Cat2OpelMeriva.jpg","Please select the variant of your Opel Meriva from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Meriva^Meriva 1.4i 16V (Meriva) 74kW (10-on)","Meriva 1.4i 16V (Meriva) 74kW (10-on)","1736",\N,"TPC001736.jpg","Products available for your Opel Meriva  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Meriva^Meriva 1.4T 16V 103kW (10-on)","Meriva 1.4T 16V 103kW (10-on)","1740",\N,"TPC001740.jpg","Products available for your Opel Meriva  are listed below",\N,\N,\N,"Y",\N
@@ -2143,6 +2162,8 @@
 "Find Stuff For My Car!^Ford^Mondeo^Mondeo MkIV^Mondeo TDCi Auto 97kW (07-13)","Mondeo TDCi Auto 97kW (07-13)","1090",\N,"TPC001090.jpg","Products available for your Ford Mondeo MkIV are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Mondeo^Mondeo MkIII^Mondeo TDDi 86kW (00-02)","Mondeo TDDi 86kW (00-02)","1078",\N,"TPC001078.jpg","Products available for your Ford Mondeo MkIII are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Morgan","Morgan","0",\N,"Cat1Morgan.jpg","Please select the model of your Morgan from the list below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Motorcycle Stand Protector","Motorcycle Stand Protector",\N,\N,"stand_protector_snmall.JPG","Motorcycle stand protector.",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Mouse Pads","Mouse Pads",\N,\N,"mouse_pads_small.jpg","BMC Mouse Pads.<br /><br />Click on every article to see a larger image and the products' details.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Movano","Movano","0",\N,"Cat2OpelMovano.jpg","Please select the variant of your Opel Movano from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Movano^Movano 2.3 CDTi 111kW (10-on)","Movano 2.3 CDTi 111kW (10-on)","1745",\N,"TPC001745.jpg","Products available for your Opel Movano  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Movano^Movano 2.3 CDTi 74kW (10-on)","Movano 2.3 CDTi 74kW (10-on)","1743",\N,"TPC001743.jpg","Products available for your Opel Movano  are listed below",\N,\N,\N,"Y",\N
@@ -2169,6 +2190,7 @@
 "Find Stuff For My Car!^Nissan^Note^Note 1.5 8V dCi EU4 78kW (08-on)","Note 1.5 8V dCi EU4 78kW (08-on)","1601",\N,"TPC001601.jpg","Products available for your Nissan Note  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^NSX","NSX","0",\N,"Cat2HondaNSX.jpg","Please select the variant of your Honda NSX from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Honda^NSX^NSX 188kW (90-98)","NSX 188kW (90-98)","1198",\N,"TPC001198.jpg","Products available for your Honda NSX  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Nylon Reduction","Nylon Reduction",\N,\N,"riduzione_nylon.jpg","Nylon Reduction.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Octavia","Octavia","0",\N,"Cat2SkodaOctavia.jpg","Please select the model code of your Skoda Octavia from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Octavia^Octavia 5^Octavia 1.2 TSI 77kW (13-on)","Octavia 1.2 TSI 77kW (13-on)","2327",\N,"TPC002327.jpg","Products available for your Skoda Octavia 5 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Octavia^Octavia 1Z^Octavia 1.4 TFSI 90kW (08-13)","Octavia 1.4 TFSI 90kW (08-13)","2347",\N,"TPC002347.jpg","Products available for your Skoda Octavia 1Z are listed below",\N,\N,\N,"Y",\N
@@ -2283,6 +2305,7 @@
 "Find Stuff For My Car!^Volkswagen^Passat^Passat B5^Passat TDI 86kW (99-01)","Passat TDI 86kW (99-01)","2558",\N,"TPC002558.jpg","Products available for your Volkswagen Passat B5 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Passat^Passat B5^Passat TDI 97kW (00-05)","Passat TDI 97kW (00-05)","2561",\N,"TPC002561.jpg","Products available for your Volkswagen Passat B5 are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Passat^Passat B5^Passat W8 203kW (01-04)","Passat W8 203kW (01-04)","2548",\N,"TPC002548.jpg","Products available for your Volkswagen Passat B5 are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Patch","Patch",\N,\N,"bmc_patch.JPG","BMC Patch 10cmx6cm",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Patrol","Patrol","0",\N,"Cat2NissanPatrol.jpg","Please select the variant of your Nissan Patrol from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Patrol^Patrol DDTi 120kW (07-on)","Patrol DDTi 120kW (07-on)","1602",\N,"TPC001602.jpg","Products available for your Nissan Patrol  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Nissan^Patrol^Patrol Di 118kW (00-02)","Patrol Di 118kW (00-02)","1603",\N,"TPC001603.jpg","Products available for your Nissan Patrol  are listed below",\N,\N,\N,"Y",\N
@@ -2296,6 +2319,9 @@
 "Find Stuff For My Car!^Morgan^Plus","Plus","0",\N,"Cat2MorganPlus.jpg","Please select the variant of your Morgan Plus from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Morgan^Plus^Plus 4 109kW (05-on)","Plus 4 109kW (05-on)","1582",\N,"TPC001582.jpg","Products available for your Morgan Plus  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Polo","Polo","0",\N,"Cat2VolkswagenPolo.jpg","Please select the model code of your Volkswagen Polo from the list below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Polo (Black)","Polo (Black)",\N,\N,"Black Polo.jpg","Black BMC Polos (stitched logo). Available size from \"S\" to \"XXL\".<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Polo (Red)","Polo (Red)",\N,\N,"Red polo.jpg","Red BMC Polos (stitched logo). Available size from \"S\" to \"XXL\".<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Polo (White)","Polo (White)",\N,\N,"White Polo.jpg","White BMC Polos (stitched logo). Available size from \"S\" to \"XXL\".<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Polo^Polo 6R^Polo 1.2 TSI 77kW (09-on)","Polo 1.2 TSI 77kW (09-on)","2625",\N,"TPC002625.jpg","Products available for your Volkswagen Polo 6R are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Polo^Polo 9N^Polo 1.4 TDI PD 59kW (05-on)","Polo 1.4 TDI PD 59kW (05-on)","2627",\N,"TPC002627.jpg","Products available for your Volkswagen Polo 9N are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Polo^Polo 6R^Polo 1.6 TDI / BlueMotion 56kW (09-on)","Polo 1.6 TDI / BlueMotion 56kW (09-on)","2622",\N,"TPC002622.jpg","Products available for your Volkswagen Polo 6R are listed below",\N,\N,\N,"Y",\N
@@ -2317,6 +2343,7 @@
 "Find Stuff For My Car!^Volkswagen^Polo^Polo 9N^Polo TDI 75kW (02-09)","Polo TDI 75kW (02-09)","2628",\N,"TPC002628.jpg","Products available for your Volkswagen Polo 9N are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Polo^Polo 9N^Polo TDI 97kW (04-09)","Polo TDI 97kW (04-09)","2629",\N,"TPC002629.jpg","Products available for your Volkswagen Polo 9N are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Porsche","Porsche","0",\N,"Cat1Porsche.jpg","Please select the model of your Porsche from the list below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Poster","Poster",\N,\N,"posters_small.JPG","",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Praktik","Praktik","0",\N,"Cat2SkodaPraktik.jpg","Please select the variant of your Skoda Praktik from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Praktik^Praktik 1.6 TDI 56kW (10-on)","Praktik 1.6 TDI 56kW (10-on)","2351",\N,"TPC002351.jpg","Products available for your Skoda Praktik  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Praktik^Praktik 1.6 TDI 66kW (10-on)","Praktik 1.6 TDI 66kW (10-on)","2352",\N,"TPC002352.jpg","Products available for your Skoda Praktik  are listed below",\N,\N,\N,"Y",\N
@@ -2433,6 +2460,7 @@
 "Find Stuff For My Car!^Peugeot^RCZ^RCZ 1.6 THP 117kW (10-on)","RCZ 1.6 THP 117kW (10-on)","1919",\N,"TPC001919.jpg","Products available for your Peugeot RCZ  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Peugeot^RCZ^RCZ 1.6 THP GT 150kW (10-on)","RCZ 1.6 THP GT 150kW (10-on)","1920",\N,"TPC001920.jpg","Products available for your Peugeot RCZ  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Peugeot^RCZ^RCZ Coupe 2.0 HDi GT 120kW (10-on)","RCZ Coupe 2.0 HDi GT 120kW (10-on)","1918",\N,"TPC001918.jpg","Products available for your Peugeot RCZ  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Red T-shirt","Red T-shirt",\N,\N,"ab202011small.JPG","Red BMC T-Shirts (stitched logo). Available size from \"S\" to \"XXXL\".<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Buick^Regal","Regal","0",\N,"Cat2BuickRegal.jpg","Please select the variant of your Buick Regal from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Buick^Regal^Regal 2.0 Turbo ECOTEC 165kW (09-on)","Regal 2.0 Turbo ECOTEC 165kW (09-on)","755",\N,"TPC000755.jpg","Products available for your Buick Regal  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault","Renault","0",\N,"Cat1Renault.jpg","Please select the model of your Renault from the list below",\N,\N,\N,"Y",\N
@@ -2683,6 +2711,7 @@
 "Find Stuff For My Car!^Volkswagen^Sharan^Sharan TDI 83kW (97-on)","Sharan TDI 83kW (97-on)","2650",\N,"TPC002650.jpg","Products available for your Volkswagen Sharan  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Sharan^Sharan TDI 86kW (00-on)","Sharan TDI 86kW (00-on)","2652",\N,"TPC002652.jpg","Products available for your Volkswagen Sharan  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Volkswagen^Sharan^Sharan TDI 97kW (03-on)","Sharan TDI 97kW (03-on)","2653",\N,"TPC002653.jpg","Products available for your Volkswagen Sharan  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Shopper","Shopper",\N,\N,"shopper_small.JPG","BMC Shopper.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Sierra","Sierra","0",\N,"Cat2FordSierra.jpg","Please select the variant of your Ford Sierra from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Sierra^Sierra RS 500 Cosworth P0 168kW (87-87)","Sierra RS 500 Cosworth P0 168kW (87-87)","1116",\N,"TPC001116.jpg","Products available for your Ford Sierra  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Ford^Sierra^Sierra RS 500 Cosworth P1 168kW (87-87)","Sierra RS 500 Cosworth P1 168kW (87-87)","1117",\N,"TPC001117.jpg","Products available for your Ford Sierra  are listed below",\N,\N,\N,"Y",\N
@@ -2698,6 +2727,7 @@
 "Find Stuff For My Car!^Opel^Signum^Signum 2.8 V6 169kW (05-on)","Signum 2.8 V6 169kW (05-on)","1762",\N,"TPC001762.jpg","Products available for your Opel Signum  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Signum^Signum CDTi 110kW (03-08)","Signum CDTi 110kW (03-08)","1760",\N,"TPC001760.jpg","Products available for your Opel Signum  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^Signum^Signum CDTi 89kW (03-08)","Signum CDTi 89kW (03-08)","1759",\N,"TPC001759.jpg","Products available for your Opel Signum  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Silicon Reducer","Silicon Reducer",\N,\N,"riduzione.jpg","Silicon Reducer.",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^CONICAL FILTERS^SINGLE AIR FILTER","SINGLE AIR FILTER",\N,\N,"","\
 ",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Single carburetor Carbon Top","Single carburetor Carbon Top",\N,\N,"carb_filters.JPG","L, R and C stand for Left, Right and Central intake.",\N,\N,\N,"Y",\N
@@ -2763,8 +2793,10 @@
 "Find Stuff For My Car!^SsangYong","SsangYong","0",\N,"Cat1SsangYong.jpg","Please select the model of your SsangYong from the list below",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^BIKE FILTERS^STANDARD BIKE FILTERS","STANDARD BIKE FILTERS",\N,\N,"","<p style=\"text-align: justify&#59\"><img style=\"float: right&#59\" title=\"Bike Filter\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/bike_filter.JPG\" alt=\"Bike Filter\" width=\"308\" height=\"205\" />The knowledge and experience gained on track is transferred to street production in order to offer performance products&#44 tested and in continuous evolution&#44 designed to satisfy the requirements of the most demanding motorcyclists. The materials used in production are of the highest standard: filters are made in one single piece with no welded joints thus avoiding breakage&#59 the filtering material is composed of a special cotton gauze soaked with low viscosity oil and covered with an epoxy coated alloy mesh to ensure protection from petrol fumes and oxidization due to air humidity. Furthermore the cotton has the advantage of being washable and therefore reusable. In this way BMC air filters guarantee superior air capacity in respect to traditional paper filters enabling minimum loss of power in the air flow and therefore obtaining better performance from the engine.<br /><br />Use the search panel (menu on the left) to find the right filter for your bike.</p>\
 ",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Stickers","Stickers",\N,\N,"stickers.JPG","BMC Stickers.<br /><br />Click an article to view the full product details.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Stilo","Stilo","0",\N,"Cat2FiatStilo.jpg","Please select the variant of your Fiat Stilo from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Stilo^Stilo JTD 86kW (02-on)","Stilo JTD 86kW (02-on)","950",\N,"TPC000950.jpg","Products available for your Fiat Stilo  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Straight Hose","Straight Hose",\N,\N,"manicotto.jpg","Silicon Connector Sleeve (THICKNESS&nbsp;5mm).",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Rover^Streetwise","Streetwise","0",\N,"Cat2RoverStreetwise.jpg","Please select the variant of your Rover Streetwise from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Rover^Streetwise^Streetwise 62kW (03-05)","Streetwise 62kW (03-05)","2169",\N,"TPC002169.jpg","Products available for your Rover Streetwise  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Rover^Streetwise^Streetwise 76kW (03-05)","Streetwise 76kW (03-05)","2170",\N,"TPC002170.jpg","Products available for your Rover Streetwise  are listed below",\N,\N,\N,"Y",\N
@@ -2796,7 +2828,9 @@
 "Find Stuff For My Car!^Skoda^Superb^Superb 3U^Superb 86kW (02-08)","Superb 86kW (02-08)","2370",\N,"TPC002370.jpg","Products available for your Skoda Superb 3U are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Skoda^Superb^Superb 3U^Superb TDI 116kW (03-08)","Superb TDI 116kW (03-08)","2377",\N,"TPC002377.jpg","Products available for your Skoda Superb 3U are listed below",\N,\N,\N,"Y",\N
 "Superchips","Superchips","0",\N,"","",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^BMC ACCESSORIES^Support hanger","Support hanger",\N,\N,"staffa_forata.jpg","Suppor hanger.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki","Suzuki","0",\N,"Cat1Suzuki.jpg","Please select the model of your Suzuki from the list below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Sweatshirt","Sweatshirt",\N,\N,"ab202006small.JPG","BMC Sweatshirts: Sizes available from \"M\" to \"XXXL\".<br /><br />Click on an article to view a lareger image and size details.",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Swift","Swift","0",\N,"Cat2SuzukiSwift.jpg","Please select the variant of your Suzuki Swift from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Swift^Swift DDiS 55kW (05-on)","Swift DDiS 55kW (05-on)","2398",\N,"TPC002398.jpg","Products available for your Suzuki Swift  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Suzuki^Swift^Swift Gti 75kW (92-96)","Swift Gti 75kW (92-96)","2397",\N,"TPC002397.jpg","Products available for your Suzuki Swift  are listed below",\N,\N,\N,"Y",\N
@@ -2979,6 +3013,7 @@
 "Find Stuff For My Car!^Fiat^Ulysse","Ulysse","0",\N,"Cat2FiatUlysse.jpg","Please select the variant of your Fiat Ulysse from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Ulysse^Ulysse 91kW (95-00)","Ulysse 91kW (95-00)","956",\N,"TPC000956.jpg","Products available for your Fiat Ulysse  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Fiat^Ulysse^Ulysse JTD 83kW (99-on)","Ulysse JTD 83kW (99-on)","957",\N,"TPC000957.jpg","Products available for your Fiat Ulysse  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^Umbrella","Umbrella",\N,\N,"umbrella_small.JPG","BMC Umbrella. Available in two colors: red&nbsp;or silver.<br /><br />Click an article to view a larger image.",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Universal Conical Filters (straight)","Universal Conical Filters (straight)",\N,\N,"conical_small.JPG","",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Universal Conical Filters (with elbow)","Universal Conical Filters (with elbow)",\N,\N,"con_angolo.jpg","",\N,\N,\N,"Y",\N
 "BMC^REPLACEMENT FILTERS^BIKE FILTERS^BIKE FILTER FOR DIRECT INDUCTION^Universal Conical Filters Twin Air (straight)","Universal Conical Filters Twin Air (straight)",\N,\N,"","",\N,\N,\N,"Y",\N
@@ -3095,7 +3130,10 @@
 "Find Stuff For My Car!^Opel^VXR8","VXR8","0",\N,"Cat2OpelVXR8.jpg","Please select the variant of your Opel VXR8 from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^VXR8^VXR8 6.0 V8 307kW (07-on)","VXR8 6.0 V8 307kW (07-on)","1804",\N,"TPC001804.jpg","Products available for your Opel VXR8  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Opel^VXR8^VXR8 6.2 V8 317kW (08-on)","VXR8 6.2 V8 317kW (08-on)","1805",\N,"TPC001805.jpg","Products available for your Opel VXR8  are listed below",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^WASHING KITS","WASHING KITS",\N,\N,"","<p>Every BMC air filter can be regenerated and re-used with a simple&nbsp&#59;washing/oiling procedure.<br /><br /><img title=\"Washing Kit\" src=\"http://www.bmcairfilters.com/cgi-bin/images/cat/washing-kit.jpg\" alt=\"Washing Kit\" width=\"100\" height=\"107\" /><br /><br /></p>\
+",\N,\N,\N,"Y",\N
 "Final Inspection^Wheel Care","Wheel Care","0",\N,"FIStore/WheelCare.jpg","<div class=\"infobox_container\">  <div class=\"infobox fullbox\">      <p>Remove the brake dust from your wheels with little time or effort required</p>  </div></div>",\N,\N,\N,"Y",\N
+"BMC^AIR INTAKE SYSTEMS^MERCHANDISING^White T-Shirt","White T-Shirt",\N,\N,"tshirt_white_small.jpg","White&nbsp;<span>BMC T-shirts. Available sizes from \"S\" to \"XXL\".</span>",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Wind","Wind","0",\N,"Cat2RenaultWind.jpg","Please select the variant of your Renault Wind from the list below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Renault^Wind^Wind 1.2 TCe 74kW (10-on)","Wind 1.2 TCe 74kW (10-on)","2129",\N,"TPC002129.jpg","Products available for your Renault Wind  are listed below",\N,\N,\N,"Y",\N
 "Find Stuff For My Car!^Jeep^Wrangler","Wrangler","0",\N,"Cat2JeepWrangler.jpg","Please select the variant of your Jeep Wrangler from the list below",\N,\N,\N,"Y",\N
