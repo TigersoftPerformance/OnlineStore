@@ -14,20 +14,23 @@
 
 use strict;
 use DBI;
-use LWP::Simple;
 use feature 'say';
-use Text::Unidecode;
+
 use utf8;
 use English;
 use Encode;
-use IO::Handle;
 use Storable qw(dclone);
 use Data::Dumper;
+use IO::Handle;
+use LWP::Simple;
+use Set::Scalar;
+use Text::Unidecode;
 
 my $url = 'http://au.bmcairfilters.com';
 use constant LOG => "./Logs/MatchCars.log";
 open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
 $logfh->autoflush;
+STDOUT->autoflush;
 
 #
 # Connect to database
@@ -98,6 +101,7 @@ while ($car_data = $sth->fetchrow_hashref)
 	@match_list = ();
 	@match_score = ();
 	say "$car_data->{make} $car_data->{model}";
+	say Dumper ($car_data);
 	&load_bmccars_by_make ($car_data->{make});
 	say "Found " . scalar (@match_list) . " Cars that match the make $car_data->{make}";
 
@@ -113,14 +117,14 @@ while ($car_data = $sth->fetchrow_hashref)
 	&score_matching_model_codes ($car_data->{make}, $car_data->{model}, $car_data->{model_code});
 	say "Found " . scalar (@match_list) . " Cars that match the model_code $car_data->{model_code}";
 
+	&score_matching_dates ($car_data->{start_date}, $car_data->{end_date});
+	say "Found " . scalar (@match_list) . " Cars that match the date range $car_data->{start_date} - $car_data->{end_date}";
+
 	&score_matching_capacity ($car_data->{capacity});
 	say "Found " . scalar (@match_list) . " Cars that match the capacity $car_data->{capacity}";
 	
 	&score_matching_cylinders ($car_data->{cylinders});
 	say "Found " . scalar (@match_list) . " Cars that match the cylinders $car_data->{cylinders}";
-
-	&score_matching_dates ($car_data->{start_date}, $car_data->{end_date});
-	say "Found " . scalar (@match_list) . " Cars that match the date range $car_data->{start_date} - $car_data->{end_date}";
 
 	#
 	# We should also attempt to match the variant string
@@ -249,6 +253,9 @@ sub score_matching_model_codes
 	{
 	my ($make, $model, $model_code) = @_;
 
+	my $weighting = 10;
+	my $any_matches = 0;
+	
 	# If the passed model_code is null, then just return without trying to match anything. 
 	if (!length $model_code)
 		{
@@ -279,16 +286,49 @@ sub score_matching_model_codes
 			{
 			if ($bmccar->{model} =~ m/$model_codes[$j]/i || $bmccar->{model_code} =~ m/$model_codes[$j]/i)
 				{
+				# say "Found match for model code $model_codes[$j]";
 				$match_found = 1;
+				$any_matches = 1;
 				last;
 				}
 			}
 		# and then if we find a match, then give this entry a 10
 		if ($match_found)
 			{
-			$match_score[$index] += 10;
+			$match_score[$index] += $weighting;
 			}
 		$index ++;
+		}
+
+	if ($any_matches)
+		{
+		$index = 0;
+		while ($index <= $#match_list)
+			{
+			my $bmccar = {};
+			$bmccar = $match_list[$index];
+			
+			# and we try and match each of the model_codes or model_code alias' with BOTH
+			# the model field and the model_code field
+			my $match_found = 0;
+			foreach my $j (0 .. scalar (@model_codes) - 1)
+				{
+				if ($bmccar->{model} =~ m/$model_codes[$j]/i || $bmccar->{model_code} =~ m/$model_codes[$j]/i)
+					{
+					$match_found = 1;
+					last;
+					}
+				}
+			# and then if we find a match, then give this entry a 10
+			if (!$match_found)
+				{
+				splice (@match_list, $index, 1);
+				splice (@match_score, $index, 1);
+				next;
+				}
+			$index ++;
+	
+			}
 		}
 	}
 	
@@ -378,18 +418,21 @@ sub score_matching_dates
 	my $start_date = $_[0];
 	my $end_date = $_[1];
 
-	my $start_year = substr ($start_date, 4, 0);
-	my $end_year = substr ($end_date, 4, 0);
+	my $weighting = 20;
+	my $start_year = substr ($start_date, 0, 4);
+	my $end_year = substr ($end_date, 0, 4);
 	
 	# OK, so from this point on, lets treat the dates as numbers, 
 	# represnting the number fo years since 1970
+	# say "Date Range of Car: $start_year - $end_year";
 	$start_year -= 1970; 
 	$start_year = 0 if $start_year < 0;
 	$end_year -= 1970; 
-	$end_year = 80 if $end_year > 0;
-	
-	my $span = $end_year - $start_year;
-	my $ave_year = $end_year + $start_year / 2;
+	#
+	# NOTE: Setting this to 50 sets the max year to 2020, which is fine in 2014
+	#
+	$end_year = 50 if $end_year > 50;
+	#say "Date Range of Car: $start_year - $end_year";
 	
 	# return if we have no dates to play with
 	return 0 if (!$start_year && !$end_year);
@@ -411,6 +454,7 @@ sub score_matching_dates
 			}
 			
 		$bmccar->{year}	=~ s/&gt;/>/;
+		# print "  BMC Year: $bmccar->{year} ";
 		if ($bmccar->{year} =~ m/^(.+)>(.+)$/)
 			{
 			$bmc_start_year = $1;
@@ -419,23 +463,74 @@ sub score_matching_dates
 		elsif ($bmccar->{year} =~ m/^(.+)>$/)
 			{
 			$bmc_start_year = $1;
-			$bmc_end_year = 50; # At this point, the BMC dates have not been normalised from 1970, so 50 means 2050
+			#
+			# NOTE: Setting this to 20 sets the max year to 2020, which is fine in 2014
+			#
+			$bmc_end_year = 20; # At this point, the BMC dates have not been normalised from 1970, so 50 means 2050
 			}
 		else
 			{
 			$bmc_start_year = $bmccar->{year};
-			$bmc_end_year = 50; # At this point, the BMC dates have not been normalised from 1970, so 50 means 2050
+			#
+			# NOTE: Setting this to 20 sets the max year to 2020, which is fine in 2014
+			#
+			$bmc_end_year = 20; # At this point, the BMC dates have not been normalised from 1970, so 50 means 2050
 			}
-		$bmc_start_year = $1 if $bmc_start_year =~ m/\d{1,2}\/\d{1,2}/;
+		$bmc_start_year = $1 if $bmc_start_year =~ m/\d{1,2}\/(\d{1,2})/;
+		$bmc_end_year = $1 if $bmc_end_year =~ m/\d{1,2}\/(\d{1,2})/;
+		# say "Date Range of BMCCar: $bmc_start_year - $bmc_end_year";
+
 		$bmc_start_year -= 70; $bmc_start_year += 100 if $bmc_start_year < 0;
 		$bmc_end_year -= 70; $bmc_end_year += 100 if $bmc_end_year < 0;
 
-		my $bmc_span = $bmc_end_year - $bmc_start_year;
-		my $bmc_ave_year = $bmc_end_year + $bmc_start_year / 2;
-		
-		# OK, now that the dates have all been parsed and normalised, we can start doing some comparisons
-		
+		#say "Date Range of BMCCar: $bmc_start_year - $bmc_end_year";
 
+		# OK, now that the dates have all been parsed and normalised, we can start doing some comparisons
+		my $date_range = Set::Scalar->new ($start_year .. $end_year);
+		my $bmc_date_range = Set::Scalar->new ($bmc_start_year .. $bmc_end_year);
+
+		# say "    date_range = " . $date_range;
+		# say "    BMC date_range = " . $bmc_date_range;
+		
+		# if the 2 sets are disjoint, then delete this record and move on
+		if ($date_range != $bmc_date_range)
+			{
+			splice (@match_list, $index, 1);
+			splice (@match_score, $index, 1);
+			# say "      sets are disjoint";
+			next;
+			}
+			
+		# if the 2 sets are subset/superset, then score 10 and move on
+		if ($date_range <= $bmc_date_range || $date_range >= $bmc_date_range)
+			{
+			# say "      sets are subset/superset";
+			$match_score[$index] += $weighting;
+			$index ++;
+			next;
+			}
+			
+		
+		# If we get here, then we have intersecting sets. So base the score on the 
+		# amount of intersection
+		my $total_size = $date_range->size + $bmc_date_range->size;
+		my $intersection = $date_range * $bmc_date_range;
+		
+		# If we only have an intersection of 1, but both sets are greater than 1 element long, then
+		# it is likely that we have 2 not equal sets such as 02-07 and 07-11.
+		if ($intersection == 1 && $date_range->size > 1 && bmc_date_range->size > 1)
+			{
+			splice (@match_list, $index, 1);
+			splice (@match_score, $index, 1);
+			# say "      sets are probably disjoint";
+			next;
+			}
+		
+		
+		my $date_score += ($intersection->size * 2 * $weighting) / $total_size;
+		$match_score[$index] += $date_score;
+		# say "      sets are intersecting, score is $date_score";
+		$index ++;
 		}
 	}
 	
