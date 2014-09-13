@@ -20,9 +20,17 @@ use Encode;
 use IO::Handle;
 
 my $url = 'http://au.bmcairfilters.com';
-use constant LOG => "./Logs/ScrapeBMCCars.log";
-open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
+
+use constant LOGFILE    => "./Logs/ScrapeBMCCars.log";
+use constant ALERTFILE  => "./Logs/ScrapeBMCCars.alert";
+use constant DEBUGFILE  => "./Logs/ScrapeBMCCars.debug";
+
+open(my $logfh, ">", LOGFILE)     or die "cannot open LOGFILE $!";
+open(my $alertfh, ">", ALERTFILE) or die "cannot open ALERTFILE $!";
+open(my $debugfh, ">", DEBUGFILE) or die "cannot open DEBUGFILE $!";
 $logfh->autoflush;
+$alertfh->autoflush;
+$debugfh->autoflush;
 
 #
 # Connect to database
@@ -65,7 +73,14 @@ my $get_bmc_prod_sth = $dbh->prepare("
 # Add a dummy record to BMC Products Table
 #
 my $ins_bmc_prod_sth = $dbh->prepare("
-	INSERT IGNORE INTO BMCProducts SET bmc_part_id = ?, type = ?, active = 'Y'
+	INSERT IGNORE INTO BMCProducts SET bmc_part_id = ?, product_url = ?, type = ?, active = 'Y'
+") or die $dbh->errstr;
+
+#
+# get a joining record from BMC fitment Table
+#
+my $get_bmc_fitment_sth = $dbh->prepare("
+	SELECT * FROM BMCFitment WHERE BMCCars_idBMCCars = ? AND BMCProducts_bmc_part_id = ?
 ") or die $dbh->errstr;
 
 #
@@ -107,7 +122,7 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 	{
 	$makeid = $1;
 	$make  = $2;	
-	print $logfh "make: $make", " => $makeid\n";
+	&log ("make: $make", " => $makeid");
 
 	#
 	# This is where we get the content from the wesbite for the specific make
@@ -125,7 +140,7 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 	# get makeids content to get modids
 	#
 	my $makeid_content;
-	my $time_delay = 0.1;
+	my $time_delay = 0.2;
 	$retries = 5;
 	my $model_list = '';
 	while ($retries && $model_list !~ m/option value/)
@@ -139,14 +154,11 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 		}
 	if ($model_list !~ m/option value/)
 		{
-		print $logfh "ERROR: Could not find model information for make $make\n";
-		print $logfh " URL is $make_url";
+		&alert ("WARNING: Could not find model information for make $make");
+		&alert (" URL is $make_url");
 		next;
 		}
 	$makeid_content =~ s/,/&#44;/g;
-	# say $logfh "----------------------------------------------------------------";
-	# say $logfh "$model_list";
-	# say $logfh "----------------------------------------------------------------";
 
 	#
 	# Now loop through the page looking for all of the models listed for this make
@@ -157,7 +169,7 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 		{
 		$modelid = $1;
 		$model = $2;
-		print $logfh " >model: $model", " => $modelid\n";
+		&log (" >model: $model", " => $modelid");
 		
 		my $model_url = 'http://au.bmcairfilters.com/search_a.aspx?marca=' . $makeid . '&mod=' . $modelid . '&lng=2';
 		# Try a few times in case of failure
@@ -172,7 +184,7 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 		# Now go and get the page for the specified model
 		#
 		my $modelid_content = '';
-		my $time_delay = 0.1;
+		my $time_delay = 0.2;
 		my $retries = 5;
 		while ($retries && $modelid_content !~ m/table class="gradient-style2"/)
 			{
@@ -183,8 +195,8 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 			}
 		if ($modelid_content !~ m/table class="gradient-style2"/)
 			{
-			print $logfh "ERROR: Could not find Product Tables for model $make $model\n";
-			print $logfh " URL is $model_url";
+			&alert ("WARNING: Could not find Product Tables for model $make $model");
+			&alert (" URL is $model_url");
 			next;
 			}
 		$modelid_content =~ s/,/&#44;/g;
@@ -196,7 +208,7 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 		while ($modelid_content =~ /<strong>(.*?)<\/strong>.*?<table class="gradient-style2"(.*?)<\/table>/sg)
 			{
 			my $product_type = $1, my $model_table = $2;
-			print $logfh "  >Found table for $product_type\n";
+			&debug ("  >Found table for $product_type");
 			
 			# so now we have just the structure of one table with its product type, 
 			# so we can parse the table header to see what columns we are dealing with.
@@ -258,6 +270,7 @@ sub add_new_variant
 		{
 		my $variant;
 		my $bmc_part_id;
+		my $bmc_part_url;
 		my $mounting_note;
 		
 		# CDA tables are peculiar in that a row can either have 2 or 3 columns. 
@@ -284,13 +297,14 @@ sub add_new_variant
 			$bmc_part_id = $column_values[2];
 			}
 		
-		if ($bmc_part_id =~ m/<a href=.*?>(.*?)<\/a/)
+		if ($bmc_part_id =~ m/<a href=\"(.*?)\".*?>(.*?)<\/a/)
 			{
-			$bmc_part_id = $1;
+			$bmc_part_url = $1;
+			$bmc_part_id = $2;
 			}
 		else
 			{
-			print $logfh "ERROR: I Don't recognise this BMC Part ID: $bmc_part_id\n";
+			&screen ("ERROR: I Don't recognise this BMC Part ID: $bmc_part_id");
 			}
 			
 			
@@ -347,8 +361,8 @@ sub add_new_variant
 
 		# Now that we have parsed all of the input, we can now write the records to the database
 		# and return
-		&add_car_to_database ($make, $model, '', $sub_variant, $hp, $year, '', '',
-		 $bmc_part_id, $product_type, $mounting_note);
+		&add_cars_to_database ($make, $model, '', $sub_variant, $hp, $year, '', '',
+		 $bmc_part_id, $bmc_part_url, $product_type, $mounting_note);
 		return 0;
 		}
 	else
@@ -357,11 +371,12 @@ sub add_new_variant
 		}
 
 	# Column Names for CAR FILTERS, OTA - OVAL TRUMPET AIRBOX, 
-	# CRF - CARBON RACING FILTERS - CARS, STANDARD BIKE FILTERS and SPECIFIC KITS are:
+	# CRF - CARBON RACING FILTERS - CARS, CRF - CARBON RACING FILTERS - BIKES, 
+	# STANDARD BIKE FILTERS, RACE BIKE FILTERS and SPECIFIC KITS are:
 	# Model, HP, Year, ID/Chassis, Engine Code, Shape, Code
 	# So 7 columns in total
 	if ($product_type =~ 
-	 m/CAR FILTERS|OTA - OVAL TRUMPET AIRBOX|CRF - CARBON RACING FILTERS - CARS|SPECIFIC KITS|STANDARD BIKE FILTERS/)
+	 m/CAR FILTERS|OTA - OVAL TRUMPET AIRBOX|CRF - CARBON RACING FILTERS - CARS|CRF - CARBON RACING FILTERS - BIKES|SPECIFIC KITS|STANDARD BIKE FILTERS|RACE BIKE FILTERS/)
 		{
 		if (scalar (@column_names) != 7 || scalar (@column_values) != 7)
 			{
@@ -369,7 +384,17 @@ sub add_new_variant
 			return -1;
 			}
 		# Get the bmc_part_id from the <a> tags in col 6
-		my $bmc_part_id = $1 if $column_values[6] =~ m/<a href=.*?>(.*?)<\/a/;
+		my $bmc_part_id;
+		my $bmc_part_url;
+		if ($column_values[6] =~ m/<a href=\"(.*?)\".*?>(.*?)<\/a/)
+			{
+			$bmc_part_url = $1;
+			$bmc_part_id = $2;
+			}
+		else
+			{
+			&screen ("ERROR: I Don't recognise this BMC Part ID: $bmc_part_id");
+			}
 		
 		# remove spaces from the year
 		$column_values[2] =~ s/ +//g;
@@ -381,18 +406,18 @@ sub add_new_variant
 			}
 		$model =~ s/ +$//;
 		
-		&add_car_to_database ($make, $model, $column_values[3], $column_values[0], $column_values[1], $column_values[2], $column_values[4], $column_values[5], $bmc_part_id, $product_type, '');
+		&add_cars_to_database ($make, $model, $column_values[3], $column_values[0], $column_values[1], $column_values[2],
+		 $column_values[4], $column_values[5], $bmc_part_id, $bmc_part_url, $product_type, '');
 		return 0;
 		}
-		
 	# I put this here during testing, but all going well we should never get here.
-	print $logfh "ERROR! Unknown Product Type!\n";
-	print $logfh "$product_type\n";
-	print $logfh "---------------------------------\n";
-	print $logfh "@column_names\n\n";
-	print $logfh "---------------------------------\n";
-	print $logfh "@column_values\n\n";
-	print $logfh "---------------------------------\n";
+	&alert ("ERROR! Unknown Product Type!");
+	&alert ("$product_type");
+	&alert ("---------------------------------");
+	&alert ("@column_names\n");
+	&alert ("---------------------------------");
+	&alert ("@column_values\n");
+	&alert ("---------------------------------");
 	return -1;
 	}
 	
@@ -403,15 +428,57 @@ sub wrong_columns
 	my @column_names = @{$_[1]};
 	my @column_values = @{$_[2]};
 	
-	print $logfh "ERROR! Mismatch of Columns!\n";
-	print $logfh "$product_type\n";
-	print $logfh "---------------------------------\n";
-	print $logfh "@column_names\n\n";
-	print $logfh "---------------------------------\n";
-	print $logfh "@column_values\n\n";
-	print $logfh "---------------------------------\n";
+	&alert ("ERROR! Mismatch of Columns!");
+	&alert ("$product_type");
+	&alert ("---------------------------------");
+	&alert ("@column_names\n");
+	&alert ("---------------------------------");
+	&alert ("@column_values\n");
+	&alert ("---------------------------------");
 	return -1;
 	}
+
+
+#########################################################################################################
+# Sub add_cars_to_database
+# We need to put in this sub to take care of multiple cars specified on the same line
+# eg, where hp is specified as 140/150, then 2 cars need to be created.
+#########################################################################################################
+sub add_cars_to_database
+	{
+	my ($make, $model, $model_code, $variant, $hp, $year, 
+	 $engine_code, $filter_shape, $bmc_part_id, $bmc_part_url, $product_type, $mounting_note) = @_;
+
+	$hp = &tidy_field ($hp);
+	$hp =~ s/\s+//g;
+
+	# If the HP field is a single number, or it is empty, then just write it as is. 
+	if ($hp =~ m/^\d+$/ || !length ($hp))
+		{
+		&add_car_to_database ($make, $model, $model_code, $variant, $hp, $year,
+		 $engine_code, $filter_shape, $bmc_part_id, $bmc_part_url, $product_type, $mounting_note);
+		return 0;
+		}
+	my $iterations = 0;
+	while ($hp =~ m/(\d+)/g)
+		{
+		my $hp1 = $1; 
+		&add_car_to_database ($make, $model, $model_code, $variant, $hp1, $year,
+		 $engine_code, $filter_shape, $bmc_part_id, $bmc_part_url, $product_type, $mounting_note);
+		$iterations ++;
+		}
+	if ($iterations)
+		{
+		return 0;
+		}
+	else
+		{
+		&screen ("ERROR: I Don't recognise this HP figure: $hp");
+		return -1;
+		}
+	}
+
+
 
 #########################################################################################################
 # Sub add_car_to_database
@@ -421,7 +488,7 @@ sub wrong_columns
 sub add_car_to_database
 	{
 	my ($make, $model, $model_code, $variant, $hp, $year, 
-	 $engine_code, $filter_shape, $bmc_part_id, $product_type, $mounting_note) = @_;
+	 $engine_code, $filter_shape, $bmc_part_id, $bmc_part_url, $product_type, $mounting_note) = @_;
 	my $update_required = 1;
 	
 
@@ -474,6 +541,7 @@ sub add_car_to_database
 		$update_required = 0;
 		if (length($engine_code) > length($bmccar->{engine_code}))
 			{
+			&alert ("   >CHANGE: Engine Code is different :$engine_code:$bmccar->{engine_code}:");
 			$update_required = 1;
 			}
 		else
@@ -483,24 +551,27 @@ sub add_car_to_database
 
 		if (length($filter_shape) > length($bmccar->{filter_shape}))
 			{
+			&alert ("   >CHANGE: filter_shape is different :$filter_shape:$bmccar->{filter_shape}:");
 			$update_required = 1;
 			}
 		else
 			{
-			$engine_code = $bmccar->{filter_shape};
+			$filter_shape = $bmccar->{filter_shape};
 			}
 		
 		if (length($mounting_note) > length($bmccar->{mounting_note}))
 			{
+			&alert ("   >CHANGE: mounting_note is different :$mounting_note:$bmccar->{mounting_note}:");
 			$update_required = 1;
 			}
 		else
 			{
-			$engine_code = $bmccar->{mounting_note};
+			$mounting_note = $bmccar->{mounting_note};
 			}
 
 		if ($capacity && !$bmccar->{capacity})
 			{
+			&alert ("   >CHANGE: capacity is different :$capacity:$bmccar->{capacity}:");
 			$update_required = 1;
 			}
 		else
@@ -510,6 +581,7 @@ sub add_car_to_database
 			
 		if ($cylinders && !$bmccar->{cylinders})
 			{
+			&alert ("   >CHANGE: cylinders is different :$cylinders:$bmccar->{cylinders}:");
 			$update_required = 1;
 			}
 		else
@@ -519,15 +591,15 @@ sub add_car_to_database
 			
 		}
 		
-	if (!$update_required)
+	if (!defined $bmccar->{make} || $update_required)
 		{
-		return 0;
+		# So to get here, either there was a record for this variant in the BMCCars tables
+		# and it needs to be updated, or this is a new record. Either way, write it.
+		$ins_bmc_car_sth->execute ($make, $model, $model_code, $variant, $hp,
+		 $year, $cylinders, $capacity, $engine_code, $filter_shape, $mounting_note) or die $dbh->errstr;
+		&screen ("    >NEW CAR! :$make:$model:$model_code:$variant: HP :$hp: Year :$year:");
 		}
 		
-	# So to get here, either there was a record for this variant in the BMCCars tables
-	# and it needs to be updated, or this is a new record. Either way, write it.
-	$ins_bmc_car_sth->execute ($make, $model, $model_code, $variant, $hp,
-	 $year, $cylinders, $capacity, $engine_code, $filter_shape, $mounting_note) or die $dbh->errstr;
 	 
 	# and then read it straight back again to get the carid.
 	undef $bmccar;
@@ -540,18 +612,32 @@ sub add_car_to_database
 		}
 	if (!defined $bmccar->{idBMCCars})
 		{
-		print $logfh "ERROR: Could not read entry for car $make:$model:$model_code:$variant: HP :$hp: Year :$year:\n";
+		&screen ("ERROR: Could not read entry for car $make:$model:$model_code:$variant: HP :$hp: Year :$year:");
 		return -1;
 		}
 		
-	# Write a matching record to the products table (won't write if it already exists)
-	$ins_bmc_prod_sth->execute ($bmc_part_id, $product_type) or die $dbh->errstr;
-	
-	# And then write a record to the joiner table
-	print $logfh "    >Car :$bmccar->{idBMCCars}:$make:$model:$model_code:$variant: HP :$hp: Year :$year:\n";
-	print $logfh "        >BMC Part :$bmc_part_id:$product_type)\n";
-	$ins_bmc_fitment_sth->execute ($bmccar->{idBMCCars}, $bmc_part_id) or die $dbh->errstr;
-	return 0;
+	# Check to see if the product already exists, and if it doesn't, then add it
+	$get_bmc_prod_sth->execute ($bmc_part_id) or die $dbh->errstr;
+	my $bmc_product = $get_bmc_prod_sth->fetchrow_hashref;
+	if (!defined $bmc_product->{bmc_part_id})
+		{
+		$ins_bmc_prod_sth->execute ($bmc_part_id, $bmc_part_url, $product_type) or die $dbh->errstr;
+		&screen ("      >NEW PRODUCT! BMC Part :$bmc_part_id:$product_type)");
+		return 0;
+		}
+
+	# Check to see if the joiner already exists, and if it doesn't, then add it
+	$get_bmc_fitment_sth->execute ($bmccar->{idBMCCars}, $bmc_part_id) or die $dbh->errstr;
+	my $bmc_fitment = $get_bmc_fitment_sth->fetchrow_hashref;
+	if (!defined $bmc_fitment->{BMCCars_idBMCCars})
+		{
+		$ins_bmc_fitment_sth->execute ($bmccar->{idBMCCars}, $bmc_part_id) or die $dbh->errstr;
+		&alert ("      >NEW JOIN! CAR: $bmccar->{idBMCCars}:$make:$model.\n   BMC Part :$bmc_part_id:$product_type)");
+		return 0;
+		}
+
+
+	return -1;
 	}
 	
 sub tidy_field
@@ -563,4 +649,31 @@ sub tidy_field
 	$field =~ s/\s\s+/ /g;
 	
 	return $field;	
+	}
+	
+sub screen
+	{
+	my $line = shift;
+	say $line;
+	&alert ($line);
+	}
+	
+sub alert
+	{
+	my $line = shift;
+	say $alertfh $line;
+	&log ($line);
+	}
+	
+sub log
+	{
+	my $line = shift;
+	say $logfh $line;
+	&debug ($line);
+	}
+
+sub debug
+	{
+	my $line = shift;
+	say $debugfh $line;
 	}

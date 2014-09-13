@@ -46,7 +46,7 @@ my $dbh = DBI->connect($dsn, undef, undef,
 ) or die $DBI::errstr;
 
 #
-# Query to get each active known product from the BMCAirProducts table
+# Query to get each active known product from the BMCProducts table
 #
 my $load_filters_sth = $dbh->prepare("
 	SELECT * FROM BMCProducts WHERE active = 'Y'
@@ -61,10 +61,10 @@ my $getbmcairth = $dbh->prepare("
 ") or die $dbh->errstr;
 
 #
-# Update existing row into BMCAirProducts
+# Update existing row into BMCProducts
 #
 my $updbmcairth = $dbh->prepare("
-	UPDATE BMCProducts SET name = ?, type = ?, description=?, image = ?, diagram = ?,
+	UPDATE BMCProducts SET type = ?, description=?, image = ?, diagram = ?,
 		dimname1 = ?, dimvalue1 = ?, dimname2 = ?, dimvalue2 = ?, dimname3 = ?, dimvalue3 = ?
 		WHERE bmc_part_id = ?
 ") or die $dbh->errstr;
@@ -76,74 +76,33 @@ unless (-d BMC_IMAGES_DIR)
 	mkdir BMC_IMAGES_DIR or die "cannot create images directory";	
 	}
 
+my $quick_scan = 0;
+if (defined $ARGV[0])
+	{
+	if ($ARGV[0] =~ m/quick/i)
+		{
+		$quick_scan = 1;
+		}
+	else
+		{
+		&screen ("Error. Unknown Arguments @ARGV");
+		exit 1;
+		}
+	}
+		
 #
 # This is the start of the main loop. It gets each product from the BMC  website, and checks for changes. 
 #
 while (my $filter_h = $load_filters_sth->fetchrow_hashref())
 	{
-	my $content;
-	my $url = BMCWEBSITE;
-	my $site_url = BMCWEBSITE;
-	my $type = "";
-	my $model_code = "";
-
-	#
-	# Build a URL in the form of
-	# http://au.bmcairfilters.com/search_c.aspx?param=ACCDASP-26&page=1&lng=2
-	# and then go get the content
-	#
-	$url = $url . "//search_c.aspx?param=" . $filter_h->{bmc_part_id} . "&page=1&lng=2";
-	my $retries = 5;
-	# Try a few times in case of failure
-	while ($retries && !($content = get $url))
+	&log ("Product $filter_h->{bmc_part_id}");
+	if ($quick_scan && defined $filter_h->{image})
 		{
-		$retries --;
-		}
-	die "Couldn't get $url" if (!$retries);	
-	if ($content =~ /No Products Found/)
-		{
-		&alert ( "\tNo Products Found for part $filter_h->{bmc_part_id}");
+		&debug (" ...skipped");
 		next;
-		}		
-	
-	#
-	# OK, so we have a page with some content, 
-	# This page holds a list of products found matching the search URL above. So now we have to scan the list looking for products
-	#
-	&debug ($url);
-	if (($content =~ /<tbody>/g) && ($content =~ /<tr>/g))
-		{
-		my $loop_count = 0;
-		#
-		# For each model listed on this page, each model is in a seperate table row
-		#
-		
-		while ($content =~ /<td width=/g)
-			{
-			$loop_count ++;
-			#
-			# Get the "type" of filter product
-			#
-			$type = $1 if $content =~ /<td>(.+?)<\/td>/g;
-			#
-			# Now get the url for the product info page and the model_code
-			if ($content =~ /<td><a href="(.+?)">(.+?)\s*<\/a>/g)
-				{
-				$site_url = $1;
-				$model_code = $2;
-				if ($loop_count == 1)
-					{
-					if ($model_code eq $filter_h->{bmc_part_id})
-						{
-						&get_product_info ($model_code, $type, $site_url);
-						}
-					}
-				}
-			}
 		}
-	}	
-
-
+	&get_product_info ($filter_h->{bmc_part_id}, $filter_h->{type}, $filter_h->{product_url});
+	}
 close $logfh;
 close $alertfh;
 close $debugfh;
@@ -158,13 +117,12 @@ sub get_product_info
 #
 # Sub get_product_info
 # Arg1 = The Part id in the table
-# Arg2 = The model code
-# Arg3 = Type
+# Arg2 = Type
 # Arg3 = The URL of the product info page for the model
 #
 #####################################
 	{
-	my ($model_code, $type, $url) = @_;
+	my ($bmc_part_id, $type, $url) = @_;
 	my ($content, $myline, $make, $model);
 	my ($hp, $year, $photo);
 	my $hpyear = "";
@@ -246,7 +204,7 @@ sub get_product_info
 					}
 				else
 					{
-					&screen ( "Too Many Dimensions for $model_code");
+					&screen ( "Too Many Dimensions for $bmc_part_id");
 					}
 				next;
 				}
@@ -302,7 +260,7 @@ sub get_product_info
 
 		}
 
-	&update_bmcairproducts_row ($model_code, $type, $description, $photo, $diagram, $dimension_count, \@dimension_names, \@dimension_values);
+	&update_bmcairproducts_row ($bmc_part_id, $type, $description, $photo, $diagram, $dimension_count, \@dimension_names, \@dimension_values);
 	}
 
 
@@ -453,7 +411,7 @@ sub update_bmcairproducts_row
 		if ($needchange)
 			{
 			&log ("Updating record for $part_id");
-			$updbmcairth->execute($part_id, $type, $description, $image, $diagram, 
+			$updbmcairth->execute($type, $description, $image, $diagram, 
 				$dimension_count >=1 ? $dimnames->[1] : "", $dimension_count >=1 ? $dimvalues->[1] : "", 
 				$dimension_count >=2 ? $dimnames->[2] : "", $dimension_count >=2 ? $dimvalues->[2] : "", 
 				$dimension_count >=3 ? $dimnames->[3] : "", $dimension_count >=3 ? $dimvalues->[3] : "",

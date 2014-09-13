@@ -42,18 +42,12 @@ my $existsbmcairth = $dbh->prepare("
 ") or die $dbh->errstr;
 
 #
-# Insert a new row into BMCAirProducts
+# Insert a new row into BMCProducts
 #
 my $insbmcairth = $dbh->prepare("
-	INSERT into BMCProducts (category,bmc_part_id,active) VALUES (?,?,?)
+	INSERT into BMCProducts (type, bmc_part_id, product_url, active) VALUES (?,?,?,?)
 ") or die $dbh->errstr;
 
-#
-# Insert a new row into Categories
-#
-my $ins_bmccat_sth = $dbh->prepare("
-	INSERT INTO Categories (longname, shortname, image, description, active) VALUES (?,?,?,?,?)
-") or die $dbh->errstr;
 
 #
 # This select is only used to see if Category exists or not
@@ -66,18 +60,9 @@ my $existsbmccatth = $dbh->prepare("
 # Update existing row in Categories
 #
 my $updbmccatth = $dbh->prepare("
-	UPDATE Categories SET longname = ?, image = ?,
-	 description = ?	
-		WHERE shortname = ?
+	UPDATE Categories SET longname = ?, image = ?, description = ? WHERE shortname = ?
 ") or die $dbh->errstr;
 
-#
-# load BMCmod
-#
-# my $loadmodth = $dbh->prepare("
-	# SELECT * FROM BMCmods
-# ") or die $dbh->errstr;
-# $loadmodth->execute();
 
 
 ######################################################################################
@@ -110,7 +95,7 @@ while ($content =~ /<li\s+class=\"bar.*?>(.*?)<\/li>/gi)
 		$curr_url = $1;
 		$cat_name = $2;
 		# I have no idea what this is doing, top cat should be equal to "BMC"!
-		# $top_cat =~ s/(.*)(\^.*?)$/$1/g if $cat_name=~/(WASHING KITS|MERCHANDISING)/i;
+		$top_cat =~ s/(.*)(\^.*?)$/$1/g if $cat_name=~/(WASHING KITS|MERCHANDISING)/i;
 		$top_cat .= "^$cat_name";				
 		}
 	else
@@ -126,7 +111,7 @@ while ($content =~ /<li\s+class=\"bar.*?>(.*?)<\/li>/gi)
 			$top_cat .=	"^AIR INTAKE SYSTEMS";
 
 			# For air intake category
-			do_categorization('http://au.bmcairfilters.com/air-intake-systems_pag_ib3_2.aspx',$top_cat);
+			parse_categories('http://au.bmcairfilters.com/air-intake-systems_pag_ib3_2.aspx',$top_cat);
 			next;
 			}	
 		}	
@@ -135,73 +120,11 @@ while ($content =~ /<li\s+class=\"bar.*?>(.*?)<\/li>/gi)
 
 	# Go deep into the current category tree
 	# and look for sub categories and products
-	do_categorization($abs_url,$top_cat);
+	parse_categories($abs_url,$top_cat);
 	
 	$top_cat =~ s/(.*)(\^.*?)$/$1/g;
 	}
 
-########################
-#
-# Scrape CAR FILTERS 
-#
-########################
-
-# $url = 'http://au.bmcairfilters.com/ajax/auto.aspx?mod=';
-# my ($code,$modid_url,@cf,$selected_div,$first_el);
-# my $product_name = 'BMC^REPLACEMENT FILTERS^CAR FILTERS';
-
-# while (my $md = $loadmodth->fetchrow_hashref)
-	# {
-	# $modid_url = $url . $md->{modid};
-
-	# my $retries = 5;
-	# # Try more times in case of failure
-	# while ($retries && !($content = get $modid_url))
-		# {
-		# $retries --;
-		# }
-	# die "Couldn't get $modid_url" if (!$retries);		
-			
-	# # If we have Car Filters in this page		
-	# if ($content =~ /id="model-table"(.*?)CAR FILTERS(.*?)<\/div>/sgi)
-		# {
-		# $selected_div = $2;
-		# @cf =();
-		# while ($selected_div =~/<a href=.*?>\s*(.*?)\s*<\/a>/sgi) 
-			# {
-			# # Product Code	
-			# $code = $1;	
-			# $first_el = $cf[0] || "";
-
-			# # Get rid of repeated codes
-			# next if $code eq $first_el;	
-			# unshift @cf, $code;
-			# }
-
-		# # Add Product Codes into BMCAirProduct table	
-		# for (@cf)
-			# {
-			# $existsbmcairth->execute($_);
-			# my $prd_table = $existsbmcairth->fetchrow_hashref;
-			# unless (defined ($prd_table))
-				# {
-				# $insbmcairth->execute($product_name,$_,"Y"); 
-				# &screen("\t\tNew Product: $product_name : $_");
-				# }
-			# else
-				# {
-				# &screen("\t$product_name : $_");	
-				# }	
-
-			# }	
-
-		# }
-	# else
-		# {
-		# next;	
-		# }	
-	
-	# }
 
 close $logfh;
 
@@ -211,7 +134,7 @@ close $logfh;
 ##############################################
 
 
-sub do_categorization
+sub parse_categories 
 #####################################
 #
 # Sub o_categorization
@@ -222,13 +145,7 @@ sub do_categorization
 {
 	my ($c_url,$c_name) = @_;
 	my ($c_cont,$c_list,$c_plist);
-	my ($c_short,$c_desc,$c_image,$c_note) = ('')x4;
 
-	# Category longname
-	$c_name =~ /(.*\^)(.*?)$/;
-
-	# Category shortname
-	$c_short = $2;
 	  
 	$retries = 5;
 	# Try a few times in case of failure
@@ -247,27 +164,15 @@ sub do_categorization
 		  )	
 		{
 
-		# Description of the Category (with images)
-		$c_desc = $1;
-
 		# Product list container
 		$c_plist = $2;
-
-		# Semicolon replacement with html entity
-		$c_desc =~ s/\;/\&#59;/g;
-
-		# Comma replacement
-		$c_desc =~ s/,/\&#44;/g;
-
-		# Add new or Update existing category 
-		do_db($c_name,$c_short,$c_desc,$c_image,$c_note);	
 
 		# Loop through product lists
 		while ($c_plist=~/<a href=\"(.*?)\".*?>(.*?)<\/a>/sgi)
 			{
 			$c_name .= "^" . $2;	
 
-			do_categorization($url . $1,$c_name);
+			parse_categories ($url . $1,$c_name);
 			$c_name =~ s/(.*)(\^.*?)$/$1/g;
 			}
 
@@ -277,21 +182,11 @@ sub do_categorization
 				(.*?)
 				<\/div>
 				(.*?)<input\s*type=\"hidden\"
-			   /xsgi
-	   )	 
+			   /xsgi   )	 
 		{  
-
-		# Description of the Category (with images)
-		$c_desc = $1;
 
 		# This part contains Product lists if any
 		$c_list = $2;
-
-		# Semicolon replacement with html entity
-		$c_desc =~ s/\;/\&#59;/g;
-
-		# Add new or Update existing category 
-		do_db($c_name,$c_short,$c_desc,$c_image,$c_note);
 
 		# Looping through Product lists' tables	
 		while ($c_list=~/<table summary=\"Products List\"(.*?)<\/table>/sgi)
@@ -313,10 +208,15 @@ sub parse_product_list
 #
 #####################################
 {
-	my ($p_name,$p_list) = @_;
-	my ($p_short,$p_desc,$p_image,$p_note,$p_code)=('')x5;
+	my ($c_name,$p_list) = @_;
+	my ($c_short,$p_desc,$p_image,$p_note,$p_code,$p_url)=('')x6;
 	my (@arr,$p_part1);
 	my $fl = 0;
+
+	# Category longname
+	$c_name =~ /(.*\^)(.*?)$/;
+	# Category shortname
+	$c_short = $2;
 
 	while ($p_list =~ /<tr>(.*?)<\/tr>/sgi)
 		{
@@ -332,7 +232,7 @@ sub parse_product_list
 		# Check to see if we have subcategory	
 		if (scalar @arr == 4)
 			{
-			$p_name .= "^" . $arr[0];
+			$c_name .= "^" . $arr[0];
 			@arr = ();	
 			$fl = 1;
 			next;
@@ -350,7 +250,7 @@ sub parse_product_list
 							(valign=\"top\")? 		   # image or note
 							>
 							(<img.*\/(.*\.jpg))?	   # image
-							(<a\s*href.*?>(.*?)<\/a>)? # code
+							(<a\s*href=\"(.*?)\".*?>(.*?)<\/a>)? # url, code
 							(.*?)
 							<\/td>
 						   /xsgi
@@ -364,10 +264,13 @@ sub parse_product_list
 			$p_note = $6 if $1 && !$2;	
 
 			# Remove <p> tags from Note, we may need that though
-			$p_note =~ s/<\/?p>//gi;
+			$p_note =~ s/<\/?p>//gi if defined $p_note;
+
+			# BMC product url
+			$p_url = $5 if $5;
 
 			# BMC product code
-			$p_code = $5 if $5;
+			$p_code = $6 if $6;
 
 			}
 
@@ -379,58 +282,14 @@ sub parse_product_list
 			my $prd_table = $existsbmcairth->fetchrow_hashref;
 			unless (defined ($prd_table))
 				{
-				$insbmcairth->execute($p_name,$p_code,"Y"); 
-				&screen("\t\tNew Product: $p_name : $p_code");
+				$insbmcairth->execute($c_short,$p_code,$p_url,"Y"); 
+				&screen("\t\tNew Product: $c_short : $p_code");
 				}
 			else
 				{
-				&screen("\tProduct $p_name : $p_code");	
+				&screen("\tProduct $c_short : $p_code");	
 				}	
 			
-		}
-
-	$p_name =~ s/(ACCESSORIES)/BMC $1/;
-
-	# Category longname
-	$p_name =~ /(.*\^)(.*?)$/;
-
-	# Category shortname
-	$p_short = $2;	
-
-	# Add new or Update existing category if subcategory
-	do_db($p_name,$p_short,$p_desc,$p_image,$p_note) if $fl;
-}
-
-
-sub do_db
-#############################
-# Add new or Update existing 
-# category in Categories
-#############################
-{
-	my ($name,$short,$desc,$image,$note) = @_;
-	$desc ||= $note;
-	# Add current Category data to the 
-	# Categories table if not exists
-	$existsbmccatth->execute($short);
-	my $cat_table = $existsbmccatth->fetchrow_hashref;
-	unless (defined ($cat_table))
-		{	
-		$ins_bmccat_sth->execute($name,$short,$image,$desc,"Y"); 
-		&screen("\tNew Category : $name");
-		}
-	# Look for changes if any	
-	elsif ( $cat_table->{longname} ne $name ||
-			$cat_table->{description} ne $desc ||
-			$cat_table->{image} ne $image
-	  	  )
-		{
-		$updbmccatth->execute($short,$image,$desc,$name);
-		&screen("Updated category $name");	
-		}
-	else	
-		{
-		&screen("Category $name");	
 		}
 }
 

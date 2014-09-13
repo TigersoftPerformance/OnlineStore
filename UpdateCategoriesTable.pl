@@ -6,7 +6,8 @@ use DBI;
 use English;
 use feature 'say';
 
-use constant ROOT_CATEGORY => "Find Stuff For My Car!";
+use constant ROOT_CATEGORY => "Find Stuff For My Car";
+use constant IMAGE_DIR => "/StorePics/";
 
 #
 # Connect to database
@@ -34,7 +35,7 @@ $sth->execute() or die $dbh->errstr;
 # Insert a new row into Categories
 #
 my $ins_cat_sth = $dbh->prepare("
-	INSERT INTO Categories (longname, shortname, idCars, image, description, active) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE description = values (description)
+	INSERT INTO Categories (longname, shortname, partid, image, description, active) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE description = values (description)
 ") or die $dbh->errstr;
 
 
@@ -53,6 +54,7 @@ while ($car_data = $sth->fetchrow_hashref)
 	my $longname = ROOT_CATEGORY . "^" . $shortname;
 	my $image = "Cat1" . $car_data->{make} . ".jpg";
 	$image =~ s/[ \/]+//g;
+	$image = IMAGE_DIR . $image;
 	my $description = "Please select the model of your " . $car_data->{make} . " from the list below";
 	$ins_cat_sth->execute ($longname, $shortname, 0, $image, $description, "Y") or die "Could not insert $longname";
 	
@@ -61,6 +63,7 @@ while ($car_data = $sth->fetchrow_hashref)
 	$longname = $longname . "^" . $shortname;
 	$image = "Cat2" . $car_data->{make} . $car_data->{model} . ".jpg";
 	$image =~ s/[ \/]+//g;
+	$image = IMAGE_DIR . $image;
 	if (length($car_data->{model_code}))
 		{
 		$description = "Please select the model code of your " . $car_data->{make} . " " . $car_data->{model} . " from the list below";
@@ -78,6 +81,7 @@ while ($car_data = $sth->fetchrow_hashref)
 		$longname = $longname . "^" . $shortname;
 		$image = "Cat3" . $car_data->{make} . $car_data->{model} . $car_data->{model_code} . ".jpg";
 		$image =~ s/[ \/]+//g;
+		$image = IMAGE_DIR . $image;
 		$description = "Please select the variant of your " . $car_data->{make} . " " . $car_data->{model} . " " . $car_data->{model_code} . " from the list below";
 		$ins_cat_sth->execute ($longname, $shortname, 0, $image, $description, "Y") or die "Could not insert $longname";
 		}
@@ -102,6 +106,7 @@ while ($car_data = $sth->fetchrow_hashref)
 	$shortname = $shortname . " " . $carkw . " " . $short_date;
 	$longname = $longname . "^" . $shortname;
 	$image = sprintf ("TPC%06d.jpg", $car_data->{idCars});
+	$image = IMAGE_DIR . $image;
 	$description = "Products available for your " . $car_data->{make} . " " . $car_data->{model} . " " . $car_data->{model_code} . " are listed below";
 	$ins_cat_sth->execute ($longname, $shortname, $car_data->{idCars}, $image, $description, "Y") or die "Could not insert $longname";
 
