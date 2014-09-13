@@ -47,6 +47,7 @@ while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	# just need to remove excess quotes and new lines from the description
 	my $description = $storeentries->{v_products_description_1};
 	$description =~ s/\"\"/\"/g;
+	$description =~ s/\r//g;
 	$description =~ s/\n//g;
 
 	# Zen Cart expects the specials price to be the before-tax price, so make the change
@@ -58,13 +59,36 @@ while ($storeentries = $store_entries_sth->fetchrow_hashref)
 
 	# Now add a Path to the FI Images
 	my $image = $storeentries->{v_products_image};
-	if ($storeentries->{v_manufacturers_name} eq "Final Inspection")
+	if ($storeentries->{v_products_image} !~ m/\//)
 		{
-		$image = "/FIStore/" . $image;
-		}
-	elsif ($storeentries->{v_manufacturers_name} eq "Superchips")
-		{
-		$image = "/Superchips/" . $image;
+		if ($storeentries->{v_manufacturers_name} eq "Final Inspection")
+			{
+			$image = "/FIStore/" . $image;
+			}
+		elsif ($storeentries->{v_manufacturers_name} eq "Superchips")
+			{
+			$image = "/Superchips/" . $image;
+			}
+		elsif ($storeentries->{v_manufacturers_name} eq "Tigersoft Performance")
+			{
+			$image = "/Tigersoft Performance/" . $image;
+			}
+		elsif ($storeentries->{v_manufacturers_name} eq "BMC")
+			{
+			$image = "/BMC Air Filters/" . $image;
+			}
+		elsif ($storeentries->{v_manufacturers_name} eq "Martini Racing")
+			{
+			$image = "/Martini Racing/" . $image;
+			}
+		elsif ($storeentries->{v_manufacturers_name} eq "BC Forged Wheels")
+			{
+			$image = "/BC Wheels/" . $image;
+			}
+		elsif ($storeentries->{v_manufacturers_name} eq "BC Racing Coilovers")
+			{
+			$image = "/BC Wheels/" . $image;
+			}
 		}
 		 
 	print $storeentries->{v_products_model}, 

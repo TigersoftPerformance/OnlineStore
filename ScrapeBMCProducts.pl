@@ -175,9 +175,6 @@ sub get_product_info
 
 	$description =~ s/\&nbsp;//g;
 
-	# Semicolon replacement with html entity
-	$description =~ s/\;/\&#59;/g;
-
 	foreach my $line (split qr/\R/, $content)
 		{
 		#

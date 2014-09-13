@@ -114,8 +114,6 @@ while ($car_data = $sth->fetchrow_hashref)
 
 	}
 
-say "*"x50;
-
 
 #
 # Disconnect from database
