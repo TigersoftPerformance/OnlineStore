@@ -35,7 +35,7 @@ if (defined $ARGV[0])
 	{
 	$zcquery .= " WHERE v_categories_name_1 LIKE '" . $ARGV[0] . "%'";
 	}
-say $zcquery;
+
 my $store_entries_sth = $dbh->prepare($zcquery) or die $dbh->errstr;
 $store_entries_sth->execute() or die $dbh->errstr;
 
@@ -43,55 +43,62 @@ print 'v_products_model,v_products_type,v_products_image,v_products_name_1,v_pro
 my $storeentries = {};
 while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	{
-	 say "Model = " . $storeentries->{v_products_model};
-	 # just need to remove excess quotes and new lines from the description
-	 my $description = $storeentries->{v_products_description_1};
-	 $description =~ s/\"\"/\"/g;
-	 $description =~ s/\n//g;
-	 
-	 # Zen Cart expects the specials price to be the before-tax price, so make the change
-	 my $specials_price = "";
-	 if ($storeentries->{v_specials_price} < $storeentries->{v_products_price})
-		{
-		$specials_price = $storeentries->{v_specials_price} - ($storeentries->{v_specials_price} / 11);
-		}
-	
+	# say "Model = " . $storeentries->{v_products_model};
+	# just need to remove excess quotes and new lines from the description
+	my $description = $storeentries->{v_products_description_1};
+	$description =~ s/\"\"/\"/g;
+	$description =~ s/\n//g;
+
+	# Zen Cart expects the specials price to be the before-tax price, so make the change
+	my $specials_price = "";
+	if ($storeentries->{v_specials_price} < $storeentries->{v_products_price})
+	{
+	$specials_price = $storeentries->{v_specials_price} - ($storeentries->{v_specials_price} / 11);
+	}
+
 	# Now add a Path to the FI Images
-	 my $image = $storeentries->{v_products_image};
-	 $image = "/FIStore/" . $image;
-	 	 	 
-	 print $storeentries->{v_products_model}, 
-	 $storeentries->{v_products_type}, 
-	 $image, 
-	 $storeentries->{v_products_name_1}, 
-	 $description, 
-	 $storeentries->{v_products_url_1},
-	 $specials_price, 
-	 $storeentries->{v_specials_date_avail}, 
-	 $storeentries->{v_specials_expires_date}, 
-	 $storeentries->{v_products_price}, 
-	 $storeentries->{v_products_weight}, 
-	 $storeentries->{v_product_is_call}, 
-	 $storeentries->{v_products_sort_order}, 
-	 $storeentries->{v_products_quantity_order_min}, 
-	 $storeentries->{v_products_quantity_order_units}, 
-	 $storeentries->{v_products_priced_by_attribute}, 
-	 $storeentries->{v_product_is_always_free_shipping}, 
-	 $storeentries->{v_date_avail}, 
-	 $storeentries->{v_date_added}, 
-	 $storeentries->{v_products_quantity}, 
-	 $storeentries->{v_manufacturers_name}, 
-	 $storeentries->{v_categories_name_1}, 
-	 $storeentries->{v_tax_class_title}, 
-	 $storeentries->{v_status}, 
-	 $storeentries->{v_metatags_products_name_status}, 
-	 $storeentries->{v_metatags_title_status}, 
-	 $storeentries->{v_metatags_model_status}, 
-	 $storeentries->{v_metatags_price_status}, 
-	 $storeentries->{v_metatags_title_tagline_status}, 
-	 $storeentries->{v_metatags_title_1}, 
-	 $storeentries->{v_metatags_keywords_1}, 
-	 $storeentries->{v_metatags_description_1}, "\n";
+	my $image = $storeentries->{v_products_image};
+	if ($storeentries->{v_manufacturers_name} eq "Final Inspection")
+		{
+		$image = "/FIStore/" . $image;
+		}
+	elsif ($storeentries->{v_manufacturers_name} eq "Superchips")
+		{
+		$image = "/Superchips/" . $image;
+		}
+		 
+	print $storeentries->{v_products_model}, 
+	$storeentries->{v_products_type}, 
+	$image, 
+	$storeentries->{v_products_name_1}, 
+	$description, 
+	$storeentries->{v_products_url_1},
+	$specials_price, 
+	$storeentries->{v_specials_date_avail}, 
+	$storeentries->{v_specials_expires_date}, 
+	$storeentries->{v_products_price}, 
+	$storeentries->{v_products_weight}, 
+	$storeentries->{v_product_is_call}, 
+	$storeentries->{v_products_sort_order}, 
+	$storeentries->{v_products_quantity_order_min}, 
+	$storeentries->{v_products_quantity_order_units}, 
+	$storeentries->{v_products_priced_by_attribute}, 
+	$storeentries->{v_product_is_always_free_shipping}, 
+	$storeentries->{v_date_avail}, 
+	$storeentries->{v_date_added}, 
+	$storeentries->{v_products_quantity}, 
+	$storeentries->{v_manufacturers_name}, 
+	$storeentries->{v_categories_name_1}, 
+	$storeentries->{v_tax_class_title}, 
+	$storeentries->{v_status}, 
+	$storeentries->{v_metatags_products_name_status}, 
+	$storeentries->{v_metatags_title_status}, 
+	$storeentries->{v_metatags_model_status}, 
+	$storeentries->{v_metatags_price_status}, 
+	$storeentries->{v_metatags_title_tagline_status}, 
+	$storeentries->{v_metatags_title_1}, 
+	$storeentries->{v_metatags_keywords_1}, 
+	$storeentries->{v_metatags_description_1}, "\n";
 	}
 exit 0;	
 	
