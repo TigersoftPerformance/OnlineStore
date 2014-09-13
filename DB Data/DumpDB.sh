@@ -9,8 +9,9 @@ cp /tmp/AliasModelCode.txt ./AliasModelCode.csv
 cp /tmp/BCRacingCoilovers.txt ./BCRacingCoilovers.csv
 
 cp /tmp/BMCCars.txt ./BMCCars.csv
-cp /tmp/BMCProducts.txt ./BMCProducts.csv
 cp /tmp/BMCFitment.txt ./BMCFitment.csv
+cp /tmp/BMCProducts.txt ./BMCProducts.csv
+cp /tmp/BMCStockedProducts.txt ./BMCStockedProducts.csv
 
 cp /tmp/Cars.txt ./Cars.csv
 cp /tmp/Categories.txt ./Categories.csv

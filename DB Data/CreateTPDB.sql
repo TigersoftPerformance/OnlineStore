@@ -176,6 +176,24 @@ SET FOREIGN_KEY_CHECKS=1;
 
 
 -- -----------------------------------------------------
+-- Table `TP`.`BMCStockedProducts`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BMCStockedProducts` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BMCStockedProducts` (
+  `bmc_part_id` VARCHAR(32) NOT NULL,
+  `description` TEXT NULL,
+  `cost_price` DECIMAL (13,4) NULL DEFAULT '0',
+  `rrp_price` DECIMAL (13,4) NULL DEFAULT '0',
+  `tp_price` DECIMAL (13,4) NULL DEFAULT '0',
+  PRIMARY KEY (`bmc_part_id`),
+  UNIQUE INDEX `bmc_part_id_UNIQUE` (`bmc_part_id` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `TP`.`Cars`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`Cars` ;
@@ -217,7 +235,7 @@ DROP TABLE IF EXISTS `TP`.`Categories` ;
 CREATE TABLE IF NOT EXISTS `TP`.`Categories` (
   `longname` VARCHAR(128) NOT NULL,
   `shortname` VARCHAR(48) NOT NULL,
-  `partid` VARCHAR(32) NULL,
+  `partid` VARCHAR(64) NULL,
   `image` TEXT NOT NULL,
   `description` TEXT NULL,
   `metatags_title` TEXT NULL DEFAULT NULL,

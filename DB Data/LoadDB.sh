@@ -13,6 +13,8 @@ mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=','
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BMCFitment.csv
 
+mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP BMCStockedProducts.csv
+
 
 mysqlimport --local --delete --fields-enclosed-by='"' --fields-terminated-by=',' --lines-terminated-by='\n' --verbose TP Cars.csv
 
