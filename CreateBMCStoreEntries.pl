@@ -132,7 +132,7 @@ while ($car_data = $sth->fetchrow_hashref)
 		}
 	
 # $23 =	v_tax_class_title,
-	my $v_tax_class_title = "--none--";
+	my $v_tax_class_title = "Taxable Goods";
 # $24 =	v_status,
 	my $v_status = 1;
 # $25 =	v_metatags_products_name_status,
