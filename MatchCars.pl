@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 #####################################################################################
 # MatchCars.pl script - John Robinson, September 2014
 # This script attempts to match the cars listed in the Cars table with the appropriate 
@@ -27,10 +27,16 @@ use Set::Scalar;
 use Text::Unidecode;
 
 my $url = 'http://au.bmcairfilters.com';
-use constant LOG => "./Logs/MatchCars.log";
-open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
+use constant LOGFILE    => "./Logs/MatchCars.log";
+use constant ALERTFILE  => "./Logs/MatchCars.alert";
+use constant DEBUGFILE  => "./Logs/MatchCars.debug";
+
+open(my $logfh, ">", LOGFILE)     or die "cannot open LOGFILE $!";
+open(my $alertfh, ">", ALERTFILE) or die "cannot open ALERTFILE $!";
+open(my $debugfh, ">", DEBUGFILE) or die "cannot open DEBUGFILE $!";
 $logfh->autoflush;
-STDOUT->autoflush;
+$alertfh->autoflush;
+$debugfh->autoflush;
 
 #
 # Connect to database
@@ -92,6 +98,7 @@ $sth->execute() or die $dbh->errstr;
 # cars that do not match
 my @match_list = ();
 my @match_score = ();
+my $matches;
 
 # This is the main loop. We are going to read through our own Cars table, car by cars
 # and then compile a list of possible matches in the BMCCars table.
@@ -100,13 +107,12 @@ while ($car_data = $sth->fetchrow_hashref)
 	{
 	@match_list = ();
 	@match_score = ();
-	say "$car_data->{make} $car_data->{model}";
-	say Dumper ($car_data);
+	&log ("CAR: =$car_data->{make}=$car_data->{model}=($car_data->{model_code})=$car_data->{variant}=$car_data->{original_bhp}=$car_data->{start_date}=$car_data->{end_date}=$car_data->{capacity}=$car_data->{cylinders}");
 	&load_bmccars_by_make ($car_data->{make});
-	say "Found " . scalar (@match_list) . " Cars that match the make $car_data->{make}";
+	$matches = $#match_list + 1; &debug ("Found $matches Cars that match the make $car_data->{make}");
 
-	&erase_non_matching_models ($car_data->{make}, $car_data->{model});
-	say "Found " . scalar (@match_list) . " Cars that match the model $car_data->{model}";
+	&erase_non_matching_models ($car_data->{make}, $car_data->{model}) if $matches;
+	$matches = $#match_list + 1; &debug ("Found $matches Cars that match the model $car_data->{model}");
 	
 	# Now zero out the match score array
 	foreach my $i (0 .. scalar (@match_list) - 1)
@@ -114,21 +120,59 @@ while ($car_data = $sth->fetchrow_hashref)
 		push (@match_score, 0);
 		}
 
-	&score_matching_model_codes ($car_data->{make}, $car_data->{model}, $car_data->{model_code});
-	say "Found " . scalar (@match_list) . " Cars that match the model_code $car_data->{model_code}";
-
-	&score_matching_dates ($car_data->{start_date}, $car_data->{end_date});
-	say "Found " . scalar (@match_list) . " Cars that match the date range $car_data->{start_date} - $car_data->{end_date}";
-
-	&score_matching_capacity ($car_data->{capacity});
-	say "Found " . scalar (@match_list) . " Cars that match the capacity $car_data->{capacity}";
+	if ($matches)
+		{
+		&score_matching_model_codes ($car_data->{make}, $car_data->{model}, $car_data->{model_code});
+		}
+	$matches = $#match_list + 1;
+	my $list = '';
+	if ($matches)
+		{
+		&debug ("Found $matches Cars that match the model_code $car_data->{model_code}");
+		$list = ' >'; for my $k (0 .. $#match_list) {$list .= $match_list[$k]->{idBMCCars} . " ";} &debug ($list);	
+		&score_matching_dates ($car_data->{start_date}, $car_data->{end_date});
+		}
+	$matches = $#match_list + 1; 
 	
-	&score_matching_cylinders ($car_data->{cylinders});
-	say "Found " . scalar (@match_list) . " Cars that match the cylinders $car_data->{cylinders}";
+	if ($matches)
+		{
+		&debug ("Found $matches Cars that match the date range $car_data->{start_date} - $car_data->{end_date}");
+		$list = ' >'; for my $k (0 .. $#match_list) {$list .= $match_list[$k]->{idBMCCars} . " ";} &debug ($list);
+		&score_matching_power ($car_data->{original_bhp});
+		}
+	$matches = $#match_list + 1; 
 
+	if ($matches)
+		{
+		&debug ("Found $matches Cars that match the horsepower $car_data->{original_bhp}");
+		$list = ' >'; for my $k (0 .. $#match_list) {$list = $list . $match_list[$k]->{idBMCCars} . " ";} &debug ($list);
+		&score_matching_capacity ($car_data->{capacity});
+		}
+	$matches = $#match_list + 1;
+
+	if ($matches)
+		{
+		&debug ("Found $matches Cars that match the capacity $car_data->{capacity}");
+		$list = ' >'; for my $k (0 .. $#match_list) {$list .= $match_list[$k]->{idBMCCars} . " ";} &debug ($list);	
+		&score_matching_cylinders ($car_data->{cylinders});
+		}
+	$matches = $#match_list + 1; 
+	
+	if ($matches)
+		{
+		&debug ("Found $matches Cars that match the cylinders $car_data->{cylinders}");
+		$list = ' >'; for my $k (0 .. $#match_list) {$list .= $match_list[$k]->{idBMCCars} . " ";} &debug ($list);
+		}
+		
 	#
 	# We should also attempt to match the variant string
 	#
+	if ($matches > 1)
+		{
+		&score_matching_variants ($car_data->{variant});
+		}
+	
+
 	
 	
 	# Do a simple bubble sort of the results
@@ -150,14 +194,36 @@ while ($car_data = $sth->fetchrow_hashref)
 			}
 		}
 	
-	say "Top 3 results are:";
+	# If $#match_list is negative, then we found no matches
+	if ($#match_list < 0)
+		{
+		&log (" *** No Matches Found! ***");
+		}
+
+	# If $#match_list is zero, then we found exactly one match
+	elsif ($#match_list == 0)
+		{
+		&log (" Perfect Match! :");
+		if ($match_score[0] < 50)
+			{
+			&log (" *** Low Score! ***");
+			}
+		}
+	elsif ($match_score[0] > $match_score[1] + 15)
+		{
+		&log (" Clear Match! :");
+		}
+	else	
+		{
+		&log (" *** Can't Decide! *** Found " . scalar (@match_list) . " possible matches:");
+		}
 	my $index = 0;
-	while ($index < 3 && $index <= $#match_list)
+	while ($index < 5 && $index <= $#match_list)
 		{
 		my $bmccar = {};
 		$bmccar = $match_list[$index];
 
-		say "BMC Car $bmccar->{idBMCCars}\tScore $match_score[$index]";
+		&log ("  Score $match_score[$index]. BMC CAR =$bmccar->{make}=$bmccar->{model}=($bmccar->{model_code})=$bmccar->{variant}=$bmccar->{hp}=$bmccar->{years}=$bmccar->{capacity}=$bmccar->{cylinders}=");
 		$index ++;
 		}
 			
@@ -212,7 +278,10 @@ sub erase_non_matching_models
 	my $aliasmodel = {};
 	while ($aliasmodel = $get_model_alias_sth->fetchrow_hashref)
 		{
-		push (@models, $aliasmodel->{alias});
+		if (defined $aliasmodel->{alias} && length ($aliasmodel->{alias}))
+			{
+			push (@models, $aliasmodel->{alias});
+			}
 		}	
 	
 	# Now we cycle through each entry in the match_list array
@@ -253,7 +322,7 @@ sub score_matching_model_codes
 	{
 	my ($make, $model, $model_code) = @_;
 
-	my $weighting = 10;
+	my $weighting = 20;
 	my $any_matches = 0;
 	
 	# If the passed model_code is null, then just return without trying to match anything. 
@@ -269,7 +338,10 @@ sub score_matching_model_codes
 	my $aliasmodelcode = {};
 	while ($aliasmodelcode = $get_modelcode_alias_sth->fetchrow_hashref)
 		{
-		push (@model_codes, $aliasmodelcode->{alias});
+		if (defined $aliasmodelcode->{alias} && length ($aliasmodelcode->{alias}))
+			{
+			push (@model_codes, $aliasmodelcode->{alias});
+			}
 		}	
 	
 	# Now we cycle through each entry in the match_list array
@@ -286,7 +358,7 @@ sub score_matching_model_codes
 			{
 			if ($bmccar->{model} =~ m/$model_codes[$j]/i || $bmccar->{model_code} =~ m/$model_codes[$j]/i)
 				{
-				# say "Found match for model code $model_codes[$j]";
+				&debug ("Found match for model code $model_codes[$j]");
 				$match_found = 1;
 				$any_matches = 1;
 				last;
@@ -332,6 +404,48 @@ sub score_matching_model_codes
 		}
 	}
 	
+sub score_matching_power
+	{
+	my $power = $_[0];
+	
+	my $weighting = 40;
+	
+	# if the passed power is zero, then just return
+	if (!$power)
+		{
+		return 0;
+		}
+	
+	# now loop through the match_list and score all of the entries
+	my $index = 0;
+	while ($index <= $#match_list)
+		{
+		my $bmccar = {};
+		$bmccar = $match_list[$index];
+
+		# if the capacity of the BMC Car is not specified, then we can't match, so just skip to the next car
+		if (!$bmccar->{hp})
+			{
+			$index ++;		
+			next;
+			}
+			
+		# If the difference in capacity is too big, then delete this record and move on
+		my $powerdiff = abs ($bmccar->{hp} - $power);
+		if ($powerdiff > 5)
+			{
+			splice (@match_list, $index, 1);
+			splice (@match_score, $index, 1);
+			next;
+			}
+
+		# So if we get here, give it a score based on how far away it is
+		$match_score[$index] += ((10 - ($powerdiff * 2)) / 10) * $weighting;
+		$index ++;		
+		}	
+	}
+
+
 sub score_matching_capacity
 	{
 	my $capacity = $_[0];
@@ -376,11 +490,13 @@ sub score_matching_capacity
 		$index ++;		
 		}	
 	}
+
 	
 sub score_matching_cylinders
 	{
 	my $cylinders = $_[0];
 	# if the passed cylinders is zero, then just return
+	&debug ("Looking for matches with $cylinders cylinders");
 	if (!$cylinders)
 		{
 		return 0;
@@ -393,6 +509,8 @@ sub score_matching_cylinders
 		my $bmccar = {};
 		$bmccar = $match_list[$index];
 
+		&debug ("car $bmccar->{idBMCCars} has $bmccar->{cylinders} cylinders");
+
 		# if the cylinders of the BMC Car is not specified, then we can't match, so just skip to the next car
 		if (!$bmccar->{cylinders})
 			{
@@ -401,7 +519,7 @@ sub score_matching_cylinders
 			}
 			
 		# If there is any difference in cylinders then delete this record and move on
-		if (!abs ($bmccar->{cylinders} - $cylinders))
+		if ($bmccar->{cylinders} != $cylinders)
 			{
 			splice (@match_list, $index, 1);
 			splice (@match_score, $index, 1);
@@ -418,13 +536,13 @@ sub score_matching_dates
 	my $start_date = $_[0];
 	my $end_date = $_[1];
 
-	my $weighting = 20;
+	my $weighting = 30;
 	my $start_year = substr ($start_date, 0, 4);
 	my $end_year = substr ($end_date, 0, 4);
 	
 	# OK, so from this point on, lets treat the dates as numbers, 
 	# represnting the number fo years since 1970
-	# say "Date Range of Car: $start_year - $end_year";
+	&debug ("Date Range of Car: $start_year - $end_year");
 	$start_year -= 1970; 
 	$start_year = 0 if $start_year < 0;
 	$end_year -= 1970; 
@@ -432,7 +550,7 @@ sub score_matching_dates
 	# NOTE: Setting this to 50 sets the max year to 2020, which is fine in 2014
 	#
 	$end_year = 50 if $end_year > 50;
-	#say "Date Range of Car: $start_year - $end_year";
+	&debug ("Date Range of Car: $start_year - $end_year");
 	
 	# return if we have no dates to play with
 	return 0 if (!$start_year && !$end_year);
@@ -454,7 +572,7 @@ sub score_matching_dates
 			}
 			
 		$bmccar->{year}	=~ s/&gt;/>/;
-		# print "  BMC Year: $bmccar->{year} ";
+		&debug ("  BMC Year: $bmccar->{year} ");
 		if ($bmccar->{year} =~ m/^(.+)>(.+)$/)
 			{
 			$bmc_start_year = $1;
@@ -478,33 +596,33 @@ sub score_matching_dates
 			}
 		$bmc_start_year = $1 if $bmc_start_year =~ m/\d{1,2}\/(\d{1,2})/;
 		$bmc_end_year = $1 if $bmc_end_year =~ m/\d{1,2}\/(\d{1,2})/;
-		# say "Date Range of BMCCar: $bmc_start_year - $bmc_end_year";
+		&debug ("Date Range of BMCCar: $bmc_start_year - $bmc_end_year");
 
 		$bmc_start_year -= 70; $bmc_start_year += 100 if $bmc_start_year < 0;
 		$bmc_end_year -= 70; $bmc_end_year += 100 if $bmc_end_year < 0;
 
-		#say "Date Range of BMCCar: $bmc_start_year - $bmc_end_year";
+		&debug ("Date Range of BMCCar: $bmc_start_year - $bmc_end_year");
 
 		# OK, now that the dates have all been parsed and normalised, we can start doing some comparisons
 		my $date_range = Set::Scalar->new ($start_year .. $end_year);
 		my $bmc_date_range = Set::Scalar->new ($bmc_start_year .. $bmc_end_year);
 
-		# say "    date_range = " . $date_range;
-		# say "    BMC date_range = " . $bmc_date_range;
+		&debug ("    date_range = " . $date_range);
+		&debug ("    BMC date_range = " . $bmc_date_range);
 		
 		# if the 2 sets are disjoint, then delete this record and move on
 		if ($date_range != $bmc_date_range)
 			{
 			splice (@match_list, $index, 1);
 			splice (@match_score, $index, 1);
-			# say "      sets are disjoint";
+			&debug ("      sets are disjoint");
 			next;
 			}
 			
 		# if the 2 sets are subset/superset, then score 10 and move on
 		if ($date_range <= $bmc_date_range || $date_range >= $bmc_date_range)
 			{
-			# say "      sets are subset/superset";
+			&debug ("      sets are subset/superset");
 			$match_score[$index] += $weighting;
 			$index ++;
 			next;
@@ -518,19 +636,78 @@ sub score_matching_dates
 		
 		# If we only have an intersection of 1, but both sets are greater than 1 element long, then
 		# it is likely that we have 2 not equal sets such as 02-07 and 07-11.
-		if ($intersection == 1 && $date_range->size > 1 && bmc_date_range->size > 1)
+		if ($intersection == 1 && $date_range->size > 1 && $bmc_date_range->size > 1)
 			{
 			splice (@match_list, $index, 1);
 			splice (@match_score, $index, 1);
-			# say "      sets are probably disjoint";
+			&debug ("      sets are probably disjoint");
 			next;
 			}
 		
 		
 		my $date_score += ($intersection->size * 2 * $weighting) / $total_size;
 		$match_score[$index] += $date_score;
-		# say "      sets are intersecting, score is $date_score";
+		&debug ("      sets are intersecting, score is $date_score");
 		$index ++;
 		}
 	}
 	
+sub score_matching_variants
+	{
+	my $variant = $_[0];
+	my $weighting = 10;
+	my @var_words = split (/ /, $variant);
+
+	&debug ("  trying to match variant " . $variant);
+	my $index = 0;
+	while ($index <= $#match_list)
+		{
+		my $bmccar = {};
+		$bmccar = $match_list[$index];
+		my $var_word_score = 0;
+		for my $i (0 .. $#var_words)
+			{
+			&debug ("  trying to match var_word " . $var_words[$i]);
+			if ($bmccar->{variant} =~ m/$var_words[$i]/)
+				{
+				&debug ("  Matched var_word " . $var_words[$i]);
+				$var_word_score ++;
+				}
+			}		
+		
+		if ($var_word_score)
+			{
+			my $score = ($var_word_score / ($#var_words + 1)) * $weighting;
+			$match_score[$index] += $score;
+			&debug ("   variant score for variant =" . $bmccar->{variant} . "= is " . $score);
+			}
+		$index ++;
+		}
+	}
+	
+sub screen
+	{
+	my $line = shift;
+	say $line;
+	&alert ($line);
+	}
+	
+sub alert
+	{
+	my $line = shift;
+	say $alertfh $line;
+	&log ($line);
+	}
+	
+sub log
+	{
+	my $line = shift;
+	say $logfh $line;
+	&debug ($line);
+	}
+
+sub debug
+	{
+	my $line = shift;
+	say $debugfh $line;
+	}
