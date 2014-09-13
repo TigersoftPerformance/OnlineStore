@@ -35,9 +35,9 @@ use constant PPBENCHTUNE  => "BT"; # Product prefix for Bench Tune
 use constant PPCHIPCHANGE => "CC"; # Product prefix for Bench Tune
 use constant PPUNKNOWN    => "UK"; # Product prefix for Bluefin
 use constant PPNONE       => "NO"; # Product prefix for None
-use constant PPSTAGE2       => "S2"; # Product prefix for None
-use constant PPSTAGE3       => "S3"; # Product prefix for None
-use constant PPSTAGE4       => "S4"; # Product prefix for None
+use constant PPSTAGE2     => "S2"; # Product prefix for None
+use constant PPSTAGE3     => "S3"; # Product prefix for None
+use constant PPSTAGE4     => "S4"; # Product prefix for None
 
 use constant PNBLUEFIN    => "Superchips Bluefin"; # Product Name for Bluefin
 use constant PNFLASHTUNE  => "Superchips Flash Tune"; # Product Name for Flash tune
@@ -45,9 +45,9 @@ use constant PNBENCHTUNE  => "Superchips Bench Tune"; # Product Name for Bench T
 use constant PNCHIPCHANGE => "Superchips Chip Change"; # Product Name for Bench Tune
 use constant PNUNKNOWN    => "Superchips Tune"; # Product Name for Bluefin
 use constant PNNONE       => "No Tune Whatsoever"; # Product Name for None
-use constant PNSTAGE2       => "Stage 2 Tune"; 
-use constant PNSTAGE3       => "Stage 3 Tune"; 
-use constant PNSTAGE4       => "Stage 4 Tune"; 
+use constant PNSTAGE2     => "Stage 2 Tune"; 
+use constant PNSTAGE3     => "Stage 3 Tune"; 
+use constant PNSTAGE4     => "Stage 4 Tune"; 
 
 use constant SORT_ORDER_START => 100;
 use constant SORT_ORDER_INCREMENT => 50;
@@ -91,7 +91,7 @@ my $get_tune_sth = $dbh->prepare("
 # Select a row from Categories based on idCars
 #
 my $get_cat_sth = $dbh->prepare("
-	SELECT * FROM Categories WHERE idCars = ? AND active = 'Y'
+	SELECT * FROM Categories WHERE partid = ? AND active = 'Y'
 ") or die $dbh->errstr;
 
 #
@@ -117,11 +117,11 @@ my $v_products_quantity_order_units = 1;
 my $v_products_priced_by_attribute = 0;
 my $v_product_is_always_free_shipping = 1;
 my $v_date_avail = "0000-00-00 00:00:00";
-my $v_date_added = "2013-12-27 00:25:30";
+my $v_date_added = "2014-09-08 00:00:00";
 my $v_products_quantity = 100;
 my $v_manufacturers_name = "Superchips";
 my $v_categories_name_1;
-my $v_tax_class_title = "--none--";
+my $v_tax_class_title = "Taxable Goods";
 my $v_status = 1;
 my $v_metatags_products_name_status = 1;
 my $v_metatags_title_status = 1;
@@ -422,6 +422,10 @@ sub insert_store_entry
 {
 	if ($v_products_model)
 		{
+		# Need to remove GST from the prices before uploading to the store
+		$v_products_price -= $v_products_price / 11;
+		$v_specials_price -= $v_specials_price / 11;
+		
 		$insertth->execute ($v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 );	
 		}
 }
