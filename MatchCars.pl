@@ -665,10 +665,13 @@ sub score_matching_variants
 		my $bmccar = {};
 		$bmccar = $match_list[$index];
 		my $var_word_score = 0;
+		my $variant = $bmccar->{variant};
+		$variant =~ s/\s+//g;
+		
 		for my $i (0 .. $#var_words)
 			{
 			&debug ("  trying to match var_word " . $var_words[$i]);
-			if ($bmccar->{variant} =~ m/$var_words[$i]/)
+			if ($variant =~ m/$var_words[$i]/)
 				{
 				&debug ("  Matched var_word " . $var_words[$i]);
 				$var_word_score ++;
