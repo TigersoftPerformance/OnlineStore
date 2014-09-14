@@ -1,0 +1,4 @@
+"BMW","Diesel","\\d{3}d"
+"BMW","Petrol","\\d{3}i"
+"Seat","Diesel","TDI"
+"Seat","Petrol","TSI"
