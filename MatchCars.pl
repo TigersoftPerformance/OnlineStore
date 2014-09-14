@@ -80,6 +80,14 @@ my $get_modelcode_alias_sth = $dbh->prepare("
 	SELECT * FROM AliasModelCode WHERE make = ? AND model = ? AND model_code = ?
 ") or die $dbh->errstr;
 
+#
+# This selects all rows based on make and fuel from AliasFuelType
+#
+my $get_fueltype_alias_sth = $dbh->prepare("
+	SELECT * FROM AliasFuelType WHERE make = ? and fuel_type = ?
+") or die $dbh->errstr;
+
+
 # Usage: MatchCars.pl [MAKE [MODEL]]
 # Restrict the main loop query based on the passed command line arguments
 my $cars_query = "SELECT * FROM Cars WHERE active = 'Y'";
@@ -107,7 +115,7 @@ while ($car_data = $sth->fetchrow_hashref)
 	{
 	@match_list = ();
 	@match_score = ();
-	&log ("CAR: =$car_data->{make}=$car_data->{model}=($car_data->{model_code})=$car_data->{variant}=$car_data->{original_bhp}=$car_data->{start_date}=$car_data->{end_date}=$car_data->{capacity}=$car_data->{cylinders}");
+	&log ("CAR: =$car_data->{make}=$car_data->{model}=($car_data->{model_code})=$car_data->{variant}=$car_data->{fuel_type}=$car_data->{original_bhp}=$car_data->{start_date}=$car_data->{end_date}=$car_data->{capacity}=$car_data->{cylinders}");
 	&load_bmccars_by_make ($car_data->{make});
 	$matches = $#match_list + 1; &debug ("Found $matches Cars that match the make $car_data->{make}");
 
@@ -162,18 +170,16 @@ while ($car_data = $sth->fetchrow_hashref)
 		{
 		&debug ("Found $matches Cars that match the cylinders $car_data->{cylinders}");
 		$list = ' >'; for my $k (0 .. $#match_list) {$list .= $match_list[$k]->{idBMCCars} . " ";} &debug ($list);
-		}
-		
-	#
-	# We should also attempt to match the variant string
-	#
-	if ($matches > 1)
-		{
 		&score_matching_variants ($car_data->{variant});
 		}
-	
-
-	
+	$matches = $#match_list + 1; 
+		
+	if ($matches)
+		{
+		&score_matching_fueltypes ($car_data->{make}, $car_data->{fuel_type});
+		}
+	$matches = $#match_list + 1; 
+	&debug ("Found $matches Cars that match the fuel_type $car_data->{fuel_type}");
 	
 	# Do a simple bubble sort of the results
 	foreach (0 .. $#match_list - 1)
@@ -204,7 +210,7 @@ while ($car_data = $sth->fetchrow_hashref)
 	elsif ($#match_list == 0)
 		{
 		&log (" Perfect Match! :");
-		if ($match_score[0] < 50)
+		if ($match_score[0] < 60)
 			{
 			&log (" *** Low Score! ***");
 			}
@@ -223,7 +229,7 @@ while ($car_data = $sth->fetchrow_hashref)
 		my $bmccar = {};
 		$bmccar = $match_list[$index];
 
-		&log ("  Score $match_score[$index]. BMC CAR =$bmccar->{make}=$bmccar->{model}=($bmccar->{model_code})=$bmccar->{variant}=$bmccar->{hp}=$bmccar->{years}=$bmccar->{capacity}=$bmccar->{cylinders}=");
+		&log ("  Score $match_score[$index]. BMC CAR =$bmccar->{make}=$bmccar->{model}=($bmccar->{model_code})=$bmccar->{variant}=$bmccar->{hp}=$bmccar->{year}=$bmccar->{capacity}=$bmccar->{cylinders}=");
 		$index ++;
 		}
 			
@@ -686,6 +692,61 @@ sub score_matching_variants
 			}
 		$index ++;
 		}
+	}
+	
+sub score_matching_fueltypes
+	{
+	my $make = $_[0];
+	my $fuel_type = $_[1];
+	
+	my $weighting = 25;
+	my @fueltypes = ();
+	
+	# Now go and find all of the fueltype makes listed in the fueltype alias table, and add them to the array
+	my $fuel;
+	$fuel = "Petrol" if ($fuel_type =~ m/Non-Turbo Petrol|Turbocharged Petrol|Supercharged|Twincharger/);
+	$fuel = "Diesel" if ($fuel_type =~ m/Turbo-Diesel/);
+	if (!defined $fuel)
+		{
+		&screen ("ERROR: Unknown Fuel Type $fuel_type");
+		exit;
+		}
+
+	$get_fueltype_alias_sth->execute($make, $fuel) or die $dbh->errstr;
+	my $aliasfueltype = {};
+	while ($aliasfueltype = $get_fueltype_alias_sth->fetchrow_hashref)
+		{
+		push (@fueltypes, $aliasfueltype->{alias});
+		}	
+
+	# if ($#fueltypes == -1)
+		# {
+		# &debug ("No Fuel Type Aliases found for $make, $fuel");
+		# return -1;
+		# }
+		
+	# Now we cycle through each entry in the match_list array
+	my $index = 0;
+	while ($index <= $#match_list)
+		{
+		my $bmccar = {};
+		$bmccar = $match_list[$index];
+
+		# and we try and match each of the fueltypes with the variant field
+		foreach my $j (0 .. $#fueltypes)
+			{
+			if ($bmccar->{variant} =~ m/$fueltypes[$j]/i)
+				{
+				&debug ("Found match for fuel_type $fuel_type with $fueltypes[$j]");
+				my $score = $weighting;
+				$match_score[$index] += $score;
+				&debug ("   fuel_type score for fuel_type $fuel_type with $fueltypes[$j] is " . $score);
+				next;
+				}
+			}
+		$index++;
+		}
+	return 0;
 	}
 	
 sub screen
