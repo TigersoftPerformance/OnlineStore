@@ -218,7 +218,7 @@ Mazda,Ute,
 Mazda,Xedos,
 Mercedes,A-Class,
 Mercedes,B-Class,
-Mercedes,C-Class,
+Mercedes,C-Class,^CLASS\\sC
 Mercedes,CL-Class,
 Mercedes,CLA,
 Mercedes,CLC,

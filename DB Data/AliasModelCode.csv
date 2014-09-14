@@ -223,7 +223,8 @@ Mazda,Ute,,
 Mazda,Xedos,,
 Mercedes,A-Class,,
 Mercedes,B-Class,,
-Mercedes,C-Class,,
+Mercedes,C-Class,W202,W\\s202
+Mercedes,C-Class,W202,S\\s202
 Mercedes,CL-Class,,
 Mercedes,CLA,,
 Mercedes,CLC,,
@@ -377,7 +378,9 @@ Seat,Arosa,,
 Seat,Cordoba,,
 Seat,Exeo,,
 Seat,Ibiza,,
-Seat,Leon,,
+Seat,Leon,1M,\\sI$
+Seat,Leon,1P,\\sII$
+Seat,Leon,5F,\\sIII$
 Seat,Toledo,,
 Skoda,Fabia,,
 Skoda,Felicia,,
