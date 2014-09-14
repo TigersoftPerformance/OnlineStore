@@ -50,8 +50,7 @@ my $dbh = DBI->connect($dsn, undef, undef,
 # Load record from BMC Cars Table
 #
 my $get_bmc_car_sth = $dbh->prepare("
-	SELECT * FROM BMCCars WHERE make = ? AND model = ?
-	 AND model_code = ? AND variant = ? AND hp = ? AND year = ?
+	SELECT * FROM BMCCars WHERE make = ? AND model = ? AND variant = ? AND hp = ? AND year = ?
 ") or die $dbh->errstr;
 
 #
@@ -509,7 +508,6 @@ sub add_car_to_database
 	# Now see what we can derive from the variant
 	my $capacity = $1 if $variant =~ m/(\d\.\d)/;
 
-
 	# To figure out how many cylinders, we can try 3 different things
 	# First, see if we can derive it from the number of valves
 	my $valves = 0; $valves = $1 if $variant =~ m/(\d{1,2})V/i;
@@ -531,7 +529,7 @@ sub add_car_to_database
 	$cylinders = $1 if $variant =~ m/(\d) *cyl/i;
 
 	# See if that car already exists in the database by reading it.
-	$get_bmc_car_sth->execute ($make, $model, $model_code, $variant, $hp, $year) or die $dbh->errstr;
+	$get_bmc_car_sth->execute ($make, $model, $variant, $hp, $year) or die $dbh->errstr;
 	my $bmccar = $get_bmc_car_sth->fetchrow_hashref;
 	
 	# if the record did already exist, then just check to see if any of the none-primary key fields have been 
@@ -549,6 +547,15 @@ sub add_car_to_database
 			$engine_code = $bmccar->{engine_code};
 			}
 
+		if (length($model_code) > length($bmccar->{model_code}))
+			{
+			&alert ("   >CHANGE: model_code is different :$model_code:$bmccar->{model_code}:");
+			$update_required = 1;
+			}
+		else
+			{
+			$model_code = $bmccar->{model_code};
+			}
 		if (length($filter_shape) > length($bmccar->{filter_shape}))
 			{
 			&alert ("   >CHANGE: filter_shape is different :$filter_shape:$bmccar->{filter_shape}:");
@@ -606,7 +613,7 @@ sub add_car_to_database
 	my $retries = 5;
 	while ($retries && !defined $bmccar)
 		{
-		$get_bmc_car_sth->execute ($make, $model, $model_code, $variant, $hp, $year) or die $dbh->errstr;
+		$get_bmc_car_sth->execute ($make, $model, $variant, $hp, $year) or die $dbh->errstr;
 		$bmccar = $get_bmc_car_sth->fetchrow_hashref;
 		$retries --;
 		}
