@@ -56,6 +56,20 @@ AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
 
 
+-- -----------------------------------------------------
+-- Table `TP`.`AliasFuelType`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`AliasFuelType` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`AliasFuelType` (
+  `make` VARCHAR(32) NOT NULL,
+  `fuel_type` VARCHAR(32) NOT NULL,
+  `alias` VARCHAR(32) NOT NULL,
+  UNIQUE INDEX `modelcodealias` (`make`, `fuel_type`, `alias`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
 
 -- -----------------------------------------------------
 -- Table `TP`.`BCRacingCoilovers`
@@ -139,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`BMCCars` (
   `active` CHAR(1) NULL,
   `comments` LONGTEXT NULL,  PRIMARY KEY (`idBMCCars`),
   UNIQUE INDEX `idBMC Cars_UNIQUE` (`idBMCCars` ASC),
-  UNIQUE INDEX `UniqueCars` (`make`, `model`, `model_code`, `variant`, `hp`, `year`))
+  UNIQUE INDEX `UniqueCars` (`make`, `model`, `variant`, `hp`, `year`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;

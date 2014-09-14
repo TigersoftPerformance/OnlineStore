@@ -1,10 +1,11 @@
-sudo rm -f /tmp/AliasM* /tmp/BCRacing* /tmp/BMC* /tmp/Cars* /tmp/Categories* /tmp/ModelCodes* /tmp/QuantumCars.* /tmp/Superchips* /tmp/FIWebsite.* /tmp/FIProducts.* /tmp/FIStoreLayout.* /tmp/ZenCartStoreEntries.*
+sudo rm -f /tmp/Alias[MF]* /tmp/BCRacing* /tmp/BMC* /tmp/Cars* /tmp/Categories* /tmp/ModelCodes* /tmp/QuantumCars.* /tmp/Superchips* /tmp/FIWebsite.* /tmp/FIProducts.* /tmp/FIStoreLayout.* /tmp/ZenCartStoreEntries.*
 
 sudo -u john mysqldump --tab="/tmp" --fields-enclosed-by='"' --fields-terminated-by="," --lines-terminated-by="\n" --no-create-info TP;
 
 cp /tmp/AliasMake.txt ./AliasMake.csv
 cp /tmp/AliasModel.txt ./AliasModel.csv
 cp /tmp/AliasModelCode.txt ./AliasModelCode.csv
+cp /tmp/AliasFuelType.txt ./AliasFuelType.csv
 
 cp /tmp/BCRacingCoilovers.txt ./BCRacingCoilovers.csv
 
