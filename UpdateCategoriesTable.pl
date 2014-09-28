@@ -35,7 +35,7 @@ $sth->execute() or die $dbh->errstr;
 # Insert a new row into Categories
 #
 my $ins_cat_sth = $dbh->prepare("
-	INSERT INTO Categories (longname, shortname, partid, image, description, active) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE description = values (description)
+	REPLACE INTO Categories (longname, shortname, partid, image, description, active) VALUES (?,?,?,?,?,?)
 ") or die $dbh->errstr;
 
 
