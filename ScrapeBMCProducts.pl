@@ -185,7 +185,7 @@ sub get_product_info
 			$dimensions = 1;
 			next;
 			}
-		#
+		# 
 		# Only execute this code if we are inside the dimensions section
 		# Take first 3 dimensions with values if any
 		#
