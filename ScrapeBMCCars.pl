@@ -286,7 +286,8 @@ sub add_new_variant
 			$variant = $previous_variant;
 			$bmc_part_id = $column_values[1];
 			$mounting_note = '';
-			$product_type = "BMC ACCESSORIES";			
+			$product_type = "ACCESSORIES";			
+			&debug ("variant = prev variant = $variant");	
 			}
 		else
 			{
@@ -294,6 +295,7 @@ sub add_new_variant
 			$variant = $column_values[0];
 			$mounting_note = $column_values[1];
 			$bmc_part_id = $column_values[2];
+			&debug ("variant = $variant");	
 			}
 		
 		if ($bmc_part_id =~ m/<a href=\"(.*?)\".*?>(.*?)<\/a/)
@@ -305,7 +307,6 @@ sub add_new_variant
 			{
 			&screen ("ERROR: I Don't recognise this BMC Part ID: $bmc_part_id");
 			}
-			
 			
 		# Also peculiar about the CDA listing is that the variant information such as hp and year
 		# is stuck on the end of the variant rather than being listed separately as with all other 
@@ -320,12 +321,12 @@ sub add_new_variant
 		# first, let's see if the year is actually specified on the end of the string, and if so, 
 		# lets get it and strip it from the remaining string. 
 		# Could be in the following formats: '11 &gt; 22', '11 &gt;', '11', or it may not be there.
-		if ($variant =~ m/(.*)(\d{2} &gt;.*)$/)
+		if ($variant =~ m/(.*)(\d{2,4}\s*&gt;.*)$/)
 			{
 			$dateless_variant = $1;
 			$year = $2;
 			}
-		elsif ($variant =~ m/(.*)(\d{2})$/)
+		elsif ($variant =~ m/(.*)(\d{2,4})$/)
 			{
 			$dateless_variant = $1;
 			$year = $2;
@@ -356,7 +357,9 @@ sub add_new_variant
 			$sub_variant = $variant;
 			$hp = '';
 			}
-			
+		
+		$model =~ s/ +$//;
+		
 
 		# Now that we have parsed all of the input, we can now write the records to the database
 		# and return
@@ -398,11 +401,6 @@ sub add_new_variant
 		# remove spaces from the year
 		$column_values[2] =~ s/ +//g;
 		
-		# Check to see if the model_code is in the model, and if it is, remove it
-		if ($model =~ m/(^.*)\s*\($column_values[3]\)(.*$)/)
-			{
-			$model = $1.$2;
-			}
 		$model =~ s/ +$//;
 		
 		&add_cars_to_database ($make, $model, $column_values[3], $column_values[0], $column_values[1], $column_values[2],
