@@ -1,7 +1,11 @@
-BMW,Diesel,\\d{3}d
-BMW,Petrol,\\d{3}i
-Seat,Diesel,TDI
-Seat,Petrol,TSI
-Ford,Diesel,TDDI
-Ford,Diesel,TDC[Ii]
-Audi ,Diesel,TDI
+"Audi ","Diesel","TDI"
+"Audi ","Petrol","TFSI"
+"Audi ","Petrol","TSI"
+"BMW","Diesel","\\d{3}t*d"
+"BMW","Petrol","\\d{3}i"
+"Ford","Diesel","TDC[Ii]"
+"Ford","Diesel","TDDI"
+"Seat","Diesel","TDI"
+"Seat","Petrol","TSI"
+"Volkswagen","Diesel","TDI"
+"Volkswagen","Petrol","TSI"

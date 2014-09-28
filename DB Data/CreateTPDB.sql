@@ -72,6 +72,22 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheels`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheels` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheels` (
+  `model` VARCHAR(16) NOT NULL,
+  `url` TEXT NULL,
+  `active` CHAR(1) NULL,
+  `comments` LONGTEXT NULL,
+  PRIMARY KEY (`model`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `TP`.`BCRacingCoilovers`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BCRacingCoilovers` ;
@@ -213,7 +229,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `TP`.`Cars` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`Cars` (
-  `idCars` INT(11) NOT NULL AUTO_INCREMENT,
+  `idCars` INT(11) NOT NULL,
   `make` VARCHAR(48) NOT NULL,
   `model` VARCHAR(48) NOT NULL,
   `model_code` VARCHAR(48) NULL,
@@ -223,6 +239,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`Cars` (
   `end_date` DATE NOT NULL,
   `capacity` FLOAT NOT NULL,
   `cylinders` INT(11) NOT NULL,
+  `engine_code` VARCHAR(64) NULL,
   `original_bhp` INT(11) NULL DEFAULT NULL,
   `original_kw` INT(11) NULL DEFAULT NULL,
   `original_nm` INT(11) NULL DEFAULT NULL,
