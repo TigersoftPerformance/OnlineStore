@@ -126,14 +126,91 @@ while ($main_content =~ /<a href=\"(.+?)\" onmouse.+?>/gs)
 			next;
 			}
 
-		&debug ("Specs\n======\n$specs\n======\n");
-		&debug ("Pics\n======\n$pics\n======\n");
+		&parse_specs ($specs);
+		&parse_pics ($pics);
 			
 
 		}
 	}
 	
+sub parse_specs
+	{
+	my $specs = shift;
+	
+	$specs =~ m/<p class="style34">&nbsp;<\/p>\s*<p class="style34">(.+?)<\/p>/sg;
+	my $model = $1;
+	return -1 if !defined $model;
+	
+	$specs =~ m/<p class="style25 style30">(.+?)<\/p>/g;
+	my $type = $1;
+	return -1 if !defined $type;
+	
+	$specs =~ m/<p class="style27"><strong>(.+?)<\/strong><\/p>/g;
+	my $description = $1;
+	return if !defined $description;
+	&log ("Model: $model. Type: $type. Description: $description");
 
+	$specs =~ s/<\/*strong.*?>//g;
+	$specs =~ s/<\/*em.*?>//g;
+	$specs =~ s/<\/*span.*?>//g;
+	$specs =~ s/<\/*u>//g;
+	$specs =~ s/<br>//g;
+	$specs =~ s/&nbsp;/ /g;
+	$specs =~ s/  +/ /g;
+	
+	$specs =~ m/<ul class="style31">(.+?)<\/ul>/sg;
+	my $size = $1;
+	return -1 if !defined $size;
+
+	$specs =~ m/<p class="style27">Remark:<\/p>\s*<ul class="style31">(.+?)<\/ul>/sg;
+	my $remark = $1;
+	return -1 if !defined $remark;
+	
+	while ($size =~ m/(\d\d)\"\s*is now avail.*?wheel width\s*(.+?)\s*\n/sg)
+		{
+		my $diameter = $1;
+		my $width = $2;
+		&debug ("    Size $diameter inch");
+
+		my $outline = "      Widths:";
+		my @widths = split /, /, $width;
+		foreach (@widths)
+			{
+			$outline .= " > $_";
+			}
+		&debug ($outline);
+		}
+	
+	while ($remark =~ m/<li class="style32">(.+?)\s*<\/li>/sg)
+		{
+		my $line = $1;
+		$line =~ s/\n/ /g;
+		&debug ("        Remark: $line");
+		}
+	
+	
+	
+	
+#	&debug ("Specs:\n=====\n$specs\n=====\n");
+	}
+	
+sub parse_pics
+	{
+	my $pics = shift;
+	
+	$pics =~ m/<img src="(.+?)"/;
+	my $titlepic = $1;
+	return -1 if !defined $titlepic;
+	&debug ("          TitlePic: $titlepic");
+	
+	while ($pics =~ m/<a id="thumb1" href="(.+?)".+?> <img src=".+?" title="(.+?)"/g)
+		{
+		my $pic = $1;
+		my $title = $2;
+		&debug ("            Pic: $pic. Title: $title");
+		}
+#	&debug ("Pics:\n=====\n$pics\n=====\n");
+	}
 
 
 
