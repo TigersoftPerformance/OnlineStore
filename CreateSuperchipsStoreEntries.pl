@@ -49,6 +49,9 @@ use constant PNSTAGE2     => "Stage 2 Tune";
 use constant PNSTAGE3     => "Stage 3 Tune"; 
 use constant PNSTAGE4     => "Stage 4 Tune"; 
 
+use constant START_WRAPPER => "<div id=\"superchipsProductDescription\" class=\"infobox_container\">";
+use constant END_WRAPPER => "</div>";
+
 use constant SORT_ORDER_START => 100;
 use constant SORT_ORDER_INCREMENT => 50;
 my $sortorder = SORT_ORDER_START;
@@ -98,7 +101,7 @@ my $get_cat_sth = $dbh->prepare("
 # Update/Insert row into ZenCartStoreEntries table
 #
 my $insertth = $dbh->prepare("
-	INSERT INTO ZenCartStoreEntries VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE v_status='1'
+	REPLACE INTO ZenCartStoreEntries VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
 ") or die $dbh->errstr;
 
 #
@@ -139,16 +142,10 @@ my $v_products_description_1 = "";
 
 my $products_model;
 
-my $guarantee = "<p>When you buy through Tigersoft Performance&#44 you get a 28-day money-back guarantee. That means that you get 28 days to try the tune out in every situation you can think of&#44 and if you are not happy&#44 we will set your car back to stock and give you a full refund&#44 no questions asked.<p>Superchips has been around since 1977. They are a well established Tuning House&#44 with a proven record and an outstanding reputation. With Superchips&#44 Reliability is always the highest priority. They will never push the standard components of your car beyond their safe operating limits. That's why Superchips is one of the only tuning companies in the world that will provide you a lifetime warranty against engine damage caused by the tune.<br>In the case of cars that are still under warranty&#44 the Superchips warranty will supplement your standard warranty to ensure that you are fully covered.";
-my $otherbenefits = "<p>The real benefits that come from the tune are noticeably smoother running&#44 sharper throttle response&#44 and the car will generally feel more lively and responsive. More power is well and good&#44 and never goes astray&#44 but the reality is that most people only spend a few percent at most of their daily driving at maximum power. It's the other benefits listed above that are of most use to you for the vast majority of your daily driving. The differences are both noticeable and tangible.<br>On top of all that&#44 you will also notice an improvement in fuel economy of around 3% for Naturally Aspirated engines&#44 5% for Turbo-Petrol engines&#44 and 10% or more for Turbo Diesel engines. Basically&#44 the tune makes your car work more efficiently&#44 giving you usable increases in torque while using less fuel overall.";
-#my $advert1 = "<br><table width=100%><tr><td><center><big><b>Christmas Special!</b></big><p>Receive 5 Litres of Martini Racing Fully Synthetic Motor Oil <b>ABSOLUTELY FREE</b> when you purchase this tune!</center></td><td><center><img height=200px width=200px src=\"images/sint20_online_store.jpg\"></img></center></td></tr></table>";
-my $advert1 = "";
-my $womostuff = "<p><table width=100%><tr><td><script type=\"text/javascript\" src=\"http://www.womo.com.au/widget-MDAxMTUyNjcw.js\"></script></td><td><center><img height=200px width=200px src=\"http://www.womo.com.au/uploadedimages/1011676.png?utm_source=womo&utm_medium=email&utm_campaign=serviceaward\"></img><br><b>Tigersoft Performance</b><br>Winners of a 2013 Service award from WOMO</center></td></tr></table>";
-
 my $carkw;
 my $complete_model;
 # my $hiddenstats = "<DIV ID=\"hiddenstats1\" STYLE=\"POSITION: absolute; z-index: 4; VISIBILITY: hidden;\">$complete_model. Original Power: $car_data->{original_kw} kW ($car_data->{original_bhp} bhp). Original Torque: $car_data->{original_nm} Nm. Power Gain: $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase.Torque Gain: $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</DIV>";
-my $hiddenstats = "";
+
 
 
 #
@@ -188,9 +185,18 @@ while ($car_data = $sth->fetchrow_hashref)
 	my $no_tune = 1;
 
 	$carkw = ($car_data->{original_kw} ? " " . $car_data->{original_kw} . "kW": "");
-	$complete_model = $car_data->{make} . " " . (length ($car_data->{variant}) ? $car_data->{variant} : "All Models") . $carkw;
-	my $openingstats = "<p><b>Vehicle:</b> $complete_model<br><b>Engine Type:</b> $superchips_website->{engine_type}<br><b>Engine Capacity:</b> $superchips_website->{capacity} cc<br><b>Original Power:</b> $car_data->{original_kw} kW ($car_data->{original_bhp} bhp)<br><b>Original Torque:</b> $car_data->{original_nm} Nm<p><font color=\"green\"><b>Power Gain:</b> $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase<br><b>Torque Gain:</b> $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</font>";
-	
+	$complete_model = $car_data->{make} . " " . $car_data->{model};
+	$complete_model .= " (" . $car_data->{model_code} . ") " if length $car_data->{model_code};
+	$complete_model .= (length ($car_data->{variant}) ? $car_data->{variant} : "All Models") . $carkw;
+	my $openingstats = "<table class=\"tuneSpecsTable\"><tbody><tr><th>Vehicle</th><td>$complete_model</td></tr>
+	 <tr><th>Engine Type</th><td>$superchips_website->{engine_type}</td></tr>
+	 <tr><th>Engine Capacity</th><td>$superchips_website->{capacity} cc</td></tr>
+	 <tr><th>Original Power</th><td>$car_data->{original_kw} kW ($car_data->{original_bhp} bhp)</td></tr>
+	 <tr><th>Original Torque</th><td>$car_data->{original_nm} Nm</td></tr>
+	 <tr class=\"highlight\"><th>Power Gain</th><td>$powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase</td></tr>
+	 <tr class=\"highlight\"><th>Torque Gain</th><td>$superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</td></tr></tbody></table>";
+
+$v_products_description_1 = START_WRAPPER;
 
 #
 # This is for BLUEFIN
@@ -201,20 +207,22 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_bluefin_price ($superchips_website->{make}, $superchips_website->{model}, $superchips_website->{engine_type}, $superchips_website->{capacity});
 		$v_products_image = "bluefin_pic.jpg";
 		$v_products_model = $products_model . PPBLUEFIN;
-		$v_products_name_1 = PNBLUEFIN . " for $complete_model";
+		$v_products_name_1 = PNBLUEFIN;
 
-		$v_products_description_1 = PNBLUEFIN . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p><h2>How does the Superchips Bluefin work?</h2><The Bluefin is a small handheld device that allows you to install the Superchips tune for your car by yourself. It is very simple to use&#44 it has just 3 buttons (Y&#44 N and <) and a 2-line display. It walks you through the process of installing the tune.<p>The entire process is as follows:<ol><li>Take the Bluefin out to your car&#44 and plug it into the standard OBD port&#44 usually located under the dash</li><li>The Bluefin will walk you through the process of reading the standard tune from your car&#44 which will be stored on the Bluefin from now on</li><li>Install the supplied software onto your computer (PC only)&#44 and then plug the Bluefin into the computer usng the supplied USB cable</li><li>Press the large CONNECT button in the centre of the screen. This will send your standard tune off to Superchips in the UK.</li><li>Within 8 hours&#44 you will receive and email advising you that your Superchips tune is ready to be downloaded</li><li>Connect the Bluefin to the computer once more and press the big CONNECT button. The software will automatically download the Superchips tune and store it on the Bluefin unit</li><li>Take the Bluefin back out to the car&#44 plug it into the OBD port&#44 and install the Superchips tune</li><li>Take your car for a spin and enoy the difference!</li><li>The car can be swapped between the standard and Superchips tunes as you see fit.</li></ol>";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-		if ($superchips_website->{bluefin} eq 'E')
-			{
-			$v_products_description_1 = $v_products_description_1 . "<p><i>PLEASE NOTE: Before the Superchips Bluefin can be used on this car&#44 the ECU needs to be 'Bluefin Enabled'.<br>This requires the ECU to be removed from the car&#44 and then carefully opened up&#44 and the encryption on the ECU defeated. We need to be in touch with Superchips in the UK during the course of this process&#44 and so that means it can only be done overnight&#44 and on a weeknight. This is delicate and time-consuming work&#44 and so the price above includes a \$" . BFECUOPENPRICE . " charge accordingly.<br>Tigersoft Performance is the only Superchips dealer in Australia with the expertise and equipment required to perform this service.</i>";
-			}
-			
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNBLUEFIN, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_whatisbluefin ();
+		$v_products_description_1 .= &infobox_howbluefinworks ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_bluefinenable () if ($superchips_website->{bluefin} eq 'E');
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+			
 		&insert_store_entry ();
 		}
 
@@ -226,16 +234,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
 		$v_products_image = "unknown_tune.jpg";
 		$v_products_model = $products_model . PPUNKNOWN;
-		$v_products_name_1 = PNUNKNOWN . " for $complete_model";
-			
-		$v_products_description_1 = PNUNKNOWN . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>Our online store is currently unable to determine if this tune is Flash Tune&#44 Bench Tune&#44 or Chip Change&#44 and this will have an impact on the final price. Please Contact Us for more information";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
+		$v_products_name_1 = PNUNKNOWN;
 
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+			
+		$v_products_description_1 .= &infobox_product_heading (PNUNKNOWN, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_unknowntune ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 
@@ -247,16 +259,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
 		$v_products_image = "flash_tune.jpg";
 		$v_products_model = $products_model . PPFLASHTUNE;
-		$v_products_name_1 = PNFLASHTUNE . " for $complete_model";
+		$v_products_name_1 = PNFLASHTUNE;
 			
-		$v_products_description_1 = PNFLASHTUNE . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>The ECU in this car can be Flash Tuned&#44 which is a relatively simple and painless procedure.<p>The entire process is as follows:<ol><li>Make an appointment and visit us at out Cheltenham workshop</li><li>While you wait&#44 we will read the existing tune from your car</li><li>We send your information off to Superchips in the UK&#44 and they will send a Superchips Tune for your car back overnight</li><li>You come and visit us again in Cheltenham&#44 and this time we write the new Superchips Tune to your car</li></ol>";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNFLASHTUNE, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_flashtune ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 
@@ -268,16 +284,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type}) + BFECUOPENPRICE;
 		$v_products_image = "bench_tune.jpg";
 		$v_products_model = $products_model . PPBENCHTUNE;
-		$v_products_name_1 = PNBENCHTUNE . " for $complete_model";
-			
-		$v_products_description_1 = PNBENCHTUNE . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>The ECU in this car has been encrypted&#44 and so to write a tune to the ECU&#44 we need to bypass the encryption and go direct to the ECU itself. This must be done overnight so that we can communicate with Superchips in the UK while the ECU is open&#44 and that means we will need the car (or at least the ECU) overnight. This is a complex and time-consuming proceduren&#44 and so the listed price includes a \$" . BFECUOPENPRICE . " installation fee accordingly";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
+		$v_products_name_1 = PNBENCHTUNE;
 
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNBENCHTUNE, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_benchtune ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 
@@ -289,16 +309,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type}) + BFECUOPENPRICE;
 		$v_products_image = "chip_change.jpg";
 		$v_products_model = $products_model . PPCHIPCHANGE;
-		$v_products_name_1 = PNCHIPCHANGE . " for $complete_model";
+		$v_products_name_1 = PNCHIPCHANGE;
 			
-		$v_products_description_1 = PNCHIPCHANGE . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>The ECU in this car uses a Chip (or EPROM) to hold the tune. To replace the tune&#44 we must replace the Chip that holds the tune. This must be done overnight so that we can communicate with Superchips in the UK while the ECU is open&#44 and that means we will need the car (or at least the ECU) overnight. This is a complex and time-consuming procedure&#44 and so the listed price includes a \$" . BFECUOPENPRICE . " installation fee accordingly";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNCHIPCHANGE, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_chipchange ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 	
@@ -322,16 +346,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
 		$v_products_image = "flash_tune.jpg";
 		$v_products_model = $products_model . PPSTAGE2;
-		$v_products_name_1 = PNSTAGE2 . " for $complete_model";
+		$v_products_name_1 = PNSTAGE2;
 			
-		$v_products_description_1 = PNSTAGE2 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNSTAGE2, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_stage2 ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 	
@@ -356,16 +384,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
 		$v_products_image = "flash_tune.jpg";
 		$v_products_model = $products_model . PPSTAGE3;
-		$v_products_name_1 = PNSTAGE3 . " for $complete_model";
+		$v_products_name_1 = PNSTAGE3;
 			
-		$v_products_description_1 = PNSTAGE3 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNSTAGE3, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_stage3 ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 	
@@ -390,16 +422,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
 		$v_products_image = "flash_tune.jpg";
 		$v_products_model = $products_model . PPSTAGE4;
-		$v_products_name_1 = PNSTAGE4 . " for $complete_model";
+		$v_products_name_1 = PNSTAGE4;
 			
-		$v_products_description_1 = PNSTAGE4 . " to suit:" . $hiddenstats . "<br>" . $openingstats . $powercurve . $advert1;
-		$v_products_description_1 = $v_products_description_1 . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)";
-		$v_products_description_1 = $v_products_description_1 . $otherbenefits;
-
 		$v_metatags_title_1 = $v_products_name_1;
 		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = "The $v_products_name_1 provides a performance increases of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
-		$v_products_description_1 = $v_products_description_1 . $guarantee . $womostuff;
+		$v_metatags_description_1 = "The $v_products_name_1 for $complete_model provides a performance increase of $powerincreasekw kW and $superchips_website->{gain_nm} Nm along with better fuel economy and smooth flexible driving";
+
+		$v_products_description_1 .= &infobox_product_heading (PNSTAGE4, $openingstats);
+		$v_products_description_1 .= &infobox_powercurve ();
+		$v_products_description_1 .= &infobox_stage4 ();
+		$v_products_description_1 .= &infobox_otherbenefits ();
+		$v_products_description_1 .= &infobox_guarantee ();
+		$v_products_description_1 .= &infobox_womostuff ();
+		$v_products_description_1 .= END_WRAPPER;
+
 		&insert_store_entry ();
 		}
 	}
@@ -425,6 +461,9 @@ sub insert_store_entry
 		# Need to remove GST from the prices before uploading to the store
 		$v_products_price -= $v_products_price / 11;
 		$v_specials_price -= $v_specials_price / 11;
+		
+		# Remove any commas from the product description
+		$v_products_description_1 =~ s/,/&#44;/g;
 		
 		$insertth->execute ($v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 );	
 		}
@@ -576,3 +615,157 @@ sub get_bluefin_price
 		}
 	return $bluefinprice;
 }
+
+
+use constant INFOBOX_START => "<div class=\"infobox";
+use constant INFOBOX_THIRD => " onethirdbox\">";
+use constant INFOBOX_HALF => " halfbox\">";
+use constant INFOBOX_TWOTHIRD => " twothirdbox\">";
+use constant INFOBOX_FULL => " fullbox\">";
+use constant INFOBOX_LONG => " fullbox longbox\">";
+use constant INFOBOX_END => "</div>";
+use constant LONGBOX_PIC_START => "<div class=\"longbox_pic\">";
+use constant LONGBOX_PIC_END => "</div>";
+use constant LONGBOX_TEXT_START => "<div class=\"longbox_text\">";
+use constant LONGBOX_TEXT_END => "</div>";
+
+sub infobox_whatisbluefin 
+	{
+	return INFOBOX_START . INFOBOX_LONG . 
+	 LONGBOX_PIC_START . "<img src=\"images/Superchips/bluefin_pic.jpg\" alt=\"Performance With Style at Tigersoft Performance\" />" . LONGBOX_PIC_END .
+	 LONGBOX_TEXT_START . "<h2>What Is Bluefin?</h2><hr />" . 
+	 "<p>The amazing Superchips Bluefin is a simple hand-held device that allows you to apply a Superchips tune at home by yourself. All you need is a Windows PC with an internet connection</p><p>It is very simple to use, it has just 3 buttons (Y, N and <) and a 2-line display. It walks you through the process of installing the tune.</p>" . LONGBOX_TEXT_END . INFOBOX_END;
+	}
+	
+sub infobox_outofboxtune
+	{
+	
+	}
+
+sub infobox_bluefinFAQ
+	{
+	
+	}
+
+
+sub infobox_howbluefinworks 
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>How do I use the Bluefin to install the tune?</h2><hr />
+	 <p>Installing the tune using the Bluefin is easy and safe. No specialist skills are required, anyone can do it. Full instructions are provided with the Bluefin.</p>
+	 <p>You start by plugging the Bluefin into the OBD port in your car. This is typically under the dash above the driver's feet, but the location can vary. If you can't find it, just ask us and we can tell you where the OBD port will be in your car.<p>
+	 <p>As soon as the Bluefin has been plugged into the OBD port, it will power up with a beep. It will display a few short messages such as which make of car the Bluefin is for, and then it will start the process as follows.
+	
+	 <ul class=\"infobox_list\">
+	  <li>The Bluefin will begin by asking you to check that the ignition is OFF, and then to press the 'Y' key</li>
+	  <li>It will then ask you to turn the ignition to ON (but don't start the engine) and then press the 'Y' key</li>
+	  <li>Depending on the model of car, it may ask you other questions as well, just answer them with the 'Y' and 'N' keys</li>
+	  <li>The Bluefin will then begin reading the standards tune from the car. It will display 'Saving Original', and a progress bar to show you how it is going. Depending on the make of car, this could take from 1 to 20 mins</li>
+	  <li>When Bluefin has finished, it will beep. It may ask you to turn the ignition off etc, and then it will display 'Install CD-ROM'.</li>
+	  <li>Unplug the Bluefin from the car, and take it inside to your computer. Don't plug it in just yet though.</li>
+	  <li>Download the latest version of the Bluefin Desktop Software from the <a href=\"http://www.superchips.co.uk/software\">Superchips Website</a>, and install it on your computer.</li>
+	  <li>Start the software, and enter your contact information.</li>
+	  <li>Now plug the Bluefin into the computer using the supplied USB cable. The drivers will be installed automatically. It may take a minute.</li>
+	  <li>Click on the big CONNECT button in the middle of the screen. The Bluefin will now send your original tune off to Superchips in the UK</li>
+	  <li>Superchips will send you an email when your tune is ready to download. This typically happens within about 10 mins, but could take upto 8 hours</li>
+	  <li>When you have received the email, just plug the Blufin back into the computer, press that big CONNECT button again, and the Bluefin will now get and get your new tune from Superchips.</li>
+	  <li>Once the tune has been downloaded, the Bluefin will now hold your Original Tune, and the new Superchips Tune. You can use the Bluefin to swap between the two as you see fit.</li>
+	  <li>Take the Bluefin back out to the car and plug it into the OBD port again. The process will be very similar to what you did last time, but instead you will now install the Superchips tune into your car</li>
+	  <li>Unplug the Bluefin, and take the car for a spin and enjoy the difference!</li>
+	 </ul>" . INFOBOX_END;
+	}
+	
+
+sub infobox_bluefinenable 
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>BLUEFIN ENABLE REQUIRED!</h2><hr /><p>PLEASE NOTE: Before the Superchips Bluefin can be used on this car, the ECU needs to be 'Bluefin Enabled'.<br>This requires the ECU to be removed from the car, and then carefully opened up, and the encryption on the ECU defeated. We need to be in touch with Superchips in the UK during the course of this process, and so that means it can only be done overnight, and on a weeknight. This is delicate and time-consuming work, and so the price above includes a \$" . BFECUOPENPRICE . " charge accordingly.<br>Tigersoft Performance is the only Superchips dealer in Australia with the expertise and equipment required to perform this service." . INFOBOX_END;
+	}
+	
+
+sub infobox_product_heading 
+	{
+	my $product_type = $_[0];
+	my $stats = $_[1];
+	
+	return INFOBOX_START . INFOBOX_FULL . "<h1>" . $product_type . " to suit:</h1><hr />" . $stats . INFOBOX_END;
+	}
+	
+
+sub infobox_powercurve 
+	{
+	my $dyno_graph = $_[0];
+	
+	if (!length ($dyno_graph))
+		{
+		return '';
+		}
+	
+	return INFOBOX_START . INFOBOX_HALF . "<h2>Power Curve</h2><hr />" . "<p><a href=\"http://www.superchips.co.uk/curves/$dyno_graph\"><img src=\"images/icon_curve.png\"></img></a>" . INFOBOX_END;
+	}
+	
+
+sub infobox_unknowntune 
+	{
+	return INFOBOX_START . INFOBOX_HALF . "<h2>Unknown Tune Type</h2><hr />" . "<p>Our online store is unable to determine if this tune is able to be applied vi the OBD Port (ie: a Flash Tune) or of the ECU needs to be removed from the car (ie: a Bench Tune). This will have an impact on the final price. Please Contact Us for further information" . INFOBOX_END;
+	}
+	
+
+sub infobox_otherbenefits 
+	{
+	return INFOBOX_START . INFOBOX_HALF . "<h2>Other Benefits</h2><hr />" . "<p>The real benefits that come from the tune are <ul class=\"infobox_list\"><li>Improved Fuel Economy</li><li>Improved Power and Torque</li><li>Noticeably smoother running</li> <li>Sharper throttle response</li></ul> <p>The car will generally feel more lively and responsive in traffic. More power is well and good, and never goes astray, but the reality is that most people only spend a few percent at most of their daily driving at maximum power. It's the other benefits listed above that are of most use to you for the vast majority of your daily driving. The differences are both noticeable and tangible.<br>You can expect an improvement in fuel economy of around 3% for Naturally Aspirated engines, 5% for Turbo-Petrol engines, and 10% or more for Turbo Diesel engines. Basically, the tune makes your car work more efficiently, giving you usable increases in torque while using less fuel overall." . INFOBOX_END;
+	}
+	
+
+sub infobox_guarantee 
+	{
+	return INFOBOX_START . INFOBOX_HALF . "<h2>28-day Money-Back Guarantee</h2><hr />" . 
+	 "<img class=\"centrePhoto\" alt=\"Money Back Guarantee at Tigersoft Performance\"
+	  src=\"images/Tigersoft%20Performance/money-back-guarantee.jpg\" />
+	 <ul class=\"infobox_list\">
+	  <li> It's one thing to claim that a tune will give you an
+	   extra 'X' kW of power, but how much is that? Will you be
+	   able to notice the difference? </li>
+	  <li>The Tigersoft Performance 28-day money-back guarantee
+	   gives you plenty of time to make up your own mind!</li>
+	  <li>Try the tune in every situation you can think of, and if
+	   after 28 days you are not happy for whatever reason, just
+	   return the product to us for a 100% refund.</li>
+	  <li>No Questions Asked! </li> </ul></div>" .
+	"<p>Superchips has been around since 1977. They are a well established Tuning House, with a proven record and an outstanding reputation. With Superchips, <strong>Reliability</strong> is always the highest priority. They will never push the standard components of your car beyond their safe operating limits. That's why Superchips is one of the only tuning companies in the world that will provide you a <strong>lifetime warranty against engine damage caused by the tune</strong>.<br>In the case of cars that are still under warranty, the Superchips warranty will supplement your standard warranty to ensure that you are fully covered." . INFOBOX_END;
+	}
+	
+sub infobox_womostuff 
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Word Of Mouth Online</h2><hr />" . "<p><table class=\"womoTable\"><tr><td><script type=\"text/javascript\" src=\"http://www.womo.com.au/widget-MDAxMTUyNjcw.js\"></script></td><td><center><img height=200px width=200px src=\"http://www.womo.com.au/uploadedimages/1011676.png?utm_source=womo&utm_medium=email&utm_campaign=serviceaward\"></img><br><b>Tigersoft Performance</b><br>Winners of a 2013 Service award from WOMO</center></td></tr></table>" . INFOBOX_END;
+	}
+	
+
+sub infobox_flashtune
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Flash Tune</h2><hr />" . "<p>The ECU in this car can be Flash Tuned, which is a relatively simple and painless procedure.<p>The entire process is as follows:<ul class=\"infobox_list\"><li>Make an appointment and visit us at out Cheltenham workshop</li><li>While you wait, we will read the existing tune from your car</li><li>We send your information off to Superchips in the UK, and they will send a Superchips Tune for your car back overnight</li><li>You come and visit us again in Cheltenham, and this time we write the new Superchips Tune to your car</li></ul>" . INFOBOX_END;
+	}
+
+
+sub infobox_benchtune
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Bench Tune</h2><hr />" . "<p>The ECU in this car has been encrypted, and so to write a tune to the ECU, we need to bypass the encryption and go direct to the ECU itself. This must be done overnight so that we can communicate with Superchips in the UK while the ECU is open, and that means we will need the car (or at least the ECU) overnight. This is a complex and time-consuming proceduren, and so the listed price includes a \$" . BFECUOPENPRICE . " installation fee accordingly" . INFOBOX_END;
+	}
+
+sub infobox_chipchange
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Chip Change</h2><hr />" . "<p>The ECU in this car uses a Chip (or EPROM) to hold the tune. To replace the tune, we must replace the Chip that holds the tune. This must be done overnight so that we can communicate with Superchips in the UK while the ECU is open, and that means we will need the car (or at least the ECU) overnight. This is a complex and time-consuming procedure, and so the listed price includes a \$" . BFECUOPENPRICE . " installation fee accordingly" . INFOBOX_END;
+	}
+	
+sub infobox_stage2
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Stage 2 Tune</h2><hr />" . "<p>This product requires that you already have the Superchips Stage 1 tune (ie the default Superchips tune)" . INFOBOX_END;
+	}
+
+sub infobox_stage3
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Stage 3 Tune</h2><hr />" . "<p>This product requires that you already have the Superchips Stage 2 tune" . INFOBOX_END;
+	}
+
+sub infobox_stage4
+	{
+	return INFOBOX_START . INFOBOX_FULL . "<h2>Stage 4 Tune</h2><hr />" . "<p>This product requires that you already have the Superchips Stage 3 tune" . INFOBOX_END;
+	}
