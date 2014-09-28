@@ -10,13 +10,10 @@ use warnings;
 use DBI;
 use English;
 use feature 'say';
+use LWP::Simple;
 
 use constant LOG => "./Logs/FormatFIStoreDescriptions.log";
 open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
-
-use constant FIDESCDIR => "FIStoreDescriptions";
-use constant HTMLBEGIN => "./" . FIDESCDIR . "/StoreTestPageBegin.html";
-use constant HTMLEND => "./" . FIDESCDIR . "/StoreTestPageEnd.html";
 
 #
 # Connect to database
@@ -33,44 +30,56 @@ my $dbh = DBI->connect($dsn, undef, undef,
 ) or die $DBI::errstr;
 
 #
+# Update the description in the FIProducts table
+#
+my $upd_fiproduct_sth = $dbh->prepare("
+	UPDATE TP.FIProducts SET description = ? WHERE partid = ?
+") or die $dbh->errstr;
+
+#
 # Select all rows from FIWebsite
 #
 my $get_fiwebsite_sth = $dbh->prepare("
-	SELECT * FROM TP.FIWebsite WHERE partid LIKE 'W%'
+	SELECT * FROM TP.FIWebsite
 ") or die $dbh->errstr;
 $get_fiwebsite_sth->execute() or die $dbh->errstr;
+
 
 
 my $fiwebsite = {};
 while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 	{
+	my $description = '';
+	
 	# Read the part id from the scraped record from the FI Website and make sure that it is valid
 	my $partid = $fiwebsite->{partid};
+	say "Part: $partid. $fiwebsite->{name}";
+
 	if (!defined ($partid))
 		{
 		say "No Part ID for $fiwebsite->{name} in $fiwebsite->{category}";
 		next;
 		}
 		
-	# If we have a valid partid, then we can open the output file
-	my $outfile = "./" . FIDESCDIR . "/StoreTest" . $partid . ".html";
-	open (my $outfh, ">", $outfile) or die "cannot open " . $outfile; 
-		
-	# Now read the beginning part of the Store Test Page, and write it to the output
-	open (my $htmlbeginfh, "<", HTMLBEGIN) or die "cannot open " . HTMLBEGIN; 
-	while (<$htmlbeginfh>)
-		{
-		print $outfh "$_\n";
-		}
-	close ($htmlbeginfh);
-	
 	# Write some wrappers around the description
-	printf $outfh '<div class="tigFIProductDescription">' . "\n";
-	print $outfh "<h1>$fiwebsite->{name}</h1>";
+	$description = '<div class="infobox_container fiproductdescription"><div class="infobox fullbox">';
+	$description .= "<h1>$fiwebsite->{name}</h1><hr />";
 		
 	# Read the descrption from the FI Website row, and do some processing on it
 	my $desc = $fiwebsite->{description};
 	
+	# Download all images that we can find.
+	while ($desc =~ m/src=\"(http:\/\/www.finalinspection.com.au\/media\/wysiwyg\/FIPhotos)\/(.+?\..+?)\"/g)
+		{
+		my $url = $1 . "/" . $2;
+		my $file = "FIPhotos/" . $2;
+		say "Downloading $url to $file";
+		unless ( -e $file)
+			{
+			getstore ($url, $file);
+			}
+		}
+
 	# This changes image paths from those on the FI server to our server
 	$desc =~ s/src=\"http:\/\/www.finalinspection.com.au\/media\/wysiwyg\/FIPhotos\/(.+\..+)\"/src="images\/FIStore\/$1"/g;
 	
@@ -84,23 +93,30 @@ while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 	$desc =~ s/<p>\&nbsp\;<\/p>//g;
 	
 	# This changes the many headings to h2
-	$desc =~ s/<p><strong>(.+)<\/strong><\/p>/<h2>$1<\/h2>/g;
+	my $lastpos = pos;
+	
+	while ($desc =~ m/<p><strong>(.+?)<\/strong><\/p>/g)
+		{
+		pos $lastpos;
+		if (length $1 < 64)
+			{
+			$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<\/div><div class="infobox fullbox"><h2>$1<\/h2><hr \/>/
+			}
+		else
+			{
+			$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<p>$1<\/p>/
+			}
+		my $lastpos = pos;
+		}
+		
+	$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<\/div><div class="infobox fullbox"><h2>$1<\/h2><hr \/>/g;
 	
 	# Now write the updated description to the output file
-	print $outfh "$desc\n";
+	$description .= $desc;
 	
 	# Close out the wrappers around the description
-	printf $outfh "</div>\n";
-		
-	# Now read the End part of the Store Test Page, and write it to the output
-	open (my $htmlendfh, "<", HTMLEND) or die "cannot open " . HTMLEND; 
-	while (<$htmlendfh>)
-		{
-		print $outfh "$_\n";
-		}
-	close ($htmlendfh);
-	close ($outfile);
-	
+	$description .= "</div></div>";
+	$upd_fiproduct_sth->execute($description, $fiwebsite->{partid}) or die $dbh->errstr;
 	}
 exit 0;	
 	
