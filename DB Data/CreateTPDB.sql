@@ -72,13 +72,69 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `TP`.`BCForgedWheels`
+-- Table `TP`.`BCForgedWheelsPCD`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TP`.`BCForgedWheels` ;
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsPCD` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheels` (
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsPCD` (
   `model` VARCHAR(16) NOT NULL,
-  `url` TEXT NULL,
+  `holes` INT NOT NULL,
+  `PCD` INT NOT NULL,
+  UNIQUE INDEX `pcd` (`model`, `holes`, `PCD`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheelsPrices`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsPrices` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsPrices` (
+  `model` VARCHAR(16) NOT NULL,
+  `diameter` INT NULL,
+  `width` DECIMAL (8,2) NULL,
+  `cost_price` INT NULL,
+  `RRP` int NULL,
+  `tp_price` int NULL,
+  UNIQUE INDEX `prices` (`model`, `diameter`, `width`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheelsSizes`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsSizes` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsSizes` (
+  `model` VARCHAR(16) NOT NULL,
+  `diameter` INT NULL,
+  `width` DECIMAL (8,2) NULL,
+  UNIQUE INDEX `sizes` (`model`, `diameter`, `width`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheelsWebsite`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsWebsite` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsWebsite` (
+  `model` VARCHAR(16) NOT NULL,
+  `type` VARCHAR(32) NULL,
+  `description` VARCHAR(32) NULL,
+  `images` TEXT NULL,
+  `remark1` TEXT NULL,
+  `remark2` TEXT NULL,
+  `remark3` TEXT NULL,
+  `remark4` TEXT NULL,
+  `remark5` TEXT NULL,
+  `remark6` TEXT NULL,
   `active` CHAR(1) NULL,
   `comments` LONGTEXT NULL,
   PRIMARY KEY (`model`))

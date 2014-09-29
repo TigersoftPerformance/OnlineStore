@@ -7,7 +7,10 @@ cp /tmp/AliasModel.txt ./AliasModel.csv
 cp /tmp/AliasModelCode.txt ./AliasModelCode.csv
 cp /tmp/AliasFuelType.txt ./AliasFuelType.csv
 
-cp /tmp/BCForgedWheels.txt ./BCForgedWheels.csv
+cp /tmp/BCForgedWheelsPCD.txt ./BCForgedWheelsPCD.csv
+cp /tmp/BCForgedWheelsPrices.txt ./BCForgedWheelsPrices.csv
+cp /tmp/BCForgedWheelsSizes.txt ./BCForgedWheelsSizes.csv
+cp /tmp/BCForgedWheelsWebsite.txt ./BCForgedWheelsWebsite.csv
 
 cp /tmp/BCRacingCoilovers.txt ./BCRacingCoilovers.csv
 
