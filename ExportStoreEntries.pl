@@ -50,12 +50,9 @@ while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	$description =~ s/\r//g;
 	$description =~ s/\n//g;
 
-	# Zen Cart expects the specials price to be the before-tax price, so make the change
-	my $specials_price = "";
-	if ($storeentries->{v_specials_price} < $storeentries->{v_products_price})
-	{
-	$specials_price = $storeentries->{v_specials_price} - ($storeentries->{v_specials_price} / 11);
-	}
+	# Zen Cart expects the prices to be the before-tax price, so make the change
+	$storeentries->{v_products_price} -= ($storeentries->{v_products_price} / 11);
+	$storeentries->{v_specials_price} -= ($storeentries->{v_specials_price} / 11);
 
 	# Now add a Path to the FI Images
 	my $image = $storeentries->{v_products_image};
@@ -97,7 +94,7 @@ while ($storeentries = $store_entries_sth->fetchrow_hashref)
 	$storeentries->{v_products_name_1}, 
 	$description, 
 	$storeentries->{v_products_url_1},
-	$specials_price, 
+	$storeentries->{v_specials_price}, 
 	$storeentries->{v_specials_date_avail}, 
 	$storeentries->{v_specials_expires_date}, 
 	$storeentries->{v_products_price}, 
