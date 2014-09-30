@@ -458,9 +458,6 @@ sub insert_store_entry
 {
 	if ($v_products_model)
 		{
-		# Need to remove GST from the prices before uploading to the store
-		$v_products_price -= $v_products_price / 11;
-		$v_specials_price -= $v_specials_price / 11;
 		
 		# Remove any commas from the product description
 		$v_products_description_1 =~ s/,/&#44;/g;
