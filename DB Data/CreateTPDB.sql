@@ -72,6 +72,21 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheelsImages`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsImages` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsImages` (
+  `model` VARCHAR(16) NOT NULL,
+  `image` VARCHAR(64) NOT NULL,
+  `title` VARCHAR(64) NOT NULL,
+UNIQUE INDEX `images` (`model`, `image`, `title`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `TP`.`BCForgedWheelsPCD`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BCForgedWheelsPCD` ;
@@ -79,7 +94,7 @@ DROP TABLE IF EXISTS `TP`.`BCForgedWheelsPCD` ;
 CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsPCD` (
   `model` VARCHAR(16) NOT NULL,
   `holes` INT NOT NULL,
-  `PCD` INT NOT NULL,
+  `PCD` DECIMAL (8,2) NOT NULL,
   UNIQUE INDEX `pcd` (`model`, `holes`, `PCD`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
@@ -92,13 +107,27 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `TP`.`BCForgedWheelsPrices` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsPrices` (
+  `series` VARCHAR(16) NOT NULL,
+  `diameter` INT NOT NULL,
+  `width` DECIMAL (8,2) NOT NULL,
+  `RRP` int NULL DEFAULT NULL,
+  `tp_price` int NULL DEFAULT NULL,
+  UNIQUE INDEX `prices` (`series`, `diameter`, `width`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheelsRemarks`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsRemarks` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsRemarks` (
   `model` VARCHAR(16) NOT NULL,
-  `diameter` INT NULL,
-  `width` DECIMAL (8,2) NULL,
-  `cost_price` INT NULL,
-  `RRP` int NULL,
-  `tp_price` int NULL,
-  UNIQUE INDEX `prices` (`model`, `diameter`, `width`))
+  `sortorder` INT NOT NULL,
+  `remark` TEXT NOT NULL,
+  UNIQUE INDEX `remarks` (`model`, `sortorder`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
@@ -111,8 +140,8 @@ DROP TABLE IF EXISTS `TP`.`BCForgedWheelsSizes` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsSizes` (
   `model` VARCHAR(16) NOT NULL,
-  `diameter` INT NULL,
-  `width` DECIMAL (8,2) NULL,
+  `diameter` INT NULL DEFAULT NULL,
+  `width` DECIMAL (8,2) NULL DEFAULT NULL,
   UNIQUE INDEX `sizes` (`model`, `diameter`, `width`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
@@ -126,17 +155,10 @@ DROP TABLE IF EXISTS `TP`.`BCForgedWheelsWebsite` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsWebsite` (
   `model` VARCHAR(16) NOT NULL,
-  `type` VARCHAR(32) NULL,
-  `description` VARCHAR(32) NULL,
-  `images` TEXT NULL,
-  `remark1` TEXT NULL,
-  `remark2` TEXT NULL,
-  `remark3` TEXT NULL,
-  `remark4` TEXT NULL,
-  `remark5` TEXT NULL,
-  `remark6` TEXT NULL,
-  `active` CHAR(1) NULL,
-  `comments` LONGTEXT NULL,
+  `type` VARCHAR(32) NULL DEFAULT NULL,
+  `description` VARCHAR(32) NULL DEFAULT NULL,
+  `active` CHAR(1) NULL DEFAULT NULL,
+  `comments` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`model`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
