@@ -1,67 +1,78 @@
-"BS01","B Type | BS Series","Exclusive Sport Design","Y",\N
-"BS02","B Type | BS Series","Exclusive Sport Design","Y",\N
-"BX04","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX04S","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX05","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX05S","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX09","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX09S","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX15","B Type | BX Series","Exotic Concave Design","Y",\N
-"BX29","B Type | BX Series","Exotic Concave Design","Y",\N
-"FJ04","B Type | FJ Series","Advance Sport Design","Y",\N
-"FJ08","B Type | FJ Series","Advance Sport Design","Y",\N
-"FJ34","B Type | FJ Series","Advance Sport Design","Y",\N
-"HB-R5","B Type | HB-R Series","Deep Concave Design with Maximum","Y",\N
-"HB-R6","B Type | HB-R Series","Deep Concave Design with Maximum","Y",\N
-"HB-S02","B Type | HB-S Series","Deep Concave Design with Maximum","Y",\N
-"HB-S03","B Type | HB-S Series","Deep Concave Design with Maximum","Y",\N
-"HB-Z05","B Type | HB-Z Series","Deep Concave Design with Maximum","Y",\N
-"HB-Z10","B Type | HB-Z Series","Deep Concave Design with Maximum","Y",\N
-"HB04","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB04S","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB05","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB05S","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB09","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB09S","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB15","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB27","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB29","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB35","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB35S","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HB36","B Type | HB Series","Deep Concave Design with Maximum","Y",\N
-"HC010","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC033","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC040","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC040S","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC050","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC050S","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC052","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC052S","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC053","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HC053S","C Type | HC Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HCS01","C Type | HCS Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HCS02","C Type | HCS Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HCS03","C Type | HCS Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"HCS04","C Type | HCS Series","Step Lip &amp; Deep Concave Desi","Y",\N
-"RA01","C Type | RA Series","Track &amp; Drift Design","Y",\N
-"RA05","C Type | RA Series","Track &amp; Drift Design","Y",\N
-"RA07","C Type | RA Series","Track &amp; Drift Design","Y",\N
-"RS31","1 Piece | RS Series","Forged Mono-block","Y",\N
-"RS40","1 Piece | RS Series","Forged Mono-block","Y",\N
-"RS41","1 Piece | RS Series","Forged Mono-block","Y",\N
-"RS42","1 Piece | RS Series","Forged Mono-block","Y",\N
-"RS43","1 Piece | RS Series","Forged Mono-block","Y",\N
-"RT50","1 Piece | RT Series","Forged Mono-block","Y",\N
-"RT51","1 Piece | RT Series","Forged Mono-block","Y",\N
-"RT52","1 Piece | RT Series","Forged Mono-block","Y",\N
-"RT53","1 Piece | RT Series","Forged Mono-block","Y",\N
-"SN01","B Type | SN Series","H Beam Spoke Structure","Y",\N
-"SN02","B Type | SN Series","H Beam Spoke Structure","Y",\N
-"SN03","B Type | SN Series","H Beam Spoke Structure","Y",\N
-"SN05","B Type | SN Series","H Beam Spoke Structure","Y",\N
-"SN06","B Type | SN Series","H Beam Spoke Structure","Y",\N
-"SN13","B Type | SN Series","H Beam Spoke Structure","Y",\N
-"TM04","B Type | TM Series","Advance Concave Design","Y",\N
-"TM05","B Type | TM Series","Advance Concave Design","Y",\N
-"TM08","B Type | TM Series","Advance Concave Design","Y",\N
-"TM14","B Type | TM Series","Advance Concave Design","Y",\N
+"BL01","B Type | BL Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"BL02","B Type | BL Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"BL03","B Type | BL Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"BL04","B Type | BL Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"BL05","B Type | BL Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"BL06","B Type | BL Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"BS01","B Type | BS Series","Exclusive Sport Design","01,02,03","Y",\N
+"BS02","B Type | BS Series","Exclusive Sport Design","01,02,03","Y",\N
+"BX-J53","B Type | BX-J Series","Exotic Concave Design","01,02,03","Y",\N
+"BX-J62","B Type | BX-J Series","Exotic Concave Design","01,02,03","Y",\N
+"BX04","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX04S","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX05","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX05S","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX09","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX09S","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX15","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"BX29","B Type | BX Series","Exotic Concave Design","01,02,03","Y",\N
+"FJ04","B Type | FJ Series","Advance Sport Design","01,02,03","Y",\N
+"FJ08","B Type | FJ Series","Advance Sport Design","01,02,03","Y",\N
+"FJ34","B Type | FJ Series","Advance Sport Design","01,02,03","Y",\N
+"HB-R5","B Type | HB-R Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB-R6","B Type | HB-R Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB-S02","B Type | HB-S Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB-S03","B Type | HB-S Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB-Z05","B Type | HB-Z Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB-Z10","B Type | HB-Z Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB04","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB04S","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB05","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB05S","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB09","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB09S","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB15","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB27","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB29","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB35","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB35S","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HB36","B Type | HB Series","Deep Concave Design with Maximum Spoke","01,02,03","Y",\N
+"HC010","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC033","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC040","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC040S","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC050","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC050S","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC052","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC052S","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC053","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HC053S","C Type | HC Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS01","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS01S","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS02","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS02S","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS03","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS03S","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"HCS04","C Type | HCS Series","Step Lip &amp; Deep Concave Design","01,02,03","Y",\N
+"RA01","C Type | RA Series","Track &amp; Drift Design","01,02,03","Y",\N
+"RA05","C Type | RA Series","Track &amp; Drift Design","01,02,03","Y",\N
+"RA07","C Type | RA Series","Track &amp; Drift Design","01,02,03","Y",\N
+"RS31","1 Piece | RS Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"RS40","1 Piece | RS Series","Forged Mono-block","CAAC","Y",\N
+"RS41","1 Piece | RS Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"RS42","1 Piece | RS Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"RS43","1 Piece | RS Series","Forged Mono-block","CAAC","Y",\N
+"RT50","1 Piece | RT Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"RT51","1 Piece | RT Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"RT52","1 Piece | RT Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"RT53","1 Piece | RT Series","Forged Mono-block","CAAC1,CAAC2","Y",\N
+"SN01","B Type | SN Series","H Beam Spoke Structure","01,02,03","Y",\N
+"SN02","B Type | SN Series","H Beam Spoke Structure","01,02,03","Y",\N
+"SN03","B Type | SN Series","H Beam Spoke Structure","01,02,03","Y",\N
+"SN05","B Type | SN Series","H Beam Spoke Structure","01,02,03","Y",\N
+"SN06","B Type | SN Series","H Beam Spoke Structure","01,02,03","Y",\N
+"SN13","B Type | SN Series","H Beam Spoke Structure","01,02,03","Y",\N
+"TM04","B Type | TM Series","Advance Concave Design","01,02,03","Y",\N
+"TM05","B Type | TM Series","Advance Concave Design","01,02,03","Y",\N
+"TM08","B Type | TM Series","Advance Concave Design","01,02,03","Y",\N
+"TM14","B Type | TM Series","Advance Concave Design","01,02,03","Y",\N

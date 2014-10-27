@@ -72,6 +72,21 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `TP`.`BCForgedWheelsColours`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BCForgedWheelsColours` ;
+
+CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsColours` (
+  `colour` VARCHAR(24) NOT NULL,
+  `tp_price` INT NOT NULL,
+  `component` VARCHAR(32) NULL,
+  `sortorder` INT NOT NULL,
+UNIQUE INDEX `colours` (`colour`, `component`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+-- -----------------------------------------------------
 -- Table `TP`.`BCForgedWheelsImages`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BCForgedWheelsImages` ;
@@ -95,7 +110,8 @@ CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsPCD` (
   `model` VARCHAR(16) NOT NULL,
   `holes` INT NOT NULL,
   `PCD` DECIMAL (8,2) NOT NULL,
-  UNIQUE INDEX `pcd` (`model`, `holes`, `PCD`))
+  `sortorder` INT NULL,
+  UNIQUE INDEX `pcd` (`model`, `holes`, `PCD` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
@@ -112,7 +128,9 @@ CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsPrices` (
   `width` DECIMAL (8,2) NOT NULL,
   `RRP` int NULL DEFAULT NULL,
   `tp_price` int NULL DEFAULT NULL,
-  UNIQUE INDEX `prices` (`series`, `diameter`, `width`))
+  `sortorder` INT NULL,
+  `diamondcut` INT NOT NULL,
+  UNIQUE INDEX `prices` (`series`, `diameter`, `width` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
@@ -123,14 +141,14 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BCForgedWheelsRemarks` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsRemarks` (
-  `model` VARCHAR(16) NOT NULL,
-  `sortorder` INT NOT NULL,
-  `remark` TEXT NOT NULL,
-  UNIQUE INDEX `remarks` (`model`, `sortorder`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8;
+-- CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsRemarks` (
+--   `model` VARCHAR(16) NOT NULL,
+--   `sortorder` INT NOT NULL,
+--   `remark` TEXT NOT NULL,
+--   UNIQUE INDEX `remarks` (`model`, `sortorder`))
+-- ENGINE = InnoDB
+-- AUTO_INCREMENT = 1
+-- DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -138,14 +156,14 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TP`.`BCForgedWheelsSizes` ;
 
-CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsSizes` (
-  `model` VARCHAR(16) NOT NULL,
-  `diameter` INT NULL DEFAULT NULL,
-  `width` DECIMAL (8,2) NULL DEFAULT NULL,
-  UNIQUE INDEX `sizes` (`model`, `diameter`, `width`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1
-DEFAULT CHARACTER SET = utf8;
+-- CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsSizes` (
+--   `model` VARCHAR(16) NOT NULL,
+--   `sortorder` INT NOT NULL,
+--   `size` TEXT NOT NULL,
+--   UNIQUE INDEX `sizes` (`model`, `sortorder`))
+-- ENGINE = InnoDB
+-- AUTO_INCREMENT = 1
+-- DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -156,7 +174,8 @@ DROP TABLE IF EXISTS `TP`.`BCForgedWheelsWebsite` ;
 CREATE TABLE IF NOT EXISTS `TP`.`BCForgedWheelsWebsite` (
   `model` VARCHAR(16) NOT NULL,
   `type` VARCHAR(32) NULL DEFAULT NULL,
-  `description` VARCHAR(32) NULL DEFAULT NULL,
+  `description` VARCHAR(80) NULL DEFAULT NULL,
+  `colours` VARCHAR(32)  NULL DEFAULT NULL,
   `active` CHAR(1) NULL DEFAULT NULL,
   `comments` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`model`))
@@ -201,7 +220,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `TP`.`BMCFitment`
 -- -----------------------------------------------------
-SET FOREIGN_KEY_CHECKS=0; 
+SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `TP`.`BMCFitment` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`BMCFitment` (
@@ -224,7 +243,17 @@ CREATE TABLE IF NOT EXISTS `TP`.`BMCFitment` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+-- -----------------------------------------------------
+-- Table `TP`.`BMCCarEquivilent`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `TP`.`BMCCarEquivilent` ;
 
+CREATE TABLE IF NOT EXISTS `TP`.`BMCCarEquivilent` (
+  `BMCCar_master` INT NOT NULL,
+  `BMCCar_slave` INT NOT NULL,
+  UNIQUE INDEX `UniqueEquiv` (`BMCCar_master`, `BMCCar_slave`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `TP`.`BMCCars`
@@ -280,7 +309,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
 
-SET FOREIGN_KEY_CHECKS=1; 
+SET FOREIGN_KEY_CHECKS=1;
 
 
 -- -----------------------------------------------------
@@ -325,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`Cars` (
   `superchips_stage2` INT(11) NULL DEFAULT NULL,
   `superchips_stage3` INT(11) NULL DEFAULT NULL,
   `superchips_stage4` INT(11) NULL DEFAULT NULL,
-  `bmc_airfilter` INT(11) NULL DEFAULT NULL,
+  `bmc_car` INT(11) NULL DEFAULT NULL,
   `bc_racing_coilovers` INT(11) NULL DEFAULT NULL,
   `active` CHAR(1) NULL DEFAULT NULL,
   `comments` TEXT NULL DEFAULT NULL,
@@ -342,17 +371,18 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `TP`.`Categories` ;
 
 CREATE TABLE IF NOT EXISTS `TP`.`Categories` (
-  `longname` VARCHAR(128) NOT NULL,
-  `shortname` VARCHAR(48) NOT NULL,
+  `longname` VARCHAR(250) NOT NULL,
+  `shortname` VARCHAR(80) NOT NULL,
   `partid` VARCHAR(64) NULL,
   `image` TEXT NOT NULL,
   `description` TEXT NULL,
   `metatags_title` TEXT NULL DEFAULT NULL,
   `metatags_keywords` TEXT NULL DEFAULT NULL,
   `metatags_description` TEXT NULL DEFAULT NULL,
+  `sort_order` INT NULL DEFAULT NULL,
   `active` CHAR(1) NULL DEFAULT NULL,
   `comments` TEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`shortname`))
+  UNIQUE INDEX `categories` (`shortname` ASC, `partid` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
@@ -526,6 +556,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`ZenCartStoreEntries` (
   `v_specials_date_avail` DATE NULL DEFAULT NULL,
   `v_specials_expires_date` DATE NULL DEFAULT NULL,
   `v_products_price` FLOAT NOT NULL,
+  `v_products_qty_box_status` INT NOT NULL DEFAULT '1',
   `v_products_weight` FLOAT NULL DEFAULT '0',
   `v_products_is_call` INT NULL DEFAULT '0',
   `v_products_sort_order` INT NULL DEFAULT '0',
@@ -537,7 +568,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`ZenCartStoreEntries` (
   `v_date_added` DATE NULL DEFAULT '2014-07-01 00:00:00',
   `v_products_quantity` FLOAT NULL DEFAULT '100',
   `v_manufacturers_name` TEXT NOT NULL,
-  `v_categories_name_1` TEXT NOT NULL,
+  `v_categories_name_1` VARCHAR(250) NOT NULL,
   `v_tax_class_title` TEXT NULL,
   `v_status` INT NULL DEFAULT '1',
   `v_metatags_products_name_status` INT NULL DEFAULT '1',
@@ -548,7 +579,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`ZenCartStoreEntries` (
   `v_metatags_title_1` TEXT NOT NULL,
   `v_metatags_keywords_1` TEXT NOT NULL,
   `v_metatags_description_1` LONGTEXT NOT NULL,
-  PRIMARY KEY (`v_products_model`))
+  UNIQUE INDEX `zencart` (`v_products_model` ASC, `v_categories_name_1` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
