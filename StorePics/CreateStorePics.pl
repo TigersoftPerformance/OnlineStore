@@ -8,8 +8,8 @@ use feature 'say';
 use feature 'switch';
 use POSIX;
 
-my $main_font = " -family 'Linux Libertine' -style Normal";
 
+my $main_font = " -family 'Linux Libertine' -style Normal";
 
 use constant STOREPICSDIR => "StorePics/";
 
@@ -199,7 +199,7 @@ sub create_variant_pic
 	$command .= &create_heading ($heading_text);
 
 	my $linenum = 0;
-	$command .= &create_specs ($linenum++, "$car->{original_kw}kW") if $car->{original_kw};
+	$command .= &create_specs ($linenum++, "$car->{original_kw}kW", "Red") if $car->{original_kw};
 	$command .= &create_specs ($linenum++, "$car->{original_nm}Nm") if $car->{original_nm};
 	$command .= &create_specs ($linenum++, sprintf ("%1.1f litre", $car->{capacity})) if $car->{capacity};
 	$command .= &create_specs ($linenum++, "$car->{cylinders} cyls") if $car->{cylinders};
@@ -243,8 +243,16 @@ sub create_heading
 
 sub create_specs
 	{
-	my ($linenum,$text) = @_;
-	my $colour = "MidnightBlue";
+	my ($linenum,$text,$mycolour) = @_;
+	my $colour;
+	if (!defined $mycolour)
+		{
+		$colour = "MidnightBlue";
+		}
+	else
+		{
+		$colour = $mycolour;
+		}
 	
 	my $line1 = 35;
 	my $lineinc = 30;

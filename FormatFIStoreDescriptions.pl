@@ -11,9 +11,7 @@ use DBI;
 use English;
 use feature 'say';
 use LWP::Simple;
-
-use constant LOG => "./Logs/FormatFIStoreDescriptions.log";
-open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
+use TP;
 
 #
 # Connect to database
@@ -53,17 +51,17 @@ while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 	
 	# Read the part id from the scraped record from the FI Website and make sure that it is valid
 	my $partid = $fiwebsite->{partid};
-	say "Part: $partid. $fiwebsite->{name}";
 
 	if (!defined ($partid))
 		{
-		say "No Part ID for $fiwebsite->{name} in $fiwebsite->{category}";
+		alert ("No Part ID for $fiwebsite->{name} in $fiwebsite->{category}");
 		next;
 		}
+	debug ("Part: $partid. $fiwebsite->{name}");
 		
 	# Write some wrappers around the description
 	$description = '<div class="infobox_container fiproductdescription"><div class="infobox fullbox">';
-	$description .= "<h1>$fiwebsite->{name}</h1><hr />";
+	$description .= '<h1 class="fiProduct">' . $fiwebsite->{name} . '</h1>';
 		
 	# Read the descrption from the FI Website row, and do some processing on it
 	my $desc = $fiwebsite->{description};
@@ -73,7 +71,7 @@ while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 		{
 		my $url = $1 . "/" . $2;
 		my $file = "FIPhotos/" . $2;
-		say "Downloading $url to $file";
+		debug ("Downloading $url to $file");
 		unless ( -e $file)
 			{
 			getstore ($url, $file);
@@ -92,6 +90,9 @@ while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 	# This deletes the empty <p> </p> statements
 	$desc =~ s/<p>\&nbsp\;<\/p>//g;
 	
+	# remove any inline style statements
+	$desc =~ s/ style=".+?"//g;
+
 	# This changes the many headings to h2
 	my $lastpos = pos;
 	
@@ -100,16 +101,34 @@ while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 		pos $lastpos;
 		if (length $1 < 64)
 			{
-			$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<\/div><div class="infobox fullbox"><h2>$1<\/h2><hr \/>/
+			$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<\/div><div class="infobox fullbox"><h2>$1<\/h2>/
 			}
 		else
 			{
-			$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<p>$1<\/p>/
+			$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<p>$1<\/strong><\/p>/
 			}
 		my $lastpos = pos;
 		}
 		
-	$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<\/div><div class="infobox fullbox"><h2>$1<\/h2><hr \/>/g;
+	#$desc =~ s/<p><strong>(.+?)<\/strong><\/p>/<\/div><div class="infobox fullbox"><h2>$1<\/h2>/g;
+
+	# Now in this section, fix up any spelling or coding mistakes in the original pages
+	# On the PPBS description
+	$desc =~ s/d<strong>esigned/designed/g;
+	$desc =~ s/<strong>(The first low)/$1/;
+	$desc =~ s/<div>&nbsp;$//g;
+	
+	# fix up some links
+	$desc =~ s/<a href=".+">'Peppermint'<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/NanoFibre\/PeppermintMicrofibreWash5ooml">'Peppermint'<\/a>/g;
+	$desc =~ s/<a href=".+">learn what these terms mean/<a>/g;
+	$desc =~ s/<a.+?>Full Metal Jacket Spray Wax<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/PaintProtection\/FullMetalJacketSprayWax275ml">Full Metal Jacket Spray Wax<\/a>/g;
+	$desc =~ s/<a.+?>[Gg]loss [Bb]oost<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/PaintProtection\/GlossBoost5ooml">Gloss Boost<\/a>/g;
+	$desc =~ s/<a.+?>mini verion<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/ExteriorCleaning\/WaffleWeaveDryingTowelMINI">mini version<\/a>/g;
+	$desc =~ s/<a.+?>it's 60cm x 90cm big brother<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/ExteriorCleaning\/WaffleWeaveDryingTowel">its 60cm x 90cm big brother<\/a>/g;
+	
+	
+	
+	
 	
 	# Now write the updated description to the output file
 	$description .= $desc;

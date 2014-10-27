@@ -7,9 +7,7 @@ use warnings;
 use DBI;
 use English;
 use feature 'say';
-
-use constant LOG => "./Logs/CreateFIStoreEntries.log";
-open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
+use TP;
 
 use constant SPECIAL_START => "2014-06-01 00:00:00";
 use constant SPECIAL_END => "2014-12-31 00:00:00";
@@ -58,7 +56,7 @@ my $get_cat_sth = $dbh->prepare("
 # Update/Insert row into ZenCartStoreEntries table
 #
 my $insertth = $dbh->prepare("
-	REPLACE INTO TP.ZenCartStoreEntries VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+	REPLACE INTO TP.ZenCartStoreEntries VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
 ") or die $dbh->errstr;
 
 #
@@ -69,6 +67,7 @@ my $v_products_url_1 = "";
 my $v_specials_price;
 my $v_specials_date_avail;
 my $v_specials_expires_date;
+my $v_products_qty_box_status = 1;
 my $v_products_weight = 0;
 my $v_product_is_call = 0;
 my $v_products_sort_order;
@@ -126,7 +125,7 @@ while ($fistore = $get_fistore_sth->fetchrow_hashref)
 	$v_categories_name_1 = $categories->{longname};
 	unless (defined ($v_categories_name_1))
 		{
-		print $logfh "Can't find Full Category Name for category $fiproduct->{category}\n";
+		alert ("Can't find Full Category Name for category $fiproduct->{category}\n");
 		next;
 		}
 		
@@ -140,6 +139,6 @@ exit 0;
 	
 sub insert_store_entry
 	{
-	$insertth->execute ($v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 )
+	$insertth->execute ($v_products_model, $v_products_type, $v_products_image, $v_products_name_1, $v_products_description_1, $v_products_url_1, $v_specials_price, $v_specials_date_avail, $v_specials_expires_date, $v_products_price, $v_products_qty_box_status, $v_products_weight, $v_product_is_call, $v_products_sort_order, $v_products_quantity_order_min, $v_products_quantity_order_units, $v_products_priced_by_attribute, $v_product_is_always_free_shipping, $v_date_avail, $v_date_added, $v_products_quantity, $v_manufacturers_name, $v_categories_name_1, $v_tax_class_title, $v_status, $v_metatags_products_name_status, $v_metatags_title_status, $v_metatags_model_status, $v_metatags_price_status, $v_metatags_title_tagline_status, $v_metatags_title_1, $v_metatags_keywords_1, $v_metatags_description_1 )
 		or die $dbh->errstr;
 	}

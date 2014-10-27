@@ -1,5 +1,5 @@
 BEGIN		{
-		linesPerFile = 500;
+		linesPerFile = 2000;
 
 		outfilePrefix = "AllSE";
 		outfileSuffix = ".csv";

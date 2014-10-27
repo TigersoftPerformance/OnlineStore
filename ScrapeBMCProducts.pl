@@ -13,23 +13,12 @@ use utf8;
 use Text::Unidecode;
 use IO::Handle;
 use Encode;
+use TP;
 
 use constant BMCWEBSITE => "http://au.bmcairfilters.com";
-use constant LOGFILE    => "./Logs/ScrapeBMCProducts.log";
-use constant ALERTFILE  => "./Logs/ScrapeBMCProducts.alert";
-use constant DEBUGFILE  => "./Logs/ScrapeBMCProducts.debug";
 
 use constant BMC_IMAGES_DIR => "./BMCImages";
 
-# 
-# Open log/alert/debug files
-#
-open(my $logfh, ">", LOGFILE)     or die "cannot open LOGFILE $!";
-open(my $alertfh, ">", ALERTFILE) or die "cannot open ALERTFILE $!";
-open(my $debugfh, ">", DEBUGFILE) or die "cannot open DEBUGFILE $!";
-$logfh->autoflush;
-$alertfh->autoflush;
-$debugfh->autoflush;
 
 #
 # Connect to database
@@ -103,9 +92,7 @@ while (my $filter_h = $load_filters_sth->fetchrow_hashref())
 		}
 	&get_product_info ($filter_h->{bmc_part_id}, $filter_h->{type}, $filter_h->{product_url});
 	}
-close $logfh;
-close $alertfh;
-close $debugfh;
+
 
 ##############################################
 ############  End of main program  ###########
@@ -274,7 +261,7 @@ sub update_bmcairproducts_row
 
 
 	# save images
-	while ($description =~/<img src=\"(.*?\.jpg)\"/sgi)
+	while ($description =~/<img src=\"(.*?\.jpg)/sgi)
 		{
 		my $curr_img = $1;	
 		my $url_img_d = BMCWEBSITE . $image;
@@ -421,30 +408,4 @@ sub update_bmcairproducts_row
 		}
 	}
 
-sub screen
-	{
-	my $line = shift;
-	say $line;
-	&alert ($line);
-	}
-	
-sub alert
-	{
-	my $line = shift;
-	say $alertfh $line;
-	&log ($line);
-	}
-	
-sub log
-	{
-	my $line = shift;
-	say $logfh $line;
-	&debug ($line);
-	}
-
-sub debug
-	{
-	my $line = shift;
-	say $debugfh $line;
-	}
 	

@@ -5,6 +5,7 @@ use warnings;
 use DBI;
 use English;
 use feature 'say';
+use TP;
 
 use constant CSV => "./CategoryMeta-EPTigersoft.csv";
 open (my $categories, ">", CSV) or die "Cannot open " . CSV;
@@ -42,21 +43,21 @@ my $get_cat_sth = $dbh->prepare("
 #
 # Here we fill Categories.csv with all data
 #
-print $categories 'v_categories_id,v_categories_image,v_categories_name_1,v_categories_description_1,v_metatags_title_1,v_metatags_keywords_1,v_metatags_description_1' . "\n";
+print $categories 'v_categories_id,v_categories_image,v_categories_name_1,v_categories_description_1,v_metatags_title_1,v_metatags_keywords_1,v_metatags_description_1,v_sort_order' . "\n";
 
 while (my $line = <$input_csv>) 
 	{	
 	$line =~ s/\"|\'//gi;
-	my ($catid,$catimg,$catname,$catdesc,$cattitle,$catkey,$catmetdesc) = split ',' , $line;
+	my ($catid,$catimg,$catname,$catdesc,$cattitle,$catkey,$catmetdesc,$sort_order) = split ',' , $line;
 
 	# skip if empty category name
 	next if $catname eq '';
-	print "Looking for Category for <$catname>\n";
+	&debug ("Looking for Category for <$catname>\n");
 	$get_cat_sth->execute($catname);
 	my $cat_table = $get_cat_sth->fetchrow_hashref;
 	unless (defined ($cat_table))
 		{
-		print "  Can't find Category for <$catname>\n";
+		&screen ("Can't find Category for <$catname>\n");
 		next;
 		}
 
@@ -65,7 +66,7 @@ while (my $line = <$input_csv>)
 	$description =~ s/\"/\"/g;
 	$description =~ s/,/&#44/g;
 	
-	print $categories $catid, $cat_table->{image}, $catname, $description, "", "", "" . "\n";
+	print $categories $catid, $cat_table->{image}, $catname, $description, $cattitle, $catkey, $catmetdesc, $cat_table->{sort_order} . "\n";
 	}	
 
 
