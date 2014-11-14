@@ -56,7 +56,7 @@ my $sth = $dbh->prepare($cars_query) or die $dbh->errstr;
 $sth->execute() or die $dbh->errstr;
 
 #
-# Select a row from Categories based on partidnline
+# Select a row from Categories based on partid
 #
 my $get_cat_sth = $dbh->prepare("
 	SELECT * FROM Categories WHERE partid = ? AND active = 'Y'
@@ -88,62 +88,34 @@ my $get_bmccarequiv_sth = $dbh->prepare("
 
 #### populate the output line:
 #
-# $1 =	v_products_model,
 	#my $products_model = ""; sprintf ("TPC%06d", $car_data->{idCars});
-# $2 =	v_products_type,
 	my $v_products_type = 1;
-# $6 =	v_products_url_1,
 	my $v_products_url_1 = "";
-# $7 =	v_specials_price,
 	my $v_specials_price = "";
-# $8 =	v_specials_date_avail,
 	my $v_specials_date_avail = SPECIAL_START;
-# $9 =	v_specials_expires_date,
 	my $v_specials_expires_date = SPECIAL_END;
-# $11 =	v_products_weight,
 	my $v_products_weight = 0;
 	my $v_products_qty_box_status = 1;
-# $12 =	v_product_is_call,
 	my $v_product_is_call = 0;
-# $13 =	v_products_sort_order,
 	my $v_products_sort_order = $sortorder;
-# $14 =	v_products_quantity_order_min,
 	my $v_products_quantity_order_min = 1;
-# $15 =	v_products_quantity_order_units,
 	my $v_products_quantity_order_units = 1;
-# $16 =	v_products_priced_by_attribute,
 	my $v_products_priced_by_attribute = 0;
-# $17 =	v_product_is_always_free_shipping,
 	my $v_product_is_always_free_shipping = 1;
-# $18 =	v_date_avail,
-	my $v_date_avail = "0000-00-00 00:00:00";
-# $19 =	v_date_added,
 	my $v_date_added = "2014-09-13 00:00:00";
-# $20 =	v_products_quantity,
 	my $v_products_quantity = 100;
-# $21 =	v_manufacturers_name,
 	my $v_manufacturers_name = "BMC";
-# $22 =	v_categories_name_1,
+	my $v_date_avail = "0000-00-00 00:00:00";
 
-# $23 =	v_tax_class_title,
 	my $v_tax_class_title = "Taxable Goods";
-# $24 =	v_status,
 	my $v_status = 1;
-# $25 =	v_metatags_products_name_status,
 	my $v_metatags_products_name_status = 1;
-# $26 =	v_metatags_title_status,
 	my $v_metatags_title_status = 1;
-# $27 =	v_metatags_model_status,
 	my $v_metatags_model_status = 1;
-# $28 =	v_metatags_price_status,
 	my $v_metatags_price_status = 0;
-# $29 =	v_metatags_title_tagline_status,
 	my $v_metatags_title_tagline_status = 1;
-# $30 =	v_metatags_title_1,
 	my $v_metatags_title_1 = "";
-# $31 =	v_metatags_keywords_1,
 	my $v_metatags_keywords_1 = "";
-# $32 =	v_metatags_description_1
 	my $v_metatags_description_1 = "";
 
 	my $v_products_price = 0;
@@ -162,12 +134,11 @@ my $get_bmccarequiv_sth = $dbh->prepare("
 my $bmc_data = {};
 while ($bmc_data = $get_bmc_sth->fetchrow_hashref)
 	{
-	$sortorder += SORT_ORDER_INCREMENT;
+	$v_products_sort_order += SORT_ORDER_INCREMENT;
 
 	my $type = $bmc_data->{type};
 	$type = "BMC ACCESSORIES" if $type eq "ACCESSORIES";
-	&build_record ($type, $bmc_data);
-
+	&build_record ($bmc_data->{bmc_part_id}, $type, $bmc_data);
 	}
 
 
@@ -183,8 +154,6 @@ while ($car_data = $sth->fetchrow_hashref)
 		push @bmccars, $bmc_car->{BMCCar_slave};
 		}
 
-
-
 	my $index = 0;
 	while ($index <= $#bmccars)
 		{
@@ -193,7 +162,7 @@ while ($car_data = $sth->fetchrow_hashref)
 		my $records = 0;
 		while ($bmc_data = $get_products_sth->fetchrow_hashref)
 			{
-			&build_record ($car_data->{idCars}, $bmc_data);
+			&build_record (sprintf ("TPC%06d-%s", $car_data->{idCars}, $bmc_data->{bmc_part_id}), $car_data->{idCars}, $bmc_data);
 			$records ++;
 			}
 		if ($records)
@@ -213,12 +182,14 @@ while ($car_data = $sth->fetchrow_hashref)
 
 exit 0;
 
-
-
-
 sub build_record
 	{
-	my ($catlookup, $bmc_data) = @_;
+	my ($model, $catlookup, $bmc_data) = @_;
+
+	$v_product_is_call = 0;
+	$v_date_avail = "0000-00-00 00:00:00";
+	$v_products_price = 0;
+	$v_specials_price = 0;
 
 	$get_cat_sth->execute ($catlookup) or die $dbh->errstr;
 	my $category = $get_cat_sth->fetchrow_hashref;
@@ -237,18 +208,97 @@ sub build_record
 		&log ("WARNING: Could not find Stocked Products for $bmc_data->{bmc_part_id}");
 		return;
 		}
-	$v_products_price = $bmcsp->{tp_price};
-	$v_specials_price = $v_products_price * SPECIAL_PRICE;
+	if ($bmcsp->{availability} eq 'N')
+		{
+		&debug ("Product Not Available: $bmc_data->{bmc_part_id}");
+		return;
+		}
+
+	if ($bmcsp->{available_date} !~ m/^0000/)
+		{
+		$v_date_avail = $bmcsp->{available_date} . " 00:00:00";
+		&debug ("Product Available: $v_date_avail");
+		}
+	
+	if ($bmcsp->{tp_price} > 0.05)
+		{
+		$v_products_price = $bmcsp->{tp_price};
+		$v_specials_price = $v_products_price * SPECIAL_PRICE;
+		}
+	else
+		{
+		$v_product_is_call = 1;
+		&debug ("Price is zero");
+		}
+
 	$v_products_image = ($bmc_data->{image} =~ /.*\/(.*)$/i ? $1 : "" ) if $bmc_data->{image};
+
+	my $type = $bmc_data->{type};
+	if ($type eq "CAR FILTERS")
+		{
+		$v_products_sort_order = 200;
+		$type = "Replacement Air Filter";
+		}
+	elsif ($type =~ m/TWIN AIR/)
+		{
+		$v_products_sort_order = 220;
+		$type = "Twin Air Conical Filter";
+		}
+	elsif ($type =~ m/SINGLE AIR/)
+		{
+		$v_products_sort_order = 210;
+		$type = "Single Air Conical Filter";
+		}
+	elsif ($type =~ m/SPECIFIC/)
+		{
+		$v_products_sort_order = 230;
+		$type = "Car Specific Kit";
+		}
+	elsif ($type =~ m/[A-Z][A-Z][AF] - (.+)/)
+		{
+		$type = join " ", map {ucfirst} split / /, $1;
+		if ($type =~ m/(.+) - Cars/)
+			{
+			$type = $1;
+			}
+		$v_products_sort_order = 270;
+		}
+	elsif ($type =~ m/ACCESSORIES/)
+		{
+		$v_products_sort_order = 290;
+		$type = "Accessories";
+		}
+	elsif ($type =~ m/BIKE/)
+		{
+		$v_products_sort_order = 299;
+		$type = "Bike Filter";
+		}
+	elsif ($type =~ m/WASH/)
+		{
+		$v_products_sort_order = 295;
+		$type = "Wash Kit";
+		}
+	else
+		{
+		&screen ("ERROR: Unknown BMC Product type $type");
+		return;
+		}
 
 
 	##############################
-	$v_products_model = $bmc_data->{bmc_part_id};
-	$v_products_name_1 = $bmc_data->{type } . " - " . $bmc_data->{bmc_part_id};
+	$v_products_model = $model;
+	$v_products_name_1 = $type . " - " . $bmc_data->{bmc_part_id};
+	if ($bmcsp->{availability} eq 'S')
+		{
+		&debug ("Product Special Order Only: $bmc_data->{bmc_part_id}");
+		$v_products_name_1 .= " (Special Order)";
+		}
+
 	$v_products_description_1 = description("BMC Products",$bmc_data->{bmc_part_id},$bmc_data->{description},$bmc_data->{dimname1},$bmc_data->{dimvalue1},$bmc_data->{dimname2},$bmc_data->{dimvalue2},$bmc_data->{dimname3},$bmc_data->{dimvalue3},$bmc_data->{image},$bmc_data->{diagram},$v_products_model);
-	$v_metatags_title_1 = $v_products_name_1;
-	$v_metatags_keywords_1 = $v_products_name_1;
-	$v_metatags_description_1 = $v_products_name_1;
+
+	# $v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+	# $v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+	# $v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 	&insert_store_entry ();
 	}
 
@@ -318,14 +368,29 @@ if (length ($finalbit))
 	$desc .= INFOBOX_START . INFOBOX_FULL . $finalbit;
 	}
 
-
-
 $desc .= INFOBOX_CONTAINER_END;
 
 $desc =~ s/,/&#44;/g;
 return $desc;
-
-
-
 }
 
+sub create_metatags_title
+	{
+	my ($complete_model, $product_name) = @_;
+	
+	return "$complete_model $product_name Performance Tune Melbourne Australia | Tigersoft Performance Cheltenham"
+	}
+
+sub create_metatags_keywords
+	{
+	my ($complete_model, $product_name) = @_;
+	
+	return "$complete_model performance tune - $complete_model performance tuning - $complete_model bluefin tune - $complete_model bluefin tuning - $complete_model superchips tune - $complete_model superchips tuning - $complete_model fuel economy - $complete_model save fuel - performance tune - tigersoft performance";
+	}
+
+sub create_metatags_description
+	{
+	my ($complete_model, $product_name) = @_;
+	
+	return "$complete_model Superchips Performance Tuning in Melbourne Australia by Tigersoft Performance";
+	}

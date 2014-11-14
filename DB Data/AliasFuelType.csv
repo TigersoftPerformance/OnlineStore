@@ -1,97 +1,97 @@
-Alfa Romeo,Diesel,JTD
-Alfa Romeo,Petrol,TS
-Audi ,Diesel,TDI
-Audi ,Petrol,FS[Ii]
-Audi ,Petrol,TFSI
-Audi ,Petrol,TSI
-BMW,Diesel,\\d{3}t*d
-BMW,Petrol,Md
-BMW,Petrol,\\d{3}i
-Chevrolet,Diesel,VCD[Ii]
-Chrysler,Diesel,CRD
-Chrysler,Diesel,TD
-Citroen,Diesel,HD[Ii]
-Citroen,Petrol,GT
-Citroen,Petrol,GT[Ii]
-Citroen,Petrol,THP
-Citroen,Petrol,VT[RS]
-Dacia,Diesel,[dD]C[Ii]
-Fiat,Diesel,JTD
-Fiat,Diesel,Multijet
-Fiat,Diesel,TD
-Fiat,Petrol,T-Jet
-Ford,Diesel,Di
-Ford,Diesel,Duratorq
-Ford,Diesel,TD
-Ford,Diesel,TDC[Ii]
-Ford,Diesel,TDDI
-Ford,Diesel,tdi
-Ford,Diesel,TD[CD][Ii]
-Ford,Diesel,TD[Ii]
-Ford,Petrol,Duratec
-Ford,Petrol,EcoBoost
-Ford,Petrol,RS
-Ford,Petrol,"ST\\d{0,3}"
-Ford,Petrol,Ti-VCT
-Ford,Petrol,VVT[Ii]
-Ford,Petrol,Zetec
-Holden,Diesel,VCD[Ii]
-Holden,Petrol,LS3
-Honda,Diesel,[iI]-DTEC
-Honda,Diesel,[Ii]CDT[Ii]
-Honda,Petrol,Esi
-Hyundai,Diesel,CRD[Ii]
-Hyundai,Diesel,CRTD
-Jeep,Diesel,CRD
-Jeep,Diesel,TD
-Kia,Diesel,CRT?D[I]
-Land Rover,Diesel,DSE
-Land Rover,Diesel,TD[56]
-Land Rover,Diesel,[ST]DV[68]
-Land Rover,Diesel,[TES]D4
-Mercedes,Diesel,CD[Ii]
-Mercedes,Diesel,TD
-Mercedes,Gas,Natural\\sGas\\sDrive
-Mercedes,Petrol,CG[Ii]
-Mercedes,Petrol,[A-Z]{1-3}55
-Mercedes,Petrol,[A-Z]{1-3}63
-MG,Diesel,CDTi
-MG,Diesel,TD
-Mitsubishi,Diesel,D[Ii]-?D
-Nissan,Diesel,Di
-Nissan,Diesel,TD[Ii]?
-Nissan,Diesel,[dD]C[Ii]
-Opel,Diesel,CDT[Ii]
-Opel,Petrol,d.d[Ti]
-Opel,Petrol,Ecotec
-Opel,Petrol,GTC
-Opel,Petrol,G[Ss][Ii]
-Opel,Petrol,SR[Ii]
-Opel,Petrol,Twin Port
-Opel,Petrol,VVT
-Opel,Petrol,VXR
-Peugeot,Diesel,HD[Ii]
-Peugeot,Petrol,GT[Ii]?
-Peugeot,Petrol,THP
-Peugeot,Petrol,X[Ss][Ii]
-Renault,Diesel,[dD]C[Ii]
-Renault,Diesel,[dD]T[Ii]
-Rover,Diesel,CDT[Ii]
-Rover,Diesel,Sdi
-Rover,Diesel,TD
-Saab,Diesel,TT?[Ii]D
-Seat,Diesel,TDI
-Seat,Petrol,FS[Ii]
-Seat,Petrol,TFSI
-Seat,Petrol,TSI
-Skoda,Diesel,TDI
-Skoda,Petrol,FS[Ii]
-Skoda,Petrol,TFSI
-Skoda,Petrol,TSI
-Volkswagen,Diesel,GTD
-Volkswagen,Diesel,TD[Ii]?
-Volkswagen,Petrol,2.0\\sR
-Volkswagen,Petrol,FS[Ii]
-Volkswagen,Petrol,GT[Ii]
-Volkswagen,Petrol,TFSI
-Volkswagen,Petrol,TSI
+"Alfa Romeo","Diesel","JTD"
+"Alfa Romeo","Petrol","TS"
+"Audi ","Diesel","TDI"
+"Audi ","Petrol","FS[Ii]"
+"Audi ","Petrol","TFSI"
+"Audi ","Petrol","TSI"
+"BMW","Diesel","\\d{3}t*d"
+"BMW","Petrol","Md"
+"BMW","Petrol","\\d{3}i"
+"Chevrolet","Diesel","VCD[Ii]"
+"Chrysler","Diesel","CRD"
+"Chrysler","Diesel","TD"
+"Citroen","Diesel","HD[Ii]"
+"Citroen","Petrol","GT"
+"Citroen","Petrol","GT[Ii]"
+"Citroen","Petrol","THP"
+"Citroen","Petrol","VT[RS]"
+"Dacia","Diesel","[dD]C[Ii]"
+"Fiat","Diesel","JTD"
+"Fiat","Diesel","Multijet"
+"Fiat","Diesel","TD"
+"Fiat","Petrol","T-Jet"
+"Ford","Diesel","Di"
+"Ford","Diesel","Duratorq"
+"Ford","Diesel","TD"
+"Ford","Diesel","TDC[Ii]"
+"Ford","Diesel","TDDI"
+"Ford","Diesel","tdi"
+"Ford","Diesel","TD[CD][Ii]"
+"Ford","Diesel","TD[Ii]"
+"Ford","Petrol","Duratec"
+"Ford","Petrol","EcoBoost"
+"Ford","Petrol","RS"
+"Ford","Petrol","ST\\d{0,3}"
+"Ford","Petrol","Ti-VCT"
+"Ford","Petrol","VVT[Ii]"
+"Ford","Petrol","Zetec"
+"Holden","Diesel","VCD[Ii]"
+"Holden","Petrol","LS3"
+"Honda","Diesel","[iI]-DTEC"
+"Honda","Diesel","[Ii]CDT[Ii]"
+"Honda","Petrol","Esi"
+"Hyundai","Diesel","CRD[Ii]"
+"Hyundai","Diesel","CRTD"
+"Jeep","Diesel","CRD"
+"Jeep","Diesel","TD"
+"Kia","Diesel","CRT?D[I]"
+"Land Rover","Diesel","DSE"
+"Land Rover","Diesel","TD[56]"
+"Land Rover","Diesel","[ST]DV[68]"
+"Land Rover","Diesel","[TES]D4"
+"Mercedes","Diesel","CD[Ii]"
+"Mercedes","Diesel","TD"
+"Mercedes","Gas","Natural\\sGas\\sDrive"
+"Mercedes","Petrol","CG[Ii]"
+"Mercedes","Petrol","[A-Z]{1-3}55"
+"Mercedes","Petrol","[A-Z]{1-3}63"
+"MG","Diesel","CDTi"
+"MG","Diesel","TD"
+"Mitsubishi","Diesel","D[Ii]-?D"
+"Nissan","Diesel","Di"
+"Nissan","Diesel","TD[Ii]?"
+"Nissan","Diesel","[dD]C[Ii]"
+"Opel","Diesel","CDT[Ii]"
+"Opel","Petrol","d.d[Ti]"
+"Opel","Petrol","Ecotec"
+"Opel","Petrol","GTC"
+"Opel","Petrol","G[Ss][Ii]"
+"Opel","Petrol","SR[Ii]"
+"Opel","Petrol","Twin Port"
+"Opel","Petrol","VVT"
+"Opel","Petrol","VXR"
+"Peugeot","Diesel","HD[Ii]"
+"Peugeot","Petrol","GT[Ii]?"
+"Peugeot","Petrol","THP"
+"Peugeot","Petrol","X[Ss][Ii]"
+"Renault","Diesel","[dD]C[Ii]"
+"Renault","Diesel","[dD]T[Ii]"
+"Rover","Diesel","CDT[Ii]"
+"Rover","Diesel","Sdi"
+"Rover","Diesel","TD"
+"Saab","Diesel","TT?[Ii]D"
+"Seat","Diesel","TDI"
+"Seat","Petrol","FS[Ii]"
+"Seat","Petrol","TFSI"
+"Seat","Petrol","TSI"
+"Skoda","Diesel","TDI"
+"Skoda","Petrol","FS[Ii]"
+"Skoda","Petrol","TFSI"
+"Skoda","Petrol","TSI"
+"Volkswagen","Diesel","GTD"
+"Volkswagen","Diesel","TD[Ii]?"
+"Volkswagen","Petrol","2.0\\sR"
+"Volkswagen","Petrol","FS[Ii]"
+"Volkswagen","Petrol","GT[Ii]"
+"Volkswagen","Petrol","TFSI"
+"Volkswagen","Petrol","TSI"

@@ -125,7 +125,7 @@ while ($fistore = $get_fistore_sth->fetchrow_hashref)
 	$v_categories_name_1 = $categories->{longname};
 	unless (defined ($v_categories_name_1))
 		{
-		alert ("Can't find Full Category Name for category $fiproduct->{category}\n");
+		alert ("Can't find Full Category Name for category $fistore->{category}\n");
 		next;
 		}
 		

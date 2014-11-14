@@ -6,11 +6,13 @@ use DBI;
 use English;
 use feature 'say';
 use LWP::Simple;
+use TP;
 
 use constant SUPERCHIPS_DOMAIN => "http://www.superchips.co.uk";
-use constant UPDATE_LOG => "./update_log";
+open(my $newcarfh, ">>", "AASuperchipsNewCars.csv") or die "cannot open New Car file $!";
+$newcarfh->autoflush;
+$OFS = ",";
 
-open (my $logfh, ">", UPDATE_LOG) or die "cannot open " . UPDATE_LOG; 
 #
 # Connect to database
 # mysql_enable_utf8 enables to store data as UT8
@@ -65,7 +67,7 @@ my $insvariantth = $dbh->prepare("
 my $makes_hr = $loadmakesth->fetchall_hashref ('make');
 my $make = (defined $ARGV[0]) ? $ARGV[0] : "ALL";
 if ($make eq "ALL")
-{
+	{
 	###########################################################################
 	# 20140714 JR
 	# When all makes will be scraped, we will first of all mark every variant currently listed in the
@@ -80,44 +82,44 @@ if ($make eq "ALL")
 		{
 			get_variants_for_make ($makes_hr->{$i}->{make}, $makes_hr->{$i}->{make_num});
 		}
-}
+	}
 else
-{
+	{
 	if (defined $makes_hr->{$make})
-	{
+		{
 		get_variants_for_make ($makes_hr->{$make}->{make}, $makes_hr->{$make}->{make_num});
-	}
+		}
 	else
-	{
+		{
 		die "Can't find Make: " . $make;
+		}
 	}
-}
-close ($logfh);
+
 
 ###############################################
 
 sub get_variants_for_make 
-{
+	{
 	my $make = $_[0];
 	my $make_num = $_[1];
 
-	say "Searching for all variants from " . $make;
+	screen ("Searching for all variants from $make");
 	for my $fueltype (1..6)
-	{
+		{
 		my $variant_list_url = SUPERCHIPS_DOMAIN . "/search?make=" . $make_num . "&fueltype=". $fueltype;
 		my $content = get $variant_list_url;
 		die "Couldn't get $variant_list_url" unless defined $content;
 		# for my $variant_url ($content =~ /<td width="\d+%">\s+<a href="([a-z0-9&=\/]+)">/g)
 		for my $variant_url ($content =~ /<td width="\d+%">\s+<a href="(\/search.+)">/g)
-		{
+			{
 			# say $variant_url;
 			extract_info_for_variant ($make, $variant_url);
-		}
+			}
+		}	
 	}	
-}
 
 sub extract_info_for_variant
-{
+	{
 	my $make = $_[0];
 	my $variant_url = SUPERCHIPS_DOMAIN . $_[1];
 	my $variant_id = 0;
@@ -145,17 +147,16 @@ sub extract_info_for_variant
 	my $content = "";
 	my $retries = 5;
 	while ($retries && !($content = get $variant_url))
-	{
+		{
 		$retries --;
-	}
+		}
 	die "Couldn't get $variant_url" if (!$retries);	
 	
 	# Find the Selected Model
 	$content =~ /<h2 class="no-margin">Selected model<\/h2>/g;
 	$content =~ /<h2 class="no-margin" style="font-size: 26px; margin: 0 0 10px 0">/g;
 	$selected_model = $1 if $content =~ /(.*?)\s*<\/h2>/g;
-	print "\t$selected_model ";
-	print $logfh "\t$selected_model ";
+	log ("\t$selected_model ");
 
 	$variant_id = $1 if $variant_url =~ /variant=(\d+)/;
 	die "Variant ID is $variant_id" if ($variant_id <= 0);
@@ -170,8 +171,7 @@ sub extract_info_for_variant
 	$original_nm = $1 if $content =~ /<b>Original nm :<\/b>\s*(.+)<hr \/>/g;
 	$gain_bhp = $1 if $content =~ /<b>BHP increase :<\/b>\s*(.+)<hr \/>/g;
 	$gain_nm = $1 if $content =~ /<b>NM gain :<\/b>\s*(.+)<hr \/>/g;
-	print "$year $engine_type $capacity cm3 $original_bhp bhp\n";
-	print $logfh "$year $engine_type $capacity cm3 $original_bhp bhp\n";
+	debug ("$year $engine_type $capacity cm3 $original_bhp bhp");
 	
 	# See if Bluefin is supported
 	$bluefin = "Y" if $bluefin eq "N" && $content =~ /bluefin is available for your/;
@@ -184,15 +184,17 @@ sub extract_info_for_variant
 	$content =~ /Pricing info SC/g;
 	$uk_price = $1 if $content =~ /&pound;(\d+)/g;
 
-	$dyno_graph = $1 if $content =~ /<a href="\/curves\/([^"]*?)"><img src="images\/icons\/icon_curve.png">/;
-	$road_test = $1 if $content =~ /<a href="\/roadtest\/([^"]*?)"><img src="images\/icons\/icon_road.png">/;
-	$related_media = $1 if $content =~ /<a href="([^"]*?)" target="_blank"><img src="images\/icons\/icon_related_n.png">/;
+	$dyno_graph = $1 if $content =~ /<a href="\/curves\/(.*?)"><img src="images\/icons\/icon_curve.png">/ms;
+	$road_test = $1 if $content =~ /<a href="\/roadtest\/(.*?)"><img src="images\/icons\/icon_road.png">/ms;
+	$related_media = $1 if $content =~ /<div.*?id='related_media_id'>.*?<embed src='(.*?)'/ms;
 	
-	if ($content =~ /<div id="warnings">/g)
-	{
-		$warning = $1 if $content =~ /<div style="text-align: left; [^"]+">\s*(.+?)\s*<div style="clear: both"><\/div>/ms;	
-	}
-		
+	# if ($content =~ m/<div id="allwarns">/g)
+	# {
+		# screen ("Found id = allwarns");	
+	# }
+	$warning = $1 if $content =~ /<div id="warnings">.*?<div style="text-align.*?">(.+?)<div style="clear: both">/ms;
+	$warning =~ s/,/&#44;/g;	
+	
 	my $model = substr ($selected_model, length ($make));
 	# my @modelarray = split (/ /, $selected_model);
 	# my $make = $modelarray[0];
@@ -204,101 +206,200 @@ sub extract_info_for_variant
 	$selvariantth->execute($variant_id) or die "Failed to execute SQL Variant request";
 
 	if ($variant_hr = $selvariantth->fetchrow_hashref)
-	{
+		{
 		$tune_type = $variant_hr->{tune_type} if ($tune_type eq "?");
+		if ($original_bhp =~ m/[^0-9]/)
+			{
+			screen ("Original BHP is not numeric!");
+			}
 		if ($original_bhp != $variant_hr->{original_bhp})
-		{
-			say $logfh "\t\tOriginal BHP is DIFFERENT. : $original_bhp : $variant_hr->{original_bhp} :";
+			{
+			alert ("\t\tOriginal BHP is DIFFERENT. : $original_bhp : $variant_hr->{original_bhp} :");
 			$need_update ++;
-		}
+			}
 		if ($original_nm != $variant_hr->{original_nm})
-		{
-			say $logfh "\t\tOriginal NM is DIFFERENT. : $original_nm : $variant_hr->{original_nm} :";
+			{
+			alert ("\t\tOriginal NM is DIFFERENT. : $original_nm : $variant_hr->{original_nm} :");
 			$need_update ++;
-		}
+			}
 		if ($gain_bhp != $variant_hr->{gain_bhp})
-		{
-			say $logfh "\t\tGain BHP is DIFFERENT. : $gain_bhp : $variant_hr->{gain_bhp} :";
+			{
+			alert ("\t\tGain BHP is DIFFERENT. : $gain_bhp : $variant_hr->{gain_bhp} :");
 			$need_update ++;
-		}
+			}
 		if ($gain_nm != $variant_hr->{gain_nm})
-		{
-			say $logfh "\t\tGain NM is DIFFERENT. : $gain_nm : $variant_hr->{gain_nm} :";
+			{
+			alert ("\t\tGain NM is DIFFERENT. : $gain_nm : $variant_hr->{gain_nm} :");
 			$need_update ++;
-		}
+			}
 		if ($uk_price != $variant_hr->{uk_price})
-		{
-			say $logfh "\t\tuk_price is DIFFERENT. : $uk_price : $variant_hr->{uk_price} :";
+			{
+			alert ("\t\tuk_price is DIFFERENT. : $uk_price : $variant_hr->{uk_price} :");
 			$need_update ++;
-		}
+			}
 		if ($bluefin ne $variant_hr->{bluefin})
-		{
-			say $logfh "\t\tbluefn is DIFFERENT. : $bluefin : $variant_hr->{bluefin} :";
+			{
+			alert ("\t\tbluefn is DIFFERENT. : $bluefin : $variant_hr->{bluefin} :");
 			$need_update ++;
-		}
+			}
 		if ($epc ne $variant_hr->{epc})
-		{
-			say $logfh "\t\tepc is DIFFERENT. : $epc : $variant_hr->{epc} :";
+			{
+			alert ("\t\tepc is DIFFERENT. : $epc : $variant_hr->{epc} :");
 			$need_update ++;
-		}
+			}
 		if ($dyno_graph ne $variant_hr->{dyno_graph})
-		{
-			say $logfh "\t\tdyno_graph is DIFFERENT. : $dyno_graph : $variant_hr->{dyno_graph} :";
+			{
+			alert ("\t\tdyno_graph is DIFFERENT. : $dyno_graph : $variant_hr->{dyno_graph} :");
 			$need_update ++;
-		}
+			}
 		if ($road_test ne $variant_hr->{road_test})
-		{
-			say $logfh "\t\troad_test is DIFFERENT. : $road_test : $variant_hr->{road_test} :";
+			{
+			alert ("\t\troad_test is DIFFERENT. : $road_test : $variant_hr->{road_test} :");
 			$need_update ++;
-		}
+			}
 		if ($warning ne $variant_hr->{warning})
-		{
-			say $logfh "\t\twarning is DIFFERENT. : $warning : $variant_hr->{warning} :";
+			{
+			alert ("\t\twarning is DIFFERENT. : $warning : $variant_hr->{warning} :");
 			$need_update ++;
-		}
+			}
 		if ($related_media ne $variant_hr->{related_media})
-		{
-			say $logfh "\t\trelated_media is DIFFERENT. : $related_media : $variant_hr->{related_media} :";
+			{
+			alert ("\t\trelated_media is DIFFERENT. : $related_media : $variant_hr->{related_media} :");
 			$need_update ++;
-		}
+			}
 		if ($year ne $variant_hr->{year})
-		{
-			say $logfh "\t\tyear is DIFFERENT. : $year : $variant_hr->{year} :";
+			{
+			alert ("\t\tyear is DIFFERENT. : $year : $variant_hr->{year} :");
 			$need_update ++;
-		}
+			}
 		if ($cylinders ne $variant_hr->{cylinders})
-		{
-			say $logfh "\t\tcylinders is DIFFERENT. : $cylinders : $variant_hr->{cylinders} :";
+			{
+			alert ("\t\tcylinders is DIFFERENT. : $cylinders : $variant_hr->{cylinders} :");
 			$need_update ++;
-		}
+			}
 		if ($engine_type ne $variant_hr->{engine_type})
-		{
-			say $logfh "\t\tengine_type is DIFFERENT. : $engine_type : $variant_hr->{engine_type} :";
+			{
+			alert ("\t\tengine_type is DIFFERENT. : $engine_type : $variant_hr->{engine_type} :");
 			$need_update ++;
-		}
+			}
 		if ($capacity ne $variant_hr->{capacity})
-		{
-			say $logfh "\t\tcapacity is DIFFERENT. : $capacity : $variant_hr->{capacity} :";
+			{
+			alert ("\t\tcapacity is DIFFERENT. : $capacity : $variant_hr->{capacity} :");
 			$need_update ++;
+			}
+		}
+	else
+		{
+		screen ("\t\tThis model needs to be added!");
+		alert ("Adding New Record $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments");
+		my ($start_date, $end_date) = parse_superchips_date ($year);
+		say $newcarfh '', $make, $model, '', '', $engine_type, $start_date, $end_date, int ($capacity / 100) / 10, $cylinders, '', $original_bhp, int (($original_bhp * 0.746) + 0.5), $original_nm, $variant_id, 0, 0, 0, 0, 0, 'Y', 'No Comments'; 
+		
+		$insvariantth->execute($variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, 'N');
+		}	
+	if ($need_update)
+		{
+		debug ("\t\tThis car needs $need_update updates!");
+		alert ("Updating: $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph $road_test, $warning, $related_media, $active, $comments");
+		$updvariantth->execute($make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, 'N', $variant_id);
+		}
+	else
+		{
+		$unmarkvariantth->execute ($variant_id);
 		}
 	}
-	else
-	{
-		say "\t\tThis model needs to be added!";
-		print $logfh "Adding New Record $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments\n";
-		$insvariantth->execute($variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, 'N');
-	}
-	if ($need_update)
-	{
-		say "\t\tThis car needs $need_update updates!";
-		print $logfh "Updating: $variant_id, $make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph $road_test, $warning, $related_media, $active, $comments\n";
-		$updvariantth->execute($make, $model, $year, $engine_type, $capacity, $cylinders, $original_bhp, $original_nm, $gain_bhp, $gain_nm, $uk_price, $bluefin, $epc, $tune_type, $dyno_graph, $road_test, $warning, $related_media, $active, $comments, 'N', $variant_id);
-	}
-	else
-	{
-	$unmarkvariantth->execute ($variant_id);
-	}
-}
 
 
+sub parse_superchips_date
+	{
+	my $scdate = $_[0];
+	
+	my $start_day = "1";
+	my $start_month = "1";
+	my $start_year = "1970";
+	my $end_day = "31";
+	my $end_month = "12";
+	my $end_year = "2050";
+	my $gooddate = 0;
+	
+	# Blank Date
+	if ($scdate eq "")
+	{
+		$gooddate = 1;
+	}
 
+	# 2008 onwards
+	if ($scdate =~ /^(\d{4}) onwards$/)
+	{
+		$start_year = $1;
+		$gooddate = 1;
+	}
+
+	# 9/2008 onwards
+	if ($scdate =~ /^(\d{1,2})\/(\d{4}) onwards$/)
+	{
+		$start_month = $1;
+		$start_year = $2;
+		$gooddate = 1;
+	}
+
+	# up to 1998
+	if ($scdate =~ /^up to (\d{4})$/)
+	{
+		$end_year = $1;
+		$gooddate = 1;
+	}
+
+	# up to 9/1998
+	if ($scdate =~ /^up to (\d{1,2})\/(\d{4})$/)
+	{
+		$end_month = $1;
+		$end_year = $2;
+		$gooddate = 1;
+	}
+
+	# 1997 - 1998
+	if ($scdate =~ /^(\d{4}) - (\d{4})$/)
+	{
+		$start_year = $1;
+		$end_year = $2;
+		$gooddate = 1;
+	}
+
+	# 1997 - 9/1998
+	if ($scdate =~ /^(\d{4}) - (\d{1,2})\/(\d{4})$/)
+	{
+		$start_year = $1;
+		$end_month = $2;
+		$end_year = $3;
+		$gooddate = 1;
+	}
+
+	# 3/1997 - 1998
+	if ($scdate =~ /^(\d{1,2})\/(\d{4}) - (\d{4})$/)
+	{
+		$start_month = $1;
+		$start_year = $2;
+		$end_year = $3;
+		$gooddate = 1;
+	}
+
+	# 3/1997 - 9/1998
+	if ($scdate =~ /^(\d{1,2})\/(\d{4}) - (\d{1,2})\/(\d{4})$/)
+	{
+		$start_month = $1;
+		$start_year = $2;
+		$end_month = $3;
+		$end_year = $4;
+		$gooddate = 1;
+		}
+
+	if ($gooddate == 0)
+		{
+		print "Unknown Date Format: " . $scdate;
+		}
+
+	my $start_date = sprintf ("%4s-%02s-%02s", $start_year, $start_month, $start_day);
+	my $end_date = sprintf ("%4s-%02s-%02s", $end_year, $end_month, $end_day);
+	return ($start_date, $end_date);
+	}

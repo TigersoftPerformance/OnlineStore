@@ -80,7 +80,7 @@
 "121","BMW","524 E34","","Turbo-Diesel","2443","0","113","0","25","50","320","N","N","C","","","","","Y","No comments","N"
 "122","BMW","525 E34","1993 - 1996","Turbo-Diesel","2498","6","115","0","30","0","320","N","N","C","","","","","Y","No comments","N"
 "123","BMW","525 E34","1993 - 1996","Turbo-Diesel","2498","6","143","280","30","0","320","N","N","C","","","","","Y","No comments","N"
-"124","BMW","525 E39 TDS","1996 - 1998","Turbo-Diesel","2498","6","143","280","30","0","320","N","N","F","","","","","Y","No comments","N"
+"124","BMW","525 tds E39 (143PS)","1996 - 2000","Turbo-Diesel","2498","6","141","280","30","75","320","N","N","F","","","","","Y","No comments","N"
 "125","BMW","525 E39 (D) (163PS)","2000 - 2003","Turbo-Diesel","2497","6","161","350","36","135","320","Y","N","F","525d.pdf","","","","Y","No comments","N"
 "126","BMW","530 E39 (D) (184PS)","1998 - 2000","Turbo-Diesel","2926","6","181","390","27","89","320","Y","N","F","330d.pdf","","","","Y","No comments","N"
 "127","BMW","530 E39 (D) (193PS)","2000 - 2003","Turbo-Diesel","2926","6","190","410","27","89","320","Y","N","F","530d193bhp.pdf","","","","Y","No comments","N"
@@ -211,17 +211,35 @@
 "256","Mercedes","M Class 320 CDI (224PS) W164","6/2005 - 9/2009","Turbo-Diesel","2987","6","224","510","37","70","365","Y","N","F","320cdi224bhp.pdf","","","","Y","No comments","N"
 "257","Mercedes","M Class 280 CDI","2005 onwards","Turbo-Diesel","2987","6","195","470","46","84","365","N","N","?","","","","","Y","No comments","N"
 "258","Mercedes","R Class 320 CDI (224PS) W251","2005 - 2010","Turbo-Diesel","2987","6","224","510","37","70","365","Y","N","F","320cdi224bhp.pdf","","","","Y","No comments","N"
-"259","Mercedes","Vaneo 170 CDI","3/2002 - 6/2005","Turbo-Diesel","1689","4","91","180","20","55","365","Y","N","F","a170cdi.pdf","","","","Y","No comments","N"
-"260","Mercedes","Viano 111 CDI","2004 - 2007","Turbo-Diesel","2148","4","109","270","43","81","365","Y","N","F","vito111cdi.pdf","","","","Y","No comments","N"
-"261","Mercedes","Viano 115 CDI","2004 - 2010","Turbo-Diesel","2148","4","150","330","29","70","365","Y","N","F","vito115cdi.pdf","","","","Y","No comments","N"
+"259","Mercedes","Vaneo 170 CDI","3/2002 - 6/2005","Turbo-Diesel","1689","4","91","180","20","55","365","Y","N","F","a170cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
+"260","Mercedes","Viano 111 CDI","2004 - 2007","Turbo-Diesel","2148","4","109","270","43","81","365","Y","N","F","vito111cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
+"261","Mercedes","Viano 115 CDI","2004 - 2010","Turbo-Diesel","2148","4","150","330","29","70","365","Y","N","F","vito115cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
 "262","Mercedes","V Class 110 CDI","1999 - 2002","Turbo-Diesel","2151","4","122","300","30","0","320","N","N","F","","","","","Y","No comments","N"
 "264","Mercedes","Sprinter 210/310/410 TD","1995 - 2000","Turbo-Diesel","2874","4","102","0","25","68","320","N","N","F","","","","","Y","No comments","N"
 "265","Mercedes","Vito 108 CDI","1999 - 2004","Turbo-Diesel","2148","4","82","0","40","0","320","N","N","F","","","","","Y","No comments","N"
-"266","Mercedes","Vito 109 CDI","2003 onwards","Turbo-Diesel","2148","4","88","240","47","98","365","Y","N","F","vito109cdi.pdf","MercedesVito.pdf","","","Y","No comments","N"
+"266","Mercedes","Vito 109 CDI","2003 onwards","Turbo-Diesel","2148","4","88","240","47","98","365","Y","N","F","vito109cdi.pdf","MercedesVito.pdf","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
 "267","Mercedes","Vito 110 CDI","1999 - 2004","Turbo-Diesel","2148","4","110","250","38","71","320","N","N","F","mercvitocdi.pdf","","","","Y","No comments","N"
-"268","Mercedes","Vito 111 CDI","2003 onwards","Turbo-Diesel","2148","4","116","290","43","81","365","Y","N","F","vito111cdi.pdf","","","","Y","No comments","N"
+"268","Mercedes","Vito 111 CDI","2003 onwards","Turbo-Diesel","2148","4","116","290","43","81","365","Y","N","F","vito111cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
 "269","Mercedes","Vito 112 CDI","1999 - 2004","Turbo-Diesel","2148","4","0","0","30","0","320","N","N","F","","","","","Y","No comments","N"
-"270","Mercedes","Vito 115 CDI","2004 - 2011","Turbo-Diesel","2148","4","150","330","29","70","365","Y","N","F","vito115cdi.pdf","","","","Y","No comments","N"
+"270","Mercedes","Vito 115 CDI","2004 - 2011","Turbo-Diesel","2148","4","150","330","29","70","365","Y","N","F","vito115cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
 "271","Mini","One D","2003 onwards","Turbo-Diesel","1364","4","75","180","20","39","320","N","N","?","minioned.pdf","mini one D.pdf","","","Y","No comments","N"
 "272","Mini","One D","2005 onwards","Turbo-Diesel","1364","4","88","190","19","42","320","N","N","?","Mini1.4d.pdf","","","","Y","No comments","N"
 "274","Nissan","Micra dCi","2003 onwards","Turbo-Diesel","1461","4","65","160","25","47","320","N","N","?","cliodci65.pdf","","","","Y","No comments","N"
@@ -303,8 +321,8 @@
 "354","Renault","Master dCi","2003 onwards","Turbo-Diesel","2500","4","100","0","30","0","320","N","N","?","","","","","Y","No comments","N"
 "355","Renault","Master dCi","2003 onwards","Turbo-Diesel","2500","4","120","0","30","0","320","N","N","?","","","","","Y","No comments","N"
 "356","Renault","Master dCi","2003 onwards","Turbo-Diesel","3000","4","140","0","30","0","320","N","N","?","","","","","Y","No comments","N"
-"357","Renault","Traffic dCi","2003 onwards","Turbo-Diesel","1870","4","100","0","30","0","320","N","N","?","","","","","Y","No comments","N"
-"358","Renault","Traffic dCi","2003 onwards","Turbo-Diesel","2500","4","140","0","30","0","320","N","N","?","","","","","Y","No comments","N"
+"357","Renault","Traffic 1.9 dCi 100 (Euro3)","3/2001 - 9/2006","Turbo-Diesel","1870","4","99","240","27","62","320","Y","N","F","Vivaro 100PS EU3.pdf","","","","Y","No comments","N"
+"358","Renault","Traffic 2.5 dCi 140 (Euro3)","9/2002 - 9/2006","Turbo-Diesel","2463","4","134","310","28","55","320","Y","N","F","","","","","Y","No comments","N"
 "359","Rover","220 Sdi","1997 - 1999","Turbo-Diesel","1994","4","103","210","30","0","320","N","N","?","","","","","Y","No comments","N"
 "360","Rover","25 TD","2001 - 2005","Turbo-Diesel","1994","4","99","240","25","40","320","N","N","?","mgzrtd.pdf","","","","Y","No comments","N"
 "362","Rover","Streetwise TD","2003 - 2005","Turbo-Diesel","1994","4","100","240","25","40","320","N","N","?","mgzrtd.pdf","","","","Y","No comments","N"
@@ -683,7 +701,7 @@
 "813","BMW","318 i E90/E91","9/2005 - 9/2007","Non-Turbo Petrol","1995","4","127","180","8","15","229","N","N","F","","","","","Y","No comments","N"
 "814","BMW","320 320i E90/1/2/3 (150PS)","3/2005 - 6/2007","Non-Turbo Petrol","1995","4","147","200","10","18","229","N","N","?","","","","","Y","No comments","N"
 "815","BMW","320 E90/E91","2005 onwards","Non-Turbo Petrol","1995","4","170","200","8","0","229","N","N","F","","","","","Y","No comments","N"
-"816","BMW","325 E90 / E91","3/2005 - 2008","Non-Turbo Petrol","2497","6","214","250","12","0","229","N","N","F","","","","","Y","No comments","N"
+"816","BMW","325 E90 / E91","3/2005 - 2008","Non-Turbo Petrol","2497","6","214","250","12","15","229","N","N","F","","","","","Y","No comments","N"
 "817","BMW","330 E90/E91","2005 onwards","Non-Turbo Petrol","2996","6","254","300","12","20","229","N","N","F","","","","","Y","No comments","N"
 "818","BMW","518 E34","1988 - 1996","Non-Turbo Petrol","1796","4","115","0","8","0","229","N","N","C","","","","","Y","No comments","N"
 "819","BMW","520 E34","1988 - 1996","Non-Turbo Petrol","1991","6","150","0","10","0","229","N","N","C","","","","","Y","No comments","N"
@@ -944,7 +962,7 @@
 "1123","Mercedes","CLK 280","2005 onwards","Non-Turbo Petrol","2996","6","231","240","12","0","229","N","N","?","","","","","Y","No comments","N"
 "1124","Mercedes","CLK 320","2000 - 2004","Non-Turbo Petrol","3199","6","218","310","13","0","229","N","N","?","","","","","Y","No comments","N"
 "1125","Mercedes","CLK 350","2005 onwards","Non-Turbo Petrol","3498","6","272","350","10","0","229","N","N","?","","","","","Y","No comments","N"
-"1126","Mercedes","CLK 500","2002 onwards","Non-Turbo Petrol","4966","8","306","460","15","0","320","N","N","?","","","","","Y","No comments","N"
+"1126","Mercedes","CLK 500","3/2002 - 6/2006","Non-Turbo Petrol","4966","8","306","460","15","25","320","N","N","?","","","","","Y","No comments","N"
 "1127","Mercedes","CLK 55","2002 onwards","Non-Turbo Petrol","5439","8","367","510","15","0","320","N","N","?","","","","","Y","No comments","N"
 "1128","Mercedes","SLK 320","2000 - 2004","Non-Turbo Petrol","3199","6","218","310","13","0","229","N","N","?","","","","","Y","No comments","N"
 "1129","Mercedes","SLK 32","2001 - 2004","Non-Turbo Petrol","3199","6","354","450","13","0","229","N","N","?","","","","","Y","No comments","N"
@@ -1331,7 +1349,7 @@
 "1547","Volkswagen","Golf Mk3","1992 onwards","Non-Turbo Petrol","1984","4","115","166","7","13","229","N","N","C","golf2lgti.pdf","","","","Y","No comments","N"
 "1548","Volkswagen","Golf Mk3","1993 onwards","Non-Turbo Petrol","1984","4","150","180","10","0","229","N","N","C","","","","","Y","No comments","N"
 "1549","Volkswagen","Golf Mk3","1992 - 1996","Non-Turbo Petrol","2861","6","190","245","11","18","229","N","N","C","vr629l.pdf","","","","Y","No comments","N"
-"1550","Volkswagen","Golf Mk3","1992 onwards","Non-Turbo Petrol","2792","6","174","235","12","0","229","N","N","C","","","","","Y","No comments","N"
+"1550","Volkswagen","Golf Mk3","1992 onwards","Non-Turbo Petrol","2792","6","174","235","12","21","229","N","N","C","","","","","Y","No comments","N"
 "1551","Volkswagen","Golf Mk4","1997 - 1999","Non-Turbo Petrol","1781","4","125","170","9","20","229","N","N","C","vw1820v.pdf","","","","Y","No comments","N"
 "1552","Volkswagen","Golf Mk4","1999 - 2004","Non-Turbo Petrol","1984","4","115","172","10","0","229","N","N","F","","","","","Y","No comments","N"
 "1553","Volkswagen","Golf Mk4","1998 - 2000","Non-Turbo Petrol","2324","5","150","205","12","0","229","N","N","C","","","","","Y","No comments","N"
@@ -1498,7 +1516,9 @@
 "1740","Land Rover","Range Rover 4.2s","2005 onwards","Supercharged","4197","8","400","560","20","24","365","N","N","?","RangeRover4.2s.pdf","","","","Y","No comments","N"
 "1741","Mitsubishi","Grandis 2.0 DiD","2005 onwards","Turbo-Diesel","1968","4","134","310","35","84","365","N","N","?","Grandis2.0DiD.pdf","","","","Y","No comments","N"
 "1742","Audi","S3 2.0 TFSI (265PS)","9/2006 onwards","Turbocharged Petrol","1984","4","261","350","42","47","365","Y","N","F","2006AudiS320T.pdf","","","","Y","No comments","N"
-"1743","Volkswagen","Golf Mk5 2.0 T Edition 30/Pirelli","9/2006 - 9/2009","Turbocharged Petrol","1984","4","226","300","61","82","365","Y","N","F","VWGolfGTIEdition30.pdf","VW Driver May07 Golf GTI Edition30.PDF","","","Y","No comments","N"
+"1743","Volkswagen","Golf Mk5 2.0 T Edition 30/Pirelli","9/2006 - 9/2009","Turbocharged Petrol","1984","4","226","300","61","82","365","Y","N","F","VWGolfGTIEdition30.pdf","VW Driver May07 Golf GTI Edition30.PDF","\
+							<p>Following further file development we no longer need to differentiate between DSG &amp; Manual models with our software. (12/2008)</p>\
+				","","Y","No comments","N"
 "1747","Mercedes","M Class 270 CDI","2004 - 2006","Turbo-Diesel","2685","5","163","370","34","71","365","N","N","?","","","","","Y","No comments","N"
 "1750","Citroen","C4 2.0L HDI","2005 onwards","Turbo-Diesel","1997","4","134","320","22","47","320","N","N","?","C420hdi136.pdf","","","","Y","No comments","N"
 "1751","Mercedes","C Class 180K","2000 - 2008","Supercharged","1796","4","143","220","12","16","229","N","N","?","c180kcoupe.pdf","","","","Y","No comments","N"
@@ -1528,7 +1548,10 @@
 "1786","Mercedes","CL Class 63 AMG","","Non-Turbo Petrol","6208","8","514","630","25","34","320","N","N","?","","","","","Y","No comments","N"
 "1787","Mercedes","CLK 63 AMG","","Non-Turbo Petrol","6208","8","514","630","25","34","320","N","N","?","","","","","Y","No comments","N"
 "1788","Mercedes","S Class S600","","Non-Turbo Petrol","5513","12","517","830","15","27","320","N","N","?","","","","","Y","No comments","N"
-"1790","Mercedes","Vito 120 V6 CDI","2003 onwards","Turbo-Diesel","2987","4","204","440","32","62","365","Y","N","F","320cdi.pdf","","","","Y","No comments","N"
+"1790","Mercedes","Vito 120 V6 CDI","2003 onwards","Turbo-Diesel","2987","4","204","440","32","62","365","Y","N","F","320cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
 "1793","Renault","Espace","2007 onwards","Turbo-Diesel","1995","4","147","0","30","0","320","N","N","?","","","","","Y","No comments","N"
 "1796","Jeep","Wrangler 2.8 CRD (177HP)","3/2007 onwards","Turbo-Diesel","2776","4","174","410","40","80","365","N","N","?","","","","","Y","No comments","N"
 "1797","Jeep","Compass","2007 onwards","Turbo-Diesel","1968","4","140","320","37","75","365","N","N","?","","","","","Y","No comments","N"
@@ -1543,11 +1566,26 @@
 "1807","Mercedes","Sprinter 211 / 311 / 411 CDI (109PS)","2000 - 2006","Turbo-Diesel","2148","4","108","270","34","61","320","N","N","F","","","","","Y","No comments","N"
 "1808","Mercedes","Sprinter 213 / 313 / 413 CDI (129PS)","2000 - 2006","Turbo-Diesel","2148","4","127","300","33","62","320","N","N","F","","","","","Y","No comments","N"
 "1809","Mercedes","Sprinter 216 / 316 / 416 / 616 CDI (156PS)","2000 - 2006","Turbo-Diesel","2689","5","154","330","32","59","320","N","N","F","","","","","Y","No comments","N"
-"1810","Mercedes","Sprinter 209 / 309 / 509 CDI","2006 onwards","Turbo-Diesel","2148","4","88","220","47","98","365","Y","N","F","sprinter309cdi.pdf","","","","Y","No comments","N"
-"1811","Mercedes","Sprinter 211 / 311 / 411 / 511 CDI","2006 onwards","Turbo-Diesel","2148","4","109","280","43","81","365","Y","N","F","sprinter311cdi.pdf","","","","Y","No comments","N"
-"1812","Mercedes","Sprinter 213 / 313 CDI","2006 onwards","Turbo-Diesel","2148","4","129","305","33","58","365","Y","N","F","","","","","Y","No comments","N"
-"1813","Mercedes","Sprinter 215 / 315 / 415 / 515 CDI","2006 - 2011","Turbo-Diesel","2148","4","150","330","29","70","365","Y","N","F","sprinter315cdi.pdf","","","","Y","No comments","N"
-"1814","Mercedes","Sprinter 218 / 318 / 418 / 518 V6 CDI","2006 onwards","Turbo-Diesel","2987","6","184","400","41","94","365","Y","N","F","","","","","Y","No comments","N"
+"1810","Mercedes","Sprinter 209 / 309 / 509 CDI","2006 onwards","Turbo-Diesel","2148","4","88","220","47","98","365","Y","N","F","sprinter309cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
+"1811","Mercedes","Sprinter 211 / 311 / 411 / 511 CDI","2006 onwards","Turbo-Diesel","2148","4","109","280","43","81","365","Y","N","F","sprinter311cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
+"1812","Mercedes","Sprinter 213 / 313 CDI","2006 onwards","Turbo-Diesel","2148","4","129","305","33","58","365","Y","N","F","","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
+"1813","Mercedes","Sprinter 215 / 315 / 415 / 515 CDI","2006 - 2011","Turbo-Diesel","2148","4","150","330","29","70","365","Y","N","F","sprinter315cdi.pdf","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
+"1814","Mercedes","Sprinter 218 / 318 / 418 / 518 V6 CDI","2006 onwards","Turbo-Diesel","2987","6","184","400","41","94","365","Y","N","F","","","\
+							<p>IMPORTANT</p>\
+<p>Before buying please check your vehicle has the 16 pin oblong D shaped diagnostic port&#44; OBD11. Bluefin is NOT compatible with the circular commercial diagnostic port. You will find it in the passenger foot well up around the fuse panel.</p>\
+				","","Y","No comments","N"
 "1821","Seat","Leon 2.0 T FSI Cupra / K1 (240PS)","9/2006 - 6/2011","Turbocharged Petrol","1984","4","236","300","44","81","365","Y","N","F","LeonCupra 240bhp.pdf","","","","Y","No comments","N"
 "1822","Audi","RS4 4.2 V8 (420PS)","9/2004 - 9/2008","Non-Turbo Petrol","4163","8","414","430","18","20","320","N","N","?","RS44.2V8FSi.pdf","","","","Y","No comments","N"
 "1823","Audi","A6 2.0 TFSI (170PS)","6/2005 - 9/2011","Turbocharged Petrol","1984","4","167","280","41","54","365","Y","N","F","","","","","Y","No comments","N"
@@ -1573,7 +1611,7 @@
 "1845","Peugeot","407 2.7 V6 HDI","2004 onwards","Turbo-Diesel","2720","6","205","440","35","86","320","N","N","B","Peugeot2.7V6HDI.pdf","","","","Y","No comments","N"
 "1846","Ford","S-Max 2.5 T","2006 onwards","Turbocharged Petrol","2522","5","216","320","49","89","320","Y","N","F","SMax2.5TStage1.pdf","","","","Y","No comments","N"
 "1847","Ford","Mondeo 2.5 T","2007 onwards","Turbocharged Petrol","2522","5","216","320","49","89","320","Y","N","F","Mondeo2.5TStage1.pdf","","","","Y","No comments","N"
-"1849","Volkswagen","Transporter T5 1.9 TDI PD","6/2003 - 2010","Turbo-Diesel","1896","4","85","200","25","57","320","N","N","?","","","","","Y","No comments","N"
+"1849","Volkswagen","Transporter T5 1.9 TDI PD (84PS)","6/2003 - 2010","Turbo-Diesel","1896","4","83","200","25","57","320","Y","N","F","","","","","Y","No comments","N"
 "1850","Ford","Transit Connect TDCi","2005 - 2006","Turbo-Diesel","1753","4","90","200","18","37","320","Y","N","F","2007TransitConnect1.8TDCi.pdf","","","","Y","No comments","N"
 "1851","Volkswagen","Beetle 1.9 TDI (105PS)","9/2005 - 9/2010","Turbo-Diesel","1896","4","105","250","27","55","320","N","N","?","golfmk5tdi105bhp.pdf","","","","Y","No comments","N"
 "1852","Skoda","Fabia 1.9 TDI PD (105PS)","2007 - 2010","Turbo-Diesel","1896","4","103","240","27","55","365","Y","N","F","golfmk5tdi105bhp.pdf","","","","Y","No comments","N"
@@ -1624,11 +1662,11 @@
 "1899","BMW","325 E90/1/2/3 (D) (197PS)","9/2006 - 3/2010","Turbo-Diesel","2993","6","194","400","62","120","365","Y","N","F","325d197ps.pdf","","","","Y","No comments","N"
 "1900","Volvo","C30 T5","2007 onwards","Turbocharged Petrol","2522","5","225","320","50","119","365","N","N","?","","","","","Y","No comments","N"
 "1901","Peugeot","207 16V GTi THP175","6/2007 - 9/2009","Turbocharged Petrol","1598","4","172","260","25","59","320","N","N","?","Peugeot207GTi.pdf","","","","Y","No comments","N"
-"1902","BMW","335 E92 (D)","2006 onwards","Turbo-Diesel","2993","6","286","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
-"1903","BMW","535 E60/E61 (D)","2007 onwards","Turbo-Diesel","2993","6","286","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
+"1902","BMW","335 3.0d E90/1/2 (286PS) EU4","9/2006 onwards","Turbo-Diesel","2993","6","282","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
+"1903","BMW","535 3.0d E60/E61 (286PS)","2007 onwards","Turbo-Diesel","2993","6","282","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
 "1904","BMW","X3 E83 3.0sd / xDrive35d","9/2006 onwards","Turbo-Diesel","2993","6","286","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
 "1905","BMW","X5 E70 3.0 (sd)","2008 onwards","Turbo-Diesel","2993","6","286","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
-"1906","BMW","635 E63 (D)","2007 onwards","Turbo-Diesel","2993","6","286","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
+"1906","BMW","635 3.0d E63 (286PS)","2007 onwards","Turbo-Diesel","2993","6","282","580","69","97","365","Y","N","F","BMW 35d 286ps.pdf","","","","Y","No comments","N"
 "1907","BMW","335 i 3.0 (E90/1/2/3) (306PS)","2007 - 3/2010","Turbocharged Petrol","2979","6","302","400","49","70","365","N","N","F","BMW35T306ps.pdf","","","","Y","No comments","N"
 "1908","BMW","135 i 3.0 (E82/88) (306PS)","2007 - 3/2010","Turbocharged Petrol","2979","6","302","400","49","70","365","N","N","F","BMW35T306ps.pdf","","","","Y","No comments","N"
 "1909","BMW","535 i","2007 - 3/2010","Turbocharged Petrol","2979","6","306","400","49","70","365","N","N","F","BMW35T306ps.pdf","","","","Y","No comments","N"
@@ -1654,7 +1692,7 @@
 "1930","Peugeot","207 1.6 16V GT THP150","9/2006 onwards","Turbocharged Petrol","1598","4","150","244","34","50","320","N","N","?","2071.6T150bhp.pdf","","","","Y","No comments","N"
 "1931","Porsche","Cayenne 3.6 S","2007 onwards","Non-Turbo Petrol","3598","6","285","385","15","25","229","N","N","?","","","","","Y","No comments","N"
 "1932","Vauxhall-Opel","Vivaro 2.0 CDTi (115PS) Euro4","2006 - 2009","Turbo-Diesel","1995","4","113","290","37","81","320","Y","N","F","Vivaro20CDTi115.pdf","","","","Y","No comments","N"
-"1933","Renault","Traffic DCi","2007 onwards","Turbo-Diesel","2000","4","115","0","37","81","320","N","N","?","RenaultTrafic20DCi115.pdf","","","","Y","No comments","N"
+"1933","Renault","Traffic 2.0 dCi (115PS) Euro4","9/2006 onwards","Turbo-Diesel","1995","4","113","290","37","81","320","Y","N","F","RenaultTrafic20DCi115.pdf","","","","Y","No comments","N"
 "1934","Nissan","Primastar DTi","2007 onwards","Turbo-Diesel","2000","4","115","0","37","81","365","N","N","?","NissanPrimastar20DTi115.pdf","","","","Y","No comments","N"
 "1936","Volkswagen","Caravelle 2.8 V6","1994 - 1999","Non-Turbo Petrol","2800","6","174","0","12","0","229","N","N","?","","","","","Y","No comments","N"
 "1937","Ford","Focus VVTi","2005 - 2007","Non-Turbo Petrol","1596","4","115","155","12","13","229","N","N","?","Focus16VVT115PS.pdf","","","","Y","No comments","N"
@@ -1665,7 +1703,7 @@
 "1943","Ford","Fiesta 1.4D TDCi","2002 - 2011","Turbo-Diesel","1399","4","67","160","18","32","320","N","N","?","FiestaMk614TDCi.pdf","","","","Y","No comments","N"
 "1944","Ford","Fusion","2005 - 2007","Turbo-Diesel","1399","4","67","160","18","32","320","N","N","?","FiestaMk614TDCi.pdf","","","","Y","No comments","N"
 "1945","Saab","9-3 TTiD (180PS)","9/2007 onwards","Turbo-Diesel","1910","4","180","400","34","75","320","Y","N","F","Saab9319TTiD.pdf","","","","Y","No comments","N"
-"1946","Opel","hall-Opel Corsa 1.6T 16V SRi EURO4","6/2007 - 3/2010","Turbocharged Petrol","1598","4","147","210","51","61","320","Y","N","F","CorsaSRi16T150.pdf","","","","Y","No comments","N"
+"1946","Vauxhall-Opel","Corsa 1.6T 16V SRi EURO4","6/2007 - 3/2010","Turbocharged Petrol","1598","4","147","210","51","61","320","Y","N","F","CorsaSRi16T150.pdf","","","http://www.youtube.com/v/AJL50_5HHsk&hl=en&fs=1&","Y","No comments","N"
 "1947","Peugeot","Boxer JTD","2003 - 2006","Turbo-Diesel","2800","4","130","0","30","50","320","N","N","?","","","","","Y","No comments","N"
 "1948","Fiat","Ducato HDI","2006 onwards","Turbo-Diesel","2300","4","0","0","30","50","320","N","N","?","","","","","Y","No comments","N"
 "1949","Ford","Ka StreetKa 1.6 8V Duratec","9/2002 - 2006","Non-Turbo Petrol","1597","4","93","135","8","10","229","Y","N","F","SportKa1.6.pdf","","","","Y","No comments","N"
@@ -1727,13 +1765,38 @@
 "2012","BMW","X6 xDrive35i (E71) (306PS)","2008 - 2010","Turbocharged Petrol","2979","6","302","400","49","70","365","N","N","F","BMW35T306ps.pdf","","","","Y","No comments","N"
 "2013","Citroen","C6","9/2006 onwards","Turbo-Diesel","2179","4","173","370","19","46","365","N","N","?","C522HDI08on.pdf","","","","Y","No comments","N"
 "2014","Citroen","C8","3/2008 onwards","Turbo-Diesel","2179","4","173","370","19","46","365","N","N","?","C522HDI08on.pdf","","","","Y","No comments","N"
-"2016","Volkswagen","Golf Mk5 2.0 GTI FSI (200PS) STAGE 2","9/2004 - 9/2009","Turbocharged Petrol","1984","4","197","280","62","86","415","Y","N","F","VAG2.0T197bhp Stage2 WM.pdf","","","","Y","No comments","N"
+"2016","Volkswagen","Golf Mk5 2.0 GTI FSI (200PS) STAGE 2","9/2004 - 9/2009","Turbocharged Petrol","1984","4","197","280","62","86","415","Y","N","F","VAG2.0T197bhp Stage2 WM.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;GTi Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat (optional Full Exhaust System).</p>\
+<p>Good quality Cold Air Intake System</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2017","BMW","323 E90","2000 - 2007","Non-Turbo Petrol","2494","6","170","245","12","23","229","N","N","F","","","","","Y","No comments","N"
 "2018","Chevrolet","Captiva 2.0 VCDi","6/2007 onwards","Turbo-Diesel","1991","4","148","320","33","48","320","N","N","?","Captiva2.0VCDi150.pdf","","","","Y","No comments","N"
 "2019","Vauxhall-Opel","Antara 2.0 CDTi","6/2007 onwards","Turbo-Diesel","1991","4","148","320","33","48","320","N","N","?","Antara2.0CDTi.pdf","","","","Y","No comments","N"
-"2020","Volkswagen","Golf Mk5 GTI 2.0T FSI (200PS) STAGE 3","9/2004 - 9/2009","Turbocharged Petrol","1984","4","197","280","94","132","415","Y","N","F","VAG2.0T197bhp Stage3 WM.pdf","","","","Y","No comments","N"
-"2021","Volkswagen","Golf Mk5 GTI 2.0T FSI (200PS) STAGE 4","9/2004 - 9/2009","Turbocharged Petrol","1984","4","197","280","108","149","415","Y","N","F","VAG2.0T197bhp Stage4 WM.pdf","","","","Y","No comments","N"
-"2024","Ford","Focus ST STAGE 2","2005 onwards","Turbocharged Petrol","2522","5","225","320","64","123","0","N","N","?","Focus ST Stage2.pdf","","<p>Stage 2 software is&nbsp;freely available&nbsp;to any ST225 Bluefin customers with&nbsp;the extra parts listed below:</p>\
+"2020","Volkswagen","Golf Mk5 GTI 2.0T FSI (200PS) STAGE 3","9/2004 - 9/2009","Turbocharged Petrol","1984","4","197","280","94","132","415","Y","N","F","VAG2.0T197bhp Stage3 WM.pdf","","\
+							<p>Stage&nbsp;3 software is available&nbsp;to any&nbsp;GTi Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>1.Good quality full exhaust system plus downpipe suitable for K04 Turbo<br />\
+2.K04 Turbo (S3/Edition30/Pirelli) and pipework including dumpvalve (Harness requires modification)<br />\
+3.Fuel injectors from S3/Edition30/Pirelli</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
+"2021","Volkswagen","Golf Mk5 GTI 2.0T FSI (200PS) STAGE 4","9/2004 - 9/2009","Turbocharged Petrol","1984","4","197","280","108","149","415","Y","N","F","VAG2.0T197bhp Stage4 WM.pdf","","\
+							<p>Stage&nbsp;4 software is available&nbsp;to any&nbsp;GTi Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>1.Good quality full exhaust system plus downpipe suitable for K04 Turbo<br />\
+2.K04 Turbo (S3/Edition30/Pirelli) and pipework including dumpvalve (Harness requires modification)<br />\
+3.Fuel injectors from S3/Edition30/Pirelli<br />\
+4.Cams from S3/Edition30/Pirelli</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
+"2024","Ford","Focus ST STAGE 2","2005 onwards","Turbocharged Petrol","2522","5","225","320","64","123","0","N","N","?","Focus ST Stage2.pdf","","\
+							<p>Stage 2 software is&nbsp;freely available&nbsp;to any ST225 Bluefin customers with&nbsp;the extra parts listed below:</p>\
 <p>1.Replacement air intake system<br />\
 2.Good quality replacement Sports-Cat</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
 				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
@@ -1742,8 +1805,11 @@
 \
 \
 				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 5px; opacity: 0\" />\
-				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>","","Y","No comments","N"
-"2025","Ford","Focus ST STAGE 3","2005 onwards","Turbocharged Petrol","2522","5","225","320","90","139","0","N","N","?","Focus ST Stage3.pdf","","<p>Stage&nbsp;3 software is freely available&nbsp;to any ST225 Bluefin customers with&nbsp;the extra parts listed below:</p>\
+				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>\
+				\
+				","","Y","No comments","N"
+"2025","Ford","Focus ST STAGE 3","2005 onwards","Turbocharged Petrol","2522","5","225","320","90","139","0","N","N","?","Focus ST Stage3.pdf","","\
+							<p>Stage&nbsp;3 software is freely available&nbsp;to any ST225 Bluefin customers with&nbsp;the extra parts listed below:</p>\
 <p>1.Replacement air intake system<br />\
 2.Good quality replacement Sports-Cat &amp; full exhaust system including downpipe<br />\
 3.Up-rated intercooler</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
@@ -1753,16 +1819,26 @@
 \
 \
 				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 5px; opacity: 0\" />\
-				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>","","Y","No comments","N"
-"2026","Opel","hall-Opel Astra H VXR STAGE 2","2005 onwards","Turbocharged Petrol","1998","4","236","320","57","88","0","Y","N","F","AstraVXRStage2.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
-<p>&nbsp;</p>","","Y","No comments","N"
-"2027","Opel","hall-Opel Astra H VXR STAGE 3","2005 onwards","Turbocharged Petrol","1998","4","236","320","65","109","0","Y","N","F","AstraVXRStage3.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>","","Y","No comments","N"
-"2028","Opel","hall-Opel Zafira VXR STAGE 2","2005 onwards","Turbocharged Petrol","1998","4","236","320","57","88","0","Y","N","F","ZafiraVXRStage2.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>","","Y","No comments","N"
-"2030","Opel","hall-Opel Zafira VXR STAGE 3","2005 onwards","Turbocharged Petrol","1998","4","236","320","65","109","0","Y","N","F","ZafiraVXRStage3.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>","","Y","No comments","N"
+				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>\
+				\
+				","","Y","No comments","N"
+"2026","Vauxhall-Opel","Astra H VXR STAGE 2","2005 onwards","Turbocharged Petrol","1998","4","236","320","57","88","0","N","N","F","AstraVXRStage2.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+<p>&nbsp;</p>\
+				","","Y","No comments","N"
+"2027","Vauxhall-Opel","Astra H VXR STAGE 3","2005 onwards","Turbocharged Petrol","1998","4","236","320","65","109","0","N","N","F","AstraVXRStage3.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+				","","Y","No comments","N"
+"2028","Vauxhall-Opel","Zafira VXR STAGE 2","2005 onwards","Turbocharged Petrol","1998","4","236","320","57","88","0","N","N","F","ZafiraVXRStage2.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+				","","Y","No comments","N"
+"2030","Vauxhall-Opel","Zafira VXR STAGE 3","2005 onwards","Turbocharged Petrol","1998","4","236","320","65","109","0","N","N","F","ZafiraVXRStage3.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+				","","Y","No comments","N"
 "2031","Mercedes","C Class AMG 63","2008 onwards","Non-Turbo Petrol","6208","8","454","600","24","32","320","N","N","?","E63 AMG.pdf","","","","Y","No comments","N"
 "2032","Mercedes","CLS AMG 63","2008 onwards","Non-Turbo Petrol","6208","8","514","630","25","34","320","N","N","?","","","","","Y","No comments","N"
 "2033","Mercedes","E Class AMG 63","2008 onwards","Non-Turbo Petrol","6208","8","514","630","25","34","320","N","N","?","","","","","Y","No comments","N"
@@ -1779,7 +1855,13 @@
 "2045","Nissan","Qashqai 1.5 8V dCi (106PS) EU4","3/2007 - 9/2010","Turbo-Diesel","1461","4","104","240","22","71","320","Y","N","F","Qashqai 1.5DCi106.pdf","","","","Y","No comments","N"
 "2046","Volvo","XC90 D5","6/2005 onwards","Turbo-Diesel","2401","5","185","400","30","73","365","N","N","?","volvod5185bhp.pdf","","","","Y","No comments","N"
 "2047","Citroen","C8 HDi","2008 onwards","Turbo-Diesel","1997","4","136","320","22","47","320","N","N","?","C420hdi136.pdf","","","","Y","No comments","N"
-"2048","Volkswagen","Golf Mk5 2.0 T Edition 30/Pirelli Stage2","9/2006 - 9/2009","Turbocharged Petrol","1984","4","226","300","74","112","415","Y","N","F","VW Golf Edition30 Stage2.pdf","","","","Y","No comments","N"
+"2048","Volkswagen","Golf Mk5 2.0 T Edition 30/Pirelli Stage2","9/2006 - 9/2009","Turbocharged Petrol","1984","4","226","300","74","112","415","Y","N","F","VW Golf Edition30 Stage2.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;ED30 Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat (optional Full Exhaust System)&#44; filter/induction kit.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2049","BMW","X6 E71 3.0 (D)","3/2008 onwards","Turbo-Diesel","2993","6","235","520","35","80","365","Y","N","F","","","","","Y","No comments","N"
 "2050","Vauxhall-Opel","Corsa Twin Port","3/2005 onwards","Non-Turbo Petrol","1229","4","78","110","6","10","229","N","N","?","Vauxhall12TwinPort.pdf","","","","Y","No comments","N"
 "2051","Vauxhall-Opel","Agila Twin Port","3/2005 onwards","Non-Turbo Petrol","1229","4","78","110","6","10","229","N","N","?","Vauxhall12TwinPort.pdf","","","","Y","No comments","N"
@@ -1805,7 +1887,18 @@
 "2074","Audi","A5 2.7 TDI (190PS)","6/2007 - 9/2009","Turbo-Diesel","2698","6","187","400","36","70","365","Y","N","F","VAG27V6TDi190bhp.pdf","","","","Y","No comments","N"
 "2075","Volkswagen","Tiguan 2.0 TDI CR (140PS)","9/2007 - 9/2009","Turbo-Diesel","1968","4","138","320","33","58","365","Y","N","F","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
 "2076","Fiat","Panda Multijet 4X4","9/2008 onwards","Turbo-Diesel","1248","4","70","145","15","37","320","N","N","?","Fiat1.3Multijet.pdf","","","","Y","No comments","N"
-"2077","Volkswagen","Golf Mk5 2.0 T Edition 30/Pirelli Stage3","9/2006 - 9/2009","Turbocharged Petrol","1984","4","226","300","89","123","415","Y","N","F","VWGolfGTIEdition30 Stage3 WM.pdf","","","","Y","No comments","N"
+"2077","Volkswagen","Golf Mk5 2.0 T Edition 30/Pirelli Stage3","9/2006 - 9/2009","Turbocharged Petrol","1984","4","226","300","89","123","415","Y","N","F","VWGolfGTIEdition30 Stage3 WM.pdf","","\
+							<p>Stage&nbsp;3 software is available&nbsp;to any&nbsp;ED30 Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<ol>\
+    <li>Good quality Replacement Sports-Cat</li>\
+    <li>Optional&#44; full exhaust system</li>\
+    <li>Filter / induction kit</li>\
+    <li>Uprated High Pressure Fuel Pump</li>\
+</ol>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2078","Audi","RS6 5.0 TFSi (579PS)","9/2008 onwards","Turbocharged Petrol","4991","10","571","650","76","119","480","N","N","?","RS6V10TT.pdf","","","","Y","No comments","N"
 "2079","Vauxhall-Opel","Vectra V6 CDTi","2002 - 2006","Turbo-Diesel","2958","6","174","370","36","58","320","N","N","?","Vectra3.0D.pdf","","","","Y","No comments","N"
 "2080","Saab","9-3 Aero","9/2007 - 6/2008","Turbocharged Petrol","2792","6","251","350","46","100","365","N","N","F","Vectra28VXR.pdf","","","","Y","No comments","N"
@@ -1823,7 +1916,7 @@
 "2093","Audi","A3 2.0 TDI CR (170PS)","9/2008 - 2010","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2094","Audi","Q5 2.0 TDI CR (170PS)","9/2008 - 9/2010","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2095","Audi","TT 2.0 TDI Quattro (170PS)","6/2008 - 9/2010","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
-"2096","Volkswagen","Passat 2.0 TDI CR (140PS)","3/2008 - 9/2010","Turbo-Diesel","1968","4","138","320","33","58","365","Y","N","F","VW20TDiCR140PS.pdf","VW Driver Passat CC bluefin.pdf","","","Y","No comments","N"
+"2096","Volkswagen","Passat 2.0 TDI CR (140PS)","3/2008 - 9/2010","Turbo-Diesel","1968","4","138","320","33","58","365","Y","N","F","VW20TDiCR140PS.pdf","VW Driver Passat CC bluefin.pdf","","http://www.youtube.com/v/1YzZgLMfX_o&hl=en&fs=1&","Y","No comments","N"
 "2097","Volkswagen","Passat 2.0 TDI CR (170PS)","3/2008 - 9/2009","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2098","Volkswagen","Tiguan 2.0 TDI CR (170PS)","3/2008 - 2010","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2099","Seat","Altea 2.0 TDI (140PS)","6/2004 onwards","Turbo-Diesel","1968","4","138","320","33","61","365","Y","N","F","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
@@ -1845,12 +1938,52 @@
 "2120","Subaru","Impreza 2.0D","9/2008 onwards","Turbo-Diesel","1998","4","147","350","34","50","365","N","N","?","Legacy20d.pdf","","","","Y","No comments","N"
 "2121","Subaru","Outback 2.0D","3/2008 onwards","Turbo-Diesel","1998","4","147","350","34","50","365","N","N","?","Legacy20d.pdf","","","","Y","No comments","N"
 "2123","Vauxhall-Opel","Astra 1.3 CDTi (90PS)","3/2005 - 9/2010","Turbo-Diesel","1248","4","88","200","13","39","320","N","N","?","Vauxhall1.3CDti 90bhp.pdf","","","","Y","No comments","N"
-"2124","Audi","S3 2.0 TFSI (265PS) Stage 2","9/2006 onwards","Turbocharged Petrol","1984","4","261","350","52","81","415","Y","N","F","AudiS320T Stage2 WM.pdf","","","","Y","No comments","N"
-"2125","Audi","S3 2.0 TFSI (265PS) Stage 3","9/2006 onwards","Turbocharged Petrol","1984","4","261","350","66","93","415","Y","N","F","AudiS320T Stage3 WM.pdf","","","","Y","No comments","N"
-"2126","Seat","Leon Cupra / K1 2.0 T FSI (240PS) Stage 2","9/2006 - 6/2011","Turbocharged Petrol","1984","4","236","300","71","111","415","Y","N","F","Cupra240bhp Stage2.pdf","","","","Y","No comments","N"
-"2127","Seat","Leon Cupra / K1 2.0 T FSI (240PS) Stage 3","9/2006 - 6/2011","Turbocharged Petrol","1984","4","236","300","89","123","415","Y","N","F","Cupra240bhp Stage3 WM.pdf","","","","Y","No comments","N"
+"2124","Audi","S3 2.0 TFSI (265PS) Stage 2","9/2006 onwards","Turbocharged Petrol","1984","4","261","350","52","81","415","Y","N","F","AudiS320T Stage2 WM.pdf","","\
+							<p>&nbsp;Stage 2 software is available&nbsp;to any S3 Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat (optional Full Exhaust System)&#44; filter/induction kit.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
+"2125","Audi","S3 2.0 TFSI (265PS) Stage 3","9/2006 onwards","Turbocharged Petrol","1984","4","261","350","66","93","415","Y","N","F","AudiS320T Stage3 WM.pdf","","\
+							<p>&nbsp;Stage&nbsp;3 software is available&nbsp;to any S3 Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<ol>\
+    <li>Good quality Replacement Sports-Cat</li>\
+    <li>Optional&#44; full exhaust system</li>\
+    <li>Filter / induction kit</li>\
+    <li>Uprated Fuel Pump&nbsp;</li>\
+</ol>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
+"2126","Seat","Leon Cupra / K1 2.0 T FSI (240PS) Stage 2","9/2006 - 6/2011","Turbocharged Petrol","1984","4","236","300","71","111","415","Y","N","F","Cupra240bhp Stage2.pdf","","\
+							<p>&nbsp;Stage 2 software is available&nbsp;to any Cupra 236bhp Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat (optional Full Exhaust System)&#44; filter/induction kit.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
+"2127","Seat","Leon Cupra / K1 2.0 T FSI (240PS) Stage 3","9/2006 - 6/2011","Turbocharged Petrol","1984","4","236","300","89","123","415","Y","N","F","Cupra240bhp Stage3 WM.pdf","","\
+							<p>&nbsp;Stage&nbsp;3 software is available&nbsp;to any Cupra 236bhp Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<ol>\
+    <li>Good quality Replacement Sports-Cat</li>\
+    <li>Optional&#44; full exhaust system</li>\
+    <li>Filter / induction kit</li>\
+    <li>Uprated Fuel Pump&nbsp;</li>\
+</ol>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2128","Vauxhall-Opel","Vivaro 2.5 CDTi (146PS) Euro4","9/2006 - 9/2012","Turbo-Diesel","2464","4","144","320","37","82","320","Y","N","F","","","","","Y","No comments","N"
-"2129","Skoda","Octavia vRS 2.0T (200PS) STAGE 2","9/2005 onwards","Turbocharged Petrol","1984","4","197","280","62","86","415","Y","N","F","VAG2.0T197bhp Stage2 WM.pdf","","","","Y","No comments","N"
+"2129","Skoda","Octavia vRS 2.0T (200PS) STAGE 2","9/2005 onwards","Turbocharged Petrol","1984","4","197","280","62","86","415","Y","N","F","VAG2.0T197bhp Stage2 WM.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;Octavia 2.0 T customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat (optional Full Exhaust System).</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2130","Vauxhall-Opel","Astra H 1.6 VVT","3/2007 onwards","Non-Turbo Petrol","1598","4","115","155","7","14","229","N","N","?","Astra16VVT.pdf","","","","Y","No comments","N"
 "2131","Audi","A6 2.0 TDI CR (170PS)","9/2008 - 6/2011","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2132","Audi","A4 1.8T FSI (160PS)","3/2008 - 9/2011","Turbocharged Petrol","1798","4","157","250","47","98","365","Y","N","F","VAG 1.8 TSi 160.pdf","","","","Y","No comments","N"
@@ -1887,7 +2020,8 @@
 "2168","Vauxhall-Opel","Vectra VXR (280PS)","6/2006 - 9/2008","Turbocharged Petrol","2792","6","276","355","25","100","320","Y","N","F","","","","","Y","No comments","N"
 "2169","Hyundai","i800 CRDi (170PS)","6/2008 onwards","Turbo-Diesel","2497","4","168","392","31","77","320","N","N","?","i800170ps.pdf","","","","Y","No comments","N"
 "2170","Saab","9-5 TiD (150PS)","9/2005 onwards","Turbo-Diesel","1910","4","147","320","31","66","365","N","N","F","Saab19TiD150.pdf","","","","Y","No comments","N"
-"2171","Ford","Focus RS MK2 STAGE2","3/2009 onwards","Turbocharged Petrol","2522","5","300","440","59","75","0","N","N","?","FocusMk2RS Stage2.pdf","","<p>Stage&nbsp;2 software freely is available&nbsp;to any&nbsp;RS MK2&nbsp;Bluefin customers with&nbsp;an <strong>Uprated Intercooler</strong>. The development vehicles had the extra parts listed below:</p>\
+"2171","Ford","Focus RS MK2 STAGE2","3/2009 onwards","Turbocharged Petrol","2522","5","300","440","59","75","0","N","N","?","FocusMk2RS Stage2.pdf","","\
+							<p>Stage&nbsp;2 software freely is available&nbsp;to any&nbsp;RS MK2&nbsp;Bluefin customers with&nbsp;an <strong>Uprated Intercooler</strong>. The development vehicles had the extra parts listed below:</p>\
 <p>1.Replacement air intake system<br />\
 2.Good quality replacement Sports-Cat &amp; full exhaust system including downpipe<br />\
 3.Up-rated intercooler</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
@@ -1897,18 +2031,46 @@
 \
 \
 				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 5px; opacity: 0\" />\
-				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>","","Y","No comments","N"
-"2172","Ford","Focus RS MK2 STAGE3 (385bhp)","3/2009 onwards","Turbocharged Petrol","2522","5","300","440","89","94","415","Y","N","F","FocusMK2RS Stage3 SCC.pdf","","","","Y","No comments","N"
+				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>\
+				\
+				","","Y","No comments","N"
+"2172","Ford","Focus RS MK2 STAGE3 (385bhp)","3/2009 onwards","Turbocharged Petrol","2522","5","300","440","89","94","415","Y","N","F","FocusMK2RS Stage3 SCC.pdf","","\
+							<p>Stage&nbsp;3 software is available&nbsp;to any&nbsp;RS MK2&nbsp;Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>1.Milltek Sport - turbo back exhaust system with Sport CAT (road legal) *Option for De-CAT also available<br />\
+2.Pro Alloy WRC Spec alloy intercooler<br />\
+3.Bosch 550cc injectors<br />\
+4.GGR Carbon Fibre Cold Air Induction system</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2173","BMW","125 E87","3/2008 onwards","Non-Turbo Petrol","2996","6","214","270","12","23","229","N","N","?","","","","","Y","No comments","N"
 "2174","Seat","Exeo 2.0 TDI CR (143PS)","3/2009 onwards","Turbo-Diesel","1968","4","140","320","33","61","365","Y","N","F","VAG20TDICR143PS.pdf","","","","Y","No comments","N"
 "2175","Ford","Fiesta 1.6 TDCi (MK VII) 90PS","9/2008 onwards","Turbo-Diesel","1560","4","88","204","23","36","320","N","N","?","FiestaMk71.6TDCi.pdf","","","","Y","No comments","N"
 "2176","Mitsubishi","Lancer 2.0 DI-D","3/2008 onwards","Turbo-Diesel","1968","4","138","310","37","59","365","N","N","?","Lancer2.0DiD.pdf","","","","Y","No comments","N"
 "2177","Chrysler","Sebring 2.0 CRD","6/2007 onwards","Turbo-Diesel","1968","4","138","310","37","75","365","N","N","?","","","","","Y","No comments","N"
-"2178","Volkswagen","Golf Mk6 GTI 2.0 TSI  (210PS) STAGE2","3/2009 onwards","Turbocharged Petrol","1984","4","207","280","75","153","415","Y","N","F","GolfMk6GTi Stage2.pdf","","","","Y","No comments","N"
-"2179","Volkswagen","Scirocco 2.0 TSI (200PS) STAGE 2","9/2008 - 2010","Turbocharged Petrol","1984","4","197","280","61","116","415","Y","N","F","Scirocco20Tsi Stage2.pdf","","","","Y","No comments","N"
+"2178","Volkswagen","Golf Mk6 GTI 2.0 TSI  (210PS) STAGE2","3/2009 onwards","Turbocharged Petrol","1984","4","207","280","75","153","415","Y","N","F","GolfMk6GTi Stage2.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;MK 6 GTi Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat.</p>\
+<p>CAT back exhaust (Full Exhaust System optional).</p>\
+<p>Good quality Cold Air Intake System</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
+"2179","Volkswagen","Scirocco 2.0 TSI (200PS) STAGE 2","9/2008 - 2010","Turbocharged Petrol","1984","4","197","280","61","116","415","Y","N","F","Scirocco20Tsi Stage2.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;Scirocco TSi&nbsp;Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat (optional Full Exhaust System).</p>\
+<p>Good quality Cold Air Intake System</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2181","Honda","FR-V iCDTi","9/2005 - 6/2009","Turbo-Diesel","2204","4","138","340","28","73","320","N","N","?","accordicdti.pdf","","","","Y","No comments","N"
-"2182","Opel","hall-Opel Corsa VXR 1.6T (192PS) EURO4 STAGE 2","3/2007 - 9/2010","Turbocharged Petrol","1598","4","189","230","51","94","0","Y","N","F","CorsaVXR Stage2.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>","","Y","No comments","N"
+"2182","Vauxhall-Opel","Corsa VXR 1.6T (192PS) EURO4 STAGE 2","3/2007 - 9/2010","Turbocharged Petrol","1598","4","189","230","51","94","0","N","N","F","CorsaVXR Stage2.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+				","","Y","No comments","N"
 "2184","Skoda","Yeti 2.0 TDI CR (140PS)","3/2009 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
 "2185","Alfa Romeo","Brera JTD M","2007 onwards","Turbo-Diesel","2387","5","200","400","26","70","320","N","N","?","Alfa24JTD200.pdf","","","","Y","No comments","N"
 "2186","BMW","Alpina D3 Bi-Turbo (E90/1/2)","up to 9/2009","Turbo-Diesel","1995","4","214","450","32","42","365","Y","N","F","2009AlpinaD3.pdf","","","","Y","No comments","N"
@@ -1942,7 +2104,7 @@
 "2220","Vauxhall-Opel","Insignia VXR","9/2009 onwards","Turbocharged Petrol","2792","6","325","435","54","104","365","Y","N","F","InsigniaVXR.pdf","","","","Y","No comments","N"
 "2221","BMW","Z4 Roadster 35i E89 (306PS)","3/2009 onwards","Turbocharged Petrol","2979","6","302","400","49","79","365","N","N","?","BMW35T306ps.pdf","","","","Y","No comments","N"
 "2222","Audi","S6 V8","9/1999 - 9/2004","Non-Turbo Petrol","4172","8","335","420","15","27","320","N","N","?","","","","","Y","No comments","N"
-"2224","LTI","TX4","9/2006 onwards","Turbo-Diesel","2499","4","101","240","27","88","365","N","N","?","LTI TX4 Taxi.pdf","","","","Y","No comments","N"
+"2224","LTI","TX4","9/2006 onwards","Turbo-Diesel","2499","4","101","240","27","88","365","N","N","?","LTI TX4 Taxi.pdf","","","http://www.youtube.com/v/DvVgwJ3o-vg&hl=en&fs=1&","Y","No comments","N"
 "2225","Vauxhall-Opel","Insignia 2.0T Ecotec","9/2008 - 2011","Turbocharged Petrol","1998","4","220","350","45","71","320","Y","N","F","Insignia2.0T.pdf","","","","Y","No comments","N"
 "2226","Volkswagen","Golf Mk6 R 2.0 TSI 4MOTION (270PS)","3/2010 onwards","Turbocharged Petrol","1984","4","266","350","39","55","365","Y","N","F","2010Mk6GolfR.pdf","","","","Y","No comments","N"
 "2227","KTM","X-Bow 2.0 TFSi (240PS)","9/2009 onwards","Turbocharged Petrol","1984","4","236","310","32","47","365","N","N","?","KTM X-bow clubsport.pdf","","","","Y","No comments","N"
@@ -1962,7 +2124,7 @@
 "2241","Land Rover","Range Rover Sport 3.0 TDV6 (245HP)","9/2009 onwards","Turbo-Diesel","2993","6","241","600","30","67","365","E","N","B","RR30TDV6.pdf","","","","Y","No comments","N"
 "2242","Mercedes","Viano 2.8 CDI","3/2006 onwards","Turbo-Diesel","2987","6","201","440","46","84","365","N","N","F","","","","","Y","No comments","N"
 "2243","BMW","330 E90/1/2/3 (D) (245PS)","9/2008 onwards","Turbo-Diesel","2993","6","241","520","44","90","365","N","N","B","BMW30d245ps.pdf","","","","Y","No comments","N"
-"2245","BMW","730 F01","","Turbo-Diesel","2993","6","241","540","44","90","365","N","N","?","BMW30d245ps.pdf","","","","Y","No comments","N"
+"2245","BMW","730 d/Ld F01/02 (245HP)","9/2008 onwards","Turbo-Diesel","2993","6","242","540","44","107","449","N","Y","?","BMWF10530dEPC.pdf","","","","Y","No comments","N"
 "2246","BMW","X5 E70","3/2010 onwards","Turbo-Diesel","2993","6","241","540","44","90","365","N","N","?","BMW30d245ps.pdf","","","","Y","No comments","N"
 "2247","BMW","X6 E71 / 72","3/2010 onwards","Turbo-Diesel","2993","6","241","540","44","90","365","N","N","?","BMW30d245ps.pdf","","","","Y","No comments","N"
 "2248","Mercedes","E Class 350 CDI BlueEFFICIENCY","6/2009 onwards","Turbo-Diesel","2987","6","231","540","34","80","365","N","N","?","E350CDi2010.pdf","","","","Y","No comments","N"
@@ -1991,7 +2153,7 @@
 "2283","Ford","Transit Connect Duratorq TDCi (110PS)","2007 onwards","Turbo-Diesel","1753","4","110","280","27","59","320","Y","N","F","","","","","Y","No comments","N"
 "2284","Hyundai","i30 1.6 CRDi (6 Speed)","6/2009 onwards","Turbo-Diesel","1582","4","113","260","27","59","320","N","N","?","i3016CRDi2009on.pdf","","","","Y","No comments","N"
 "2285","Hyundai","ix35 2.0 CRDi","3/2010 onwards","Turbo-Diesel","1995","4","134","320","25","52","365","N","N","?","i3520CRDi.pdf","","","","Y","No comments","N"
-"2287","Porsche","Cayenne Diesel (240PS)","3/2010 onwards","Turbo-Diesel","2967","6","236","550","47","82","365","N","N","?","Cayenne30D.pdf","","","","Y","No comments","N"
+"2287","Porsche","Cayenne Diesel (240PS)","3/2009 onwards","Turbo-Diesel","2967","6","236","550","47","82","365","N","N","?","Cayenne30D.pdf","","","","Y","No comments","N"
 "2288","Audi","Q7 6.0 V12 TDI (500PS)","9/2008 onwards","Turbo-Diesel","5934","12","493","1000","48","145","480","N","N","?","","","","","Y","No comments","N"
 "2289","SsangYong","Actyon 2.0XDCi Sport (141PS)","","Turbo-Diesel","1998","4","139","310","30","65","365","N","N","?","","","","","Y","No comments","N"
 "2290","SsangYong","Rexton 270 Xdi","2003 onwards","Turbo-Diesel","2696","5","162","340","34","71","365","N","N","?","","","","","Y","No comments","N"
@@ -2001,14 +2163,26 @@
 "2296","Alfa Romeo","145/146 TSdfdsfdsf","1994 - 1997","Non-Turbo Petrol","1596","4","103","134","5","0","320","N","N","?","","","","","Y","No comments","N"
 "2297","Alfa Romeo","145/146 TS","1994 - 1997","Non-Turbo Petrol","1596","4","103","134","5","0","320","N","N","?","","","","","Y","No comments","N"
 "2298","Alfa Romeo","145/146 TSdfdsfdsf","1994 - 1997","Non-Turbo Petrol","1596","4","103","134","5","0","320","N","N","?","","","","","Y","No comments","N"
-"2301","Renault","Megane 2.0 T 16V Renaultsport 250","2009 onwards","Turbocharged Petrol","1998","4","246","340","49","66","365","Y","N","F","MeganeRS250.pdf","MeganeRS250.pdf","","","Y","No comments","N"
+"2301","Renault","Megane 2.0 T 16V Renaultsport 250","2009 onwards","Turbocharged Petrol","1998","4","246","340","49","66","365","Y","N","F","MeganeRS250.pdf","MeganeRS250.pdf","","http://www.youtube.com/v/DqNNU0Frfck&hl=en&fs=1&","Y","No comments","N"
 "2302","Vauxhall-Opel","Astra J 1.6i 16v (180PS)","9/2009 onwards","Turbocharged Petrol","1598","4","177","230","17","32","320","Y","N","F","Astra J 1.6T 180PS.pdf","","","","Y","No comments","N"
-"2303","Ford","Fiesta Mk7 1.6 16v Ti-VCT (120PS)","9/2008 onwards","Non-Turbo Petrol","1598","4","118","152","13","16","229","Y","N","F","1.6 Duratec 16v Ti-VCT 120PS.pdf","","","","Y","No comments","N"
+"2303","Ford","Fiesta Mk7 1.6 16v Ti-VCT (120PS)","9/2008 onwards","Non-Turbo Petrol","1598","4","118","152","13","16","229","Y","N","F","1.6 Duratec 16v Ti-VCT 120PS.pdf","","\
+							<p>Before purchasing a Bluefin please check your ECU type&#44; it is clearly visible in the engine bay next to the battery. Bluefin supports EMS2103&#44; it does not support EMS2205 currently&#44; the sticker on the ECU displays this. If you are unsure or require some help please contact us.</p>\
+				","","Y","No comments","N"
 "2304","Ford","C-Max TDCi (115PS)","6/2005 - 6/2010","Turbo-Diesel","1798","4","113","280","20","40","320","Y","N","F","","","","","Y","No comments","N"
 "2305","Ford","Fiesta MK6.5 1.25","2005 onwards","Non-Turbo Petrol","1242","4","73","110","6","10","229","Y","N","F","FiestaMk61.25.pdf","","","","Y","No comments","N"
 "2306","Ford","Focus RS MK2 MP350 (350PS)","6/2010 onwards","Turbocharged Petrol","2522","5","345","460","53","89","365","Y","N","F","FocusMk2 RS500 & MP350.pdf","","","","Y","No comments","N"
 "2307","Ford","Focus RS MK2 RS500 (350PS)","6/2010 onwards","Turbocharged Petrol","2522","5","345","460","53","89","365","Y","N","F","FocusMk2 RS500 & MP350.pdf","","","","Y","No comments","N"
-"2308","Ford","Focus RS MK2 STAGE4 (400bhp)","3/2009 onwards","Turbocharged Petrol","2522","5","300","440","118","105","465","Y","N","F","FocusRSMk2SCC400S.pdf","","","","Y","No comments","N"
+"2308","Ford","Focus RS MK2 STAGE4 (400bhp)","3/2009 onwards","Turbocharged Petrol","2522","5","300","440","118","105","465","Y","N","F","FocusRSMk2SCC400S.pdf","","\
+							<p>Stage&nbsp;4 software is available&nbsp;to any&nbsp;RS MK2&nbsp;Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>1.Milltek Sport - turbo back exhaust system with Sport CAT (road legal) *Option for De-CAT also available<br />\
+2.Pro Alloy WRC Spec alloy intercooler<br />\
+3.Bosch 550cc injectors &amp; High pressure fuel pump<br />\
+4.GGR Carbon Fibre Cold Air Induction system</p>\
+<p>&nbsp;</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
+\
+				\
+				","","Y","No comments","N"
 "2309","Ford","Galaxy 2.0 TDCi (163PS)","3/2010 onwards","Turbo-Diesel","1997","4","160","340","22","89","320","Y","N","F","2.0 TDCI 163PS.pdf","","","","Y","No comments","N"
 "2310","Ford","Kuga 2.0 TDCi (163PS)","6/2010 onwards","Turbo-Diesel","1997","4","160","340","22","89","320","Y","N","F","2.0 TDCI 163PS.pdf","","","","Y","No comments","N"
 "2311","Ford","Mondeo 2.0 TDCi (115PS)","3/2010 onwards","Turbo-Diesel","1997","4","113","300","47","96","320","Y","N","F","Ford 2.0TDCi 115ps After March 2010 (Nm).pdf","","","","Y","No comments","N"
@@ -2029,11 +2203,11 @@
 "2326","Renault","Koleos 2.0 dCi (150PS)","6/2008 - 9/2010","Turbo-Diesel","1995","4","147","320","23","50","320","N","N","?","Renault2.0dCi150PS.pdf","","","","Y","No comments","N"
 "2327","Renault","Megane 2.0 dCi (150PS)","6/2009 - 3/2011","Turbo-Diesel","1995","4","147","360","23","50","320","N","N","?","Renault2.0dCi150PS.pdf","","","","Y","No comments","N"
 "2328","Renault","Scenic 2.0 dCi (150PS)","9/2006 - 3/2010","Turbo-Diesel","1995","4","147","340","23","50","320","N","N","?","Renault2.0dCi150PS.pdf","","","","Y","No comments","N"
-"2329","Volkswagen","Transporter 2.0 TDI CR (140PS)","2010 onwards","Turbo-Diesel","1968","4","138","340","32","101","365","E","N","B","Transporter201020TDi140ps.pdf","","","","Y","No comments","N"
-"2330","Volkswagen","Transporter 2.0 TDI CR (102PS)","2010 onwards","Turbo-Diesel","1968","4","101","250","65","122","365","E","N","B","Transporter201020TDi102ps.pdf","","","","Y","No comments","N"
-"2331","Ford","S-Max 2.0 EcoBoost (203PS)","3/2010 onwards","Turbocharged Petrol","1999","4","200","300","40","67","365","Y","N","F","FordEcoboost2.0203ps.pdf","","","","Y","No comments","N"
+"2329","Volkswagen","Transporter 2.0 TDI CR (140PS)","2010 onwards","Turbo-Diesel","1968","4","138","340","32","101","365","E","N","B","Transporter201020TDi140ps.pdf","How to re-map.pdf","","","Y","No comments","N"
+"2330","Volkswagen","Transporter 2.0 TDI CR (102PS)","2010 onwards","Turbo-Diesel","1968","4","101","250","65","122","365","E","N","B","Transporter201020TDi102ps.pdf","How to re-map.pdf","","","Y","No comments","N"
+"2331","Ford","S-Max 2.0 EcoBoost (203PS)","3/2010 onwards","Turbocharged Petrol","1999","4","200","300","40","67","365","Y","N","F","FordEcoboost2.0203ps.pdf","","","http://www.youtube.com/v/yE-unoGgtEo&hl=en&fs=1&","Y","No comments","N"
 "2332","Ford","Mondeo 2.0 EcoBoost (203PS)","3/2010 onwards","Turbocharged Petrol","1999","4","200","300","40","67","365","Y","N","F","FordEcoboost2.0203ps.pdf","","","","Y","No comments","N"
-"2333","Ford","Galaxy 2.0 EcoBoost (203PS)","3/2010 onwards","Turbocharged Petrol","1999","4","200","300","40","67","365","Y","N","F","FordEcoboost2.0203ps.pdf","","","","Y","No comments","N"
+"2333","Ford","Galaxy 2.0 EcoBoost (203PS)","3/2010 onwards","Turbocharged Petrol","1999","4","200","300","40","67","365","Y","N","F","FordEcoboost2.0203ps.pdf","","","http://www.youtube.com/v/yE-unoGgtEo&hl=en&fs=1&","Y","No comments","N"
 "2334","Honda","CR-V 2.2 i-DTEC (150PS)","up to 9/2012","Turbo-Diesel","2199","4","147","350","29","51","365","N","N","?","HondaCR-V2.2 i-DTEC150PS.pdf","","","","Y","No comments","N"
 "2335","Honda","Accord 2.2 i-DTEC (150PS)","up to 9/2012","Turbo-Diesel","2199","4","147","350","29","51","365","N","N","?","HondaCR-V2.2 i-DTEC150PS.pdf","","","","Y","No comments","N"
 "2336","Vauxhall-Opel","Insignia 2.0 CDTi (160PS)","2009 - 9/2010","Turbo-Diesel","1956","4","157","350","28","52","365","N","N","?","Vauxhall Insignia CDTi 160PS.pdf","","","","Y","No comments","N"
@@ -2042,7 +2216,7 @@
 "2341","Chevrolet","Cruze 2.0 VCDi","6/2009 - 3/2011","Turbo-Diesel","1991","4","147","320","33","48","365","N","N","?","Captiva2.0VCDi150.pdf","","","","Y","No comments","N"
 "2342","Porsche","911 997 (480PS)","6/2006 - 2009","Turbocharged Petrol","3600","6","473","680","61","84","480","N","N","?","997Turbo.pdf","","","","Y","No comments","N"
 "2344","Citroen","DS3 Racing 1.6THP","2011 - 3/2011","Turbocharged Petrol","1598","4","207","275","26","46","365","N","N","?","DS3 Racing.pdf","","","","Y","No comments","N"
-"2345","Audi","A1 1.4 TFSI (122PS)","9/2010 onwards","Turbocharged Petrol","1390","4","120","200","26","28","365","E","N","B","VAG 1.4TFSi 122PS 2010 on.pdf","LOW1Audi Driver Superchips A1.pdf","","","Y","No comments","N"
+"2345","Audi","A1 1.4 TFSI (122PS)","9/2010 onwards","Turbocharged Petrol","1390","4","120","200","26","28","365","E","N","B","VAG 1.4TFSi 122PS 2010 on.pdf","LOW1Audi Driver Superchips A1.pdf","","http://www.youtube.com/v/pVkEbGmr4lw&hl=en&fs=1&","Y","No comments","N"
 "2346","Skoda","Octavia 1.4 TFSI (122PS)","9/2008 onwards","Turbocharged Petrol","1390","4","120","200","33","39","365","Y","N","F","VAG14TFSi122.pdf","","","","Y","No comments","N"
 "2347","Hyundai","Santa Fe 2.2 CRDi (194bhp)","2012 onwards","Turbo-Diesel","2199","4","194","436","41","80","365","N","N","?","Santa Fe 2.2 CRDi 194bhp.pdf","","","","Y","No comments","N"
 "2348","Audi","Q7 4.2 V8 TDI (340PS)","6/2009 onwards","Turbo-Diesel","4134","8","335","760","45","116","480","N","N","?","","","","","Y","No comments","N"
@@ -2066,7 +2240,7 @@
 "2367","Vauxhall-Opel","Astra J 2.0 CDTi (160PS)","9/2010 - 6/2011","Turbo-Diesel","1956","4","157","350","25","73","320","N","N","?","Astra J 20CDTI 160ps.pdf","","","","Y","No comments","N"
 "2368","BMW","325 E90/1/2/3 325d (204PS)","3/2010 onwards","Turbo-Diesel","2993","6","201","430","68","136","365","N","N","?","325d204ps2010on.pdf","","","","Y","No comments","N"
 "2369","Renault","Megane III 1.5 8V dCi (110PS) FAP","2009 onwards","Turbo-Diesel","1461","4","108","240","20","37","320","Y","N","F","1.5 dCi 110bhp.pdf","","","","Y","No comments","N"
-"2370","Renault","Clio Renaultsport (200PS)","6/2009 onwards","Non-Turbo Petrol","1998","4","197","215","12","16","229","Y","N","F","Clio Renaultsport 200.pdf","","","","Y","No comments","N"
+"2370","Renault","Clio Renaultsport (200PS)","6/2009 onwards","Non-Turbo Petrol","1998","4","197","215","12","16","229","Y","N","F","Clio Renaultsport 200.pdf","","","http://www.youtube.com/v/JsKIMZeqyOk&hl=en&fs=1&","Y","No comments","N"
 "2371","Citroen","C3 1.6 HDi 8V (90PS) E5","6/2010 onwards","Turbo-Diesel","1560","4","89","230","24","46","365","N","N","?","PSA 1.6 HDi 90ps.pdf","","","","Y","No comments","N"
 "2372","Renault","Megane 2.0 TCe (180PS)","2009 onwards","Turbocharged Petrol","1998","4","177","300","40","67","365","Y","N","F","Megane 2.0TCe.pdf","","","","Y","No comments","N"
 "2373","LTI","TXII 2.4 (90PS)","3/2002 - 2006","Turbo-Diesel","2402","4","88","200","31","55","320","Y","N","F","","","","","Y","No comments","N"
@@ -2079,7 +2253,7 @@
 "2382","Renault","Master III 2.3 dCi (100PS)","3/2010 onwards","Turbo-Diesel","2298","4","99","285","33","74","365","N","N","?","","","","","Y","No comments","N"
 "2383","Renault","Master III 2.3 dCi (125PS)","3/2010 onwards","Turbo-Diesel","2298","3","124","310","39","100","365","N","N","?","Master23dci125PS.pdf","","","","Y","No comments","N"
 "2384","Renault","Master III 2.3 dCi (150PS)","3/2010 onwards","Turbo-Diesel","2298","4","148","350","31","59","365","N","N","?","","","","","Y","No comments","N"
-"2385","Ford","Fiesta 1.6 TDCi (MK VII) 95PS","3/2010 onwards","Turbo-Diesel","1560","4","93","200","26","48","320","N","N","?","Fiesta16TDCi95ps.pdf","","","","Y","No comments","N"
+"2385","Ford","Fiesta MK VII 1.6 TDCi (95PS) EU5","3/2010 - 9/2012","Turbo-Diesel","1560","4","93","205","26","48","320","Y","N","F","Fiesta16TDCi95ps.pdf","","","","Y","No comments","N"
 "2386","Vauxhall-Opel","Corsa 1.3 CDTi (95PS) Euro5","3/2010 onwards","Turbo-Diesel","1248","4","94","210","26","50","320","N","N","?","","","","","Y","No comments","N"
 "2387","Peugeot","Boxer 2.2 HDi (100PS)","2006 onwards","Turbo-Diesel","2198","4","99","250","28","48","320","N","N","?","","","","","Y","No comments","N"
 "2388","Fiat","Ducato 2.2 Multijet (100PS)","9/2006 onwards","Turbo-Diesel","2198","4","99","250","28","48","320","N","N","?","","","","","Y","No comments","N"
@@ -2116,7 +2290,7 @@
 "2421","Ford","Mondeo 2.2 Duratorq TDCi (200PS)","3/2011 onwards","Turbo-Diesel","2179","4","197","420","30","85","365","Y","N","F","22tdci200psNEW.pdf","","","","Y","No comments","N"
 "2422","Ford","S-Max 2.2 Duratorq TDCi (200PS)","9/2010 onwards","Turbo-Diesel","2179","4","197","420","30","85","365","Y","N","F","22tdci200psNEW.pdf","","","","Y","No comments","N"
 "2423","BMW","X5 xDrive40d (306hp)","3/2010 onwards","Turbo-Diesel","2993","6","301","600","51","104","365","N","N","?","xDrive40d.pdf","","","","Y","No comments","N"
-"2424","BMW","740 F01 d (306hp)","9/2011 onwards","Turbo-Diesel","2993","6","301","600","51","104","365","N","N","?","xDrive40d.pdf","","","","Y","No comments","N"
+"2424","BMW","740 F01 d (306hp)","9/2009 - 2012","Turbo-Diesel","2993","6","301","600","51","104","365","N","N","?","xDrive40d.pdf","","","","Y","No comments","N"
 "2425","BMW","X6 xDrive40d (306hp)","3/2010 onwards","Turbo-Diesel","2993","6","301","600","51","104","365","N","N","?","xDrive40d.pdf","","","","Y","No comments","N"
 "2426","Volkswagen","Amarok 2.0 BiTDI (163PS)","2010 onwards","Turbo-Diesel","1968","4","161","400","26","67","365","E","N","B","Amarok 163ps BiTurbo.pdf","","","","Y","No comments","N"
 "2427","Jaguar","XF 3.0d V6 (240PS)","3/2009 onwards","Turbo-Diesel","2993","6","236","500","40","84","365","E","N","B","XF 30d V6.pdf","","","","Y","No comments","N"
@@ -2168,7 +2342,7 @@
 "2480","BMW","120 E81/2/7/8 (D)","9/2009 - 9/2012","Turbo-Diesel","1995","4","177","350","44","103","365","E","N","B","BMW20D177bhp.pdf","","","","Y","No comments","N"
 "2481","BMW","123 E87 (D)","9/2009 onwards","Turbo-Diesel","1995","4","204","400","50","92","365","E","N","B","BMW20D204bhp.pdf","","","","Y","No comments","N"
 "2482","BMW","318 E90 (D)","9/2009 onwards","Turbo-Diesel","1995","4","143","300","42","80","365","N","N","?","BMW20D143bhp.pdf","","","","Y","No comments","N"
-"2483","BMW","320 E90/1/2/3","9/2007 - 9/2009","Turbo-Diesel","1995","4","177","345","44","103","365","Y","N","F","BMW20D177bhp.pdf","","","","Y","No comments","N"
+"2483","BMW","320 E90/1/2/3","9/2007 - 9/2009","Turbo-Diesel","1995","4","177","345","44","103","365","Y","N","F","BMW20D177bhp.pdf","","","http://www.youtube.com/v/VL90l6zw2MQ&hl=en&fs=1&","Y","No comments","N"
 "2484","BMW","520 E60/1 (D)","9/2007 - 9/2009","Turbo-Diesel","1995","4","177","345","44","103","365","Y","N","F","BMW20D177bhp.pdf","BMWCC P43.pdf","","","Y","No comments","N"
 "2485","BMW","Alpina D3 Bi-Turbo (E90/1/2)","9/2009 onwards","Turbo-Diesel","1995","4","214","450","32","42","365","N","N","?","2009AlpinaD3.pdf","","","","Y","No comments","N"
 "2486","BMW","X3 E83 18d","9/2009 - 2011","Turbo-Diesel","1995","4","140","350","42","80","365","N","N","?","BMW20D143bhp.pdf","","","","Y","No comments","N"
@@ -2179,7 +2353,12 @@
 "2492","Volkswagen","EOS 2.0 TDI CR (140PS) Euro5","9/2009 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
 "2493","Volkswagen","Golf Mk6 2.0 TDI CR (140PS)","2010 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","VW20TDiCR140PS.pdf","Car - Passat 2.0 TDI 140 CR.pdf","","","Y","No comments","N"
 "2494","Vauxhall-Opel","Astra J 1.6i 16v GTC (180PS)","6/2011 onwards","Turbocharged Petrol","1598","4","177","230","20","40","320","Y","N","F","Astra J GTC 16T.pdf","","","","Y","No comments","N"
-"2495","Volkswagen","Scirocco GT 2.0 TSI (210PS) STAGE2","9/2009 onwards","Turbocharged Petrol","1984","4","207","280","75","153","415","Y","N","F","GolfMk6GTi Stage2.pdf","","","","Y","No comments","N"
+"2495","Volkswagen","Scirocco GT 2.0 TSI (210PS) STAGE2","9/2009 onwards","Turbocharged Petrol","1984","4","207","280","75","153","415","Y","N","F","GolfMk6GTi Stage2.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;Scirocco GTi Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat.</p>\
+<p>CAT back exhaust (Full Exhaust System optional).</p>\
+<p>Good quality Cold Air Intake System</p>\
+				","","Y","No comments","N"
 "2496","Volkswagen","Golf Plus 2.0 TDI CR (140PS)","2010 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","N","N","?","VW20TDiCR140PS.pdf","Car - Passat 2.0 TDI 140 CR.pdf","","","Y","No comments","N"
 "2497","Volkswagen","Jetta 2.0 TDI PD (170PS)","6/2006 - 2009","Turbo-Diesel","1968","4","170","350","27","77","365","Y","N","F","vag20tdi170.pdf","","","","Y","No comments","N"
 "2498","Fiat","Bravo 1.6 D Multijet 16V (105PS)","3/2008 onwards","Turbo-Diesel","1598","4","105","290","20","46","320","N","N","?","Fiat 1.6 multijet 105ps.pdf","","","","Y","No comments","N"
@@ -2189,26 +2368,37 @@
 "2502","Volkswagen","Scirocco 2.0 TDI CR (140PS)","2010 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
 "2503","Volkswagen","Tiguan 2.0 TDI CR (140PS)","9/2009 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
 "2504","Volkswagen","Tiguan 2.0 TDI CR (170PS)","2011 onwards","Turbo-Diesel","1968","4","167","350","28","59","365","E","N","B","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
-"2505","Volkswagen","EOS 2.0 TSI (210PS) STAGE2","9/2009 onwards","Turbocharged Petrol","1984","4","207","280","75","153","415","Y","N","F","GolfMk6GTi Stage2.pdf","","","","Y","No comments","N"
+"2505","Volkswagen","EOS 2.0 TSI (210PS) STAGE2","9/2009 onwards","Turbocharged Petrol","1984","4","207","280","75","153","415","Y","N","F","GolfMk6GTi Stage2.pdf","","\
+							<p>Stage 2 software is available&nbsp;to any&nbsp;EOS TSI 210PS&nbsp;Bluefin customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat.</p>\
+<p>CAT back exhaust (Full Exhaust System optional).</p>\
+<p>Good quality Cold Air Intake System</p>\
+				","","Y","No comments","N"
 "2506","Vauxhall-Opel","Astra H 1.6 16V Twin Port","3/2004 - 2010","Non-Turbo Petrol","1598","4","105","150","8","20","229","N","N","?","Zafira 16i 105.pdf","","","","Y","No comments","N"
 "2507","Mercedes","CLS 320 CDI (W219)","3/2008 - 6/2009","Turbo-Diesel","2987","6","224","540","39","75","365","Y","N","F","CLS320CDI 04 08on.pdf","","","","Y","No comments","N"
 "2508","Mercedes","CLS CLS 350 CDI (W219)","3/2009 - 9/2010","Turbo-Diesel","2987","6","224","540","39","75","365","Y","N","F","CLS320CDI 04 08on.pdf","","","","Y","No comments","N"
-"2509","Mini","Cooper S MK 1 (R52/R53) Stage2","6/2004 - 9/2008","Supercharged","1598","4","170","220","44","61","0","N","N","?","","","<p>Stage 2 software is&nbsp;freely available to any existing MK1 MINI Bluefin customer with an aftermarket pulley reduction, please contact us for further details.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+"2509","Mini","Cooper S MK 1 (R52/R53) Stage2","6/2004 - 9/2008","Supercharged","1598","4","170","220","44","61","0","N","N","?","","","\
+							<p>Stage 2 software is&nbsp;freely available to any existing MK1 MINI Bluefin customer with an aftermarket pulley reduction&#44; please contact us for further details.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
 				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
 \
 				\
 \
 \
 				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 5px; opacity: 0\" />\
-				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>","","Y","No comments","N"
-"2510","Mini","Cooper S MK 1 (R52/R53) Stage2","3/2002 - 6/2004","Supercharged","1598","4","163","210","44","61","0","N","N","?","coopers.pdf","","<p>Stage 2 software is&nbsp;freely available to any existing MK1 MINI Bluefin customer with an aftermarket pulley reduction, please contact us for further details.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
+				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>\
+				\
+				","","Y","No comments","N"
+"2510","Mini","Cooper S MK 1 (R52/R53) Stage2","3/2002 - 6/2004","Supercharged","1598","4","163","210","44","61","0","N","N","?","coopers.pdf","","\
+							<p>Stage 2 software is&nbsp;freely available to any existing MK1 MINI Bluefin customer with an aftermarket pulley reduction&#44; please contact us for further details.</p>				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 10px;\" />\
 				<div style=\"float: left; width: 90%; padding-left: 10px; padding-top:13px\"><b>Please note this product is a software upgrade specific to your bluefin model. You will be required to supply a serial number of your bluefin prior to software dispatch.<br /></b></div>\
 \
 				\
 \
 \
 				<img src=\"/images/warn.png\" style=\"float: left; padding-top: 5px; opacity: 0\" />\
-				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>","","Y","No comments","N"
+				<div style=\"float: left; width: 90%; padding-left: 10px;\"><br /><b>To receive this upgrade free of charge please  <a class=\"find_outmore_live\" href=\"/contact#form\">send us an email</a> with your bluefin serial number.</b></div>\
+				\
+				","","Y","No comments","N"
 "2511","Volkswagen","Scirocco R 2.0 TSI (256PS)","9/2009 onwards","Turbocharged Petrol","1984","4","256","350","39","55","365","Y","N","F","2010SciroccoR.pdf","","","","Y","No comments","N"
 "2512","Volkswagen","Tiguan 2.0 TSI (200PS)","2011 onwards","Turbocharged Petrol","1984","4","197","280","56","104","365","N","N","B","VW Scirocco20TFSi.pdf","","","","Y","No comments","N"
 "2513","Nissan","Juke 1.5 8V dCi (110PS)","9/2010 onwards","Turbo-Diesel","1461","4","108","240","18","37","320","Y","N","F","Juke 15 DCi.pdf","","","","Y","No comments","N"
@@ -2231,17 +2421,25 @@
 "2531","Buick","Regal 2.0 Turbo ECOTEC","2009 onwards","Turbocharged Petrol","1998","4","220","350","45","71","320","Y","N","F","Insignia2.0T.pdf","","","","Y","No comments","N"
 "2532","Vauxhall-Opel","Vectra 2.2i Direct","9/2005 - 9/2008","Non-Turbo Petrol","2198","4","152","220","12","15","229","N","N","?","","","","","Y","No comments","N"
 "2534","Mercedes","E Class E220 CDI W211 (170PS)","6/2006 - 3/2010","Turbo-Diesel","2148","4","167","400","40","75","365","N","N","?","","","","","Y","No comments","N"
-"2535","Bluefin Reset","Bluefin Reset Bluefin Reset","","Non-Turbo Petrol","0","0","0","0","0","0","0","Y","N","F","","","<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
-<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>","","Y","No comments","N"
-"2536","Bluefin Reset","Bluefin Reset Bluefin Reset","","Turbo-Diesel","0","0","0","0","0","0","0","Y","N","F","","","<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
-<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>","","Y","No comments","N"
-"2537","Bluefin Reset","Bluefin Reset Bluefin Reset","","Turbocharged Petrol","0","0","0","0","0","0","0","Y","N","F","","","<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
-<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>","","Y","No comments","N"
-"2538","Bluefin Reset","Bluefin Reset Bluefin Reset","","Twincharger","0","0","0","0","0","0","0","Y","N","F","","","<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
-<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>","","Y","No comments","N"
-"2539","Ford","Mondeo 1.6 EcoBoost (160PS)","9/2010 onwards","Turbocharged Petrol","1596","4","157","270","34","59","365","Y","N","F","16EcoBoost160PS.pdf","","","","Y","No comments","N"
-"2540","Ford","S-Max 1.6 EcoBoost (160PS)","9/2010 onwards","Turbocharged Petrol","1596","4","157","270","34","59","365","Y","N","F","16EcoBoost160PS.pdf","","","","Y","No comments","N"
-"2541","Ford","Galaxy 1.6 EcoBoost (160PS)","9/2010 onwards","Turbocharged Petrol","1596","4","157","270","34","59","365","Y","N","F","16EcoBoost160PS.pdf","","","","Y","No comments","N"
+"2535","Bluefin Reset","Bluefin Reset Bluefin Reset","","Non-Turbo Petrol","0","0","0","0","0","0","0","Y","N","F","","","\
+							<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
+<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>\
+				","","Y","No comments","N"
+"2536","Bluefin Reset","Bluefin Reset Bluefin Reset","","Turbo-Diesel","0","0","0","0","0","0","0","Y","N","F","","","\
+							<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
+<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>\
+				","","Y","No comments","N"
+"2537","Bluefin Reset","Bluefin Reset Bluefin Reset","","Turbocharged Petrol","0","0","0","0","0","0","0","Y","N","F","","","\
+							<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
+<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>\
+				","","Y","No comments","N"
+"2538","Bluefin Reset","Bluefin Reset Bluefin Reset","","Twincharger","0","0","0","0","0","0","0","Y","N","F","","","\
+							<p><span style=\"color: #ffffff\"><span style=\"font-family: Arial\"><font size=\"2\"><span style=\"font-style: italic; font-size: 10pt\">In most cases your bluefin can be reset online. Once you have clicked on the &ldquo;Buy Bluefin online&rdquo; please fill in the information fields as required. In the unlikely event of your bluefin needing to be returned to Superchips for a firmware upgrade we will contact you.</span></font></span></span></p>\
+<p><em><strong><span style=\"color: #cccccc\"><a href=\"http://www.mybluefin.co.uk/software\"><span style=\"color: #ffffff\">www.mybluefin.co.uk/software</span></a></span></strong></em></p>\
+				","","Y","No comments","N"
+"2539","Ford","Mondeo 1.6 EcoBoost (160PS)","9/2010 onwards","Turbocharged Petrol","1596","4","157","270","34","59","365","Y","N","F","16EcoBoost160PS.pdf","","","http://www.youtube.com/v/tMBgOzrADuk&hl=en&fs=1&","Y","No comments","N"
+"2540","Ford","S-Max 1.6 EcoBoost (160PS)","9/2010 onwards","Turbocharged Petrol","1596","4","157","270","34","59","365","Y","N","F","16EcoBoost160PS.pdf","","","http://www.youtube.com/v/tMBgOzrADuk&hl=en&fs=1&","Y","No comments","N"
+"2541","Ford","Galaxy 1.6 EcoBoost (160PS)","9/2010 onwards","Turbocharged Petrol","1596","4","157","270","34","59","365","Y","N","F","16EcoBoost160PS.pdf","","","http://www.youtube.com/v/tMBgOzrADuk&hl=en&fs=1&","Y","No comments","N"
 "2542","Ford","Focus 1.6 EcoBoost (150PS)","3/2011 onwards","Turbocharged Petrol","1596","4","147","240","30","51","365","Y","N","F","16EcoBoost150PS.pdf","","","","Y","No comments","N"
 "2543","Ford","C-Max 1.6 EcoBoost (150PS)","9/2010 onwards","Turbocharged Petrol","1596","4","147","240","30","51","365","Y","N","F","16EcoBoost150PS.pdf","","","","Y","No comments","N"
 "2544","Ford","Focus 1.6 EcoBoost (182PS)","3/2011 onwards","Turbocharged Petrol","1596","4","180","270","20","44","365","Y","N","F","16EcoBoost182PS.pdf","","","","Y","No comments","N"
@@ -2303,7 +2501,7 @@
 "2603","Audi","A5 2.0 TDI (170PS)","6/2008 - 9/2009","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2604","Audi","A5 2.0T FSI (180PS)","2010 onwards","Turbocharged Petrol","1984","4","177","320","60","74","365","E","N","B","20TFSI180PS.pdf","","","","Y","No comments","N"
 "2605","BMW","1M Coupe E82 (340PS)","3/2011 onwards","Turbocharged Petrol","2979","6","335","450","36","71","365","N","N","F","1MCoupe.pdf","","","","Y","No comments","N"
-"2606","Volkswagen","Transporter 2.0 TDI CR (84PS)","9/2009 onwards","Turbo-Diesel","1968","4","84","220","76","162","365","E","N","B","Transporter 20 TDI 85PS .pdf","","","","Y","No comments","N"
+"2606","Volkswagen","Transporter 2.0 TDI CR (84PS)","9/2009 onwards","Turbo-Diesel","1968","4","84","220","76","162","365","E","N","B","Transporter 20 TDI 85PS .pdf","How to re-map.pdf","","","Y","No comments","N"
 "2607","Audi","A4 2.0 TDI CR (177PS)","2012 onwards","Turbo-Diesel","1968","4","175","380","45","80","365","E","N","B","2.0 TDI 177PS.pdf","","","","Y","No comments","N"
 "2608","Audi","A6 2.0 TDI CR (177PS)","3/2011 onwards","Turbo-Diesel","1968","4","175","380","45","80","365","E","N","B","2.0 TDI 177PS.pdf","","","","Y","No comments","N"
 "2609","Audi","A5 2.0 TDI CR (177PS)","9/2011 onwards","Turbo-Diesel","1968","4","175","380","45","80","365","E","N","B","2.0 TDI 177PS.pdf","","","","Y","No comments","N"
@@ -2325,7 +2523,7 @@
 "2627","Ford","Focus 2.0 TDCi (163PS)","3/2011 onwards","Turbo-Diesel","1997","4","160","340","22","89","320","Y","N","F","2.0 TDCI 163PS.pdf","","","","Y","No comments","N"
 "2628","BMW","X3 E83 3.0d (204PS)","2003 - 2005","Turbo-Diesel","2993","6","201","410","46","94","365","Y","N","F","330d204.pdf","","","","Y","No comments","N"
 "2629","Vauxhall-Opel","Insignia 1.4T 16V (140PS)","9/2011 onwards","Turbocharged Petrol","1364","4","138","200","22","46","365","Y","N","F","Vauxhall&Opel14T40PS.pdf","","","","Y","No comments","N"
-"2630","Vauxhall-Opel","Mokka 1.4T 16V (140PS)","9/2012 onwards","Turbocharged Petrol","1364","4","138","200","22","46","365","Y","N","F","Vauxhall&Opel14T40PS.pdf","","","","Y","No comments","N"
+"2630","Vauxhall-Opel","Mokka 1.4T 16V (140PS)","9/2012 onwards","Turbocharged Petrol","1364","4","138","200","22","46","320","Y","N","F","Vauxhall&Opel14T40PS.pdf","","","","Y","No comments","N"
 "2631","Vauxhall-Opel","Zafira 1.4T 16V (140PS)","9/2011 onwards","Turbocharged Petrol","1364","4","138","200","22","46","365","Y","N","F","Vauxhall&Opel14T40PS.pdf","","","","Y","No comments","N"
 "2632","Buick","Encore 1.4T 16V (140PS)","9/2012 onwards","Turbocharged Petrol","1364","4","138","200","22","46","320","Y","N","F","Vauxhall&Opel14T40PS.pdf","","","","Y","No comments","N"
 "2633","Audi","RS3 2.5T FSI (340PS)","3/2011 onwards","Turbocharged Petrol","2480","5","335","450","52","75","365","N","N","?","RS3.pdf","","","","Y","No comments","N"
@@ -2336,7 +2534,9 @@
 "2638","Seat","Ibiza 1.4 TSI FR (150PS)","6/2009 onwards","Twincharger","1390","4","147","220","30","52","365","Y","N","F","VAG14TSi150ps.pdf","","","","Y","No comments","N"
 "2639","Seat","Leon 2.0 TDI CR (170PS)","9/2009 onwards","Turbo-Diesel","1968","4","167","350","28","59","365","E","N","B","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2640","Renault","Traffic 2.0 dCi (115PS) Euro5","2011 onwards","Turbo-Diesel","1995","4","115","290","25","66","320","N","N","?","Vivaro 115PS Eu5.pdf","","","","Y","No comments","N"
-"2641","Ford","Focus ST 2.0T (250PS)","3/2012 onwards","Turbocharged Petrol","1999","4","247","360","66","138","365","Y","N","F","ST Mk3 Stage 1+Exhaust(NEW).pdf","Autocar Focus ST MK3 Jan 2013 - Reduced memory.pdf","","","Y","No comments","N"
+"2641","Ford","Focus ST 2.0T (250PS)","3/2012 onwards","Turbocharged Petrol","1999","4","247","360","66","138","365","Y","N","F","ST Mk3 Stage 1+Exhaust(NEW).pdf","Autocar Focus ST MK3 Jan 2013 - Reduced memory.pdf","\
+							<p>The power and torque figures displayed were taken from our development vehicle which has a full exhaust including a high flow Sport CAT &amp; a performance air filter.</p>\
+				","http://www.youtube.com/v/rM2Kj7be9Rs&hl=en&fs=1&","Y","No comments","N"
 "2642","Ford","Mondeo 1.8 TDCi (100PS)","2007 - 2010","Turbo-Diesel","1753","4","98","280","29","49","320","Y","N","F","","","","","Y","No comments","N"
 "2643","Skoda","Octavia vRS TDI CR (170PS)","up to 9/2009","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
 "2644","Skoda","Superb 2.0 TDI CR (170PS)","6/2008 - 9/2009","Turbo-Diesel","1968","4","167","350","28","59","365","Y","N","F","VAG20TDiCR170ps.pdf","","","","Y","No comments","N"
@@ -2360,11 +2560,22 @@
 "2664","Land Rover","Discovery 4 3.0 TDV6 (210HP)","9/2010 onwards","Turbo-Diesel","2993","6","208","520","50","94","365","E","N","B","Discovery430tdv6210hp.pdf","","","","Y","No comments","N"
 "2665","Jaguar","XJ 3.0d V6 (275PS)","3/2010 onwards","Turbo-Diesel","2993","6","271","600","33","82","365","E","N","B","Jaguar 30d V6 S.pdf","","","","Y","No comments","N"
 "2666","Seat","Ibiza 2.0 TDI CR (143PS)","3/2010 onwards","Turbo-Diesel","1968","4","140","320","33","61","365","E","N","B","VAG20TDICR143PS.pdf","","","","Y","No comments","N"
-"2667","Vauxhall-Opel","Astra J 1.7 CDTi (110PS) - Engine code A17DTE","9/2009 onwards","Turbo-Diesel","1686","4","108","260","32","62","320","Y","N","F","17CDTi110PSEu5.pdf","","","","Y","No comments","N"
+"2667","Vauxhall-Opel","Astra J 1.7 CDTi (110PS) - Engine code A17DTE","9/2009 onwards","Turbo-Diesel","1686","4","108","260","32","62","320","Y","N","F","17CDTi110PSEu5.pdf","","\
+							<p>\
+<p>Please note these details are for the A17DTE Engine code vehicles only.</p>\
+<p>Please call us on 01280 816781 with your vehicle registration for  confirmation of your engine code if you do not know it&#44; we will give you  the details of the Superchips fitting centre at the same time.</p>\
+</p>\
+				","","Y","No comments","N"
 "2668","Citroen","C5 2.2 HDi (133PS)","9/2000 - 6/2008","Turbo-Diesel","2179","4","131","314","32","62","320","N","N","?","","","","","Y","No comments","N"
 "2669","Chevrolet","Trax 1.7 VCDi (130PS)","9/2012 onwards","Turbo-Diesel","1686","4","128","300","26","39","320","Y","N","F","Cruze 17VCDI 130PS.pdf","","","","Y","No comments","N"
 "2670","Fiat","Ducato 3.0 JTD 180 Multijet","6/2011 onwards","Turbo-Diesel","2999","4","177","400","30","80","365","N","N","?","","","","","Y","No comments","N"
-"2671","Mini","Cooper S All body styles (184PS) STAGE 2","3/2010 onwards","Turbocharged Petrol","1598","4","181","260","35","60","415","N","N","?","","","","","Y","No comments","N"
+"2671","Mini","Cooper S All body styles (184PS) STAGE 2","3/2010 onwards","Turbocharged Petrol","1598","4","181","260","35","60","415","N","N","?","","","\
+							<p>\
+<p>Stage 2 software is available&nbsp;to any customers with&nbsp;the extra parts listed below:</p>\
+<p>Good quality Replacement Sports-Cat &amp; Full Exhaust System.</p>\
+<p>Uprated Intercooler.</p>\
+</p>\
+				","","Y","No comments","N"
 "2672","Peugeot","4007 2.2 HDi (156PS)","9/2007 onwards","Turbo-Diesel","2179","4","156","380","24","70","320","N","N","?","22HDI 156BHP.pdf","","","","Y","No comments","N"
 "2673","Chevrolet","Aveo 1.2i 16V (86PS)","3/2011 onwards","Non-Turbo Petrol","1229","4","83","115","7","10","229","Y","N","F","","","","","Y","No comments","N"
 "2674","Honda","Civic 2.2 i-DTEC (150PS)","up to 9/2012","Turbo-Diesel","2199","4","147","350","29","51","365","N","N","?","HondaCR-V2.2 i-DTEC150PS.pdf","","","","Y","No comments","Y"
@@ -2414,9 +2625,11 @@
 "2719","Volkswagen","Caddy 1.6 TDI / BlueMotion (102PS)","9/2010 onwards","Turbo-Diesel","1598","4","101","250","47","74","365","E","N","B","16TDI102PS.pdf","","","","Y","No comments","N"
 "2720","Vauxhall-Opel","Astra J GTC VXR 2.0T (280PS)","3/2012 onwards","Turbocharged Petrol","1998","4","276","400","23","61","365","Y","N","F","GTC VXR Stage 1.pdf","","","","Y","No comments","N"
 "2721","Kia","Sorento 2.5 CRDi (170PS)","9/2006 onwards","Turbo-Diesel","2497","6","168","392","38","76","365","N","N","?","","","","","Y","No comments","N"
-"2722","Opel","hall-Opel Astra J GTC VXR STAGE 2 2.0T (280PS)","3/2012 onwards","Turbocharged Petrol","1998","4","276","400","32","75","0","Y","N","F","GTC VXR Stage 2.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
-<p>&nbsp;</p>","","Y","No comments","N"
+"2722","Vauxhall-Opel","Astra J GTC VXR STAGE 2 2.0T (280PS)","3/2012 onwards","Turbocharged Petrol","1998","4","276","400","32","75","0","N","N","F","GTC VXR Stage 2.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+<p>&nbsp;</p>\
+				","","Y","No comments","N"
 "2723","Volkswagen","Caddy 2.0 TDI CR (140PS)","9/2010 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","VW20TDiCR140PS.pdf","","","","Y","No comments","N"
 "2724","Volkswagen","Amarok 2.0 BiTDI (180PS)","9/2011 onwards","Turbo-Diesel","1968","4","177","420","35","94","365","E","N","B","","","","","Y","No comments","N"
 "2725","Isuzu","D-Max 2.5 Twin turbo (163PS)","3/2012 onwards","Turbo-Diesel","2500","4","161","400","22","89","365","N","N","?","25TwinTurbo163PS.pdf","","","","Y","No comments","N"
@@ -2432,26 +2645,34 @@
 "2737","Citroen","C4 2.0 HDi (163PS)","9/2010 onwards","Turbo-Diesel","1997","4","160","340","39","66","320","N","N","?","PSA 20HDI 163PS.pdf","","","","Y","No comments","N"
 "2738","Vauxhall-Opel","Corsa 1.3 CDTi (70PS) Euro3 / 4","9/2003 - 9/2006","Turbo-Diesel","1248","4","69","170","19","43","320","Y","N","F","","","","","Y","No comments","N"
 "2739","Vauxhall-Opel","Combo 1.3 CDTi (70PS) Euro3 / 4","2003 - 2012","Turbo-Diesel","1248","4","69","170","19","43","320","Y","N","F","","","","","Y","No comments","N"
-"2740","BMW","135 i 3.0 (E82/88) (306PS)","2010 - 2013","Turbocharged Petrol","2979","6","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
-"2741","BMW","M135i F20 / 21 (320PS)","6/2012 onwards","Turbocharged Petrol","2979","6","315","450","49","104","399","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
-"2742","BMW","335 i 3.0 (E90/92) (306PS)","2010 onwards","Turbocharged Petrol","2979","6","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
-"2743","BMW","335 i 3.0 (F30/31) (306PS)","3/2012 onwards","Turbocharged Petrol","2979","6","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
-"2744","BMW","535 i 3.0 GT (F07) (306PS)","9/2009 onwards","Turbocharged Petrol","2979","5","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
-"2745","BMW","535 i 3.0 (F10) (306PS)","9/2009 onwards","Turbocharged Petrol","2979","5","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
-"2746","BMW","X3 xDrive35i (F25) (306PS)","9/2010 onwards","Turbocharged Petrol","2979","6","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
-"2747","BMW","X5 xDrive35i (E70) (306PS)","6/2010 onwards","Turbocharged Petrol","2979","6","302","400","29","103","399","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2740","BMW","135 i 3.0 (E82/88) (306PS)","2010 - 2013","Turbocharged Petrol","2979","6","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2741","BMW","M135i F20 / 21 (320PS)","6/2012 onwards","Turbocharged Petrol","2979","6","315","450","49","104","449","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
+"2742","BMW","335 i 3.0 (E90/92) (306PS)","2010 onwards","Turbocharged Petrol","2979","6","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2743","BMW","335 i 3.0 (F30/31) (306PS)","3/2012 onwards","Turbocharged Petrol","2979","6","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2744","BMW","535 i 3.0 GT (F07) (306PS)","9/2009 onwards","Turbocharged Petrol","2979","5","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2745","BMW","535 i 3.0 (F10) (306PS)","9/2009 onwards","Turbocharged Petrol","2979","5","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2746","BMW","X3 xDrive35i (F25) (306PS)","9/2010 onwards","Turbocharged Petrol","2979","6","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2747","BMW","X5 xDrive35i (E70) (306PS)","6/2010 onwards","Turbocharged Petrol","2979","6","302","400","29","103","449","N","Y","N","N55 with PRO2.pdf","","","","Y","No comments","N"
 "2748","BMW","X6 xDrive35i (E71) (306PS)","2010 - 2013","Turbocharged Petrol","2979","6","302","400","29","103","365","N","Y","N","","","","","Y","No comments","N"
-"2749","BMW","640 i Gran Coupe (F06) (320PS)","6/2012 onwards","Turbocharged Petrol","2979","6","315","450","49","104","399","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
-"2750","BMW","640 i 3.0 (F12/13) (320PS)","3/2011 onwards","Turbocharged Petrol","2979","6","315","450","49","104","399","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
+"2749","BMW","640 i Gran Coupe (F06) (320PS)","6/2012 onwards","Turbocharged Petrol","2979","6","315","450","49","104","449","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
+"2750","BMW","640 i 3.0 (F12/13) (320PS)","3/2011 onwards","Turbocharged Petrol","2979","6","315","450","49","104","449","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
 "2751","BMW","740 i 3.0 (F01 / F02) (326PS)","9/2008 - 2012","Turbocharged Petrol","2979","6","321","450","49","104","399","N","N","?","","","","","Y","No comments","N"
-"2752","BMW","740 i/Li Sedan (F01 / F02) (320PS)","2012 onwards","Turbocharged Petrol","2979","6","315","450","49","104","399","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
+"2752","BMW","740 i/Li Sedan (F01 / F02) (320PS)","2012 onwards","Turbocharged Petrol","2979","6","315","450","49","104","449","N","Y","N","N55HP with PRO2.pdf","","","","Y","No comments","N"
 "2753","Skoda","Superb 3.6 FSi V6 (260PS)","9/2008 onwards","Non-Turbo Petrol","3597","6","256","350","18","22","229","N","N","?","","","","","Y","No comments","N"
 "2754","Seat","Leon 1.6 TDI (105PS)","9/2009 - 9/2012","Turbo-Diesel","1598","4","103","250","41","70","365","E","N","B","16TDI105PS.pdf","Superchips Golf 1.6 TDI.pdf","","","Y","No comments","N"
 "2755","Vauxhall-Opel","Combo 1.3 CDTi (90PS) Euro5","3/2012 onwards","Turbo-Diesel","1248","4","89","200","20","54","320","N","N","?","ComboD13CDTi.pdf","","","","Y","No comments","N"
 "2756","Ford","Fiesta Mk7 Metal / S 1.6 16v Ti-VCT (134PS)","3/2011 - 9/2012","Non-Turbo Petrol","1596","4","132","160","9","12","229","Y","N","F","Fiesta Ti-VCT 134PS.pdf","","","","Y","No comments","N"
 "2757","Ford","Fiesta ST 1.6 EcoBoost (182PS)","3/2013 onwards","Turbocharged Petrol","1596","4","179","290","38","73","365","Y","N","F","FiestaSTEcoBoostStage1.pdf","","","","Y","No comments","N"
-"2758","Vauxhall-Opel","Astra J 1.7 CDTi (110PS) - Engine code A17DTJ","2009 - 2013","Turbo-Diesel","1686","4","108","260","22","46","320","N","N","?","A17DTJ.pdf","","","","Y","No comments","N"
-"2759","Vauxhall-Opel","Zafira 1.7 CDTi (110PS) - Engine code A17DTJ","3/2009 onwards","Turbo-Diesel","1686","4","108","260","22","46","320","N","N","?","A17DTJ.pdf","","","","Y","No comments","N"
+"2758","Vauxhall-Opel","Astra J 1.7 CDTi (110PS) - Engine code A17DTJ","2009 - 2013","Turbo-Diesel","1686","4","108","260","22","46","320","N","N","?","A17DTJ.pdf","","\
+							<p>Please note these details are for the A17DTJ Engine code vehicles only.</p>\
+<p>Please call us on 01280 816781 with your vehicle registration for confirmation of your engine code if you do not know it&#44; we will give you the details of the Superchips fitting centre at the same time.</p>\
+				","","Y","No comments","N"
+"2759","Vauxhall-Opel","Zafira 1.7 CDTi (110PS) - Engine code A17DTJ","3/2009 onwards","Turbo-Diesel","1686","4","108","260","22","46","320","N","N","?","A17DTJ.pdf","","\
+							<p>&nbsp;</p>\
+<p>Please note these details are for the A17DTJ Engine code vehicles only.</p>\
+<p>Please call us on 01280 816781 with your vehicle registration for  confirmation of your engine code if you do not know it&#44; we will give you  the details of the Superchips fitting centre at the same time.</p>\
+<p>&nbsp;</p>\
+				","","Y","No comments","N"
 "2760","Audi","RS5 4.2 FSI Quattro (450PS)","3/2010 onwards","Non-Turbo Petrol","4163","8","444","430","15","21","320","N","N","?","42V8 FSi 450PS.pdf","","","","Y","No comments","N"
 "2761","Audi","RS4 4.2 FSI Quattro (450PS)","9/2012 onwards","Non-Turbo Petrol","4163","8","444","430","15","21","320","N","N","?","42V8 FSi 450PS.pdf","","","","Y","No comments","N"
 "2762","Toyota","GT86 2.0 D-4S (200HP)","6/2012 onwards","Non-Turbo Petrol","1998","4","197","205","12","18","229","N","N","?","BRZ & GT86.pdf","","","","Y","No comments","N"
@@ -2474,9 +2695,9 @@
 "2779","Seat","Toledo 1.6 TDI (90PS)","9/2012 onwards","Turbo-Diesel","1598","4","88","230","44","80","365","E","N","B","16tdi 90PS.pdf","","","","Y","No comments","N"
 "2780","Audi","A1 1.6 TDI (90PS)","9/2010 onwards","Turbo-Diesel","1598","4","88","230","44","80","365","E","N","B","16tdi 90PS.pdf","","","","Y","No comments","N"
 "2781","Audi","A3 1.6 TDI (90PS)","3/2009 onwards","Turbo-Diesel","1598","4","88","230","44","80","365","E","N","B","16tdi 90PS.pdf","","","","Y","No comments","N"
-"2782","Mercedes","C Class 200 CGI BlueEFFICIENCY (184PS)","9/2009 onwards","Turbocharged Petrol","1796","4","181","270","27","44","399","N","Y","N","200CGi Pro 2.pdf","","","","Y","No comments","N"
-"2783","Mercedes","E Class 200 CGI BlueEFFICIENCY (184PS)","9/2009 onwards","Turbocharged Petrol","1796","4","181","270","27","44","399","N","Y","N","","","","","Y","No comments","N"
-"2784","Mercedes","SLK 200 CGI BlueEFFICIENCY (184PS)","3/2011 onwards","Turbocharged Petrol","1796","4","181","270","27","44","399","N","Y","N","","","","","Y","No comments","N"
+"2782","Mercedes","C Class 200 CGI BlueEFFICIENCY (184PS)","9/2009 onwards","Turbocharged Petrol","1796","4","181","270","27","44","449","N","Y","N","200CGi Pro 2.pdf","","","","Y","No comments","N"
+"2783","Mercedes","E Class 200 CGI BlueEFFICIENCY (184PS)","9/2009 onwards","Turbocharged Petrol","1796","4","181","270","27","44","449","N","Y","N","","","","","Y","No comments","N"
+"2784","Mercedes","SLK 200 CGI BlueEFFICIENCY (184PS)","3/2011 onwards","Turbocharged Petrol","1796","4","181","270","27","44","449","N","Y","N","","","","","Y","No comments","N"
 "2785","Volkswagen","Crafter 2.0 TDI CR30/35/50 (109PS)","6/2011 onwards","Turbo-Diesel","1968","4","108","300","43","87","365","E","N","B","","","","","Y","No comments","N"
 "2786","Volkswagen","Crafter 2.0 TDI CR30/35/50 (136PS)","6/2011 onwards","Turbo-Diesel","1968","4","134","340","39","75","365","E","N","B","","","","","Y","No comments","N"
 "2787","Volkswagen","Crafter 2.0 BiTDI CR30/35/50 (143PS)","6/2011 onwards","Turbo-Diesel","1968","4","142","340","43","87","365","N","N","?","","","","","Y","No comments","N"
@@ -2494,8 +2715,10 @@
 "2800","Audi","A6 3.0 BiTDI CR (313PS)","9/2011 onwards","Turbo-Diesel","2967","6","308","650","41","116","365","E","N","B","3.0BiTdi.pdf","","","","Y","No comments","N"
 "2801","Audi","A7 3.0 BiTDI CR (313PS)","9/2011 onwards","Turbo-Diesel","2967","6","308","650","41","116","365","E","N","B","3.0BiTdi.pdf","","","","Y","No comments","N"
 "2803","Vauxhall-Opel","Corsa VXR 1.6T (192PS) EURO5","9/2010 onwards","Turbocharged Petrol","1598","4","189","230","35","50","320","Y","N","F","CorsaVXR.pdf","","","","Y","No comments","N"
-"2804","Opel","hall-Opel Corsa VXR 1.6T (192PS) EURO5 STAGE 2","9/2010 onwards","Turbocharged Petrol","1598","4","189","230","51","94","0","Y","N","F","CorsaVXR Stage2.pdf","","<p>For all U.K enquiries please contact Thorney Motorsport, Milton Keynes,&nbsp;t: 01908 238798, e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
-<p>For all other enquiries please contact Superchips by email,&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>","","Y","No comments","N"
+"2804","Vauxhall-Opel","Corsa VXR 1.6T (192PS) EURO5 STAGE 2","9/2010 onwards","Turbocharged Petrol","1598","4","189","230","51","94","0","N","N","F","CorsaVXR Stage2.pdf","","\
+							<p>For all U.K enquiries please contact Thorney Motorsport&#44; Milton Keynes&#44;&nbsp;t: 01908 238798&#44; e: <a href=\"mailto:info@thorneymotorsport.co.uk\"><span style=\"color: #99ccff\">info@thorneymotorsport.co.uk</span></a></p>\
+<p>For all other enquiries please contact Superchips by email&#44;&nbsp;&nbsp;&nbsp; e: <a href=\"mailto:sales@superchips.co.uk\"><span style=\"color: #99ccff\">sales@superchips.co.uk</span></a></p>\
+				","","Y","No comments","N"
 "2805","Mercedes","G Class 350 BlueTEC (211PS)","9/2010 - 2013","Turbo-Diesel","2987","6","207","540","41","97","365","N","N","?","","","","","Y","No comments","N"
 "2806","Jaguar","XF 2.2 i4 Td (190PS)","3/2011 - 9/2012","Turbo-Diesel","2179","4","187","450","39","93","365","Y","N","F","XF22d190.pdf","","","","Y","No comments","N"
 "2807","Ford","Ranger T6 3.2 TDCi (200PS)","9/2011 onwards","Turbo-Diesel","3198","5","197","470","45","117","365","E","N","B","Ranger32tdci.pdf","","","","Y","No comments","N"
@@ -2540,9 +2763,9 @@
 "2846","Dacia","Lodgy 1.5 dCi (90PS) EU5","3/2012 onwards","Turbo-Diesel","1461","4","89","200","21","58","320","Y","N","F","1.5dCi 90PS EU5.pdf","","","","Y","No comments","N"
 "2847","Dacia","Logan 1.5 dCi (86PS) EU4","3/2008 onwards","Turbo-Diesel","1461","4","85","200","20","42","320","Y","N","F","","","","","Y","No comments","N"
 "2848","Dacia","Logan 1.5 dCi FAP (90PS) EU5","9/2010 onwards","Turbo-Diesel","1461","4","87","220","21","58","320","Y","N","F","1.5dCi 90PS EU5.pdf","","","","Y","No comments","N"
-"2849","Mercedes","CLA 180 (122PS)","3/2013 onwards","Turbocharged Petrol","1595","4","120","200","21","37","399","N","Y","?","180CGI 1.6T Pro2.pdf","","","","Y","No comments","N"
-"2850","Mercedes","A Class 180 (122PS)","9/2012 onwards","Turbocharged Petrol","1595","4","120","200","21","37","399","N","Y","?","180CGI 1.6T Pro2.pdf","","","","Y","No comments","N"
-"2851","Mercedes","B Class 180 (122PS)","9/2011 onwards","Turbocharged Petrol","1595","4","120","200","21","37","399","N","Y","?","180CGI 1.6T Pro2.pdf","","","","Y","No comments","N"
+"2849","Mercedes","CLA 180 (122PS)","3/2013 onwards","Turbocharged Petrol","1595","4","120","200","21","37","449","N","Y","?","180CGI 1.6T Pro2.pdf","","","","Y","No comments","N"
+"2850","Mercedes","A Class 180 (122PS)","9/2012 onwards","Turbocharged Petrol","1595","4","120","200","21","37","449","N","Y","?","180CGI 1.6T Pro2.pdf","","","","Y","No comments","N"
+"2851","Mercedes","B Class 180 (122PS)","9/2011 onwards","Turbocharged Petrol","1595","4","120","200","21","37","449","N","Y","?","180CGI 1.6T Pro2.pdf","","","","Y","No comments","N"
 "2852","Renault","Clio IV 1.6T Renaultsport (200PS) EDC","3/2013 onwards","Turbocharged Petrol","1618","4","197","240","46","71","365","Y","N","F","Clio IV RenaultSport.pdf","","","","Y","No comments","N"
 "2853","Chevrolet","Orlando 2.0 VCDi (163PS)","3/2011 onwards","Turbo-Diesel","1998","4","160","360","41","83","320","N","N","?","","","","","Y","No comments","N"
 "2854","Chevrolet","Orlando 2.0 VCDi (130PS)","3/2011 onwards","Turbo-Diesel","1998","4","128","315","29","67","320","N","N","?","","","","","Y","No comments","N"
@@ -2560,25 +2783,44 @@
 "2866","Ford","Fiesta MKVI 1.0 EcoBoost (100PS)","9/2012 onwards","Turbocharged Petrol","999","3","98","170","41","75","365","Y","N","F","FiestaEcoBoost100PS.pdf","","","","Y","No comments","N"
 "2867","Ford","Focus 1.0 EcoBoost (100PS)","3/2012 onwards","Turbocharged Petrol","999","3","98","170","41","75","365","Y","N","F","EcoBoost100PS.pdf","","","","Y","No comments","N"
 "2868","Ford","C-Max 1.0 EcoBoost (100PS)","9/2012 onwards","Turbocharged Petrol","999","3","98","170","41","75","365","Y","N","F","EcoBoost100PS.pdf","","","","Y","No comments","N"
-"2869","Ford","B-Max 1.0 EcoBoost (100PS)","9/2012 onwards","Turbocharged Petrol","999","3","98","170","41","75","365","N","N","?","EcoBoost100PS.pdf","","","","Y","No comments","N"
+"2869","Ford","B-Max 1.0 EcoBoost (100PS)","9/2012 onwards","Turbocharged Petrol","999","3","98","170","41","75","365","N","N","?","EcoBoost100PS.pdf","","\
+							<p>Vehicle wanted for Bluefin development at Superchips UK HQ&#44; Buckingham. Please  contact us on 01280 816781 for further details if you are interested and  in the locality. (Trade price and FOC power curves&#44; before &amp;  after).</p>\
+				","","Y","No comments","N"
 "2870","Ford","Fiesta 1.0 EcoBoost (125PS)","9/2012 onwards","Turbocharged Petrol","999","3","123","200","31","47","365","Y","N","F","EcoBoost125PS.060214.pdf","","","","Y","No comments","N"
 "2871","Ford","C-Max 1.0 EcoBoost (125PS)","9/2012 onwards","Turbocharged Petrol","999","3","123","200","31","47","365","Y","N","F","EcoBoost125PS.060214.pdf","","","","Y","No comments","N"
 "2872","Ford","C-Max 1.6 SCTi EcoBoost (182PS)","9/2010 onwards","Turbocharged Petrol","1596","4","180","270","20","44","365","Y","N","F","16EcoBoost182PS.pdf","","","","Y","No comments","N"
-"2873","Mercedes","C Class 180 CGI BlueEFFICIENCY (156PS)","9/2009 onwards","Turbocharged Petrol","1796","4","154","250","25","39","399","N","Y","?","C180 CGI Pro2.pdf","","","","Y","No comments","N"
+"2873","Mercedes","C Class 180 CGI BlueEFFICIENCY (156PS)","9/2009 onwards","Turbocharged Petrol","1796","4","154","250","25","39","449","N","Y","?","C180 CGI Pro2.pdf","","","","Y","No comments","N"
 "2874","Mercedes","GL 420 CDI (306PS)","3/2006 - 6/2009","Turbo-Diesel","3996","8","301","700","50","110","365","N","N","?","","","","","Y","No comments","N"
 "2875","Mercedes","M Class ML 420 CDI (306PS)","6/2006 - 6/2009","Turbo-Diesel","3996","8","301","700","50","110","365","N","N","?","","","","","Y","No comments","N"
 "2876","Citroen","C3 III 1.4 HDi (70PS) E5","9/2009 onwards","Turbo-Diesel","1398","4","69","160","26","42","365","N","N","?","14hdi70PSEu5.pdf","","","","Y","No comments","N"
 "2877","Citroen","DS3 1.4 HDi (70PS) E5","9/2010 onwards","Turbo-Diesel","1398","4","69","160","26","42","365","N","N","?","14hdi70PSEu5.pdf","","","","Y","No comments","N"
+"2878","Iveco","Daily 29L10 2.3 (96PS)","2006 - 2011","Turbo-Diesel","2300","4","95","240","30","75","320","N","N","?","","","","","Y","No comments","N"
+"2879","Iveco","Daily 29L12 2.3 (116PS)","2006 - 2011","Turbo-Diesel","2300","4","114","270","28","69","320","N","N","?","","","","","Y","No comments","N"
+"2880","Iveco","Daily 29L14 2.3 (136PS)","2006 - 2011","Turbo-Diesel","2300","4","134","320","36","85","320","N","N","?","","","","","Y","No comments","N"
+"2881","Iveco","Daily 35C10 2.3 HPI (96PS)","9/2002 - 9/2006","Turbo-Diesel","0","4","95","240","30","75","320","N","N","?","","","","","Y","No comments","N"
+"2882","Iveco","Daily 35C12 2.3 (116PS)","9/2002 - 9/2006","Turbo-Diesel","2300","4","114","270","28","69","320","N","N","?","","","","","Y","No comments","N"
+"2883","Iveco","Daily 35C13 2.8 (125PS)","6/1999 - 6/2006","Turbo-Diesel","2800","4","123","290","32","77","320","N","N","?","","","","","Y","No comments","N"
+"2884","Iveco","Daily 35C14 3.0 HPI (136PS)","","Turbo-Diesel","2998","4","134","340","34","79","320","N","N","?","","","","","Y","No comments","N"
+"2885","Iveco","Daily 35C15 3.0 HPI (146PS)","6/2006 onwards","Turbo-Diesel","3000","4","144","350","35","71","320","N","N","?","","","","","Y","No comments","N"
+"2886","Iveco","Daily 35C17 3.0 HPT (170PS)","9/2009 onwards","Turbo-Diesel","3000","4","168","400","37","95","320","N","N","?","","","","","Y","No comments","N"
+"2887","Iveco","Daily 35C18 3.0 HPT (176PS)","6/2006 onwards","Turbo-Diesel","3000","4","174","400","35","82","320","N","N","?","","","","","Y","No comments","N"
+"2888","Iveco","Daily 35S10 2.3 HPI (96PS)","6/2006 onwards","Turbo-Diesel","2300","4","95","240","30","75","320","N","N","?","","","","","Y","No comments","N"
 "2889","Alfa Romeo","Giulietta 1.6 JTDM (105PS)","2010 onwards","Turbo-Diesel","1598","4","104","320","35","65","320","N","N","?","","","","","Y","No comments","N"
 "2890","Hyundai","Santa Fe 2.2 CRDi (194bhp)","9/2009 - 2012","Turbo-Diesel","2199","4","194","422","41","80","365","N","N","?","","","","","Y","No comments","N"
 "2891","Volkswagen","Golf Mk5 1.9 TDI PD (90PS)","3/2004 - 9/2009","Turbo-Diesel","1896","4","89","210","29","78","320","Y","N","F","","","","","Y","No comments","N"
 "2892","Volkswagen","Transporter 2.0 TDI CR (114PS)","6/2011 onwards","Turbo-Diesel","1968","4","112","250","57","120","365","E","N","B","","","","","Y","No comments","N"
+"2893","Iveco","Daily 35S12 2.3 (116PS)","2006 - 2011","Turbo-Diesel","2300","4","114","270","28","69","320","N","N","?","","","","","Y","No comments","N"
+"2894","Iveco","Daily 35S13 2.3 (126PS)","9/2009 onwards","Turbo-Diesel","2300","4","124","320","32","77","320","N","N","?","","","","","Y","No comments","N"
+"2895","Iveco","Daily 35S14 2.3 HPT (136PS)","6/2006 onwards","Turbo-Diesel","2300","4","134","320","36","85","320","N","N","?","","","","","Y","No comments","N"
+"2896","Iveco","Daily 35S18 3.0 HPT (176PS)","6/2006 onwards","Turbo-Diesel","3000","4","174","400","35","82","320","N","N","?","","","","","Y","No comments","N"
+"2897","Iveco","Daily 40C15 3.0 HPI (146PS)","6/2006 onwards","Turbo-Diesel","3000","4","144","350","35","71","320","N","N","?","","","","","Y","No comments","N"
+"2898","Iveco","Daily 65C15 3.0 HPI (146PS)","6/2006 onwards","Turbo-Diesel","3000","4","144","350","35","71","320","N","N","?","","","","","Y","No comments","N"
 "2899","Skoda","Yeti 2.0 TDI CR (110PS)","9/2009 onwards","Turbo-Diesel","1968","4","108","250","36","87","365","E","N","B","","","","","Y","No comments","N"
 "2900","Skoda","Octavia 2.0 TDI CR (110PS)","3/2010 - 2013","Turbo-Diesel","1968","4","108","250","36","87","365","E","N","B","","","","","Y","No comments","N"
-"2901","Mercedes","A Class A200 BlueEFFICIENCY (156PS)","9/2012 onwards","Turbocharged Petrol","1595","4","154","250","27","42","399","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
-"2902","Mercedes","B Class B200 BlueEFFICIENCY (156PS)","9/2011 onwards","Turbocharged Petrol","1595","4","154","250","27","42","399","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
-"2903","Mercedes","CLA 200 (156PS)","3/2013 onwards","Turbocharged Petrol","1595","4","154","250","27","42","399","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
-"2904","Mercedes","GLA 200 (156PS)","9/2013 onwards","Turbocharged Petrol","1595","4","154","250","27","42","399","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
+"2901","Mercedes","A Class A200 BlueEFFICIENCY (156PS)","9/2012 onwards","Turbocharged Petrol","1595","4","154","250","27","42","449","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
+"2902","Mercedes","B Class B200 BlueEFFICIENCY (156PS)","9/2011 onwards","Turbocharged Petrol","1595","4","154","250","27","42","449","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
+"2903","Mercedes","CLA 200 (156PS)","3/2013 onwards","Turbocharged Petrol","1595","4","154","250","27","42","449","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
+"2904","Mercedes","GLA 200 (156PS)","9/2013 onwards","Turbocharged Petrol","1595","4","154","250","27","42","449","N","Y","?","Mercedes16t156ps.pdf","","","","Y","No comments","N"
 "2905","Citroen","DS3 1.6 THP DSport (156PS)","3/2010 onwards","Turbocharged Petrol","1598","4","155","240","42","55","365","N","N","?","DS3 16THP 156PS.pdf","","","","Y","No comments","N"
 "2906","Citroen","C4 Picasso / Grand 1.6 THP DSport (156PS)","6/2010 onwards","Turbocharged Petrol","1598","4","155","240","42","55","365","N","N","?","DS3 16THP 156PS.pdf","","","","Y","No comments","N"
 "2907","Citroen","C5 1.6 THP (156PS)","9/2009 onwards","Turbocharged Petrol","1598","4","155","240","42","55","365","N","N","?","DS3 16THP 156PS.pdf","","","","Y","No comments","N"
@@ -2591,37 +2833,87 @@
 "2914","Renault","Scenic III 1.6 dCi 130","6/2011 onwards","Turbo-Diesel","1598","4","128","320","31","73","320","Y","N","F","16dCi130PS.pdf","","","","Y","No comments","N"
 "2915","Renault","Megane III 1.6 dCi 130","6/2011 onwards","Turbo-Diesel","1598","4","128","320","31","73","320","Y","N","F","16dCi130PS.pdf","","","","Y","No comments","N"
 "2916","BMW","320 E90/1/2/3 EfficientDynamics (163HP)","3/2010 onwards","Turbo-Diesel","1995","4","160","380","39","58","365","N","N","?","E9x320dEfficientDynamics.pdf","","","","Y","No comments","N"
-"2917","Audi","A3 2.0 TDI CR (150PS)","9/2012 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
-"2918","Volkswagen","Golf Mk7 2.0 TDI CR (150PS)","9/2012 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
-"2919","Audi","A4 2.0 TDI CR (150PS)","6/2013 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
-"2920","Audi","A5 2.0 TDI CR (150PS)","6/2013 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
-"2921","Audi","Q5 2.0 TDI CR (150PS)","6/2013 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
-"2922","Seat","Leon 2.0 TDI CR (150PS)","9/2012 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
-"2923","Skoda","Octavia 2.0 TDI CR (150PS)","2013 onwards","Turbo-Diesel","1968","4","148","320","26","62","399","N","Y","?","vag 2.0 tdi 150 hp Power Curve.pdf","","","","Y","No comments","N"
+"2917","Audi","A3 2.0 TDI CR (150PS)","9/2012 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
+"2918","Volkswagen","Golf Mk7 2.0 TDI CR (150PS)","9/2012 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
+"2919","Audi","A4 2.0 TDI CR (150PS)","6/2013 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
+"2920","Audi","A5 2.0 TDI CR (150PS)","6/2013 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
+"2921","Audi","Q5 2.0 TDI CR (150PS)","6/2013 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
+"2922","Seat","Leon 2.0 TDI CR (150PS)","9/2012 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
+"2923","Skoda","Octavia 2.0 TDI CR (150PS)","2013 onwards","Turbo-Diesel","1968","4","148","320","31","85","365","N","N","?","20tdi150PSflash.pdf","","","","Y","No comments","N"
 "2924","Nissan","Kubistar 1.5 dCi 70","2003 - 2009","Turbo-Diesel","1461","4","70","160","26","65","320","Y","N","F","15dCi70PSEuro3.pdf","","","","Y","No comments","N"
-"2925","BMW","520 F10/11 2.0 184hp","9/2011 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2926","BMW","520 GT F07 2.0 184hp","6/2012 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2927","BMW","X1 E84 2.0 184hp","6/2012 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2928","BMW","120 F20/21 2.0 184hp","9/2011 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2929","BMW","320 F30/31 2.0 184hp","9/2011 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2930","BMW","X3 F25 2.0 184hp","9/2010 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2931","BMW","220 F22 2.0 184hp","3/2014 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
-"2932","BMW","420 F32/33 2.0 184hp","6/2013 onwards","Turbo-Diesel","1995","4","181","380","25","98","399","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2925","BMW","520 F10/11 2.0 184hp","9/2011 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2926","BMW","520 GT F07 2.0 184hp","6/2012 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2927","BMW","X1 E84 2.0 184hp","6/2012 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2928","BMW","120 F20/21 2.0 184hp","9/2011 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2929","BMW","320 F30/31 2.0 184hp","9/2011 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2930","BMW","X3 F25 2.0 184hp","9/2010 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2931","BMW","220 F22 2.0 184hp","3/2014 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
+"2932","BMW","420 F32/33 2.0 184hp","6/2013 onwards","Turbo-Diesel","1995","4","181","380","25","98","449","N","Y","?","520dwithAutomaticTransmission.pdf","","","","Y","No comments","N"
 "2933","Jaguar","XF  2.2 i4 Td (163PS)","3/2012 onwards","Turbo-Diesel","2179","4","161","400","34","71","365","Y","N","F","XF22d163.pdf","","","","Y","No comments","N"
-"2934","BMW","M235i F22 (326PS)","3/2014 onwards","Turbocharged Petrol","2979","6","321","450","57","85","399","N","Y","?","M235i EPC.pdf","","","","Y","No comments","N"
+"2934","BMW","M235i F22 (326PS)","3/2014 onwards","Turbocharged Petrol","2979","6","321","450","57","85","449","N","Y","?","M235i EPC.pdf","","","","Y","No comments","N"
 "2935","Jeep","Grand Cherokee 3.0 CRD V6 (240PS)","6/2011 onwards","Turbo-Diesel","2987","6","237","550","48","109","365","N","N","?","GrandCherokee30CRD240PS.pdf","","","","Y","No comments","N"
 "2936","Volkswagen","Transporter T4 2.5 TDI (102PS)","9/1995 - 6/2003","Turbo-Diesel","2461","5","101","250","25","63","320","N","N","?","","","","","Y","No comments","N"
 "2937","BMW","Z4 E89 3.0 35is (340PS)","3/2010 onwards","Turbocharged Petrol","2979","6","335","450","36","71","365","N","N","?","1MCoupe.pdf","","","","Y","No comments","N"
-"2939","BMW","435 i 3.0 (F30/31) (306PS)","6/2013 onwards","Turbocharged Petrol","2979","6","302","400","29","103","399","N","Y","?","N55 with PRO2.pdf","","","","Y","No comments","N"
+"2939","BMW","435 i 3.0 (F30/31) (306PS)","6/2013 onwards","Turbocharged Petrol","2979","6","302","400","29","103","449","N","Y","?","N55 with PRO2.pdf","","","","Y","No comments","N"
 "2940","Porsche","911 997 S 3.8 (385PS)","6/2008 - 9/2012","Non-Turbo Petrol","3800","6","380","420","16","21","320","N","N","?","997Carrera4S385PS.pdf","","","","Y","No comments","N"
-"2941","Volkswagen","Golf Mk7 2.0 TSI GTI (220PS)","9/2013 onwards","Turbocharged Petrol","1984","4","216","350","30","51","399","N","Y","?","Golf7GTiEPC.pdf","","","","Y","No comments","N"
-"2942","Volkswagen","Golf Mk7 2.0 TSI R (300PS)","9/2013 onwards","Turbocharged Petrol","1984","4","296","380","59","73","399","N","Y","?","Golf 7 R EPC and org Schips.pdf","","","","Y","No comments","N"
+"2941","Volkswagen","Golf Mk7 2.0 TSI GTI (220PS)","9/2013 onwards","Turbocharged Petrol","1984","4","216","350","59","97","365","N","N","?","GolfGTIMk7220PSStage1.pdf","","","","Y","No comments","N"
+"2942","Volkswagen","Golf Mk7 2.0 TSI R (300PS)","9/2013 onwards","Turbocharged Petrol","1984","4","296","380","59","73","449","N","Y","?","Golf 7 R EPC and org Schips.pdf","","","","Y","No comments","N"
 "2943","Mini","Paceman Cooper 1.6 (122PS)","3/2013 onwards","Non-Turbo Petrol","1598","4","120","160","9","14","229","N","N","?","PacemanCooper.pdf","","","","Y","No comments","N"
 "2944","Ford","Mondeo 2.0L Duratorq CR (115PS)","3/2007 - 2010","Turbo-Diesel","1998","4","113","300","35","71","320","Y","N","F","","","","","Y","No comments","N"
 "2945","Ford","C-Max II 1.6 TDCi (115PS)","9/2010 onwards","Turbo-Diesel","1560","4","113","270","24","58","365","E","N","B","Mondeo16tdci115psEu5.pdf","","","","Y","No comments","N"
-"2946","Volkswagen","Golf Mk7 2.0 GTD (184PS)","3/2013 onwards","Turbo-Diesel","1968","4","181","380","32","59","399","N","Y","?","VAG2.0TDICR184PS.pdf","","","","Y","No comments","N"
-"2947","Audi","A3 2.0 TDI CR (184PS)","9/2013 onwards","Turbo-Diesel","1968","4","181","380","32","59","399","N","Y","?","VAG2.0TDICR184PS.pdf","","","","Y","No comments","N"
-"2948","Seat","Leon 2.0 TDI CR (184PS)","3/2013 onwards","Turbo-Diesel","1968","4","181","380","32","59","399","N","Y","?","VAG2.0TDICR184PS.pdf","","","","Y","No comments","N"
-"2949","Skoda","Octavia 2.0 vRS TDI CR (184PS)","6/2013 onwards","Turbo-Diesel","1968","4","181","380","32","59","399","N","Y","?","VAG2.0TDICR184PS.pdf","","","","Y","No comments","N"
+"2946","Volkswagen","Golf Mk7 2.0 GTD (184PS)","3/2013 onwards","Turbo-Diesel","1968","4","181","380","34","109","365","N","N","?","VAG2.0TDICR184PSRemap.pdf","","","","Y","No comments","N"
+"2947","Audi","A3 2.0 TDI CR (184PS)","9/2013 onwards","Turbo-Diesel","1968","4","181","380","34","109","365","N","N","?","VAG2.0TDICR184PSRemap.pdf","","","","Y","No comments","N"
+"2948","Seat","Leon 2.0 TDI CR (184PS)","3/2013 onwards","Turbo-Diesel","1968","4","181","380","34","109","365","N","N","?","VAG2.0TDICR184PSRemap.pdf","","","","Y","No comments","N"
+"2949","Skoda","Octavia 2.0 vRS TDI CR (184PS)","6/2013 onwards","Turbo-Diesel","1968","4","181","380","34","109","365","N","N","?","VAG2.0TDICR184PSRemap.pdf","","","","Y","No comments","N"
 "2950","Alfa Romeo","145 1.9 JTD (105PS)","1997 - 2001","Turbo-Diesel","1910","4","104","255","28","81","320","N","N","?","","","","","Y","No comments","N"
 "2952","Mazda","6 2.2 D (163PS)","2009 - 2013","Turbo-Diesel","2184","4","160","360","24","111","365","Y","N","F","Mazda22D163PS.pdf","","","","Y","No comments","N"
+"2953","Mini","Cooper SD R55/6/7/8/9/60/1 (143PS)","3/2011 onwards","Turbo-Diesel","1995","4","141","305","29","54","449","N","Y","?","Mini2.0D143HP.pdf","","","","Y","No comments","N"
+"2954","Audi","A6 2.0 TDI ultra (190PS)","3/2014 onwards","Turbo-Diesel","1968","4","187","400","32","62","449","N","Y","?","VAG2.0TDI190PS.pdf","","","","Y","No comments","N"
+"2955","Audi","S3 2.0 TFSI (300PS)","9/2013 onwards","Turbocharged Petrol","1984","4","296","380","59","73","449","N","Y","?","AudiS32.0TFSI300PSEPC.pdf","","","","Y","No comments","N"
+"2956","BMW","335 3.0d E90/1/2 (286PS) EU5","9/2009 onwards","Turbo-Diesel","2993","6","282","580","51","85","449","N","Y","?","335dwithDPF.pdf","","","","Y","No comments","N"
+"2957","Volkswagen","Golf Mk7 1.6 TDI / BlueMotion (110PS)","9/2012 onwards","Turbo-Diesel","1598","4","108","250","14","29","449","N","Y","?","VAG1.6TDI110PS.pdf","","","","Y","No comments","N"
+"2958","Skoda","Octavia III 1.6 TDI / GreenLine (110PS)","3/2014 onwards","Turbo-Diesel","1598","4","108","250","14","29","449","N","Y","?","VAG1.6TDI110PS.pdf","","","","Y","No comments","N"
+"2959","Mercedes","R Class 350 CDI (269PS) EURO5","6/2010 onwards","Turbo-Diesel","2987","6","265","620","40","95","365","N","N","?","","","","","Y","No comments","N"
+"2960","Mercedes","C Class 350 CDI (269PS) EURO5","2010 - 2014","Turbo-Diesel","2987","6","265","620","40","95","365","N","N","?","","","","","Y","No comments","N"
+"2961","Mercedes","GL 350 CDI (269PS) EURO5","9/2010 onwards","Turbo-Diesel","2987","6","265","620","40","95","365","N","N","?","","","","","Y","No comments","N"
+"2962","Mercedes","E Class 350 CDI (269PS) EURO5","","Turbo-Diesel","2987","6","265","620","40","95","365","N","N","?","","","","","Y","No comments","N"
+"2963","Mercedes","M Class 350 CDI (269PS) EURO5","2010 onwards","Turbo-Diesel","2987","6","265","620","40","95","365","N","N","?","","","","","Y","No comments","N"
+"2964","Land Rover","Range Rover 4 TDV6 L405 (258PS)","2013 onwards","Turbo-Diesel","2993","6","254","600","45","115","365","E","N","B","RangeRover4TDV6.pdf","","","","Y","No comments","N"
+"2965","Ford","Fiesta ST 1.6 EcoBoost STAGE2 (182PS)","3/2013 onwards","Turbocharged Petrol","1596","4","179","290","52","90","369","Y","N","F","FiestaSTEcoBoostStage2andDAIS.pdf","","\
+							<p><strong>&quot;Engineered by GGR&#44; remapped by Superchips&quot;</strong></p>\
+<p>This <strong>Superchips High Flow Fiesta ST180 DAIS</strong> package comprises the associated hardware and custom remap&#44; PLEASE NOTE IT DOES NOT INCLUDE THE BLUEFIN HANDSET&#44; this must be purchased separately. If you install the hardware without the custom remap the vehicle runs poorly with the EML illuminated and stores fault codes. The custom remap is also suitable for use on vehicles whose CAT has been removed in conjunction with the <strong> High Flow Fiesta ST180 DAIS</strong> package.</p>\
+<p>Please contact our head office for further information&#44; 01280 816781.</p>\
+				","","Y","No comments","N"
+"2966","BMW","118 i F20 / 21 (170PS)","9/2011 onwards","Turbocharged Petrol","1598","4","168","250","32","69","449","N","Y","?","BMWF20118i.pdf","","","","Y","No comments","N"
+"2967","BMW","320 i F30 / F31 EfficientDynamics (170PS)","9/2012 onwards","Turbocharged Petrol","1598","4","168","250","32","69","449","N","Y","?","BMWF20118i.pdf","","","","Y","No comments","N"
+"2968","Nissan","NV200 1.5 dCi (90PS) EU5","9/2009 onwards","Turbo-Diesel","1461","4","89","200","17","35","320","Y","N","F","15dci90PSEuro4.pdf","","","","Y","No comments","N"
+"2969","Audi","S5 3.0 TFSI (333PS)","6/2009 onwards","Supercharged","2995","6","329","440","62","59","365","N","N","?","S4S530TFSISupercharged.pdf","","","","Y","No comments","N"
+"2970","Audi","S4 3.0 TFSI (333PS)","3/2009 onwards","Supercharged","2995","6","329","440","62","59","365","N","N","?","S4S530TFSISupercharged.pdf","","","","Y","No comments","N"
+"2971","Suzuki","Swift 1.6 Sport (136PS)","9/2011 onwards","Non-Turbo Petrol","1586","4","134","160","7","8","229","N","N","?","SwiftSportBosch.pdf","","","","Y","No comments","N"
+"2972","BMW","740 d F01/02 (313HP)","6/2012 onwards","Turbo-Diesel","2993","6","309","630","42","77","449","N","Y","?","BMWF13640dEPC.pdf","","","","Y","No comments","N"
+"2973","BMW","335 d/xDrive F30/31 (313HP)","6/2013 onwards","Turbo-Diesel","2993","6","309","630","42","77","449","N","Y","?","BMWF13640dEPC.pdf","","","","Y","No comments","N"
+"2974","BMW","535 d/xDrive GT F07 (313HP)","6/2012 onwards","Turbo-Diesel","2993","6","309","630","42","77","449","N","Y","?","BMWF13640dEPC.pdf","","","","Y","No comments","N"
+"2975","BMW","640 d/xDrive F06/12/13 (313HP)","9/2011 onwards","Turbo-Diesel","2993","6","309","630","42","77","449","N","Y","?","BMWF13640dEPC.pdf","","","","Y","No comments","N"
+"2976","BMW","435 d/xDrive F32/33/36 (313HP)","9/2013 onwards","Turbo-Diesel","2993","6","309","630","42","77","449","N","Y","?","BMWF13640dEPC.pdf","","","","Y","No comments","N"
+"2977","BMW","X3 xDrive35d F25 (313HP)","9/2011 onwards","Turbo-Diesel","2993","6","309","630","42","77","449","N","Y","?","BMWF13640dEPC.pdf","","","","Y","No comments","N"
+"2978","Mitsubishi","Outlander II 2.2 DI-D (156PS)","9/2007 onwards","Turbo-Diesel","2179","4","156","380","24","70","320","N","N","?","22HDI 156BHP.pdf","","","","Y","No comments","N"
+"2979","BMW","530 d/xDrive F10/11 (245HP)","3/2010 onwards","Turbo-Diesel","2993","6","242","540","44","107","449","N","Y","?","BMWF10530dEPC.pdf","","","","Y","No comments","N"
+"2980","Ford","Transit 2.2 TDCi Duratorq (100PS) EURO5","9/2011 onwards","Turbo-Diesel","2198","4","98","310","42","101","365","E","N","B","Transit22TDCI100PSEU5.pdf","","","","Y","No comments","N"
+"2981","Citroen","Dispatch II 2.0 HDi 125","6/2011 onwards","Turbo-Diesel","1997","4","126","320","56","104","365","N","N","?","dispatch20hdi125ps.pdf","","","","Y","No comments","N"
+"2982","Renault","Kangoo II 1.5 8V dCi 110 EU5","9/2010 onwards","Turbo-Diesel","1461","4","108","240","20","37","320","Y","N","F","1.5 dCi 110bhp.pdf","","","","Y","No comments","N"
+"2983","BMW","330 F30/31 330d/xDrive (258HP)","6/2012 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2984","BMW","330 F34 GT 330d (258HP)","2014 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2985","BMW","X3 F25 xDrive30d (258HP)","3/2011 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2986","BMW","430 F32/33/36 d/xDrive (258HP)","9/2013 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2987","BMW","530 F10/11 d/xDrive (258HP)","9/2011 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2988","BMW","530 F07 d/xDrive GT (258HP)","6/2012 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2989","BMW","730 F01/02 730d/xDrive (258HP)","6/2012 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2990","Jeep","Grand Cherokee 3.0 CRD V6 (250PS)","6/2013 onwards","Turbo-Diesel","2987","6","247","550","37","90","365","N","N","?","GrandCherokee30CRD250PS.pdf","","","","Y","No comments","N"
+"2991","BMW","X5 F15 xDrive30d (258HP)","9/2013 onwards","Turbo-Diesel","2993","6","254","560","41","92","449","N","Y","?","BMWF10530d258psEPC.pdf","","","","Y","No comments","N"
+"2992","Volkswagen","Touran 2.0 TDI CR (140PS)","2010 onwards","Turbo-Diesel","1968","4","138","320","33","58","365","E","N","B","","","","","Y","No comments","N"
+"2993","Porsche","Macan S Diesel (258hp)","3/2014 onwards","Turbo-Diesel","2967","6","254","580","40","85","365","N","N","?","MacanSdiesel.pdf","","","","Y","No comments","N"
+"2994","Volkswagen","Golf Mk7 2.0 TSI GTI (220PS) STAGE2","9/2013 onwards","Turbocharged Petrol","1984","4","216","350","78","115","415","N","N","?","GolfGTIMk7220PSStage2.pdf","","\
+							<p>&nbsp;</p>\
+<p>The Stage 2 software developed for the MK7 GTi not only significantly increases performance gains&#44; it removes the CEL (Check Engine Light) activated by catalyst efficiency error codes caused by SPORT CAT or CAT removal. It also includes the removal of the speed limit for motorsport use and in manual cars the rev limit is extended to 7150rpm.</p>\
+<p>&nbsp;</p>\
+				","","Y","No comments","N"

@@ -6,21 +6,7 @@ use DBI;
 use English;
 use TP;
 
-use constant BFECUOPENPRICE => 400; 
-use constant TUNENASPPRICE1 => 599;
-use constant TUNENASPPRICE2 => 699;
-use constant TUNETURBOPRICE1 => 999;
-use constant TUNETURBOPRICE2 => 1249;
-use constant TUNETURBOPRICE3 => 1499;
 
-use constant TUNESTAGE2PRICE => 150;
-use constant TUNESTAGE3PRICE => 150;
-use constant TUNESTAGE4PRICE => 150;
-
-use constant BFNASPPRICE => 499;
-use constant BFFORDPRICE => 739;
-use constant BFVAGPRICE  => 739;
-use constant BFOPELPRICE => 739;
 
 use constant PPBLUEFIN    => "BF"; # Product suffix for Bluefin
 use constant PPFLASHTUNE  => "FT"; # Product prefix for Flash tune
@@ -32,15 +18,7 @@ use constant PPSTAGE2     => "S2"; # Product prefix for None
 use constant PPSTAGE3     => "S3"; # Product prefix for None
 use constant PPSTAGE4     => "S4"; # Product prefix for None
 
-use constant PNBLUEFIN    => "Superchips Bluefin"; # Product Name for Bluefin
-use constant PNFLASHTUNE  => "Superchips Flash Tune"; # Product Name for Flash tune
-use constant PNBENCHTUNE  => "Superchips Bench Tune"; # Product Name for Bench Tune
-use constant PNCHIPCHANGE => "Superchips Chip Change"; # Product Name for Bench Tune
-use constant PNUNKNOWN    => "Superchips Tune"; # Product Name for Bluefin
-use constant PNNONE       => "No Tune Whatsoever"; # Product Name for None
-use constant PNSTAGE2     => "Stage 2 Tune"; 
-use constant PNSTAGE3     => "Stage 3 Tune"; 
-use constant PNSTAGE4     => "Stage 4 Tune"; 
+
 
 use constant START_WRAPPER => "<div id=\"superchipsProductDescription\" class=\"infobox_container\">";
 use constant END_WRAPPER => "</div>";
@@ -103,8 +81,8 @@ my $insertth = $dbh->prepare("
 my $v_products_type = 1;
 my $v_products_url_1;
 my $v_specials_price;
-my $v_specials_date_avail = "";
-my $v_specials_expires_date = "";
+my $v_specials_date_avail = "2014-09-08 00:00:00";
+my $v_specials_expires_date = "2014-12-31 00:00:00";
 my $v_products_weight = 0;
 my $v_products_qty_box_status = 1;
 my $v_product_is_call = 0;
@@ -135,9 +113,6 @@ my $v_products_name_1 = "";
 my $v_products_description_1 = "";
 
 my $products_model;
-
-# my $hiddenstats = "<DIV ID=\"hiddenstats1\" STYLE=\"POSITION: absolute; z-index: 4; VISIBILITY: hidden;\">$complete_model. Original Power: $car_data->{original_kw} kW ($car_data->{original_bhp} bhp). Original Torque: $car_data->{original_nm} Nm. Power Gain: $powerincreasekw kW ($superchips_website->{gain_bhp} bhp) = $percentpowerincrease% increase.Torque Gain: $superchips_website->{gain_nm} Nm = $percenttorqueincrease% increase</DIV>";
-
 
 
 #
@@ -170,30 +145,35 @@ while ($car_data = $sth->fetchrow_hashref)
 		}
 
 	my $no_tune = 1;
-
 	my $openingstats = &create_superchips_stats_table ($car_data, $superchips_website);
-	
+	my $complete_model = &get_complete_model ($car_data);
+		
 	$v_products_description_1 = START_WRAPPER;
+
+
 #
 # This is for BLUEFIN
 #
 	if ($no_tune && $superchips_website->{bluefin} ne "N")
 		{
 		$no_tune = 0;
+		my $product_name = PNBLUEFIN;
+		$v_products_sort_order = 10;
 		$v_products_price = &get_bluefin_price ($superchips_website->{make}, $superchips_website->{model}, $superchips_website->{engine_type}, $superchips_website->{capacity});
+		$v_specials_price = $v_products_price - 40;
 		$v_products_image = "Bluefin.jpg";
 		$v_products_model = $products_model . PPBLUEFIN;
-		$v_products_name_1 = PNBLUEFIN;
 		$v_products_sort_order = 10;
 
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNBLUEFIN, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_whatisbluefin ();
-		$v_products_description_1 .= &infobox_howbluefinworks ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_bluefinenable () if ($superchips_website->{bluefin} eq 'E');
 		$v_products_description_1 .= &infobox_guarantee ();
@@ -210,19 +190,23 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 	if ($no_tune && $superchips_website->{tune_type} eq "?")
 		{
+		$no_tune = 0;
+		my $product_name = PNUNKNOWN;
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
+		$v_specials_price = $v_products_price - 40;
 		$v_products_image = "unknown_tune.jpg";
 		$v_products_model = $products_model . PPUNKNOWN;
-		$v_products_name_1 = PNUNKNOWN;
 		$v_products_sort_order = 20;
 
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 			
 		$v_products_description_1 .= &infobox_product_heading (PNUNKNOWN, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_unknowntune ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -237,19 +221,23 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 	if ($no_tune && $superchips_website->{tune_type} eq "F")
 		{
+		$no_tune = 0;
+		my $product_name = PNFLASHTUNE;
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type});
+		$v_specials_price = $v_products_price - 40;
 		$v_products_image = "flash_tune.jpg";
 		$v_products_model = $products_model . PPFLASHTUNE;
-		$v_products_name_1 = PNFLASHTUNE;
 		$v_products_sort_order = 20;
 			
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNFLASHTUNE, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_flashtune ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -264,19 +252,23 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 	if ($no_tune && $superchips_website->{tune_type} eq "B")
 		{
+		$no_tune = 0;
+		my $product_name = PNBENCHTUNE;
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type}) + BFECUOPENPRICE;
+		$v_specials_price = $v_products_price - 100;
 		$v_products_image = "bench_tune.jpg";
 		$v_products_model = $products_model . PPBENCHTUNE;
-		$v_products_name_1 = PNBENCHTUNE;
 		$v_products_sort_order = 20;
 
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNBENCHTUNE, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_benchtune ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -291,19 +283,22 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 	if ($no_tune && $superchips_website->{tune_type} eq "C")
 		{
+		$no_tune = 0;
+		my $product_name = PNCHIPCHANGE;
 		$v_products_price = &get_tune_price ($superchips_website->{uk_price}, $superchips_website->{engine_type}) + BFECUOPENPRICE;
 		$v_products_image = "chip_change.jpg";
 		$v_products_model = $products_model . PPCHIPCHANGE;
-		$v_products_name_1 = PNCHIPCHANGE;
 		$v_products_sort_order = 20;
 			
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNCHIPCHANGE, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_chipchange ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -312,12 +307,20 @@ while ($car_data = $sth->fetchrow_hashref)
 
 		&insert_store_entry ();
 		}
+
+
 	
+
+	$v_products_description_1 = START_WRAPPER;
+
+
+
 #
 # This is for a STAGE 2 tune
 #
 	if ($car_data->{superchips_stage2})
 		{
+		my $product_name = PNSTAGE2;
 		my $superchips_website = &get_tune_info ($car_data->{superchips_stage2}, $get_tune_sth);
 		unless (defined $superchips_website)
 			{
@@ -328,18 +331,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		my $openingstats = &create_superchips_stats_table ($car_data, $superchips_website);
 
 		$v_products_price = TUNESTAGE2PRICE;
-		$v_products_image = "flash_tune.jpg";
+		$v_specials_price = $v_products_price - 15;
+		$v_products_image = "Bluefin.jpg";
 		$v_products_model = $products_model . PPSTAGE2;
-		$v_products_name_1 = PNSTAGE2;
 		$v_products_sort_order = 50;
 			
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNSTAGE2, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_stage2 ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -355,6 +360,7 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 	if ($car_data->{superchips_stage3})
 		{
+		my $product_name = PNSTAGE3;
 		my $superchips_website = &get_tune_info ($car_data->{superchips_stage3}, $get_tune_sth);
 		unless (defined $superchips_website)
 			{
@@ -365,18 +371,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		my $openingstats = &create_superchips_stats_table ($car_data, $superchips_website);
 
 		$v_products_price = TUNESTAGE3PRICE;
-		$v_products_image = "flash_tune.jpg";
+		$v_specials_price = $v_products_price - 15;
+		$v_products_image = "Bluefin.jpg";
 		$v_products_model = $products_model . PPSTAGE3;
-		$v_products_name_1 = PNSTAGE3;
 		$v_products_sort_order = 60;
 			
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNSTAGE3, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_stage3 ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -392,6 +400,7 @@ while ($car_data = $sth->fetchrow_hashref)
 #
 	if ($car_data->{superchips_stage4})
 		{
+		my $product_name = PNSTAGE4;
 		my $superchips_website = &get_tune_info ($car_data->{superchips_stage4}, $get_tune_sth);
 		unless (defined $superchips_website)
 			{
@@ -402,18 +411,20 @@ while ($car_data = $sth->fetchrow_hashref)
 		my $openingstats = &create_superchips_stats_table ($car_data, $superchips_website);
 
 		$v_products_price = TUNESTAGE4PRICE;
-		$v_products_image = "flash_tune.jpg";
+		$v_specials_price = $v_products_price - 15;
+		$v_products_image = "Bluefin.jpg";
 		$v_products_model = $products_model . PPSTAGE4;
-		$v_products_name_1 = PNSTAGE4;
 		$v_products_sort_order = 70;
 			
-		$v_metatags_title_1 = $v_products_name_1;
-		$v_metatags_keywords_1 = $v_products_name_1;
-		$v_metatags_description_1 = &create_metatags_description ($v_products_name_1, $car_data, $superchips_website);
+		$v_products_name_1 = $product_name;
+		$v_metatags_title_1 = &create_metatags_title ($complete_model, $product_name);
+		$v_metatags_keywords_1 = &create_metatags_keywords ($complete_model, $product_name);
+		$v_metatags_description_1 = &create_metatags_description ($complete_model, $product_name);
 
 		$v_products_description_1 .= &infobox_product_heading (PNSTAGE4, $openingstats);
-		$v_products_description_1 .= &infobox_powercurve ();
 		$v_products_description_1 .= &infobox_stage4 ();
+		$v_products_description_1 .= &infobox_warning ($superchips_website->{warning});
+		$v_products_description_1 .= &infobox_extrainfo ($superchips_website->{dyno_graph}, $superchips_website->{road_test}, $superchips_website->{related_media});
 		$v_products_description_1 .= &infobox_otherbenefits ();
 		$v_products_description_1 .= &infobox_guarantee ();
 		$v_products_description_1 .= &infobox_about_superchips ();
@@ -463,147 +474,12 @@ sub get_tune_info
 }
 
 
-sub get_tune_price
-##########################
-# Gives the right price for
-# the selected tuner
-##########################
-{
-	my ($uk_price, $fuel_type) = @_;
-	my $tuneprice = 0;
-
-	if ($uk_price <= 229)
-		{
-		if ($fuel_type eq NONTURBO)
-			{
-			$tuneprice = TUNENASPPRICE1;
-			}
-		else
-			{
-			$tuneprice = TUNETURBOPRICE1;
-			}
-		}
-
-	if ($uk_price > 229 && $uk_price <= 320)
-		{
-		if ($fuel_type eq NONTURBO)
-			{
-			$tuneprice = TUNENASPPRICE2;
-			}
-		else
-			{
-			$tuneprice = TUNETURBOPRICE1;
-			}
-		}
-
-	if ($uk_price > 320 && $uk_price <= 365)
-		{
-		$tuneprice = TUNETURBOPRICE1;
-		}
-
-	if ($uk_price > 365 && $uk_price <= 480)
-		{
-		$tuneprice = TUNETURBOPRICE2;
-		}
-
-	if ($uk_price > 480 && $uk_price <= 799)
-		{
-		$tuneprice = TUNETURBOPRICE3;
-		}
-
-	if ($uk_price > 799)
-		{
-		$tuneprice = 1000000;
-		}
-	return $tuneprice;
-}
-
-sub get_bluefin_price
-##########################
-# Gives the right price for
-# the selected bluefin
-##########################
-{
-	my ($make, $model, $fuel_type, $capacity) = @_;	
-	my $bluefinprice = 0;
-	
-	if ($make =~ /Audi|BMW|Dacia|Mercedes|Nissan|Renault|Seat|Skoda|Volkswagen/i)
-		{
-		if ($fuel_type eq NONTURBO)
-			{
-			$bluefinprice = BFNASPPRICE;
-			}
-		else
-			{
-			$bluefinprice = BFVAGPRICE;
-			}
-		}
-
-	if ($make =~ /Buick|Chevrolet|Holden|Saab|Vauxhall-Opel|Opel/i)
-		{
-		if ($fuel_type eq NONTURBO)
-			{
-			$bluefinprice = BFNASPPRICE;
-			}
-		else
-			{
-			$bluefinprice = BFOPELPRICE;
-			}
-		}
-
-	if ($make =~ /Ford|LTI/i)
-		{
-		if ($fuel_type eq NONTURBO)
-			{
-			$bluefinprice = BFNASPPRICE;
-			}
-		else
-			{
-			$bluefinprice = BFFORDPRICE;
-			}
-		}
-
-	if ($make =~ /Jaguar/i)
-		{
-		# The X Types use the FORD-T, while the XF and XJ use LRF-T
-		# $2 is the Model. If the left 2 characters are "X ", then it is an X Type
-		if (substr($model, 1, 2) eq "X ")
-			{
-			$bluefinprice = BFFORDPRICE;
-			}
-		else
-			{
-			$bluefinprice = BFVAGPRICE;
-			}
-		}
-
-	if ($make =~ /Land Rover/i)
-		{
-		if ($capacity == 2402)
-			{
-			$bluefinprice = BFFORDPRICE;
-			}
-		else
-			{
-			$bluefinprice = BFVAGPRICE;
-			}
-		}
-
-	if ($make =~ /Mini|Morgan/i)
-		{
-		$bluefinprice = BFNASPPRICE;
-		}
-	return $bluefinprice;
-}
-
-
-
 sub infobox_whatisbluefin 
 	{
 	return TP::INFOBOX_START . TP::INFOBOX_LONG . 
 	 TP::LONGBOX_PIC_START . "<img src=\"images/Superchips/Bluefin.jpg\" alt=\"Performance With Style at Tigersoft Performance\" />" . TP::LONGBOX_PIC_END .
 	 TP::LONGBOX_TEXT_START . "<h2>What Is Bluefin?</h2>" . 
-	 "<p>The amazing Superchips Bluefin is a simple hand-held device that allows you to apply a Superchips tune at home by yourself. All you need is a Windows PC with an internet connection</p><p>It is very simple to use, it has just 3 buttons (Y, N and <) and a 2-line display. It walks you through the process of installing the tune.</p>" . TP::LONGBOX_TEXT_END . TP::INFOBOX_END;
+	 "<p>The amazing Superchips Bluefin is a simple hand-held device that allows you to apply a Superchips tune at home by yourself. All you need is a Windows PC with an internet connection</p><p>It is very simple to use, it has just 3 buttons (Y, N and <) and a 2-line display. It walks you through the process of installing the tune.</p><a class='tpbutton' href='/BluefinInfo'>Learn More About Bluefin<\/a>" . TP::LONGBOX_TEXT_END . TP::INFOBOX_END;
 	}
 	
 sub infobox_outofboxtune
@@ -646,7 +522,7 @@ sub infobox_howbluefinworks
 
 sub infobox_bluefinenable 
 	{
-	return TP::INFOBOX_START . TP::INFOBOX_FULL . "<h2>BLUEFIN ENABLE REQUIRED!</h2><p>PLEASE NOTE: Before the Superchips Bluefin can be used on this car, the ECU needs to be 'Bluefin Enabled'.<br>This requires the ECU to be removed from the car, and then carefully opened up, and the encryption on the ECU defeated. We need to be in touch with Superchips in the UK during the course of this process, and so that means it can only be done overnight, and on a weeknight. This is delicate and time-consuming work, and so the price above includes a \$" . BFECUOPENPRICE . " charge accordingly.<br>Tigersoft Performance is the only Superchips dealer in Australia with the expertise and equipment required to perform this service." . TP::INFOBOX_END;
+	return TP::INFOBOX_START . TP::INFOBOX_HALF . "<h2>BLUEFIN ENABLE REQUIRED!</h2><p>PLEASE NOTE: Before the Superchips Bluefin can be used on this car, the ECU needs to be 'Bluefin Enabled'.<br>This requires the ECU to be removed from the car, and then carefully opened up, and the encryption on the ECU defeated. We need to be in touch with Superchips in the UK during the course of this process, and so that means it can only be done overnight, and on a weeknight. This is delicate and time-consuming work, and so the price above includes a \$" . BFECUOPENPRICE . " charge accordingly.<br>Tigersoft Performance is the only Superchips dealer in Australia with the expertise and equipment required to perform this service." . TP::INFOBOX_END;
 	}
 	
 
@@ -659,16 +535,51 @@ sub infobox_product_heading
 	}
 	
 
-sub infobox_powercurve 
+sub infobox_extrainfo 
 	{
-	my $dyno_graph = $_[0];
+	my ($dyno_graph, $road_test, $related_media) = @_;
 	
-	if (!length ($dyno_graph))
+	my $extra_info = '';
+	if (length ($dyno_graph))
+		{
+		$extra_info .= "<h3>Power Curve</h3>" . "<div class='iframe_container'><a href=\"http://www.superchips.co.uk/curves/$dyno_graph\"><img src=\"images/Superchips/icon_curve.png\"></img></a><\/div>"
+		}
+
+	if (length ($road_test))
+		{
+		$extra_info .= "<h3>Road Test</h3>" . "<div class='iframe_container'><a href=\"http://www.superchips.co.uk/roadtest/$road_test\"><img src=\"images/Superchips/icon_road.png\"></img></a><\/div>"
+		}
+		
+	if (length ($related_media))
+		{
+		$extra_info .= "<h3>Related Media</h3>" . "<div class='iframe_container'><embed src=\"$related_media\" width='320' height='240' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' align='center'<\/embed><\/div>";
+		}	
+
+	if (length ($extra_info))
+		{
+		return TP::INFOBOX_START . TP::INFOBOX_HALF . "<h2>Additional Information</h2>" . $extra_info . TP::INFOBOX_END;
+		}
+	return '';
+	}
+	
+sub infobox_warning
+	{
+	my $warning = $_[0];
+	
+	if (!length ($warning))
 		{
 		return '';
 		}
 	
-	return TP::INFOBOX_START . TP::INFOBOX_HALF . "<h2>Power Curve</h2>" . "<p><a href=\"http://www.superchips.co.uk/curves/$dyno_graph\"><img src=\"images/icon_curve.png\"></img></a>" . TP::INFOBOX_END;
+	# Audi S3 195kW
+	$warning =~ s/<p>&nbsp;Stage 2 software is available&nbsp;to any S3 Bluefin customers with&nbsp;the extra parts listed below:<\/p>\s*<p>Good quality Replacement Sports-Cat (optional Full Exhaust System)&#44; filter\/induction kit.<\/p>/<p>Stage 2 software is available to any S3 Bluefin customers with the extra parts listed below:<\/p><ul class='infobox_list'><li>Good quality Replacement Sports-Cat (optional Full Exhaust System)<\/li><li>Good Quality <a alt='BMC Replacement Air Filters at Tigersoft Performance' href='\/BMCReplacementFilters'>Replacement Air Filter<\/a> or <a alt='BMC Cold Air Intake Cold Air Induction at Tigersoft Performance' href='\/BMCColdAirIntakes'>Cold Air Intake<\/a><\li><\/ul>/s;
+	
+	$warning =~ s/images\/warn/images\/Superchips\/warn/;	
+	$warning =~ s/&nbsp;/ /g;
+	$warning =~ s/^\s+//;
+	$warning =~ s/\s+$//;
+	
+	return TP::INFOBOX_START . TP::INFOBOX_HALF . "<h2>PLEASE NOTE!</h2>" . "<p>$warning</p>" . TP::INFOBOX_END;
 	}
 	
 
@@ -703,7 +614,7 @@ sub infobox_guarantee
 	 
 sub infobox_about_superchips
 	{
-	return TP::INFOBOX_START . TP::INFOBOX_FULL . "<h2>About Superchips</h2>" . 
+	return TP::INFOBOX_START . TP::INFOBOX_HALF . "<h2>About Superchips</h2>" . 
 	 "<p>Superchips has been around since 1977. They are a well established Tuning House, with a proven record and an outstanding reputation. With Superchips, <strong>Reliability</strong> is always the highest priority. They will never push the standard components of your car beyond their safe operating limits. That's why Superchips is one of the only tuning companies in the world that will provide you a <strong>lifetime warranty against engine damage caused by the tune</strong>.<br>In the case of cars that are still under warranty, the Superchips warranty will supplement your standard warranty to ensure that you are fully covered." . TP::INFOBOX_END
 	}
 	
@@ -738,4 +649,27 @@ sub infobox_stage3
 sub infobox_stage4
 	{
 	return TP::INFOBOX_START . TP::INFOBOX_FULL . "<h2>Stage 4 Tune</h2>" . "<p>This product requires that you already have the Superchips Stage 3 tune" . TP::INFOBOX_END;
+	}
+
+
+
+sub create_metatags_title
+	{
+	my ($complete_model, $product_name) = @_;
+	
+	return "$complete_model $product_name Performance Tune Melbourne Australia | Tigersoft Performance Cheltenham"
+	}
+
+sub create_metatags_keywords
+	{
+	my ($complete_model, $product_name) = @_;
+	
+	return "$complete_model performance tune - $complete_model performance tuning - $complete_model bluefin tune - $complete_model bluefin tuning - $complete_model superchips tune - $complete_model superchips tuning - $complete_model fuel economy - $complete_model save fuel - performance tune - tigersoft performance";
+	}
+
+sub create_metatags_description
+	{
+	my ($complete_model, $product_name) = @_;
+	
+	return "$complete_model Superchips Performance Tuning in Melbourne Australia by Tigersoft Performance";
 	}

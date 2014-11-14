@@ -7,7 +7,6 @@ use English;
 use feature 'say';
 use TP;
 
-use constant BLUEFIN_PRICE => 739;
 use constant BLUEFIN_SPECIAL_PRICE => 0.925;
 use constant BMC_SPECIAL_PRICE => 0.80;
 use constant SPECIAL_START => "2014-06-01 00:00:00";
@@ -55,7 +54,7 @@ my $sth = $dbh->prepare($cars_query) or die $dbh->errstr;
 $sth->execute() or die $dbh->errstr;
 
 #
-# Select a row from Categories based on partidnline
+# Select a row from Categories based on partid
 #
 my $get_cat_sth = $dbh->prepare("
 	SELECT * FROM Categories WHERE partid = ? AND active = 'Y'
@@ -84,6 +83,14 @@ my $get_products_sth = $dbh->prepare("
 	    inner join BMCFitment s on u.bmc_part_id = s.BMCProducts_bmc_part_id
 	WHERE s.BMCCars_idBMCCars = ?;
 ") or die $dbh->errstr;
+
+#
+# Read rows from the BMCCarEquivilent table
+#
+my $get_bmccarequiv_sth = $dbh->prepare("
+	SELECT * FROM BMCCarEquivilent WHERE BMCCar_master = ?
+") or die $dbh->errstr;
+
 
 #### populate the output line:
 #
@@ -162,9 +169,9 @@ my $bmc_data = {};
 my $car_data = {};
 while ($car_data = $sth->fetchrow_hashref)
 	{
-	$sortorder = 1000;
+	$v_products_sort_order = 1000;
 	
-	if (!$car_data->{superchips_tune} || !$car_data->{bmc_car} || $car_data->{fuel_type} eq "Non-Turbo Petrol")
+	if (!$car_data->{superchips_tune} || !$car_data->{bmc_car})
 		{
 		next;
 		}
@@ -176,29 +183,47 @@ while ($car_data = $sth->fetchrow_hashref)
 		next;
 		}
 		
-	next if $tune_data->{bluefin} ne 'Y';
 	my $openingstats = &create_superchips_stats_table ($car_data, $tune_data);
 
 
-
-
-
-
-	$get_products_sth->execute ($car_data->{bmc_car}) or die "could not execute get_products for car $car_data->{idCars}";
-	my $records = 0;
-	while ($bmc_data = $get_products_sth->fetchrow_hashref)
+	my @bmccars = ();
+	push @bmccars, $car_data->{bmc_car};
+	$get_bmccarequiv_sth->execute($car_data->{bmc_car}) or die "could not execute get_bmccarequiv_sth for car $car_data->{bmc_car}";
+	while (my $bmc_car = $get_bmccarequiv_sth->fetchrow_hashref)
 		{
-		next if $bmc_data->{type} eq "ACCESSORIES";
-
-		&screen ("Found car $car_data->{idCars} with Bluefin and BMC Product $bmc_data->{bmc_part_id}, $bmc_data->{type}");
-		&build_record ($car_data->{idCars}, $openingstats, ++$records);
-		
+		push @bmccars, $bmc_car->{BMCCar_slave};
 		}
-	
-	next if !$records;
-	
-	
-		
+
+	my $index = 0;
+	my $records = 0;
+	my @products = ();
+	while ($index <= $#bmccars)
+		{
+		debug ("Finding Products for car $car_data->{idCars}, bmc car $bmccars[$index]");
+		$get_products_sth->execute ($bmccars[$index]) or die "could not execute get_products for car $car_data->{idCars}";
+
+		while ($bmc_data = $get_products_sth->fetchrow_hashref)
+			{
+			next if $bmc_data->{type} eq "ACCESSORIES";
+			my $match = 0;
+			for my $k (0 .. $#products)
+				{
+				if ($products[$k] eq $bmc_data->{bmc_part_id})
+					{
+					$match = 1;
+					}
+				}
+			
+			if (!$match)
+				{
+				push @products, $bmc_data->{bmc_part_id};
+				&log ("Found car $car_data->{idCars} with Bluefin and BMC Product $bmc_data->{bmc_part_id}, $bmc_data->{type}");
+				&build_record ($car_data->{idCars}, $openingstats, ++$records, $tune_data);
+				}
+			
+			}
+		$index ++;
+		}
 	
 	}
 
@@ -209,7 +234,7 @@ exit 0;
 
 sub build_record
 	{
-	my ($partid, $openingstats, $record) = @_;
+	my ($partid, $openingstats, $record, $tune_data) = @_;
 	
 	$get_cat_sth->execute ($partid) or die $dbh->errstr;
 	my $category = $get_cat_sth->fetchrow_hashref;
@@ -228,8 +253,33 @@ sub build_record
 		&log ("WARNING: Could not find Stocked Products for $bmc_data->{bmc_part_id}");
 		return;
 		}
-	$v_products_price = BLUEFIN_PRICE + $bmcsp->{tp_price};
-	$v_specials_price = (BLUEFIN_PRICE * BLUEFIN_SPECIAL_PRICE) + ($bmcsp->{tp_price} * BMC_SPECIAL_PRICE);
+
+	my $tune_price = 0;
+	my $superchips_name = '';
+	if ($tune_data->{bluefin} eq 'Y')
+		{
+		$tune_price = &get_bluefin_price ($tune_data->{make}, $tune_data->{model}, $tune_data->{engine_type}, $tune_data->{capacity});
+		$superchips_name = PNBLUEFIN;
+		}
+	elsif ($tune_data->{bluefin} eq 'E')
+		{
+		$tune_price = &get_bluefin_price ($tune_data->{make}, $tune_data->{model}, $tune_data->{engine_type}, $tune_data->{capacity}) + BFECUOPENPRICE;
+		$superchips_name = PNBLUEFIN;
+		}
+	elsif ($tune_data->{tune_type} eq 'F')
+		{
+		$superchips_name = PNFLASHTUNE;
+		$tune_price = &get_tune_price ($tune_data->{uk_price}, $tune_data->{engine_type});
+		}
+	else
+		{
+		&debug ("WARNING: Unknown Tune Type");
+		return;
+		}
+	
+
+	$v_products_price = $tune_price + $bmcsp->{tp_price};
+	$v_specials_price = ($tune_price * BLUEFIN_SPECIAL_PRICE) + ($bmcsp->{tp_price} * BMC_SPECIAL_PRICE);
 	$v_products_image = "package-deal.jpg";
 
 
@@ -238,11 +288,18 @@ sub build_record
 	my $type = $bmc_data->{type};
 	if ($type eq "CAR FILTERS")
 		{
-		$type = "BMC AIR FILTER";
+		$type = "BMC REPLACEMENT AIR FILTER";
+		$v_products_sort_order = 300;
 		}
-	elsif ($type =~ m/[A-Z][A-Z]A - (.+)/)
+	elsif ($type =~ m/[A-Z][A-Z][AF] - (.+)/)
 		{
 		$type = "BMC " . $1;
+		$v_products_sort_order = 310;
+		}
+	elsif ($type =~ m/^SINGLE/)
+		{
+		$type = "BMC " . $type;
+		$v_products_sort_order = 320;
 		}
 	else
 		{
@@ -250,7 +307,7 @@ sub build_record
 		return;
 		}
 		
-	$v_products_name_1 = "Superchips Bluefin + $type";
+	$v_products_name_1 = "$superchips_name + $type";
 
 	$v_products_description_1 = INFOBOX_CONTAINER;
 	$v_products_description_1 .= INFOBOX_START . INFOBOX_FULL . "<h1>" . "Superchips Bluefin + BMC $type</h1>" . INFOBOX_END;

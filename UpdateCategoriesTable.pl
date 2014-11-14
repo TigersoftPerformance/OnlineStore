@@ -43,7 +43,7 @@ my $get_cat_sth = $dbh->prepare("
 # Insert a new row into Categories
 #
 my $ins_cat_sth = $dbh->prepare("
-	INSERT IGNORE INTO Categories (longname, shortname, partid, image, description, sort_order, active) VALUES (?,?,?,?,?,?,?)
+	INSERT IGNORE INTO Categories (longname, shortname, partid, image, description, metatags_title, metatags_keywords, metatags_description, sort_order, active) VALUES (?,?,?,?,?,?,?,?,?,?)
 ") or die $dbh->errstr;
 
 
@@ -51,7 +51,10 @@ my $ins_cat_sth = $dbh->prepare("
 # This is where the grunt work happens
 # This main loop reads each row from the Cars table
 #
-
+my $metatags_title = "";
+my $metatags_keywords = "";
+my $metatags_description = "";
+my $model_code;
 my $car_data = {};
 
 # Loop through every entry in the Cars Table
@@ -63,8 +66,14 @@ while ($car_data = $sth->fetchrow_hashref)
 	my $image = "Cat1" . $car_data->{make} . ".jpg";
 	$image =~ s/[ \/]+//g;
 	$image = IMAGE_DIR . $image;
-	my $description = INFOBOX_START . INFOBOX_FULL . "<h3>Please select the MODEL of your " . $car_data->{make} . " from the list below</h3>" . INFOBOX_END;
-	write_db_record ($longname, $shortname, 0, $image, $description, 0, "Y");
+	my $description = INFOBOX_CONTAINER . INFOBOX_START . INFOBOX_FULL . "<h3>Please select the MODEL of your " . $car_data->{make} . " from the list below</h3>" . INFOBOX_END . INFOBOX_CONTAINER_END;
+
+	$metatags_title = &create_metatags_title ($car_data->{make});
+	$metatags_keywords = &create_metatags_keywords ($car_data->{make});
+	$metatags_description = &create_metatags_description ($car_data->{make});
+	
+	write_db_record ($longname, $shortname, 0, $image, $description, 
+	 $metatags_title, $metatags_keywords, $metatags_description, 0, "Y");
 	
 	# Now we have to build a second level category for the Model
 	$shortname = $car_data->{model};
@@ -74,13 +83,19 @@ while ($car_data = $sth->fetchrow_hashref)
 	$image = IMAGE_DIR . $image;
 	if (length($car_data->{model_code}))
 		{
-		$description = INFOBOX_START . INFOBOX_FULL . "<h3>Please select the MODEL CODE of your " . $car_data->{make} . " " . $car_data->{model} . " from the list below" . INFOBOX_END;
+		$description = INFOBOX_CONTAINER . INFOBOX_START . INFOBOX_FULL . "<h3>Please select the MODEL CODE of your " . $car_data->{make} . " " . $car_data->{model} . " from the list below" . INFOBOX_END . INFOBOX_CONTAINER_END;
 		}
 	else
 		{
-		$description = INFOBOX_START . INFOBOX_FULL . "<h3>Please select the VARIANT of your " . $car_data->{make} . " " . $car_data->{model} . " from the list below" . INFOBOX_END;
+		$description = INFOBOX_CONTAINER . INFOBOX_START . INFOBOX_FULL . "<h3>Please select the VARIANT of your " . $car_data->{make} . " " . $car_data->{model} . " from the list below" . INFOBOX_END . INFOBOX_CONTAINER_END;
 		}
-	write_db_record  ($longname, $shortname, 0, $image, $description, 0, "Y");
+	my $makemodel = "$car_data->{make} $car_data->{model}";
+	$metatags_title = &create_metatags_title ($makemodel);
+	$metatags_keywords = &create_metatags_keywords ($makemodel);
+	$metatags_description = &create_metatags_description ($makemodel);
+
+	write_db_record ($longname, $shortname, 0, $image, $description, 
+	 $metatags_title, $metatags_keywords, $metatags_description, 0, "Y");
 	
 	# If the model_code exists then we need to build a 3rd level category for that as well.
 	if (length($car_data->{model_code}))
@@ -98,27 +113,31 @@ while ($car_data = $sth->fetchrow_hashref)
 		$image = "Cat3" . $car_data->{make} . $car_data->{model} . $car_data->{model_code} . ".jpg";
 		$image =~ s/[ \/]+//g;
 		$image = IMAGE_DIR . $image;
-		$description = INFOBOX_START . INFOBOX_FULL . "<h3>Please select the variant of your " . $car_data->{make} . " " . $car_data->{model} . " " . $car_data->{model_code} . " from the list below" . INFOBOX_END;
-		write_db_record ($longname, $shortname, 0, $image, $description, 0, "Y");
+
+
+		$model_code = "";
+		if (length ($car_data->{model_code}))
+			{
+			$model_code = $car_data->{model_code};
+			$model_code =~ s/$car_data->{model} //;
+			$model_code = " (" . $model_code . ")";
+			}
+		my $makemodel = "$car_data->{make} $car_data->{model} $model_code";
+		$description = INFOBOX_CONTAINER . INFOBOX_START . INFOBOX_FULL;
+		$description .= "<h3>Please select the variant of your $makemodel from the list below</h3>";
+		$description .= "<p>PLEASE NOTE: The variants listed below are not in alphabetical order. They are sorted first by Engine Type (Turbo Diesel, Turbo Petrol, Non Turbo Petrol etc), and then by the original power (highlighted in red). If you are unable to find your car listed below, please feel free to <a href='ContactUs'>contact us</a> to see what we can do</p>";		
+		
+		$description .= INFOBOX_END . INFOBOX_CONTAINER_END;
+		$description =~ s/,/&#44;/g;
+		$metatags_title = &create_metatags_title ($makemodel);
+		$metatags_keywords = &create_metatags_keywords ($makemodel);
+		$metatags_description = &create_metatags_description ($makemodel);
+
+		write_db_record ($longname, $shortname, 0, $image, $description, 
+		 $metatags_title, $metatags_keywords, $metatags_description, 0, "Y");
 		}
 	
 	# Finally, we can build the low level category
-	# First build the Short Date
-	my $start_year = substr ($car_data->{start_date}, 0, 4);
-	my $end_year = substr ($car_data->{end_date}, 0, 4);
-	my $start_part = ($start_year eq 1970) ? "upto" : substr ($start_year, 2, 2);
-	my $middle_part = "-";
-	my $end_part = ($end_year eq 2050 || $end_year eq "0000") ? "on" : substr ($end_year, 2, 2);
-	my $short_date = ($start_year eq 1970 && ($end_year eq 2050 || $end_year eq "0000")) ? "" : "[". $start_part . $middle_part . $end_part . "]";
-
-	my $model_code = "";
-	if (length ($car_data->{model_code}))
-		{
-		$model_code = $car_data->{model_code};
-		$model_code =~ s/$car_data->{model} //;
-		$model_code = " (" . $model_code . ")";
-		}
-
         my $sort_order;
         if ($car_data->{fuel_type} eq TURBODIESEL)
 		{
@@ -146,21 +165,23 @@ while ($car_data = $sth->fetchrow_hashref)
 		}
 
 
-	# And then add the power figure in kW
-	my $carkw = ($car_data->{original_kw} ? $car_data->{original_kw} . "kW" : "");
 	$sort_order += ($car_data->{original_kw} ? $car_data->{original_kw} : 0);
 
-	$shortname = $car_data->{model} . $model_code;
-	if (length ($car_data->{variant}))
-		{
-		$shortname = $shortname . " " . $car_data->{variant};
-		}
-	$shortname = $shortname . " " . $carkw . " " . $short_date;
+	my $completename = &get_complete_model ($car_data);
+	$shortname = $completename;
+	$shortname =~ s/^$car_data->{make} //;
 	$longname = $longname . "^" . $shortname;
 	$image = sprintf ("TPC%06d.jpg", $car_data->{idCars});
 	$image = IMAGE_DIR . $image;
-	$description = INFOBOX_START . INFOBOX_FULL . "<h3>Products available for your " . $car_data->{make} . " " . $car_data->{model} . " " . $car_data->{model_code} . " are listed below" . INFOBOX_END;
-	write_db_record ($longname, $shortname, $car_data->{idCars}, $image, $description, $sort_order, "Y");
+	$description = INFOBOX_CONTAINER . INFOBOX_START . INFOBOX_FULL . "<h3>Products available for your " . $car_data->{make} . " " . $car_data->{model} . " " . $car_data->{model_code} . " are listed below" . INFOBOX_END . INFOBOX_CONTAINER_END;
+
+
+	$metatags_title = &create_metatags_title ($completename);
+	$metatags_keywords = &create_metatags_keywords ($completename);
+	$metatags_description = &create_metatags_description ($completename);
+
+	write_db_record ($longname, $shortname, $car_data->{idCars}, $image, $description, 
+	 $metatags_title, $metatags_keywords, $metatags_description, $sort_order, "Y");
 
 	debug ("\t$longname");
 
@@ -179,7 +200,7 @@ exit 0;
 
 sub write_db_record
 	{
-	my ($longname, $shortname, $partid, $image, $description, $sort_order, $active) = @_;
+	my ($longname, $shortname, $partid, $image, $description, $metatags_title, $metatags_keywords, $metatags_description, $sort_order, $active) = @_;
 
 	$get_cat_sth->execute ($shortname, $partid) or die "Could not execute Get Cat";
 	my $cat = $get_cat_sth->fetchrow_hashref;
@@ -195,9 +216,30 @@ sub write_db_record
 			}
 		}
 			
-	$ins_cat_sth->execute ($longname, $shortname, $partid, $image, $description, $sort_order, $active) or die "Could not insert $longname";
+	$ins_cat_sth->execute ($longname, $shortname, $partid, $image, $description, $metatags_title, $metatags_keywords, $metatags_description, $sort_order, $active) or die "Could not insert $longname";
 	if (defined $dbh->err)
 		{
 		debug ("Error: $dbh->err, $dbh->errstr");
 		}
+	}
+	
+sub create_metatags_title
+	{
+	my ($complete_model) = @_;
+	
+	return "All Products to suit $complete_model at Tigersoft Performance Cheltenham Melbourne Australia"
+	}
+
+sub create_metatags_keywords
+	{
+	my ($complete_model) = @_;
+	
+	return "$complete_model performance tune - $complete_model performance tuning - $complete_model bluefin tune - $complete_model bluefin tuning - $complete_model superchips tune - $complete_model superchips tuning - $complete_model fuel economy - $complete_model save fuel - performance tune - tigersoft performance - $complete_model BC Forged Wheels - $complete_model BC Racing Coilovers -  complete_model BMC Air Filters - $complete_model BMC Cold Air Intake - $complete_model BC Forged Wheels";
+	}
+
+sub create_metatags_description
+	{
+	my ($complete_model) = @_;
+	
+	return "All Products to suit $complete_model at Tigersoft Performance Cheltenham Melbourne Australia"
 	}

@@ -4,6 +4,7 @@ use strict;
 use DBI;
 use LWP::Simple;
 use feature 'say';
+use TP;
 
 my $content;
 #
@@ -12,10 +13,6 @@ my $content;
 my $url ='http://www.bcec.com.tw/products_all/ZA.htm';
 
 use constant URL => 'http://www.bcec.com.tw/products_all/';
-use constant LOG => "./bcracing";
-
-# Opening a log file to log data
-open (my $logfh, ">", LOG) or die "cannot open " . LOG; 
 
 #
 # Connect to database
@@ -82,6 +79,7 @@ foreach my $key (sort keys %urls)
 	{
 	# Make an absolute url like	
 	$url = URL . $key;
+	debug ("URL = $url");
 	$retries = 5;
 	# Try a few times in case of failure
 	while ($retries && !($content = get $url))
@@ -99,11 +97,12 @@ foreach my $key (sort keys %urls)
 	my $after_no = 0;
 	my $make;
 
-	# Lplit html contents into array of lines 
+	# split html contents into array of lines 
 	my @lines = split '\n', $content;
 	# Looping through the data to get things out
 	foreach my $line (@lines)
 	 	{
+		debug (" line = $line");
 	 	# Remove all spaces	
 	 	$line =~ s/\s+/ /g;
 	 	# Skip everything before NO.	
@@ -141,8 +140,6 @@ foreach my $key (sort keys %urls)
 	 		}	
 	 	}
 	} 	
-
-close $logfh;
 
 
 sub do_db
@@ -195,11 +192,3 @@ sub do_db
 		}	
 }
 
-# this subroutine prints to the screen
-# also logs whatever passed to it
-sub screen
-	{
-	my $line = shift;
-	say $line;
-	say $logfh $line;
-	}

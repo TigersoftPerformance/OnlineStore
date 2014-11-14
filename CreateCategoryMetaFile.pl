@@ -62,11 +62,11 @@ while (my $line = <$input_csv>)
 		}
 
 	my $description = $cat_table->{description};
-	$description =~ s/[\n]//g;
 	$description =~ s/\"/\"/g;
-	$description =~ s/,/&#44/g;
+	$description =~ s/,/&#44;/g;
+	$description =~ s/\R//g;
 	
-	print $categories $catid, $cat_table->{image}, $catname, $description, $cattitle, $catkey, $catmetdesc, $cat_table->{sort_order} . "\n";
+	print $categories $catid, $cat_table->{image}, $catname, $description, $cat_table->{metatags_title}, $cat_table->{metatags_keywords}, $cat_table->{metatags_description}, $cat_table->{sort_order} . "\n";
 	}	
 
 

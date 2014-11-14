@@ -117,16 +117,24 @@ while ($fiwebsite = $get_fiwebsite_sth->fetchrow_hashref)
 	$desc =~ s/d<strong>esigned/designed/g;
 	$desc =~ s/<strong>(The first low)/$1/;
 	$desc =~ s/<div>&nbsp;$//g;
+	$desc =~ s/(Directions) of use/$1/m;
+	$desc =~ s/recommended Final Inspection process/recommended Tigersoft Performance Wash Process/g;
+	$desc =~ s/More detailed information and direction on the number of uses of Jaffa is available by clicking here.//g;
+
+
+
 	
 	# fix up some links
 	$desc =~ s/<a href=".+">'Peppermint'<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/NanoFibre\/PeppermintMicrofibreWash5ooml">'Peppermint'<\/a>/g;
+	
 	$desc =~ s/<a href=".+">learn what these terms mean/<a>/g;
+	$desc =~ s/Click here to&nbsp;<a href=\"http:\/\/s164851.gridserver.com\/blog\/Glossary\/\">learn what the terms used here mean<\/a>//g;
+	
 	$desc =~ s/<a.+?>Full Metal Jacket Spray Wax<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/PaintProtection\/FullMetalJacketSprayWax275ml">Full Metal Jacket Spray Wax<\/a>/g;
 	$desc =~ s/<a.+?>[Gg]loss [Bb]oost<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/PaintProtection\/GlossBoost5ooml">Gloss Boost<\/a>/g;
 	$desc =~ s/<a.+?>mini verion<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/ExteriorCleaning\/WaffleWeaveDryingTowelMINI">mini version<\/a>/g;
 	$desc =~ s/<a.+?>it's 60cm x 90cm big brother<\/a>/<a href="http:\/\/tigersoft.com.au\/FinalInspection\/ExteriorCleaning\/WaffleWeaveDryingTowel">its 60cm x 90cm big brother<\/a>/g;
-	
-	
+	$desc =~ s/<a.+?>here<\/a>/<a title="How To Wash Your Car" alt="How To Wash Your Car At Tigersoft Performance" href="http:\/\/tigersoft.com.au\/HowToWashYourCar">here<\/a>/g;	
 	
 	
 	

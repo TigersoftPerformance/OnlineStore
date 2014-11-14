@@ -121,6 +121,10 @@ while ($temp1 =~ /<option value="(\d+)">(.*?)<\/option>/gi)
 	{
 	$makeid = $1;
 	$make  = $2;	
+	if (defined $ARGV[0] && $make ne $ARGV[0])
+		{
+		next;
+		}
 	&log ("make: $make", " => $makeid");
 
 	#
@@ -287,7 +291,7 @@ sub add_new_variant
 			$bmc_part_id = $column_values[1];
 			$mounting_note = '';
 			$product_type = "ACCESSORIES";			
-			&debug ("variant = prev variant = $variant");	
+			# &debug ("variant = prev variant = $variant");	
 			}
 		else
 			{
@@ -295,7 +299,7 @@ sub add_new_variant
 			$variant = $column_values[0];
 			$mounting_note = $column_values[1];
 			$bmc_part_id = $column_values[2];
-			&debug ("variant = $variant");	
+			# &debug ("variant = $variant");	
 			}
 		
 		if ($bmc_part_id =~ m/<a href=\"(.*?)\".*?>(.*?)<\/a/)

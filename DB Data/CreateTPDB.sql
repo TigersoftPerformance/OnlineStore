@@ -323,6 +323,9 @@ CREATE TABLE IF NOT EXISTS `TP`.`BMCStockedProducts` (
   `cost_price` DECIMAL (13,4) NULL DEFAULT '0',
   `rrp_price` DECIMAL (13,4) NULL DEFAULT '0',
   `tp_price` DECIMAL (13,4) NULL DEFAULT '0',
+  `availability` CHAR(1) NULL,
+  `available_date` DATE NULL,
+  `comments` TEXT NULL,
   PRIMARY KEY (`bmc_part_id`),
   UNIQUE INDEX `bmc_part_id_UNIQUE` (`bmc_part_id` ASC))
 ENGINE = InnoDB
@@ -558,7 +561,7 @@ CREATE TABLE IF NOT EXISTS `TP`.`ZenCartStoreEntries` (
   `v_products_price` FLOAT NOT NULL,
   `v_products_qty_box_status` INT NOT NULL DEFAULT '1',
   `v_products_weight` FLOAT NULL DEFAULT '0',
-  `v_products_is_call` INT NULL DEFAULT '0',
+  `v_product_is_call` INT NULL DEFAULT '0',
   `v_products_sort_order` INT NULL DEFAULT '0',
   `v_products_quantity_order_min` FLOAT NULL DEFAULT '1',
   `v_products_quantity_order_units` FLOAT NULL DEFAULT '1',
